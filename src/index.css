@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#F4F7FE] text-slate-800 font-sans antialiased selection:bg-[#1E65FF] selection:text-white;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+/* Eventik Custom Design Utilities */
+.eventik-hero-bg {
+  background: linear-gradient(135deg, #0A192F 0%, #0D327B 50%, #1E65FF 100%);
+  position: relative;
+}
+
+.eventik-blue-card {
+  background: linear-gradient(135deg, #1E65FF 0%, #0D47A1 100%);
+  box-shadow: 0 20px 40px -10px rgba(30, 101, 255, 0.4);
+}
+
+.eventik-white-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.eventik-white-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(30, 101, 255, 0.15);
+  border-color: #CBD5E1;
+}
+
+.eventik-badge-blue {
+  background: rgba(30, 101, 255, 0.1);
+  color: #1E65FF;
+  border: 1px solid rgba(30, 101, 255, 0.2);
+}
+
+.eventik-badge-white {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  backdrop-filter: blur(8px);
+}
+
+.glass-panel {
+  background: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #1E65FF 0%, #00D2FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F7FE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
