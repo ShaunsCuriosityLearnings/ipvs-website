@@ -4,6 +4,7 @@ import { MarqueeTicker } from '../components/layout/MarqueeTicker';
 import { InlineRegistrationForm } from '../components/common/InlineRegistrationForm';
 import { PastExhibitionGallery } from '../components/common/PastExhibitionGallery';
 import { Award } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 interface AdvisoryPageProps {
   onOpenModal?: (mode: 'exhibitor' | 'visitor' | 'contact') => void;
@@ -12,6 +13,11 @@ interface AdvisoryPageProps {
 export const AdvisoryPage: React.FC<AdvisoryPageProps> = ({ onOpenModal }) => {
   return (
     <div className="pt-28 pb-20 animate-in fade-in duration-300">
+      <SEO 
+        title="Advisory Board & Technical Committee | IPVS 2026"
+        description="Meet the esteemed advisory board and technical leaders guiding IPVS 2026, representing Grundfos, ANDRITZ, Wilo, and premier Indian engineering institutions."
+        canonical="https://ipvs.in/advisory-board"
+      />
       
       <section className="py-16 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-b border-slate-800 text-center relative">
         <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6">

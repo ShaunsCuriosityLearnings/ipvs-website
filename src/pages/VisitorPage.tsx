@@ -2,6 +2,7 @@ import React from 'react';
 import { InlineRegistrationForm } from '../components/common/InlineRegistrationForm';
 import { PastExhibitionGallery } from '../components/common/PastExhibitionGallery';
 import { EVENT_DETAILS } from '../data/ipvsData';
+import { SEO } from '../components/common/SEO';
 import { 
   Users, 
   Calendar, 
@@ -80,6 +81,11 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
 
   return (
     <div className="pt-20 pb-16 bg-[#F8FAFC] text-slate-800 min-h-screen">
+      <SEO 
+        title="Visitor Registration & Free Pass | IPVS 2026 Hyderabad"
+        description="Register for your free visitor badge at IPVS 2026. Explore live machinery demos, attend high-level technical conferences, and network with 100+ global manufacturers at HITEX Hyderabad."
+        canonical="https://ipvs.in/visitor"
+      />
       
       {/* ==========================================
           SECTION 1: CREATIVE ULTRA-MODERN HERO SECTION

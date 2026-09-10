@@ -4,6 +4,7 @@ import { MarqueeTicker } from '../components/layout/MarqueeTicker';
 import { InlineRegistrationForm } from '../components/common/InlineRegistrationForm';
 import { PastExhibitionGallery } from '../components/common/PastExhibitionGallery';
 import { Cpu, ArrowRight } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 
 interface SmartValvePageProps {
@@ -13,6 +14,11 @@ interface SmartValvePageProps {
 export const SmartValvePage: React.FC<SmartValvePageProps> = ({ onOpenModal }) => {
   return (
     <div className="pt-28 pb-20 animate-in fade-in duration-300">
+      <SEO 
+        title="Smart Valves & Flow Automation Machinery | IPVS 2026"
+        description="Explore intelligent actuator valves, emergency shutdown systems, cryogenic flow controls, and smart industrial automation solutions at IPVS 2026 Hyderabad."
+        canonical="https://ipvs.in/smart-valve-automation"
+      />
       
       <section className="py-16 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-b border-slate-800 text-center relative">
         <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6">

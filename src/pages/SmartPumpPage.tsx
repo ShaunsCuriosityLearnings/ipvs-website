@@ -4,6 +4,7 @@ import { MarqueeTicker } from '../components/layout/MarqueeTicker';
 import { InlineRegistrationForm } from '../components/common/InlineRegistrationForm';
 import { PastExhibitionGallery } from '../components/common/PastExhibitionGallery';
 import { Layers, ArrowRight } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 interface SmartPumpPageProps {
   onOpenModal: (mode: 'exhibitor' | 'visitor' | 'contact') => void;
@@ -12,6 +13,11 @@ interface SmartPumpPageProps {
 export const SmartPumpPage: React.FC<SmartPumpPageProps> = ({ onOpenModal }) => {
   return (
     <div className="pt-28 pb-20 animate-in fade-in duration-300">
+      <SEO 
+        title="Smart IoT Pumps & Industrial Fluid Telemetry | IPVS 2026"
+        description="Discover intelligent IoT pumping systems, AI predictive maintenance, and energy-efficient fluid movement equipment showcased at IPVS 2026 in Hyderabad."
+        canonical="https://ipvs.in/smart-iot-pumps"
+      />
       
       <section className="py-16 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border-b border-slate-800 text-center relative">
         <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6">

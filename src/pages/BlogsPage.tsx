@@ -4,6 +4,7 @@ import { BLOG_ARTICLES, BlogArticle } from '../data/ipvsData';
 import { InlineRegistrationForm } from '../components/common/InlineRegistrationForm';
 import { PastExhibitionGallery } from '../components/common/PastExhibitionGallery';
 import { Calendar, Clock, User, Search, Tag, ArrowRight, Sparkles, BookOpen } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 interface BlogsPageProps {
   onOpenModal?: (mode: 'exhibitor' | 'visitor' | 'contact') => void;
@@ -37,6 +38,11 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onOpenModal }) => {
 
   return (
     <div className="pt-24 pb-12 bg-[#F4F7FE] text-slate-800 min-h-screen">
+      <SEO 
+        title="Industrial Engineering Blogs & Insights | IPVS 2026"
+        description="Explore in-depth technical analysis, industrial pump selection guides, ZLD water recycling, predictive maintenance, and ethanol refinery standards."
+        canonical="https://ipvs.in/blogs"
+      />
       
       {/* Header Banner */}
       <div className="bg-gradient-to-r from-[#111183] to-[#0e89d0] text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 text-center mb-10 shadow-xl">

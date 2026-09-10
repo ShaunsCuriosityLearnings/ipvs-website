@@ -5,6 +5,7 @@ import { InlineRegistrationForm } from '../components/common/InlineRegistrationF
 import { FloorPlanViewer } from '../components/exhibitors/FloorPlanViewer';
 import { PastExhibitionGallery } from '../components/common/PastExhibitionGallery';
 import { submitLead } from '../services/leadService';
+import { SEO } from '../components/common/SEO';
 import { 
   Building2, 
   Users, 
@@ -106,6 +107,11 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
 
   return (
     <div className="pt-24 pb-16 bg-[#F4F7FE] text-slate-800 min-h-screen">
+      <SEO 
+        title="Book Your Stall & Exhibit | IPVS 2026 Hyderabad"
+        description="Exhibit at IPVS 2026. Showcase your pumps, valves, and industrial automation solutions to 5,000+ targeted procurement heads, EPC contractors, and plant engineers."
+        canonical="https://ipvs.in/exhibitor"
+      />
       
       {/* ==========================================
           SECTION 1: HERO SECTION

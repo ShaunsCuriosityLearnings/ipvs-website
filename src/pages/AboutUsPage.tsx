@@ -5,7 +5,7 @@ import { AboutSection } from '../components/home/AboutSection';
 import { InlineRegistrationForm } from '../components/common/InlineRegistrationForm';
 import { PastExhibitionGallery } from '../components/common/PastExhibitionGallery';
 import { EVENT_DETAILS } from '../data/ipvsData';
-
+import { SEO } from '../components/common/SEO';
 import { Building2, MapPin, Calendar, Award, CheckCircle2, ArrowRight } from 'lucide-react';
 
 interface AboutUsPageProps {
@@ -15,6 +15,11 @@ interface AboutUsPageProps {
 export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenModal }) => {
   return (
     <div className="pt-24 pb-12 animate-in fade-in duration-300">
+      <SEO 
+        title="About IPVS 2026 & Orbit Exhibitions"
+        description="Learn about the Industrial Pumps, Valves & Systems Exhibition (IPVS 2026) organized by Orbit Exhibitions Pvt Ltd. Discover our vision, sectors, and legacy."
+        canonical="https://ipvs.in/about-us"
+      />
       
       {/* Page Sub-Hero Banner */}
       <section className="py-10 sm:py-12 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 relative border-b border-slate-800">

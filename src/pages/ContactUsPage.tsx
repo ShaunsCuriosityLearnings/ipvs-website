@@ -9,6 +9,7 @@ import { getMediaUrl } from '../utils/media';
 import { submitLead } from '../services/leadService';
 import { PastExhibitionGallery } from '../components/common/PastExhibitionGallery';
 import { FaqAccordion } from '../components/common/FaqAccordion';
+import { SEO } from '../components/common/SEO';
 
 interface ContactUsPageProps {
   onOpenModal?: (mode: 'exhibitor' | 'visitor' | 'contact') => void;
@@ -66,6 +67,11 @@ export const ContactUsPage: React.FC<ContactUsPageProps> = ({ onOpenModal }) => 
 
   return (
     <div className="min-h-screen bg-white text-slate-800 selection:bg-[#1E65FF] selection:text-white">
+      <SEO 
+        title="Contact Us & Exhibition Venue | IPVS 2026 Hyderabad"
+        description="Contact Orbit Exhibitions for stall inquiries, visitor passes, and sponsorship details for IPVS 2026 at HITEX Exhibition Center, Hyderabad."
+        canonical="https://ipvs.in/contact-us"
+      />
 
       {/* =========================================================
           SECTION 1: HERO HEADER WITH OVERLAPPING ARCH IMAGE

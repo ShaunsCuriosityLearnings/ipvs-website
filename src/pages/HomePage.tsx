@@ -9,6 +9,7 @@ import { MediaPartnersSection } from '../components/home/MediaPartnersSection';
 import { FaqAccordion } from '../components/common/FaqAccordion';
 import { InlineRegistrationForm } from '../components/common/InlineRegistrationForm';
 import { PastExhibitionGallery } from '../components/common/PastExhibitionGallery';
+import { SEO } from '../components/common/SEO';
 
 interface HomePageProps {
   onOpenModal: (mode: 'exhibitor' | 'visitor' | 'contact') => void;
@@ -18,6 +19,11 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onOpenModal, onNavigateToSection }) => {
   return (
     <div className="animate-in fade-in duration-300 bg-[#F4F7FE]">
+      <SEO 
+        title="IPVS 2026 | India's Premier Industrial Pumps, Valves & Process Systems Exhibition"
+        description="Connect with 100+ global exhibitors and 5,000+ trade buyers across Ethanol, Pharma, Water Treatment, and Heavy Process industries at HITEX Hyderabad (Dec 03-04, 2026)."
+        canonical="https://ipvs.in/"
+      />
       
       {/* 1. Hero Section */}
       <Hero onOpenModal={onOpenModal} onNavigate={onNavigateToSection} />
