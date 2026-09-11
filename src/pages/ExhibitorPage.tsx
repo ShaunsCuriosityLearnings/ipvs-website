@@ -6,6 +6,7 @@ import { FloorPlanViewer } from '../components/exhibitors/FloorPlanViewer';
 import { PastExhibitionGallery } from '../components/common/PastExhibitionGallery';
 import { submitLead, HEARD_ABOUT_OPTIONS } from '../services/leadService';
 import { SEO } from '../components/common/SEO';
+import { getMediaUrl } from '../utils/media';
 import { 
   Building2, 
   Users, 
@@ -33,7 +34,11 @@ import {
   Wheat,
   Anchor,
   Atom,
-  Sliders
+  Sliders,
+  Sparkles,
+  TrendingUp,
+  Target,
+  BarChart3
 } from 'lucide-react';
 
 interface ExhibitorPageProps {
@@ -415,7 +420,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
         <section id="about-exhibition" className="scroll-mt-32 space-y-12">
           
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block">
               EXHIBITOR OPPORTUNITIES
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-heading">
@@ -426,54 +431,148 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
             </p>
           </div>
 
-          {/* 2 Feature Cards */}
+          {/* 2 Feature Cards with Real Visual Storytelling */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
             
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4 flex flex-col justify-between">
+            {/* Card 1: Unlock Endless B2B Enquiries */}
+            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col justify-between group">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center mb-6">
-                  <Users className="w-6 h-6" />
+                <div className="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
+                  <img 
+                    src={getMediaUrl('/newcardimages/Connect With the People Who Drive Industry.jfif')} 
+                    alt="Targeted Industrial Buyers Networking at IPVS" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                  
+                  <div className="absolute top-4 left-4 flex items-center space-x-2">
+                    <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[11px] font-extrabold shadow-sm flex items-center space-x-1.5">
+                      <Users className="w-3.5 h-3.5 text-[#1E65FF]" />
+                      <span>Targeted Industrial Buyers</span>
+                    </span>
+                    <span className="px-2.5 py-1 rounded-full bg-emerald-500/90 text-white text-[10px] font-bold">
+                      Verified B2B
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-4 left-5 right-5">
+                    <span className="text-[11px] font-bold text-cyan-300 uppercase tracking-wider block mb-0.5">
+                      High-Value Sourcing Delegation
+                    </span>
+                    <p className="text-white font-extrabold text-lg sm:text-xl font-heading leading-tight drop-shadow-sm">
+                      7,000+ Industrial Buyers & Plant Heads
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-extrabold text-slate-900 font-heading mb-2">
-                  Unlock Endless B2B Enquiries
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Collaborate with qualified buyers & discover high-value market leads. Engage face-to-face with decision-makers actively sourcing pump systems, valve positioners, actuators, and plant automation.
-                </p>
+
+                <div className="p-6 sm:p-8 space-y-4">
+                  <h3 className="text-2xl font-extrabold text-slate-900 font-heading">
+                    Unlock Endless B2B Enquiries
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Collaborate with qualified buyers & discover high-value market leads. Engage face-to-face with decision-makers actively sourcing pump systems, valve positioners, actuators, and plant automation.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {['Plant Heads', 'Procurement Chiefs', 'EPC Contractors', 'OEM Engineers', 'Project Consultants'].map((tag) => (
+                      <span key={tag} className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-semibold flex items-center space-x-1">
+                        <Check className="w-3 h-3 text-[#1E65FF]" />
+                        <span>{tag}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs font-bold text-[#1E65FF]">Targeted Industrial Buyers</span>
-                <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+              <div className="px-6 sm:px-8 py-4 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between">
+                <span className="text-xs font-bold text-[#1E65FF] flex items-center space-x-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                  <span>Targeted Industrial Buyers</span>
+                </span>
+                <button 
+                  onClick={() => onOpenModal('exhibitor')}
+                  className="text-xs font-extrabold text-slate-900 hover:text-[#1E65FF] flex items-center space-x-1 group-hover:translate-x-1 transition-all"
+                >
+                  <span>Book Stall Access</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 space-y-4 flex flex-col justify-between">
+            {/* Card 2: The Premier Industry Benchmark */}
+            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col justify-between group">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center mb-6">
-                  <Award className="w-6 h-6" />
+                <div className="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
+                  <img 
+                    src={getMediaUrl('/newcardimages/mainimage2.jfif')} 
+                    alt="Flagship B2B Platform IPVS" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                  
+                  <div className="absolute top-4 left-4 flex items-center space-x-2">
+                    <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[11px] font-extrabold shadow-sm flex items-center space-x-1.5">
+                      <Award className="w-3.5 h-3.5 text-[#1E65FF]" />
+                      <span>Flagship B2B Platform</span>
+                    </span>
+                    <span className="px-2.5 py-1 rounded-full bg-blue-600 text-white text-[10px] font-bold">
+                      HITEX Hyderabad
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-4 left-5 right-5">
+                    <span className="text-[11px] font-bold text-cyan-300 uppercase tracking-wider block mb-0.5">
+                      India's 2026 Milestone Expo
+                    </span>
+                    <p className="text-white font-extrabold text-lg sm:text-xl font-heading leading-tight drop-shadow-sm">
+                      100+ Leading Exhibitors & Industry Benchmarks
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-extrabold text-slate-900 font-heading mb-2">
-                  The Premier Industry Benchmark
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Exhibit at India’s flagship industrial technology event of 2026. Establish your brand authority alongside leading global engineering manufacturers and process technology pioneers.
-                </p>
+
+                <div className="p-6 sm:p-8 space-y-4">
+                  <h3 className="text-2xl font-extrabold text-slate-900 font-heading">
+                    The Premier Industry Benchmark
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Exhibit at India’s flagship industrial technology event of 2026. Establish your brand authority alongside leading global engineering manufacturers and process technology pioneers.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {['Brand Authority', 'Hall 1-3 Pavilions', 'Global OEM Presence', 'Media Showcase', 'Live Product Launches'].map((tag) => (
+                      <span key={tag} className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-semibold flex items-center space-x-1">
+                        <Check className="w-3 h-3 text-[#1E65FF]" />
+                        <span>{tag}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs font-bold text-[#1E65FF]">Flagship B2B Platform</span>
-                <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+              <div className="px-6 sm:px-8 py-4 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between">
+                <span className="text-xs font-bold text-[#1E65FF] flex items-center space-x-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                  <span>Flagship B2B Platform</span>
+                </span>
+                <a 
+                  href="#stall-layout"
+                  className="text-xs font-extrabold text-slate-900 hover:text-[#1E65FF] flex items-center space-x-1 group-hover:translate-x-1 transition-all"
+                >
+                  <span>View Floor Plan</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
 
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <a 
               href="#exhibitor-profile"
-              className="px-6 py-3.5 rounded-xl bg-slate-900 text-white font-bold text-xs uppercase tracking-wider hover:bg-[#1E65FF] transition-colors flex items-center space-x-2"
+              className="px-6 py-3.5 rounded-xl bg-slate-900 text-white font-bold text-xs uppercase tracking-wider hover:bg-[#1E65FF] transition-colors flex items-center space-x-2 shadow-sm"
             >
               <span>Exhibitors Profile →</span>
             </a>
@@ -495,173 +594,294 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
         <section className="space-y-12">
           
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block">
               EXHIBITOR BENEFITS
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-heading">
               Why Industry Leaders Choose IPVS 2026
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
               5 strategic growth advantages engineered specifically for pump, valve, and process automation manufacturers.
             </p>
           </div>
 
-          {/* 5 Benefit Blocks Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+          {/* Visual Bento Showcase of 5 Benefit Cards */}
+          <div className="space-y-8 text-left">
             
-            {/* Benefit 1 */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div className="space-y-4">
-                <span className="text-3xl font-black text-[#1E65FF]/40 font-heading block">01</span>
-                <h3 className="text-xl font-extrabold text-slate-900 font-heading">
-                  1. Connect with Industry Leaders
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Build valuable relationships with plant heads, procurement managers, EPC contractors, OEMs, consultants, distributors, and decision-makers from India’s leading process industries.
-                </p>
+            {/* Top Row: 2 Spotlight Benefit Cards (Horizontal Split on large screens) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              {/* Benefit 01: Connect with Industry Leaders */}
+              <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col sm:flex-row group">
+                <div className="sm:w-2/5 relative h-52 sm:h-auto overflow-hidden bg-slate-900 shrink-0">
+                  <img 
+                    src={getMediaUrl('/newcardimages/Connect With the People Who Drive Industry.jfif')} 
+                    alt="Connect with Industry Leaders"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-slate-950/80 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 rounded-full bg-[#1E65FF] text-white text-xs font-black tracking-wider shadow-sm">
+                      01
+                    </span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <span className="text-[10px] font-bold text-cyan-300 uppercase tracking-widest block">
+                      Networking & Buyers
+                    </span>
+                    <span className="text-white font-extrabold text-sm">
+                      Plant Heads & EPCs
+                    </span>
+                  </div>
+                </div>
 
-                <div className="pt-4 border-t border-slate-100 space-y-2">
-                  <span className="text-xs font-bold text-slate-900 block">Key Benefits:</span>
-                  <ul className="space-y-1.5 text-xs text-slate-600">
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Network with qualified industrial buyers</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Meet EPC companies and OEMs</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Build long-term business partnerships</span>
-                    </li>
-                  </ul>
+                <div className="p-6 sm:p-7 space-y-4 flex flex-col justify-between grow">
+                  <div className="space-y-2.5">
+                    <h3 className="text-xl font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                      1. Connect with Industry Leaders
+                    </h3>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Build valuable relationships with plant heads, procurement managers, EPC contractors, OEMs, consultants, distributors, and decision-makers from India’s leading process industries.
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-100 space-y-1.5">
+                    <span className="text-[11px] font-bold text-slate-900 block">Key Benefits:</span>
+                    <ul className="space-y-1 text-xs text-slate-600">
+                      <li className="flex items-center">
+                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                        <span>Network with qualified industrial buyers</span>
+                      </li>
+                      <li className="flex items-center">
+                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                        <span>Meet EPC companies and OEMs</span>
+                      </li>
+                      <li className="flex items-center">
+                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                        <span>Build long-term business partnerships</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
+
+              {/* Benefit 02: Showcase Your Innovation */}
+              <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col sm:flex-row group">
+                <div className="sm:w-2/5 relative h-52 sm:h-auto overflow-hidden bg-slate-900 shrink-0">
+                  <img 
+                    src={getMediaUrl('/newcardimages/See Technology in Action.jfif')} 
+                    alt="Showcase Your Innovation"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-slate-950/80 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 rounded-full bg-[#1E65FF] text-white text-xs font-black tracking-wider shadow-sm">
+                      02
+                    </span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <span className="text-[10px] font-bold text-cyan-300 uppercase tracking-widest block">
+                      Live Demonstrations
+                    </span>
+                    <span className="text-white font-extrabold text-sm">
+                      Live Flow Machinery
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-6 sm:p-7 space-y-4 flex flex-col justify-between grow">
+                  <div className="space-y-2.5">
+                    <h3 className="text-xl font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                      2. Showcase Your Innovation
+                    </h3>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Demonstrate your latest pumps, valves, automation systems, Industrial IoT solutions, instrumentation, and process technologies through live product displays and technical demonstrations.
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-100 space-y-1.5">
+                    <span className="text-[11px] font-bold text-slate-900 block">Key Benefits:</span>
+                    <ul className="space-y-1 text-xs text-slate-600">
+                      <li className="flex items-center">
+                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                        <span>Launch new technologies</span>
+                      </li>
+                      <li className="flex items-center">
+                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                        <span>Demonstrate products live</span>
+                      </li>
+                      <li className="flex items-center">
+                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                        <span>Position your brand as an industry innovator</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
-            {/* Benefit 2 */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div className="space-y-4">
-                <span className="text-3xl font-black text-[#1E65FF]/40 font-heading block">02</span>
-                <h3 className="text-xl font-extrabold text-slate-900 font-heading">
-                  2. Showcase Your Innovation
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Demonstrate your latest pumps, valves, automation systems, Industrial IoT solutions, instrumentation, and process technologies through live product displays and technical demonstrations.
-                </p>
+            {/* Bottom Row: 3 Grid Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              
+              {/* Benefit 03: Generate High-Quality Business Leads */}
+              <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-44 overflow-hidden bg-slate-900">
+                    <img 
+                      src={getMediaUrl('/we/webkeep1.webp')} 
+                      alt="Generate High-Quality Business Leads"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+                    <div className="absolute top-3 left-3">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#1E65FF] text-white text-xs font-black shadow-sm">
+                        03
+                      </span>
+                    </div>
+                    <div className="absolute bottom-3 left-4">
+                      <span className="text-white font-extrabold text-sm">
+                        Pipeline & Sales ROI
+                      </span>
+                    </div>
+                  </div>
 
-                <div className="pt-4 border-t border-slate-100 space-y-2">
-                  <span className="text-xs font-bold text-slate-900 block">Key Benefits:</span>
-                  <ul className="space-y-1.5 text-xs text-slate-600">
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Launch new technologies</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Demonstrate products live</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Position your brand as an industry innovator</span>
-                    </li>
-                  </ul>
+                  <div className="p-6 space-y-3">
+                    <h3 className="text-lg font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                      3. Generate High-Quality Leads
+                    </h3>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Meet thousands of professionals actively seeking industrial equipment, automation systems, flow control technologies, and engineering solutions.
+                    </p>
+
+                    <div className="pt-3 border-t border-slate-100 space-y-1.5">
+                      <span className="text-[11px] font-bold text-slate-900 block">Key Benefits:</span>
+                      <ul className="space-y-1 text-xs text-slate-600">
+                        <li className="flex items-center">
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <span>Generate qualified B2B enquiries</span>
+                        </li>
+                        <li className="flex items-center">
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <span>Meet purchase decision-makers</span>
+                        </li>
+                        <li className="flex items-center">
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <span>Expand your sales pipeline</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Benefit 3 */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div className="space-y-4">
-                <span className="text-3xl font-black text-[#1E65FF]/40 font-heading block">03</span>
-                <h3 className="text-xl font-extrabold text-slate-900 font-heading">
-                  3. Generate High-Quality Business Leads
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Meet thousands of professionals actively seeking industrial equipment, automation systems, flow control technologies, and engineering solutions.
-                </p>
+              {/* Benefit 04: Expand Your Market Presence */}
+              <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-44 overflow-hidden bg-slate-900">
+                    <img 
+                      src={getMediaUrl('/newcardimages/From Components to Complete Systems.jfif')} 
+                      alt="Expand Your Market Presence"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+                    <div className="absolute top-3 left-3">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#1E65FF] text-white text-xs font-black shadow-sm">
+                        04
+                      </span>
+                    </div>
+                    <div className="absolute bottom-3 left-4">
+                      <span className="text-white font-extrabold text-sm">
+                        National Reach & Visibility
+                      </span>
+                    </div>
+                  </div>
 
-                <div className="pt-4 border-t border-slate-100 space-y-2">
-                  <span className="text-xs font-bold text-slate-900 block">Key Benefits:</span>
-                  <ul className="space-y-1.5 text-xs text-slate-600">
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Generate qualified B2B enquiries</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Meet purchase decision-makers</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Expand your sales pipeline</span>
-                    </li>
-                  </ul>
+                  <div className="p-6 space-y-3">
+                    <h3 className="text-lg font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                      4. Expand Your Market Presence
+                    </h3>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Strengthen your presence across India’s rapidly growing manufacturing, chemical, pharmaceutical, water treatment, energy, and infrastructure sectors.
+                    </p>
+
+                    <div className="pt-3 border-t border-slate-100 space-y-1.5">
+                      <span className="text-[11px] font-bold text-slate-900 block">Key Benefits:</span>
+                      <ul className="space-y-1 text-xs text-slate-600">
+                        <li className="flex items-center">
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <span>Reach new industrial markets</span>
+                        </li>
+                        <li className="flex items-center">
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <span>Increase brand visibility</span>
+                        </li>
+                        <li className="flex items-center">
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <span>Build nationwide distribution networks</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Benefit 4 */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-              <div className="space-y-4">
-                <span className="text-3xl font-black text-[#1E65FF]/40 font-heading block">04</span>
-                <h3 className="text-xl font-extrabold text-slate-900 font-heading">
-                  4. Expand Your Market Presence
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Strengthen your presence across India’s rapidly growing manufacturing, chemical, pharmaceutical, water treatment, energy, and infrastructure sectors.
-                </p>
+              {/* Benefit 05: Stay Ahead of Industry Trends */}
+              <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+                <div>
+                  <div className="relative h-44 overflow-hidden bg-slate-900">
+                    <img 
+                      src={getMediaUrl('/newcardimages/Where Industrial Equipment Meets Intelligence.jfif')} 
+                      alt="Stay Ahead of Industry Trends"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+                    <div className="absolute top-3 left-3">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#1E65FF] text-white text-xs font-black shadow-sm">
+                        05
+                      </span>
+                    </div>
+                    <div className="absolute bottom-3 left-4">
+                      <span className="text-white font-extrabold text-sm">
+                        Industry 4.0 & Smart Tech
+                      </span>
+                    </div>
+                  </div>
 
-                <div className="pt-4 border-t border-slate-100 space-y-2">
-                  <span className="text-xs font-bold text-slate-900 block">Key Benefits:</span>
-                  <ul className="space-y-1.5 text-xs text-slate-600">
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Reach new industrial markets</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Increase brand visibility</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Build nationwide distribution networks</span>
-                    </li>
-                  </ul>
+                  <div className="p-6 space-y-3">
+                    <h3 className="text-lg font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                      5. Stay Ahead of Trends
+                    </h3>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Explore the latest developments in Industry 4.0, Smart Manufacturing, Industrial IoT, predictive condition monitoring, hydrogen technologies, and green solutions.
+                    </p>
+
+                    <div className="pt-3 border-t border-slate-100 space-y-1.5">
+                      <span className="text-[11px] font-bold text-slate-900 block">Key Benefits:</span>
+                      <ul className="space-y-1 text-xs text-slate-600">
+                        <li className="flex items-center">
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <span>Discover emerging technologies</span>
+                        </li>
+                        <li className="flex items-center">
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <span>Learn from industry experts</span>
+                        </li>
+                        <li className="flex items-center">
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <span>Gain valuable market insights</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Benefit 5 */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between md:col-span-2 lg:col-span-1">
-              <div className="space-y-4">
-                <span className="text-3xl font-black text-[#1E65FF]/40 font-heading block">05</span>
-                <h3 className="text-xl font-extrabold text-slate-900 font-heading">
-                  5. Stay Ahead of Industry Trends
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Explore the latest developments in Industry 4.0, Smart Manufacturing, Industrial IoT, predictive condition monitoring, hydrogen technologies, ethanol processing, and sustainable industrial solutions.
-                </p>
-
-                <div className="pt-4 border-t border-slate-100 space-y-2">
-                  <span className="text-xs font-bold text-slate-900 block">Key Benefits:</span>
-                  <ul className="space-y-1.5 text-xs text-slate-600">
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Discover emerging technologies</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Learn from industry experts</span>
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
-                      <span>Gain valuable market insights</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
 
           </div>
@@ -671,21 +891,29 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
         {/* ==========================================
             SECTION 4: EXHIBITORS & INDUSTRY LEADERS
             ========================================== */}
-        <section className="space-y-8 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm">
+        <section className="space-y-8 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200/90 shadow-sm">
           
-          <div className="text-left max-w-3xl space-y-2">
-            <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block">
-              PARTICIPATING INDUSTRIAL BRANDS
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 font-heading">
-              Exhibitors & Industry Leaders
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-500">
-              Explore featured brands exhibiting pump systems, valve positioners, and industrial automation solutions.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 text-left">
+            <div className="space-y-2 max-w-2xl">
+              <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block">
+                PARTICIPATING INDUSTRIAL BRANDS
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 font-heading">
+                Exhibitors & Industry Leaders
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500">
+                Explore featured brands exhibiting pump systems, valve positioners, and industrial automation solutions.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2 text-[11px] font-bold text-slate-600">
+              <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200">100+ Manufacturers</span>
+              <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200">Global & Domestic</span>
+              <span className="px-3 py-1 rounded-full bg-blue-50 text-[#1E65FF] border border-blue-200">Hall 1, 2 & 3</span>
+            </div>
           </div>
 
-          {/* Logo Cards Grid (Matching Esteemed Exhibitors Section, without Booth & Sector) */}
+          {/* Logo Cards Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5 sm:gap-5">
             {ESTEEMED_EXHIBITORS.map((exhibitor) => (
               <div 
@@ -693,7 +921,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                 onClick={() => onOpenModal('exhibitor')}
                 className="bg-[#F8FAFC] hover:bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-between text-center min-h-[125px] sm:min-h-[140px]"
               >
-                {/* Logo Container with Proper Scaling */}
+                {/* Logo Container */}
                 <div className="h-12 sm:h-14 w-full flex items-center justify-center p-1">
                   <img 
                     src={exhibitor.logo} 
@@ -703,7 +931,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                   />
                 </div>
 
-                {/* Brand Name Text under the Logo */}
+                {/* Brand Name */}
                 <div className="w-full pt-2 border-t border-slate-200/80">
                   <h3 className="text-xs font-extrabold text-slate-900 font-heading tracking-tight line-clamp-2 text-center group-hover:text-[#1E65FF] transition-colors">
                     {exhibitor.name}
@@ -711,6 +939,25 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Banner under brands */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-[#0A192F] to-[#0D327B] text-white flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left shadow-inner">
+            <div className="space-y-1">
+              <span className="text-[11px] font-bold text-cyan-300 uppercase tracking-wider block">
+                Prime Stall Locations Available
+              </span>
+              <p className="text-xs sm:text-sm font-semibold text-slate-200">
+                Want your brand showcased alongside these esteemed process industry leaders at HITEX Hyderabad?
+              </p>
+            </div>
+            <button 
+              onClick={() => onOpenModal('exhibitor')}
+              className="px-5 py-2.5 rounded-xl bg-[#1E65FF] hover:bg-white hover:text-slate-900 text-white font-extrabold text-xs uppercase tracking-wider transition-all shrink-0 shadow-md flex items-center space-x-1.5"
+            >
+              <span>Book Your Space</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
           </div>
 
         </section>
@@ -721,128 +968,197 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
         <section id="exhibitor-profile" className="scroll-mt-32 space-y-16">
           
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block">
               EXHIBITOR PROFILE
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-heading">
               Technologies Driving Modern Process Industries
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
               Explore the innovations, equipment and industrial technologies that will be showcased at IPVS 2026 by leading manufacturers, automation companies and engineering solution providers.
             </p>
           </div>
 
-          {/* 3 Main Technology Showcase Cards */}
+          {/* 3 Main Technology Showcase Cards with High-Res Photographic Headers */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             
             {/* Card 1: Industrial Pumps */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center">
-                  <Building2 className="w-6 h-6" />
+            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col justify-between group">
+              <div>
+                <div className="relative h-48 overflow-hidden bg-slate-900">
+                  <img 
+                    src={getMediaUrl('/newcardimages/From Components to Complete Systems.jfif')} 
+                    alt="Industrial Pumps & Fluid Handling Equipment"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+                  
+                  <div className="absolute top-3 left-3">
+                    <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-extrabold shadow-sm flex items-center space-x-1">
+                      <Building2 className="w-3 h-3 text-[#1E65FF]" />
+                      <span>HEAVY PROCESS EQUIPMENT</span>
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-3 left-4">
+                    <span className="text-white font-extrabold text-base drop-shadow-sm">
+                      Pumping & Fluid Systems
+                    </span>
+                  </div>
                 </div>
 
-                <h3 className="text-2xl font-extrabold text-slate-900 font-heading">
-                  Industrial Pumps
-                </h3>
+                <div className="p-6 sm:p-7 space-y-4">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                    Industrial Pumps
+                  </h3>
 
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Discover advanced pumping technologies engineered for chemical, water, oil & gas, pharmaceutical and manufacturing industries.
-                </p>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Discover advanced pumping technologies engineered for chemical, water, oil & gas, pharmaceutical and manufacturing industries.
+                  </p>
 
-                {/* Tech Pills */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {[
-                    "Smart Pumps", "Centrifugal", "Chemical Pumps", "Slurry Pumps", 
-                    "Boiler Feed", "VFD Drives", "IoT Monitoring", "Mechanical Seals"
-                  ].map((tech) => (
-                    <span key={tech} className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-semibold">
-                      {tech}
-                    </span>
-                  ))}
+                  {/* Tech Pills */}
+                  <div className="flex flex-wrap gap-1.5 pt-2">
+                    {[
+                      "Smart Pumps", "Centrifugal", "Chemical Pumps", "Slurry Pumps", 
+                      "Boiler Feed", "VFD Drives", "IoT Monitoring", "Mechanical Seals"
+                    ].map((tech) => (
+                      <span key={tech} className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-semibold">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              <button 
-                onClick={() => navigate('/smart-iot-pumps')}
-                className="w-full py-3 rounded-xl bg-[#F4F7FE] hover:bg-[#1E65FF] text-[#1E65FF] hover:text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2"
-              >
-                <span>Explore Technologies</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+              <div className="p-6 sm:p-7 pt-0">
+                <button 
+                  onClick={() => navigate('/smart-iot-pumps')}
+                  className="w-full py-3 rounded-xl bg-[#F4F7FE] hover:bg-[#1E65FF] text-[#1E65FF] hover:text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-sm"
+                >
+                  <span>Explore Pump Technologies</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
 
             {/* Card 2: Industrial Valve Automation */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center">
-                  <Layers className="w-6 h-6" />
+            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col justify-between group">
+              <div>
+                <div className="relative h-48 overflow-hidden bg-slate-900">
+                  <img 
+                    src={getMediaUrl('/newcardimages/Where Industrial Equipment Meets Intelligence.jfif')} 
+                    alt="Industrial Valve Automation & Flow Control"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+                  
+                  <div className="absolute top-3 left-3">
+                    <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-extrabold shadow-sm flex items-center space-x-1">
+                      <Layers className="w-3 h-3 text-[#1E65FF]" />
+                      <span>FLOW CONTROL & POSITIONERS</span>
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-3 left-4">
+                    <span className="text-white font-extrabold text-base drop-shadow-sm">
+                      Smart Actuators & Valves
+                    </span>
+                  </div>
                 </div>
 
-                <h3 className="text-2xl font-extrabold text-slate-900 font-heading">
-                  Industrial Valve Automation
-                </h3>
+                <div className="p-6 sm:p-7 space-y-4">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                    Industrial Valve Automation
+                  </h3>
 
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Intelligent flow control solutions powered by actuators, positioners, smart valves and digital monitoring systems.
-                </p>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Intelligent flow control solutions powered by actuators, positioners, smart valves and digital monitoring systems.
+                  </p>
 
-                {/* Tech Pills */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {[
-                    "Valve Automation", "Control Valves", "Actuators", "Positioners", "Safety Valves"
-                  ].map((tech) => (
-                    <span key={tech} className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-semibold">
-                      {tech}
-                    </span>
-                  ))}
+                  {/* Tech Pills */}
+                  <div className="flex flex-wrap gap-1.5 pt-2">
+                    {[
+                      "Valve Automation", "Control Valves", "Actuators", "Positioners", "Safety Valves", "Smart Diagnostics"
+                    ].map((tech) => (
+                      <span key={tech} className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-semibold">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              <button 
-                onClick={() => navigate('/smart-valve-automation')}
-                className="w-full py-3 rounded-xl bg-[#F4F7FE] hover:bg-[#1E65FF] text-[#1E65FF] hover:text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2"
-              >
-                <span>Explore Technologies</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+              <div className="p-6 sm:p-7 pt-0">
+                <button 
+                  onClick={() => navigate('/smart-valve-automation')}
+                  className="w-full py-3 rounded-xl bg-[#F4F7FE] hover:bg-[#1E65FF] text-[#1E65FF] hover:text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-sm"
+                >
+                  <span>Explore Valve Technologies</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
 
             {/* Card 3: Automation & Instrumentation */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center">
-                  <Cpu className="w-6 h-6" />
+            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col justify-between group">
+              <div>
+                <div className="relative h-48 overflow-hidden bg-slate-900">
+                  <img 
+                    src={getMediaUrl('/newcardimages/Discover What’s Next in Industrial Technology.jfif')} 
+                    alt="Automation & Instrumentation"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+                  
+                  <div className="absolute top-3 left-3">
+                    <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-extrabold shadow-sm flex items-center space-x-1">
+                      <Cpu className="w-3 h-3 text-[#1E65FF]" />
+                      <span>INDUSTRY 4.0 & DIGITAL TWIN</span>
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-3 left-4">
+                    <span className="text-white font-extrabold text-base drop-shadow-sm">
+                      SCADA, DCS & IoT
+                    </span>
+                  </div>
                 </div>
 
-                <h3 className="text-2xl font-extrabold text-slate-900 font-heading">
-                  Automation & Instrumentation
-                </h3>
+                <div className="p-6 sm:p-7 space-y-4">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                    Automation & Instrumentation
+                  </h3>
 
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Experience Industry 4.0 technologies connecting machinery, analytics and plant operations through intelligent automation.
-                </p>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Experience Industry 4.0 technologies connecting machinery, analytics and plant operations through intelligent automation.
+                  </p>
 
-                {/* Tech Pills */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {[
-                    "PLC", "SCADA", "DCS", "Industrial IoT", 
-                    "Digital Twin", "Condition Monitoring", "Cloud Monitoring", "Sensors"
-                  ].map((tech) => (
-                    <span key={tech} className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-semibold">
-                      {tech}
-                    </span>
-                  ))}
+                  {/* Tech Pills */}
+                  <div className="flex flex-wrap gap-1.5 pt-2">
+                    {[
+                      "PLC", "SCADA", "DCS", "Industrial IoT", 
+                      "Digital Twin", "Condition Monitoring", "Cloud Monitoring", "Sensors"
+                    ].map((tech) => (
+                      <span key={tech} className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-semibold">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              <button 
-                onClick={() => navigate('/smart-valve-automation')}
-                className="w-full py-3 rounded-xl bg-[#F4F7FE] hover:bg-[#1E65FF] text-[#1E65FF] hover:text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2"
-              >
-                <span>Explore Technologies</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+              <div className="p-6 sm:p-7 pt-0">
+                <button 
+                  onClick={() => navigate('/smart-valve-automation')}
+                  className="w-full py-3 rounded-xl bg-[#F4F7FE] hover:bg-[#1E65FF] text-[#1E65FF] hover:text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-sm"
+                >
+                  <span>Explore Automation Systems</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
 
           </div>
