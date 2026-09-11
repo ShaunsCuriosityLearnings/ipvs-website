@@ -3,8 +3,36 @@
  * Dispatches form submissions to /api/send-lead which uses Nodemailer to deliver leads to info@orbitexhibitions.com
  */
 
+export const HEARD_ABOUT_OPTIONS = [
+  'LinkedIn',
+  'Google',
+  'Instagram',
+  'Facebook',
+  'Hindu Newspaper',
+  'Times of India',
+  'Trade Magazine / Media Partner',
+  'Industry Colleague / Word of Mouth',
+  'Email / Newsletter Invitation',
+  'Direct Invitation from Orbit Exhibitions',
+  'Past IPVS Exhibition',
+  'Other'
+];
+
+export const SPONSORSHIP_TIERS = [
+  'Platinum Partner / Principal Sponsor',
+  'Gold Sponsor',
+  'Silver Sponsor',
+  'Associate Sponsor',
+  'Badge & Lanyard Sponsor',
+  'Visitor Registration Counter Sponsor',
+  'VIP Lounge & Networking Sponsor',
+  'Conference & Technical Session Sponsor',
+  'Exhibition Carry Bag / Kit Sponsor',
+  'General / Custom Sponsorship Inquiry'
+];
+
 export interface LeadSubmissionData {
-  formType: 'exhibitor' | 'visitor' | 'contact';
+  formType: 'exhibitor' | 'visitor' | 'contact' | 'sponsorship';
   source?: string;
   firstName: string;
   lastName: string;
@@ -16,6 +44,7 @@ export interface LeadSubmissionData {
   website?: string;
   stallSize?: string;
   sectorInterest?: string;
+  sponsorshipTier?: string;
   heardFrom?: string;
   message?: string;
 }

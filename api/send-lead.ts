@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
 export interface LeadPayload {
-  formType: 'exhibitor' | 'visitor' | 'contact';
+  formType: 'exhibitor' | 'visitor' | 'contact' | 'sponsorship';
   source?: string;
   firstName: string;
   lastName: string;
@@ -13,6 +13,7 @@ export interface LeadPayload {
   website?: string;
   stallSize?: string;
   sectorInterest?: string;
+  sponsorshipTier?: string;
   heardFrom?: string;
   message?: string;
   submittedAt?: string;
@@ -32,6 +33,7 @@ export async function processLeadEmail(payload: LeadPayload): Promise<{ success:
     website = 'N/A',
     stallSize = 'N/A',
     sectorInterest = 'N/A',
+    sponsorshipTier = 'N/A',
     heardFrom = 'N/A',
     message = 'N/A',
     submittedAt = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
@@ -58,6 +60,10 @@ export async function processLeadEmail(payload: LeadPayload): Promise<{ success:
     subject = `[IPVS 2026 Visitor Lead] ${firstName} ${lastName} - ${company}`;
     categoryBadge = 'Free Trade Visitor Pass';
     badgeColor = '#059669';
+  } else if (formType === 'sponsorship') {
+    subject = `[IPVS 2026 Sponsorship Lead] ${company} - ${sponsorshipTier !== 'N/A' ? sponsorshipTier : 'Sponsorship Inquiry'}`;
+    categoryBadge = `Sponsorship (${sponsorshipTier !== 'N/A' ? sponsorshipTier : 'Corporate Sponsor'})`;
+    badgeColor = '#7C3AED';
   } else if (formType === 'contact') {
     subject = `[IPVS 2026 Contact Inquiry] Message from ${firstName} ${lastName}`;
     categoryBadge = 'Event Desk Message';
@@ -111,6 +117,12 @@ export async function processLeadEmail(payload: LeadPayload): Promise<{ success:
                 <td class="value highlight">${stallSize}</td>
               </tr>
               ` : ''}
+              ${formType === 'sponsorship' ? `
+              <tr>
+                <td class="label">Sponsorship Interest:</td>
+                <td class="value highlight" style="color: #7C3AED; font-weight: 800;">${sponsorshipTier}</td>
+              </tr>
+              ` : ''}
               <tr>
                 <td class="label">Full Name:</td>
                 <td class="value">${firstName} ${lastName}</td>
@@ -119,7 +131,7 @@ export async function processLeadEmail(payload: LeadPayload): Promise<{ success:
                 <td class="label">Company Name:</td>
                 <td class="value">${company}</td>
               </tr>
-              ${formType === 'visitor' ? `
+              ${formType === 'visitor' || formType === 'sponsorship' ? `
               <tr>
                 <td class="label">Designation:</td>
                 <td class="value">${designation}</td>
@@ -137,7 +149,7 @@ export async function processLeadEmail(payload: LeadPayload): Promise<{ success:
                 <td class="label">City / Location:</td>
                 <td class="value">${city}</td>
               </tr>
-              ${formType === 'exhibitor' && website && website !== 'N/A' ? `
+              ${(formType === 'exhibitor' || formType === 'sponsorship') && website && website !== 'N/A' ? `
               <tr>
                 <td class="label">Company Website:</td>
                 <td class="value"><a href="${website.startsWith('http') ? website : 'https://' + website}" target="_blank" style="color:#1E65FF;">${website}</a></td>
@@ -196,6 +208,7 @@ Category: ${categoryBadge}
 Name: ${firstName} ${lastName}
 Company: ${company}
 ${formType === 'exhibitor' ? `Required Stall Area: ${stallSize}\nWebsite: ${website}\n` : ''}
+${formType === 'sponsorship' ? `Sponsorship Interest: ${sponsorshipTier}\nDesignation: ${designation}\nWebsite: ${website}\n` : ''}
 ${formType === 'visitor' ? `Designation: ${designation}\nSector Interest: ${sectorInterest}\n` : ''}
 Mobile: ${mobile}
 Email: ${email}

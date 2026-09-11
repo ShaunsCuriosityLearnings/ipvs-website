@@ -8,14 +8,15 @@ import {
   Send,
   Calendar,
   ShieldCheck,
-  Loader2
+  Loader2,
+  Award
 } from 'lucide-react';
 import { EVENT_DETAILS } from '../../data/ipvsData';
-import { submitLead } from '../../services/leadService';
+import { submitLead, HEARD_ABOUT_OPTIONS, SPONSORSHIP_TIERS } from '../../services/leadService';
 
 interface RegistrationModalProps {
   isOpen: boolean;
-  mode: 'exhibitor' | 'visitor' | 'contact';
+  mode: 'exhibitor' | 'visitor' | 'contact' | 'sponsorship';
   initialSqm?: number;
   onClose: () => void;
 }
@@ -25,12 +26,13 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
   mode,
   onClose
 }) => {
-  const [activeTab, setActiveTab] = useState<'exhibitor' | 'visitor' | 'contact'>(mode);
+  const [activeTab, setActiveTab] = useState<'exhibitor' | 'visitor' | 'contact' | 'sponsorship'>(mode);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
     stallSize: '18 SQM',
+    sponsorshipTier: SPONSORSHIP_TIERS[0],
     firstName: '',
     lastName: '',
     company: '',
@@ -62,12 +64,13 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
       firstName: formData.firstName,
       lastName: formData.lastName,
       company: formData.company,
-      designation: activeTab === 'visitor' ? formData.designation : undefined,
+      designation: activeTab === 'visitor' || activeTab === 'sponsorship' ? formData.designation : undefined,
       mobile: formData.mobile,
       email: formData.email,
       city: formData.city,
-      website: activeTab === 'exhibitor' ? formData.website : undefined,
+      website: activeTab === 'exhibitor' || activeTab === 'sponsorship' ? formData.website : undefined,
       stallSize: activeTab === 'exhibitor' ? formData.stallSize : undefined,
+      sponsorshipTier: activeTab === 'sponsorship' ? formData.sponsorshipTier : undefined,
       sectorInterest: activeTab === 'visitor' ? formData.sectorInterest : undefined,
       heardFrom: formData.heardFrom || undefined,
       message: activeTab === 'contact' ? formData.message : undefined
@@ -79,13 +82,14 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
   const isVisitor = activeTab === 'visitor';
   const isExhibitor = activeTab === 'exhibitor';
   const isContact = activeTab === 'contact';
+  const isSponsorship = activeTab === 'sponsorship';
 
   const stallOptions = ['9 SQM', '12 SQM', '18 SQM', '36 SQM', '54 SQM', '72+ SQM'];
 
   return (
     <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
       
-      {/* Compact Modal Card in slightly gray tone for professional tactile appearance */}
+      {/* Compact Modal Card */}
       <div className="bg-[#EDF2F7] text-slate-900 border border-slate-300 rounded-2xl sm:rounded-3xl max-w-lg sm:max-w-xl w-full p-4 sm:p-7 relative shadow-2xl animate-in zoom-in-95 duration-200 my-4 sm:my-8 text-left max-h-[92vh] overflow-y-auto">
         
         {/* Close Button */}
@@ -99,42 +103,54 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
         {/* Modal Tab Switcher */}
         {!submitted && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-1 p-1 rounded-xl bg-slate-200/80 border border-slate-300 mb-4 sm:mb-5 max-w-sm shadow-inner">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-1 p-1 rounded-xl bg-slate-200/80 border border-slate-300 mb-4 sm:mb-5 max-w-lg shadow-inner">
             <button
               type="button"
               onClick={() => setActiveTab('visitor')}
-              className={`py-2 px-2.5 rounded-lg text-xs font-extrabold transition-all flex items-center justify-center space-x-1.5 ${
+              className={`py-2 px-2 rounded-lg text-xs font-extrabold transition-all flex items-center justify-center space-x-1.5 ${
                 isVisitor
                   ? 'bg-[#1E65FF] text-white shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              <Ticket className="w-3.5 h-3.5" />
-              <span>Visitor Pass</span>
+              <Ticket className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">Visitor Pass</span>
             </button>
             <button
               type="button"
               onClick={() => setActiveTab('exhibitor')}
-              className={`py-2 px-2.5 rounded-lg text-xs font-extrabold transition-all flex items-center justify-center space-x-1.5 ${
+              className={`py-2 px-2 rounded-lg text-xs font-extrabold transition-all flex items-center justify-center space-x-1.5 ${
                 isExhibitor
                   ? 'bg-[#1E65FF] text-white shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              <Building2 className="w-3.5 h-3.5" />
-              <span>Exhibitor Stall</span>
+              <Building2 className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">Exhibitor</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab('sponsorship')}
+              className={`py-2 px-2 rounded-lg text-xs font-extrabold transition-all flex items-center justify-center space-x-1.5 ${
+                isSponsorship
+                  ? 'bg-[#7C3AED] text-white shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              <Award className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">Sponsorship</span>
             </button>
             <button
               type="button"
               onClick={() => setActiveTab('contact')}
-              className={`hidden sm:flex py-2 px-2.5 rounded-lg text-xs font-extrabold transition-all items-center justify-center space-x-1.5 ${
+              className={`py-2 px-2 rounded-lg text-xs font-extrabold transition-all items-center justify-center space-x-1.5 flex ${
                 isContact
                   ? 'bg-[#1E65FF] text-white shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              <Mail className="w-3.5 h-3.5" />
-              <span>Event Desk</span>
+              <Mail className="w-3.5 h-3.5 shrink-0" />
+              <span className="truncate">Help Desk</span>
             </button>
           </div>
         )}
@@ -151,14 +167,20 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                 ? "Visitor Registration Confirmed!" 
                 : isExhibitor 
                   ? "Stall Request Confirmed!" 
-                  : "Inquiry Sent to Event Desk!"}
+                  : isSponsorship
+                    ? "Sponsorship Inquiry Received!"
+                    : "Inquiry Sent to Event Desk!"}
             </h3>
 
             <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
               Thank you, <strong>{formData.firstName} {formData.lastName}</strong> from <strong>{formData.company || 'Delegate'}</strong>. 
               {isVisitor 
                 ? ` Your confirmation has been dispatched to ${formData.email}. Show confirmation at HITEX registration counter for instant fast-track entry.` 
-                : ` Orbit Exhibitions will contact you at ${formData.email} and ${formData.mobile} with layout diagrams for ${formData.stallSize}.`}
+                : isExhibitor
+                  ? ` Orbit Exhibitions will contact you at ${formData.email} and ${formData.mobile} with layout diagrams for ${formData.stallSize}.`
+                  : isSponsorship
+                    ? ` Orbit Exhibitions will contact you at ${formData.email} and ${formData.mobile} with the IPVS 2026 Sponsorship Deck & branding deliverables.`
+                    : ` Event Desk will review your inquiry and respond to ${formData.email} shortly.`}
             </p>
 
             <button
@@ -180,14 +202,18 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                   ? 'Trade Visitor Pre-Registration' 
                   : isExhibitor 
                     ? 'Exhibitor Stall Space Registration' 
-                    : 'Contact IPVS Event Support'}
+                    : isSponsorship
+                      ? 'Sponsorship & Brand Partnership'
+                      : 'Contact IPVS Event Support'}
               </h3>
               <p className="text-[11px] sm:text-xs text-slate-500 font-medium">
                 {isVisitor 
                   ? 'Free entry pass for industrial buyers, EPC consultants & plant engineers.' 
                   : isExhibitor 
                     ? 'Select your required stall size and submit your booth inquiry.' 
-                    : 'Ask questions regarding stalls, sponsorships, or delegate passes.'}
+                    : isSponsorship
+                      ? 'Partner with IPVS 2026 to position your brand before 7,000+ industry decision makers.'
+                      : 'Ask questions regarding stalls, sponsorships, or delegate passes.'}
               </p>
             </div>
 
@@ -215,6 +241,26 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                       </button>
                     ))}
                   </div>
+                </div>
+              )}
+
+              {/* SPONSORSHIP SPECIFIC: Desired Package */}
+              {isSponsorship && (
+                <div className="p-3 rounded-xl bg-purple-50/60 border border-purple-200 space-y-1 shadow-sm">
+                  <label className="block text-[11px] sm:text-xs font-bold text-purple-950 font-heading">
+                    Desired Sponsorship Package <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    value={formData.sponsorshipTier}
+                    onChange={(e) => setFormData({ ...formData, sponsorshipTier: e.target.value })}
+                    className="w-full px-3 py-2 rounded-lg bg-white border border-purple-300 text-slate-900 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
+                  >
+                    {SPONSORSHIP_TIERS.map((tier) => (
+                      <option key={tier} value={tier}>
+                        {tier}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               )}
 
@@ -249,7 +295,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                 </div>
               </div>
 
-              {/* Row 2: Company Name * & (Designation or Mobile) */}
+              {/* Row 2: Company Name * & (Designation for Visitor/Sponsor OR City for Exhibitor/Contact) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                 <div>
                   <label className="block text-[11px] font-bold text-slate-700 mb-1">
@@ -265,7 +311,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                   />
                 </div>
 
-                {isVisitor ? (
+                {isVisitor || isSponsorship ? (
                   <div>
                     <label className="block text-[11px] font-bold text-slate-700 mb-1">
                       Designation <span className="text-red-500">*</span>
@@ -275,46 +321,44 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                       required
                       value={formData.designation}
                       onChange={(e) => setFormData({ ...formData, designation: e.target.value })}
-                      placeholder="e.g. Plant Manager / Engineer"
+                      placeholder={isSponsorship ? "e.g. Director / Head of Marketing" : "e.g. Plant Manager / Engineer"}
                       className="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E65FF]"
                     />
                   </div>
                 ) : (
                   <div>
                     <label className="block text-[11px] font-bold text-slate-700 mb-1">
-                      Mobile Number <span className="text-red-500">*</span>
+                      City / Location <span className="text-red-500">*</span>
                     </label>
                     <input
-                      type="tel"
+                      type="text"
                       required
-                      value={formData.mobile}
-                      onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                      placeholder="+91 98765 43210"
+                      value={formData.city}
+                      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                      placeholder="e.g. Hyderabad / Mumbai"
                       className="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E65FF]"
                     />
                   </div>
                 )}
               </div>
 
-              {/* Row 3: Mobile (if visitor) & Official Work Email * */}
+              {/* Row 3: Mobile * & Email * */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
-                {isVisitor && (
-                  <div>
-                    <label className="block text-[11px] font-bold text-slate-700 mb-1">
-                      Mobile Number <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={formData.mobile}
-                      onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
-                      placeholder="+91 98765 43210"
-                      className="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E65FF]"
-                    />
-                  </div>
-                )}
+                <div>
+                  <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                    Mobile Number <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    value={formData.mobile}
+                    onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
+                    placeholder="+91 98765 43210"
+                    className="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E65FF]"
+                  />
+                </div>
 
-                <div className={!isVisitor ? "sm:col-span-1" : ""}>
+                <div>
                   <label className="block text-[11px] font-bold text-slate-700 mb-1">
                     Official Work Email <span className="text-red-500">*</span>
                   </label>
@@ -327,37 +371,35 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                     className="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E65FF]"
                   />
                 </div>
-
-                {!isVisitor && (
-                  <div>
-                    <label className="block text-[11px] font-bold text-slate-700 mb-1">
-                      City <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.city}
-                      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                      placeholder="e.g. Hyderabad / Mumbai"
-                      className="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E65FF]"
-                    />
-                  </div>
-                )}
               </div>
 
-              {/* Row 4: City & Sector (if visitor) OR Company Website (if exhibitor) */}
-              {isVisitor ? (
+              {/* Conditional Row 4 */}
+              {isContact ? (
+                <div>
+                  <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                    Your Message / Inquiry Details <span className="text-red-500">*</span>
+                  </label>
+                  <textarea
+                    rows={2}
+                    required
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Inquire about stall availability, speaker sessions, travel logistics..."
+                    className="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E65FF]"
+                  />
+                </div>
+              ) : isVisitor ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                   <div>
                     <label className="block text-[11px] font-bold text-slate-700 mb-1">
-                      City <span className="text-red-500">*</span>
+                      City / Location <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
                       required
                       value={formData.city}
                       onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                      placeholder="e.g. Hyderabad / Mumbai"
+                      placeholder="e.g. Hyderabad / Pune"
                       className="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E65FF]"
                     />
                   </div>
@@ -383,6 +425,35 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                     </select>
                   </div>
                 </div>
+              ) : isSponsorship ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+                  <div>
+                    <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                      City / Location <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.city}
+                      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                      placeholder="e.g. Hyderabad / Mumbai"
+                      className="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E65FF]"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-bold text-slate-700 mb-1">
+                      Company Website
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.website}
+                      onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                      placeholder="www.company.com"
+                      className="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
+                    />
+                  </div>
+                </div>
               ) : (
                 <div>
                   <label className="block text-[11px] font-bold text-slate-700 mb-1">
@@ -398,10 +469,10 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                 </div>
               )}
 
-              {/* Where did you hear about us? */}
+              {/* How did you hear about us? */}
               <div>
                 <label className="block text-[11px] font-bold text-slate-700 mb-1">
-                  Where did you hear about us? <span className="text-red-500">*</span>
+                  How did you hear about us? <span className="text-red-500">*</span>
                 </label>
                 <select
                   required
@@ -410,14 +481,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                   className="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#1E65FF]"
                 >
                   <option value="">Select how you heard about us</option>
-                  <option value="Social Media (LinkedIn / Facebook / Twitter)">Social Media (LinkedIn / Facebook / Twitter)</option>
-                  <option value="Google / Online Search">Google / Online Search</option>
-                  <option value="Industry Colleague / Word of Mouth">Industry Colleague / Word of Mouth</option>
-                  <option value="Email / Newsletter Invitation">Email / Newsletter Invitation</option>
-                  <option value="Media Partner / Trade Magazine (Chemical Industry Digest / Spicos / Mantonia)">Media Partner / Trade Magazine</option>
-                  <option value="Telephonic / Direct Invitation from Orbit Exhibitions">Direct Invitation from Orbit Exhibitions</option>
-                  <option value="Past IPVS Exhibition">Past IPVS Exhibition</option>
-                  <option value="Other">Other</option>
+                  {HEARD_ABOUT_OPTIONS.map((opt) => (
+                    <option key={opt} value={opt}>
+                      {opt}
+                    </option>
+                  ))}
                 </select>
               </div>
 
@@ -426,7 +494,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 sm:py-3.5 rounded-xl bg-[#1E65FF] hover:bg-[#0D47A1] text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-md flex items-center justify-center space-x-2 transition-all disabled:opacity-75 disabled:cursor-not-allowed"
+                  className={`w-full py-3 sm:py-3.5 rounded-xl text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-md flex items-center justify-center space-x-2 transition-all disabled:opacity-75 disabled:cursor-not-allowed ${
+                    isSponsorship
+                      ? 'bg-[#7C3AED] hover:bg-[#6D28D9]'
+                      : 'bg-[#1E65FF] hover:bg-[#0D47A1]'
+                  }`}
                 >
                   {isSubmitting ? (
                     <>
@@ -444,6 +516,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                         <>
                           <Building2 className="w-4 h-4" />
                           <span>Submit Exhibitor Stall Request</span>
+                        </>
+                      ) : isSponsorship ? (
+                        <>
+                          <Award className="w-4 h-4" />
+                          <span>Submit Sponsorship Inquiry</span>
                         </>
                       ) : (
                         <>

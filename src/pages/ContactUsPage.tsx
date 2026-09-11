@@ -6,7 +6,7 @@ import {
   Linkedin, Twitter, Youtube, Facebook, Globe
 } from 'lucide-react';
 import { getMediaUrl } from '../utils/media';
-import { submitLead } from '../services/leadService';
+import { submitLead, HEARD_ABOUT_OPTIONS } from '../services/leadService';
 import { PastExhibitionGallery } from '../components/common/PastExhibitionGallery';
 import { FaqAccordion } from '../components/common/FaqAccordion';
 import { SEO } from '../components/common/SEO';
@@ -307,14 +307,11 @@ export const ContactUsPage: React.FC<ContactUsPageProps> = ({ onOpenModal }) => 
                       className="w-full bg-[#15222E]/80 border border-slate-600/80 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
                     >
                       <option value="" className="bg-slate-900 text-slate-300">Select how you heard about us</option>
-                      <option value="Social Media (LinkedIn / Facebook / Twitter)" className="bg-slate-900 text-white">Social Media (LinkedIn / Facebook / Twitter)</option>
-                      <option value="Google / Online Search" className="bg-slate-900 text-white">Google / Online Search</option>
-                      <option value="Industry Colleague / Word of Mouth" className="bg-slate-900 text-white">Industry Colleague / Word of Mouth</option>
-                      <option value="Email / Newsletter Invitation" className="bg-slate-900 text-white">Email / Newsletter Invitation</option>
-                      <option value="Media Partner / Trade Magazine (Chemical Industry Digest / Spicos / Mantonia)" className="bg-slate-900 text-white">Media Partner / Trade Magazine</option>
-                      <option value="Telephonic / Direct Invitation from Orbit Exhibitions" className="bg-slate-900 text-white">Direct Invitation from Orbit Exhibitions</option>
-                      <option value="Past IPVS Exhibition" className="bg-slate-900 text-white">Past IPVS Exhibition</option>
-                      <option value="Other" className="bg-slate-900 text-white">Other</option>
+                      {HEARD_ABOUT_OPTIONS.map((opt) => (
+                        <option key={opt} value={opt} className="bg-slate-900 text-white">
+                          {opt}
+                        </option>
+                      ))}
                     </select>
                   </div>
 

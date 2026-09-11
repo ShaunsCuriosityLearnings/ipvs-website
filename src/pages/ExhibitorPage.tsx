@@ -4,7 +4,7 @@ import { ESTEEMED_EXHIBITORS, FAQS } from '../data/ipvsData';
 import { InlineRegistrationForm } from '../components/common/InlineRegistrationForm';
 import { FloorPlanViewer } from '../components/exhibitors/FloorPlanViewer';
 import { PastExhibitionGallery } from '../components/common/PastExhibitionGallery';
-import { submitLead } from '../services/leadService';
+import { submitLead, HEARD_ABOUT_OPTIONS } from '../services/leadService';
 import { SEO } from '../components/common/SEO';
 import { 
   Building2, 
@@ -310,14 +310,11 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                     className="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#1E65FF]"
                   >
                     <option value="">Select how you heard about us</option>
-                    <option value="Social Media (LinkedIn / Facebook / Twitter)">Social Media (LinkedIn / Facebook / Twitter)</option>
-                    <option value="Google / Online Search">Google / Online Search</option>
-                    <option value="Industry Colleague / Word of Mouth">Industry Colleague / Word of Mouth</option>
-                    <option value="Email / Newsletter Invitation">Email / Newsletter Invitation</option>
-                    <option value="Media Partner / Trade Magazine (Chemical Industry Digest / Spicos / Mantonia)">Media Partner / Trade Magazine</option>
-                    <option value="Telephonic / Direct Invitation from Orbit Exhibitions">Direct Invitation from Orbit Exhibitions</option>
-                    <option value="Past IPVS Exhibition">Past IPVS Exhibition</option>
-                    <option value="Other">Other</option>
+                    {HEARD_ABOUT_OPTIONS.map((opt) => (
+                      <option key={opt} value={opt}>
+                        {opt}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
