@@ -89,24 +89,24 @@ export const PastHighlightsSection: React.FC<PastHighlightsSectionProps> = ({ on
 
 
   return (
-    <section className="py-10 sm:py-14 bg-white text-slate-800 space-y-10 sm:space-y-14">
-      <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 space-y-10 sm:space-y-14">
+    <section className="py-8 sm:py-10 bg-white text-slate-800 space-y-6 sm:space-y-8">
+      <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 space-y-6 sm:space-y-8">
 
         {/* ==========================================
             SECTION 3 (Part A): Event Registration for Exhibitors Banner
             (Brand Gradient: #111183 to #0e89d0)
             ========================================== */}
-        <div className="bg-gradient-to-r from-[#111183] to-[#0e89d0] text-white rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 text-left relative overflow-hidden">
+        <div className="bg-gradient-to-r from-[#111183] to-[#0e89d0] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6 text-left relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
 
-          <div className="space-y-3 max-w-3xl relative z-10">
-            <span className="px-3.5 py-1.5 rounded-full bg-white/20 text-cyan-200 text-xs font-bold uppercase tracking-widest inline-block">
+          <div className="space-y-2 max-w-3xl relative z-10">
+            <span className="px-3 py-1 rounded-full bg-white/20 text-cyan-200 text-xs font-bold uppercase tracking-widest inline-block">
               Event Registration for Exhibitors
             </span>
-            <h3 className="text-2xl sm:text-4xl font-extrabold font-heading text-white">
+            <h3 className="text-xl sm:text-3xl font-extrabold font-heading text-white">
               Connect with 100+ Exhibitors showcasing cutting-edge Technologies and Innovations
             </h3>
-            <p className="text-sm text-slate-200 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
               The ultimate platform for professionals in the industrial pumps, valves, and chemical processing equipment sectors.
             </p>
           </div>
@@ -114,7 +114,7 @@ export const PastHighlightsSection: React.FC<PastHighlightsSectionProps> = ({ on
           <div className="shrink-0 relative z-10">
             <button
               onClick={() => onOpenModal && onOpenModal('exhibitor')}
-              className="px-8 py-4 rounded-xl text-xs sm:text-sm font-extrabold text-[#111183] bg-white hover:bg-slate-100 transition-all shadow-xl uppercase tracking-wider flex items-center space-x-2"
+              className="px-6 py-3.5 rounded-xl text-xs sm:text-sm font-extrabold text-[#111183] bg-white hover:bg-slate-100 transition-all shadow-xl uppercase tracking-wider flex items-center space-x-2"
             >
               <Building2 className="w-4 h-4" />
               <span>Pre-Register as Exhibitor</span>
@@ -126,36 +126,34 @@ export const PastHighlightsSection: React.FC<PastHighlightsSectionProps> = ({ on
         {/* ==========================================
             SECTION 3 (Part B): Highlights of the Exhibition (6 Cards)
             ========================================== */}
-        <div className="space-y-10">
+        <div className="space-y-6 sm:space-y-8">
 
-          <div className="text-center space-y-3">
+          <div className="text-center space-y-2">
             <div className="inline-flex items-center space-x-2 text-[#0e89d0] text-xs font-bold tracking-widest uppercase">
               <span className="w-6 h-0.5 bg-[#0e89d0]"></span>
               <span>Exhibition Highlights</span>
               <span className="w-6 h-0.5 bg-[#0e89d0]"></span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-heading">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-heading">
               Highlights of the Exhibition
             </h2>
-            <p className="text-sm text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto">
               Experience breakthrough innovations and world-class B2B experiences at IPVS 2026.
             </p>
           </div>
 
-
-
-          {/* 6 Exhibition Highlights Grid Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {/* 6 Exhibition Highlights Grid Cards: Borderless with Soft Elevation */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {highlights.map((item, idx) => {
               const IconComp = item.icon;
               return (
                 <div
                   key={idx}
-                  className="bg-[#F8FAFC] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between text-left group"
+                  className="bg-white rounded-2xl overflow-hidden border-0 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between text-left group"
                 >
                   <div>
                     {/* Image Header with Badge */}
-                    <div className="relative h-40 sm:h-48 w-full overflow-hidden bg-slate-200">
+                    <div className="relative h-40 sm:h-44 w-full overflow-hidden bg-slate-200">
                       <img
                         src={item.image}
                         alt={item.title}
@@ -178,21 +176,21 @@ export const PastHighlightsSection: React.FC<PastHighlightsSectionProps> = ({ on
                     </div>
 
                     {/* Card Content */}
-                    <div className="p-5 sm:p-6 space-y-2">
+                    <div className="p-4 sm:p-5 space-y-1.5">
                       <span className="text-[11px] font-extrabold text-[#0e89d0] uppercase tracking-wider block font-heading">
                         {item.num} — {item.tag}
                       </span>
                       <h3 className="text-base sm:text-lg font-extrabold text-slate-900 group-hover:text-[#111183] transition-colors font-heading leading-snug">
                         {item.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                      <p className="text-xs text-slate-600 leading-relaxed pt-0.5">
                         {item.description}
                       </p>
                     </div>
                   </div>
 
                   {/* Card Bottom CTA Button */}
-                  <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-3 border-t border-slate-200/80">
+                  <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-2.5 border-t border-slate-100">
                     <button
                       onClick={() => onOpenModal && onOpenModal('visitor')}
                       className="text-xs font-bold text-[#111183] hover:text-[#0e89d0] flex items-center group-hover:translate-x-1 transition-all"

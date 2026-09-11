@@ -53,7 +53,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenModal, onNavigateToSec
       <FaqAccordion onOpenModal={onOpenModal} />
 
       {/* Universal Embedded Form (Form on Every Page requirement) */}
-      <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 py-10">
+      <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 pb-6 sm:pb-8">
         <InlineRegistrationForm 
           title="Reserve Your Space at IPVS 2026"
           subtitle="Pre-register for your free visitor pass or inquire about exhibitor booth options at HITEX Hyderabad."

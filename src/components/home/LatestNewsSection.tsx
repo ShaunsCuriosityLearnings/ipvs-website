@@ -8,45 +8,45 @@ export const LatestNewsSection: React.FC = () => {
   const topBlogs = BLOG_ARTICLES.slice(0, 3);
 
   return (
-    <section className="py-10 sm:py-14 bg-[#F4F7FE] text-slate-800 border-t border-slate-200">
-      <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 text-center space-y-8 sm:space-y-10">
+    <section className="py-8 sm:py-10 bg-[#F4F7FE] text-slate-800 border-t border-slate-200/60">
+      <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 text-center space-y-6 sm:space-y-8">
         
         {/* Section Header */}
-        <div className="space-y-3">
+        <div className="space-y-2.5">
           <div className="inline-flex items-center space-x-2 text-[#1E65FF] text-xs font-bold tracking-widest uppercase">
             <span className="w-6 h-0.5 bg-[#1E65FF]"></span>
             <span>EXHIBITION INSIGHTS</span>
             <span className="w-6 h-0.5 bg-[#1E65FF]"></span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-heading">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-heading">
             Top Blogs & Industry Articles
           </h2>
-          <p className="text-sm text-slate-600 max-w-xl mx-auto">
+          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
             Explore technical articles, exhibitor stories, and visitor guides for the upcoming IPVS 2026 expo.
           </p>
         </div>
 
         {/* Blog Cards: Horizontal Scrollable Row on Mobile, 3-Column Grid on Desktop */}
-        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 pt-1 px-2 -mx-2 sm:mx-0 sm:px-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible no-scrollbar scroll-smooth">
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 pt-1 px-2 -mx-2 sm:mx-0 sm:px-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible no-scrollbar scroll-smooth">
           {topBlogs.map((article) => (
             <div 
               key={article.id}
               onClick={() => navigate(`/blogs/${article.slug}`)}
-              className="w-[82vw] max-w-[300px] flex-shrink-0 snap-center md:w-auto md:max-w-none bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group text-left flex flex-col justify-between cursor-pointer"
+              className="w-[82vw] max-w-[300px] flex-shrink-0 snap-center md:w-auto md:max-w-none bg-white rounded-2xl sm:rounded-3xl overflow-hidden border-0 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group text-left flex flex-col justify-between cursor-pointer"
             >
               <div>
-                <div className="relative h-48 sm:h-56 overflow-hidden bg-slate-900">
+                <div className="relative h-44 sm:h-50 overflow-hidden bg-slate-900">
                   <img 
                     src={article.image} 
                     alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#1E65FF] text-white text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider shadow-md">
+                  <span className="absolute top-3 left-3 sm:top-3.5 sm:left-3.5 px-2.5 py-0.5 sm:px-3 sm:py-0.5 rounded-full bg-[#1E65FF] text-white text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider shadow-md">
                     {article.type}
                   </span>
                 </div>
 
-                <div className="p-4 sm:p-6 space-y-2 sm:space-y-3">
+                <div className="p-4 sm:p-5 space-y-2">
                   <div className="flex items-center justify-between text-[11px] sm:text-xs text-slate-500">
                     <span className="flex items-center">
                       <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1 text-[#1E65FF]" />

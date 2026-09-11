@@ -111,7 +111,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
   ];
 
   return (
-    <div className="pt-24 pb-16 bg-[#F4F7FE] text-slate-800 min-h-screen">
+    <div className="pt-16 pb-12 bg-[#F4F7FE] text-slate-800 min-h-screen">
       <SEO 
         title="Book Your Stall & Exhibit | IPVS 2026 Hyderabad"
         description="Exhibit at IPVS 2026. Showcase your pumps, valves, and industrial automation solutions to 5,000+ targeted procurement heads, EPC contractors, and plant engineers."
@@ -121,16 +121,16 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
       {/* ==========================================
           SECTION 1: HERO SECTION
           ========================================== */}
-      <section className="relative bg-gradient-to-br from-[#0A192F] via-[#0D327B] to-[#1E65FF] text-white pt-28 sm:pt-32 pb-14 sm:pb-16 px-3 sm:px-6 lg:px-8 overflow-hidden mb-10">
+      <section className="relative bg-gradient-to-br from-[#0A192F] via-[#0D327B] to-[#1E65FF] text-white pt-24 sm:pt-28 pb-10 sm:pb-12 px-3 sm:px-6 lg:px-8 overflow-hidden mb-8">
         
         {/* Subtle Background Elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#1E65FF]/20 rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00D2FF]/10 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
           
           {/* Form on the Left Side */}
-          <div className="lg:col-span-5 bg-[#EDF2F7] text-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-2xl border border-slate-300 text-left">
+          <div className="lg:col-span-5 bg-[#EDF2F7] text-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl border border-slate-300 text-left">
             <div className="space-y-1 mb-4 text-center sm:text-left">
               <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-[11px] font-bold uppercase tracking-wider mb-1">
                 <Building2 className="w-3.5 h-3.5" />
@@ -412,32 +412,32 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
       </section>
 
       {/* Main Container */}
-      <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 space-y-10 sm:space-y-12">
+      <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 space-y-8 sm:space-y-10">
 
         {/* ==========================================
             SECTION 2: EXHIBITOR OPPORTUNITIES
             ========================================== */}
-        <section id="about-exhibition" className="scroll-mt-32 space-y-12">
+        <section id="about-exhibition" className="scroll-mt-32 space-y-6 sm:space-y-8">
           
-          <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="text-center max-w-3xl mx-auto space-y-2.5">
             <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block">
               EXHIBITOR OPPORTUNITIES
             </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-heading">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-heading">
               Connect, Showcase & Scale Your Industrial Reach
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Discover the power of exhibiting at IPVS 2026 — India’s premier exhibition where global technology leaders, OEMs, plant heads, and EPC decision-makers converge.
             </p>
           </div>
 
-          {/* 2 Feature Cards with Real Visual Storytelling */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+          {/* 2 Feature Cards with Real Visual Storytelling: Borderless Soft Elevation */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 text-left">
             
             {/* Card 1: Unlock Endless B2B Enquiries */}
-            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col justify-between group">
+            <div className="bg-white rounded-2xl border-0 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col justify-between group">
               <div>
-                <div className="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
+                <div className="relative h-52 sm:h-56 overflow-hidden bg-slate-950">
                   <img 
                     src={getMediaUrl('/newcardimages/Connect With the People Who Drive Industry.jfif')} 
                     alt="Targeted Industrial Buyers Networking at IPVS" 
@@ -446,7 +446,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
                   
-                  <div className="absolute top-4 left-4 flex items-center space-x-2">
+                  <div className="absolute top-3.5 left-3.5 flex items-center space-x-2">
                     <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[11px] font-extrabold shadow-sm flex items-center space-x-1.5">
                       <Users className="w-3.5 h-3.5 text-[#1E65FF]" />
                       <span>Targeted Industrial Buyers</span>
@@ -456,25 +456,25 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                     </span>
                   </div>
 
-                  <div className="absolute bottom-4 left-5 right-5">
-                    <span className="text-[11px] font-bold text-cyan-300 uppercase tracking-wider block mb-0.5">
+                  <div className="absolute bottom-3.5 left-4 right-4">
+                    <span className="text-[10px] font-bold text-cyan-300 uppercase tracking-wider block mb-0.5">
                       High-Value Sourcing Delegation
                     </span>
-                    <p className="text-white font-extrabold text-lg sm:text-xl font-heading leading-tight drop-shadow-sm">
+                    <p className="text-white font-extrabold text-base sm:text-lg font-heading leading-tight drop-shadow-sm">
                       7,000+ Industrial Buyers & Plant Heads
                     </p>
                   </div>
                 </div>
 
-                <div className="p-6 sm:p-8 space-y-4">
-                  <h3 className="text-2xl font-extrabold text-slate-900 font-heading">
+                <div className="p-5 sm:p-6 space-y-3">
+                  <h3 className="text-xl font-extrabold text-slate-900 font-heading">
                     Unlock Endless B2B Enquiries
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     Collaborate with qualified buyers & discover high-value market leads. Engage face-to-face with decision-makers actively sourcing pump systems, valve positioners, actuators, and plant automation.
                   </p>
 
-                  <div className="flex flex-wrap gap-2 pt-2">
+                  <div className="flex flex-wrap gap-1.5 pt-1">
                     {['Plant Heads', 'Procurement Chiefs', 'EPC Contractors', 'OEM Engineers', 'Project Consultants'].map((tag) => (
                       <span key={tag} className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-semibold flex items-center space-x-1">
                         <Check className="w-3 h-3 text-[#1E65FF]" />
@@ -485,7 +485,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                 </div>
               </div>
 
-              <div className="px-6 sm:px-8 py-4 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between">
+              <div className="px-5 sm:px-6 py-3.5 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between">
                 <span className="text-xs font-bold text-[#1E65FF] flex items-center space-x-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                   <span>Targeted Industrial Buyers</span>
@@ -501,9 +501,9 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
             </div>
 
             {/* Card 2: The Premier Industry Benchmark */}
-            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col justify-between group">
+            <div className="bg-white rounded-2xl border-0 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col justify-between group">
               <div>
-                <div className="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
+                <div className="relative h-52 sm:h-56 overflow-hidden bg-slate-950">
                   <img 
                     src={getMediaUrl('/newcardimages/mainimage2.jfif')} 
                     alt="Flagship B2B Platform IPVS" 
@@ -512,7 +512,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
                   
-                  <div className="absolute top-4 left-4 flex items-center space-x-2">
+                  <div className="absolute top-3.5 left-3.5 flex items-center space-x-2">
                     <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[11px] font-extrabold shadow-sm flex items-center space-x-1.5">
                       <Award className="w-3.5 h-3.5 text-[#1E65FF]" />
                       <span>Flagship B2B Platform</span>
@@ -522,25 +522,25 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                     </span>
                   </div>
 
-                  <div className="absolute bottom-4 left-5 right-5">
-                    <span className="text-[11px] font-bold text-cyan-300 uppercase tracking-wider block mb-0.5">
+                  <div className="absolute bottom-3.5 left-4 right-4">
+                    <span className="text-[10px] font-bold text-cyan-300 uppercase tracking-wider block mb-0.5">
                       India's 2026 Milestone Expo
                     </span>
-                    <p className="text-white font-extrabold text-lg sm:text-xl font-heading leading-tight drop-shadow-sm">
+                    <p className="text-white font-extrabold text-base sm:text-lg font-heading leading-tight drop-shadow-sm">
                       100+ Leading Exhibitors & Industry Benchmarks
                     </p>
                   </div>
                 </div>
 
-                <div className="p-6 sm:p-8 space-y-4">
-                  <h3 className="text-2xl font-extrabold text-slate-900 font-heading">
+                <div className="p-5 sm:p-6 space-y-3">
+                  <h3 className="text-xl font-extrabold text-slate-900 font-heading">
                     The Premier Industry Benchmark
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     Exhibit at India’s flagship industrial technology event of 2026. Establish your brand authority alongside leading global engineering manufacturers and process technology pioneers.
                   </p>
 
-                  <div className="flex flex-wrap gap-2 pt-2">
+                  <div className="flex flex-wrap gap-1.5 pt-1">
                     {['Brand Authority', 'Hall 1-3 Pavilions', 'Global OEM Presence', 'Media Showcase', 'Live Product Launches'].map((tag) => (
                       <span key={tag} className="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-semibold flex items-center space-x-1">
                         <Check className="w-3 h-3 text-[#1E65FF]" />
@@ -551,7 +551,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                 </div>
               </div>
 
-              <div className="px-6 sm:px-8 py-4 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between">
+              <div className="px-5 sm:px-6 py-3.5 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between">
                 <span className="text-xs font-bold text-[#1E65FF] flex items-center space-x-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                   <span>Flagship B2B Platform</span>
@@ -569,17 +569,17 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center justify-center gap-3.5 pt-1">
             <a 
               href="#exhibitor-profile"
-              className="px-6 py-3.5 rounded-xl bg-slate-900 text-white font-bold text-xs uppercase tracking-wider hover:bg-[#1E65FF] transition-colors flex items-center space-x-2 shadow-sm"
+              className="px-5 py-3 rounded-xl bg-slate-900 text-white font-bold text-xs uppercase tracking-wider hover:bg-[#1E65FF] transition-colors flex items-center space-x-2 shadow-sm"
             >
               <span>Exhibitors Profile →</span>
             </a>
 
             <button 
               onClick={() => onOpenModal('exhibitor')}
-              className="px-6 py-3.5 rounded-xl bg-[#1E65FF] hover:bg-[#0D47A1] text-white font-extrabold text-xs uppercase tracking-wider transition-colors shadow-md flex items-center space-x-2"
+              className="px-5 py-3 rounded-xl bg-[#1E65FF] hover:bg-[#0D47A1] text-white font-extrabold text-xs uppercase tracking-wider transition-colors shadow-md flex items-center space-x-2"
             >
               <Building2 className="w-4 h-4" />
               <span>Register as Exhibitor</span>
@@ -591,13 +591,13 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
         {/* ==========================================
             SECTION 3: EXHIBITOR BENEFITS
             ========================================== */}
-        <section className="space-y-12">
+        <section className="space-y-6 sm:space-y-8">
           
-          <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="text-center max-w-3xl mx-auto space-y-2.5">
             <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block">
               EXHIBITOR BENEFITS
             </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-heading">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-heading">
               Why Industry Leaders Choose IPVS 2026
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
@@ -605,15 +605,15 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
             </p>
           </div>
 
-          {/* Visual Bento Showcase of 5 Benefit Cards */}
-          <div className="space-y-8 text-left">
+          {/* Visual Bento Showcase of 5 Benefit Cards: Borderless Soft Elevation */}
+          <div className="space-y-5 sm:space-y-6 text-left">
             
-            {/* Top Row: 2 Spotlight Benefit Cards (Horizontal Split on large screens) */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Top Row: 2 Spotlight Benefit Cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6">
               
               {/* Benefit 01: Connect with Industry Leaders */}
-              <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col sm:flex-row group">
-                <div className="sm:w-2/5 relative h-52 sm:h-auto overflow-hidden bg-slate-900 shrink-0">
+              <div className="bg-white rounded-2xl border-0 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col sm:flex-row group">
+                <div className="sm:w-2/5 relative h-48 sm:h-auto overflow-hidden bg-slate-900 shrink-0">
                   <img 
                     src={getMediaUrl('/newcardimages/Connect With the People Who Drive Industry.jfif')} 
                     alt="Connect with Industry Leaders"
@@ -621,24 +621,24 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-slate-950/80 to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-[#1E65FF] text-white text-xs font-black tracking-wider shadow-sm">
+                  <div className="absolute top-3.5 left-3.5">
+                    <span className="px-2.5 py-1 rounded-full bg-[#1E65FF] text-white text-xs font-black tracking-wider shadow-sm">
                       01
                     </span>
                   </div>
-                  <div className="absolute bottom-4 left-4 right-4">
+                  <div className="absolute bottom-3.5 left-3.5 right-3.5">
                     <span className="text-[10px] font-bold text-cyan-300 uppercase tracking-widest block">
                       Networking & Buyers
                     </span>
-                    <span className="text-white font-extrabold text-sm">
+                    <span className="text-white font-extrabold text-xs sm:text-sm">
                       Plant Heads & EPCs
                     </span>
                   </div>
                 </div>
 
-                <div className="p-6 sm:p-7 space-y-4 flex flex-col justify-between grow">
-                  <div className="space-y-2.5">
-                    <h3 className="text-xl font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                <div className="p-5 sm:p-6 space-y-3 flex flex-col justify-between grow">
+                  <div className="space-y-2">
+                    <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
                       1. Connect with Industry Leaders
                     </h3>
                     <p className="text-xs text-slate-600 leading-relaxed">
@@ -646,19 +646,19 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-slate-100 space-y-1.5">
+                  <div className="pt-2.5 border-t border-slate-100 space-y-1">
                     <span className="text-[11px] font-bold text-slate-900 block">Key Benefits:</span>
                     <ul className="space-y-1 text-xs text-slate-600">
                       <li className="flex items-center">
-                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                         <span>Network with qualified industrial buyers</span>
                       </li>
                       <li className="flex items-center">
-                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                         <span>Meet EPC companies and OEMs</span>
                       </li>
                       <li className="flex items-center">
-                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                         <span>Build long-term business partnerships</span>
                       </li>
                     </ul>
@@ -667,8 +667,8 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
               </div>
 
               {/* Benefit 02: Showcase Your Innovation */}
-              <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col sm:flex-row group">
-                <div className="sm:w-2/5 relative h-52 sm:h-auto overflow-hidden bg-slate-900 shrink-0">
+              <div className="bg-white rounded-2xl border-0 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col sm:flex-row group">
+                <div className="sm:w-2/5 relative h-48 sm:h-auto overflow-hidden bg-slate-900 shrink-0">
                   <img 
                     src={getMediaUrl('/newcardimages/See Technology in Action.jfif')} 
                     alt="Showcase Your Innovation"
@@ -676,24 +676,24 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-slate-950/80 to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-[#1E65FF] text-white text-xs font-black tracking-wider shadow-sm">
+                  <div className="absolute top-3.5 left-3.5">
+                    <span className="px-2.5 py-1 rounded-full bg-[#1E65FF] text-white text-xs font-black tracking-wider shadow-sm">
                       02
                     </span>
                   </div>
-                  <div className="absolute bottom-4 left-4 right-4">
+                  <div className="absolute bottom-3.5 left-3.5 right-3.5">
                     <span className="text-[10px] font-bold text-cyan-300 uppercase tracking-widest block">
                       Live Demonstrations
                     </span>
-                    <span className="text-white font-extrabold text-sm">
+                    <span className="text-white font-extrabold text-xs sm:text-sm">
                       Live Flow Machinery
                     </span>
                   </div>
                 </div>
 
-                <div className="p-6 sm:p-7 space-y-4 flex flex-col justify-between grow">
-                  <div className="space-y-2.5">
-                    <h3 className="text-xl font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                <div className="p-5 sm:p-6 space-y-3 flex flex-col justify-between grow">
+                  <div className="space-y-2">
+                    <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
                       2. Showcase Your Innovation
                     </h3>
                     <p className="text-xs text-slate-600 leading-relaxed">
@@ -701,19 +701,19 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-slate-100 space-y-1.5">
+                  <div className="pt-2.5 border-t border-slate-100 space-y-1">
                     <span className="text-[11px] font-bold text-slate-900 block">Key Benefits:</span>
                     <ul className="space-y-1 text-xs text-slate-600">
                       <li className="flex items-center">
-                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                         <span>Launch new technologies</span>
                       </li>
                       <li className="flex items-center">
-                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                         <span>Demonstrate products live</span>
                       </li>
                       <li className="flex items-center">
-                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                         <span>Position your brand as an industry innovator</span>
                       </li>
                     </ul>
@@ -724,12 +724,12 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
             </div>
 
             {/* Bottom Row: 3 Grid Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
               
               {/* Benefit 03: Generate High-Quality Business Leads */}
-              <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+              <div className="bg-white rounded-2xl border-0 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
                 <div>
-                  <div className="relative h-44 overflow-hidden bg-slate-900">
+                  <div className="relative h-40 overflow-hidden bg-slate-900">
                     <img 
                       src={getMediaUrl('/we/webkeep1.webp')} 
                       alt="Generate High-Quality Business Leads"
@@ -749,27 +749,27 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                     </div>
                   </div>
 
-                  <div className="p-6 space-y-3">
-                    <h3 className="text-lg font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                  <div className="p-4 sm:p-5 space-y-2.5">
+                    <h3 className="text-base sm:text-lg font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
                       3. Generate High-Quality Leads
                     </h3>
                     <p className="text-xs text-slate-600 leading-relaxed">
                       Meet thousands of professionals actively seeking industrial equipment, automation systems, flow control technologies, and engineering solutions.
                     </p>
 
-                    <div className="pt-3 border-t border-slate-100 space-y-1.5">
+                    <div className="pt-2.5 border-t border-slate-100 space-y-1">
                       <span className="text-[11px] font-bold text-slate-900 block">Key Benefits:</span>
                       <ul className="space-y-1 text-xs text-slate-600">
                         <li className="flex items-center">
-                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                           <span>Generate qualified B2B enquiries</span>
                         </li>
                         <li className="flex items-center">
-                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                           <span>Meet purchase decision-makers</span>
                         </li>
                         <li className="flex items-center">
-                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                           <span>Expand your sales pipeline</span>
                         </li>
                       </ul>
@@ -779,9 +779,9 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
               </div>
 
               {/* Benefit 04: Expand Your Market Presence */}
-              <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+              <div className="bg-white rounded-2xl border-0 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
                 <div>
-                  <div className="relative h-44 overflow-hidden bg-slate-900">
+                  <div className="relative h-40 overflow-hidden bg-slate-900">
                     <img 
                       src={getMediaUrl('/newcardimages/From Components to Complete Systems.jfif')} 
                       alt="Expand Your Market Presence"
@@ -801,27 +801,27 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                     </div>
                   </div>
 
-                  <div className="p-6 space-y-3">
-                    <h3 className="text-lg font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                  <div className="p-4 sm:p-5 space-y-2.5">
+                    <h3 className="text-base sm:text-lg font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
                       4. Expand Your Market Presence
                     </h3>
                     <p className="text-xs text-slate-600 leading-relaxed">
                       Strengthen your presence across India’s rapidly growing manufacturing, chemical, pharmaceutical, water treatment, energy, and infrastructure sectors.
                     </p>
 
-                    <div className="pt-3 border-t border-slate-100 space-y-1.5">
+                    <div className="pt-2.5 border-t border-slate-100 space-y-1">
                       <span className="text-[11px] font-bold text-slate-900 block">Key Benefits:</span>
                       <ul className="space-y-1 text-xs text-slate-600">
                         <li className="flex items-center">
-                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                           <span>Reach new industrial markets</span>
                         </li>
                         <li className="flex items-center">
-                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                           <span>Increase brand visibility</span>
                         </li>
                         <li className="flex items-center">
-                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                           <span>Build nationwide distribution networks</span>
                         </li>
                       </ul>
@@ -831,9 +831,9 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
               </div>
 
               {/* Benefit 05: Stay Ahead of Industry Trends */}
-              <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+              <div className="bg-white rounded-2xl border-0 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
                 <div>
-                  <div className="relative h-44 overflow-hidden bg-slate-900">
+                  <div className="relative h-40 overflow-hidden bg-slate-900">
                     <img 
                       src={getMediaUrl('/newcardimages/Where Industrial Equipment Meets Intelligence.jfif')} 
                       alt="Stay Ahead of Industry Trends"
@@ -853,27 +853,27 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                     </div>
                   </div>
 
-                  <div className="p-6 space-y-3">
-                    <h3 className="text-lg font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                  <div className="p-4 sm:p-5 space-y-2.5">
+                    <h3 className="text-base sm:text-lg font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
                       5. Stay Ahead of Trends
                     </h3>
                     <p className="text-xs text-slate-600 leading-relaxed">
                       Explore the latest developments in Industry 4.0, Smart Manufacturing, Industrial IoT, predictive condition monitoring, hydrogen technologies, and green solutions.
                     </p>
 
-                    <div className="pt-3 border-t border-slate-100 space-y-1.5">
+                    <div className="pt-2.5 border-t border-slate-100 space-y-1">
                       <span className="text-[11px] font-bold text-slate-900 block">Key Benefits:</span>
                       <ul className="space-y-1 text-xs text-slate-600">
                         <li className="flex items-center">
-                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                           <span>Discover emerging technologies</span>
                         </li>
                         <li className="flex items-center">
-                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                           <span>Learn from industry experts</span>
                         </li>
                         <li className="flex items-center">
-                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-2 shrink-0" />
+                          <Check className="w-3.5 h-3.5 text-[#1E65FF] mr-1.5 shrink-0" />
                           <span>Gain valuable market insights</span>
                         </li>
                       </ul>
@@ -891,14 +891,14 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
         {/* ==========================================
             SECTION 4: EXHIBITORS & INDUSTRY LEADERS
             ========================================== */}
-        <section className="space-y-8 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200/90 shadow-sm">
+        <section className="space-y-6 bg-white p-5 sm:p-8 rounded-2xl border-0 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)]">
           
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 text-left">
-            <div className="space-y-2 max-w-2xl">
+            <div className="space-y-1.5 max-w-2xl">
               <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block">
                 PARTICIPATING INDUSTRIAL BRANDS
               </span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 font-heading">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-heading">
                 Exhibitors & Industry Leaders
               </h2>
               <p className="text-xs sm:text-sm text-slate-500">
@@ -907,32 +907,32 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
             </div>
 
             <div className="flex flex-wrap gap-2 text-[11px] font-bold text-slate-600">
-              <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200">100+ Manufacturers</span>
-              <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200">Global & Domestic</span>
-              <span className="px-3 py-1 rounded-full bg-blue-50 text-[#1E65FF] border border-blue-200">Hall 1, 2 & 3</span>
+              <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200/80">100+ Manufacturers</span>
+              <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200/80">Global & Domestic</span>
+              <span className="px-3 py-1 rounded-full bg-blue-50 text-[#1E65FF] border border-blue-200/80">Hall 1, 2 & 3</span>
             </div>
           </div>
 
-          {/* Logo Cards Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5 sm:gap-5">
+          {/* Logo Cards Grid: Clean Borderless Cards with Soft Elevation */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
             {ESTEEMED_EXHIBITORS.map((exhibitor) => (
               <div 
                 key={exhibitor.id}
                 onClick={() => onOpenModal('exhibitor')}
-                className="bg-[#F8FAFC] hover:bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-between text-center min-h-[125px] sm:min-h-[140px]"
+                className="bg-[#F8FAFC] hover:bg-white rounded-xl p-3.5 sm:p-4 border-0 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-between text-center min-h-[110px] sm:min-h-[125px]"
               >
                 {/* Logo Container */}
-                <div className="h-12 sm:h-14 w-full flex items-center justify-center p-1">
+                <div className="h-11 sm:h-13 w-full flex items-center justify-center p-1">
                   <img 
                     src={exhibitor.logo} 
                     alt={exhibitor.name}
-                    className="max-h-10 sm:max-h-12 w-auto max-w-[85%] object-contain group-hover:scale-105 transition-transform duration-300"
+                    className="max-h-9 sm:max-h-11 w-auto max-w-[85%] object-contain group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                 </div>
 
                 {/* Brand Name */}
-                <div className="w-full pt-2 border-t border-slate-200/80">
+                <div className="w-full pt-1.5 border-t border-slate-100">
                   <h3 className="text-xs font-extrabold text-slate-900 font-heading tracking-tight line-clamp-2 text-center group-hover:text-[#1E65FF] transition-colors">
                     {exhibitor.name}
                   </h3>
@@ -965,13 +965,13 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
         {/* ==========================================
             SECTION 5: EXHIBITOR PROFILE & INDUSTRIES SERVED
             ========================================== */}
-        <section id="exhibitor-profile" className="scroll-mt-32 space-y-16">
+        <section id="exhibitor-profile" className="scroll-mt-32 space-y-6 sm:space-y-8">
           
-          <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="text-center max-w-3xl mx-auto space-y-2.5">
             <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block">
               EXHIBITOR PROFILE
             </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-heading">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-heading">
               Technologies Driving Modern Process Industries
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
@@ -979,13 +979,13 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
             </p>
           </div>
 
-          {/* 3 Main Technology Showcase Cards with High-Res Photographic Headers */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+          {/* 3 Main Technology Showcase Cards: Distinct Top Accent Borders */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 text-left">
             
-            {/* Card 1: Industrial Pumps */}
-            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col justify-between group">
+            {/* Card 1: Industrial Pumps (Blue Top Accent) */}
+            <div className="bg-white rounded-2xl border-t-4 border-t-[#1E65FF] border-x-0 border-b-0 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.06)] hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
               <div>
-                <div className="relative h-48 overflow-hidden bg-slate-900">
+                <div className="relative h-44 sm:h-48 overflow-hidden bg-slate-900">
                   <img 
                     src={getMediaUrl('/newcardimages/From Components to Complete Systems.jfif')} 
                     alt="Industrial Pumps & Fluid Handling Equipment"
@@ -995,21 +995,21 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
                   
                   <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-extrabold shadow-sm flex items-center space-x-1">
+                    <span className="px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-extrabold shadow-sm flex items-center space-x-1">
                       <Building2 className="w-3 h-3 text-[#1E65FF]" />
                       <span>HEAVY PROCESS EQUIPMENT</span>
                     </span>
                   </div>
 
-                  <div className="absolute bottom-3 left-4">
-                    <span className="text-white font-extrabold text-base drop-shadow-sm">
+                  <div className="absolute bottom-3 left-3.5">
+                    <span className="text-white font-extrabold text-sm sm:text-base drop-shadow-sm">
                       Pumping & Fluid Systems
                     </span>
                   </div>
                 </div>
 
-                <div className="p-6 sm:p-7 space-y-4">
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                <div className="p-5 sm:p-6 space-y-3">
+                  <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
                     Industrial Pumps
                   </h3>
 
@@ -1018,7 +1018,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                   </p>
 
                   {/* Tech Pills */}
-                  <div className="flex flex-wrap gap-1.5 pt-2">
+                  <div className="flex flex-wrap gap-1.5 pt-1">
                     {[
                       "Smart Pumps", "Centrifugal", "Chemical Pumps", "Slurry Pumps", 
                       "Boiler Feed", "VFD Drives", "IoT Monitoring", "Mechanical Seals"
@@ -1031,10 +1031,10 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                 </div>
               </div>
 
-              <div className="p-6 sm:p-7 pt-0">
+              <div className="p-5 sm:p-6 pt-0">
                 <button 
                   onClick={() => navigate('/smart-iot-pumps')}
-                  className="w-full py-3 rounded-xl bg-[#F4F7FE] hover:bg-[#1E65FF] text-[#1E65FF] hover:text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-sm"
+                  className="w-full py-2.5 rounded-xl bg-[#F4F7FE] hover:bg-[#1E65FF] text-[#1E65FF] hover:text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-sm"
                 >
                   <span>Explore Pump Technologies</span>
                   <ArrowRight className="w-4 h-4" />
@@ -1042,10 +1042,10 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
               </div>
             </div>
 
-            {/* Card 2: Industrial Valve Automation */}
-            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col justify-between group">
+            {/* Card 2: Industrial Valve Automation (Cyan Top Accent) */}
+            <div className="bg-white rounded-2xl border-t-4 border-t-[#00D2FF] border-x-0 border-b-0 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.06)] hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
               <div>
-                <div className="relative h-48 overflow-hidden bg-slate-900">
+                <div className="relative h-44 sm:h-48 overflow-hidden bg-slate-900">
                   <img 
                     src={getMediaUrl('/newcardimages/Where Industrial Equipment Meets Intelligence.jfif')} 
                     alt="Industrial Valve Automation & Flow Control"
@@ -1055,21 +1055,21 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
                   
                   <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-extrabold shadow-sm flex items-center space-x-1">
-                      <Layers className="w-3 h-3 text-[#1E65FF]" />
+                    <span className="px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-extrabold shadow-sm flex items-center space-x-1">
+                      <Layers className="w-3 h-3 text-[#00A3C4]" />
                       <span>FLOW CONTROL & POSITIONERS</span>
                     </span>
                   </div>
 
-                  <div className="absolute bottom-3 left-4">
-                    <span className="text-white font-extrabold text-base drop-shadow-sm">
+                  <div className="absolute bottom-3 left-3.5">
+                    <span className="text-white font-extrabold text-sm sm:text-base drop-shadow-sm">
                       Smart Actuators & Valves
                     </span>
                   </div>
                 </div>
 
-                <div className="p-6 sm:p-7 space-y-4">
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                <div className="p-5 sm:p-6 space-y-3">
+                  <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading group-hover:text-[#00A3C4] transition-colors">
                     Industrial Valve Automation
                   </h3>
 
@@ -1078,7 +1078,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                   </p>
 
                   {/* Tech Pills */}
-                  <div className="flex flex-wrap gap-1.5 pt-2">
+                  <div className="flex flex-wrap gap-1.5 pt-1">
                     {[
                       "Valve Automation", "Control Valves", "Actuators", "Positioners", "Safety Valves", "Smart Diagnostics"
                     ].map((tech) => (
@@ -1090,10 +1090,10 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                 </div>
               </div>
 
-              <div className="p-6 sm:p-7 pt-0">
+              <div className="p-5 sm:p-6 pt-0">
                 <button 
                   onClick={() => navigate('/smart-valve-automation')}
-                  className="w-full py-3 rounded-xl bg-[#F4F7FE] hover:bg-[#1E65FF] text-[#1E65FF] hover:text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-sm"
+                  className="w-full py-2.5 rounded-xl bg-[#F4F7FE] hover:bg-[#00D2FF] text-slate-800 hover:text-slate-950 font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-sm"
                 >
                   <span>Explore Valve Technologies</span>
                   <ArrowRight className="w-4 h-4" />
@@ -1101,10 +1101,10 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
               </div>
             </div>
 
-            {/* Card 3: Automation & Instrumentation */}
-            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col justify-between group">
+            {/* Card 3: Automation & Instrumentation (Emerald Top Accent) */}
+            <div className="bg-white rounded-2xl border-t-4 border-t-emerald-500 border-x-0 border-b-0 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.06)] hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
               <div>
-                <div className="relative h-48 overflow-hidden bg-slate-900">
+                <div className="relative h-44 sm:h-48 overflow-hidden bg-slate-900">
                   <img 
                     src={getMediaUrl('/newcardimages/Discover What’s Next in Industrial Technology.jfif')} 
                     alt="Automation & Instrumentation"
@@ -1114,21 +1114,21 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
                   
                   <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-extrabold shadow-sm flex items-center space-x-1">
-                      <Cpu className="w-3 h-3 text-[#1E65FF]" />
+                    <span className="px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-extrabold shadow-sm flex items-center space-x-1">
+                      <Cpu className="w-3 h-3 text-emerald-600" />
                       <span>INDUSTRY 4.0 & DIGITAL TWIN</span>
                     </span>
                   </div>
 
-                  <div className="absolute bottom-3 left-4">
-                    <span className="text-white font-extrabold text-base drop-shadow-sm">
+                  <div className="absolute bottom-3 left-3.5">
+                    <span className="text-white font-extrabold text-sm sm:text-base drop-shadow-sm">
                       SCADA, DCS & IoT
                     </span>
                   </div>
                 </div>
 
-                <div className="p-6 sm:p-7 space-y-4">
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading group-hover:text-[#1E65FF] transition-colors">
+                <div className="p-5 sm:p-6 space-y-3">
+                  <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading group-hover:text-emerald-600 transition-colors">
                     Automation & Instrumentation
                   </h3>
 
@@ -1137,7 +1137,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                   </p>
 
                   {/* Tech Pills */}
-                  <div className="flex flex-wrap gap-1.5 pt-2">
+                  <div className="flex flex-wrap gap-1.5 pt-1">
                     {[
                       "PLC", "SCADA", "DCS", "Industrial IoT", 
                       "Digital Twin", "Condition Monitoring", "Cloud Monitoring", "Sensors"
@@ -1150,10 +1150,10 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                 </div>
               </div>
 
-              <div className="p-6 sm:p-7 pt-0">
+              <div className="p-5 sm:p-6 pt-0">
                 <button 
                   onClick={() => navigate('/smart-valve-automation')}
-                  className="w-full py-3 rounded-xl bg-[#F4F7FE] hover:bg-[#1E65FF] text-[#1E65FF] hover:text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-sm"
+                  className="w-full py-2.5 rounded-xl bg-[#F4F7FE] hover:bg-emerald-600 text-emerald-700 hover:text-white font-bold text-xs transition-colors flex items-center justify-center space-x-2 shadow-sm"
                 >
                   <span>Explore Automation Systems</span>
                   <ArrowRight className="w-4 h-4" />
@@ -1164,13 +1164,13 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
           </div>
 
           {/* Sub-Section: Industries Served */}
-          <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 space-y-8 text-center">
+          <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 space-y-6 text-center">
             
-            <div className="space-y-3 max-w-2xl mx-auto">
+            <div className="space-y-2 max-w-2xl mx-auto">
               <span className="px-3.5 py-1.5 rounded-full bg-white/10 text-[#00D2FF] text-xs font-bold uppercase tracking-widest inline-block">
                 INDUSTRIES SERVED
               </span>
-              <h3 className="text-3xl font-extrabold font-heading">
+              <h3 className="text-2xl sm:text-3xl font-extrabold font-heading">
                 Solutions Engineered for Ethanol, Pharma & Water Sectors
               </h3>
               <p className="text-xs sm:text-sm text-slate-300">
@@ -1179,16 +1179,16 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
             </div>
 
             {/* 12 Sectors Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-3.5">
               {industriesServed.map((ind) => {
                 const IconComp = ind.icon;
                 return (
                   <div 
                     key={ind.name}
-                    className="bg-slate-800/80 hover:bg-[#1E65FF] rounded-2xl p-4 border border-slate-700 hover:border-white/40 transition-all text-center flex flex-col items-center justify-center space-y-2 group cursor-pointer"
+                    className="bg-slate-800/70 hover:bg-[#1E65FF] rounded-xl p-3 border-0 transition-all text-center flex flex-col items-center justify-center space-y-1.5 group cursor-pointer"
                   >
-                    <div className={`p-2.5 rounded-xl ${ind.bg} group-hover:bg-white/20 transition-colors`}>
-                      <IconComp className={`w-5 h-5 ${ind.color} group-hover:text-white`} />
+                    <div className={`p-2 rounded-lg ${ind.bg} group-hover:bg-white/20 transition-colors`}>
+                      <IconComp className={`w-4 h-4 ${ind.color} group-hover:text-white`} />
                     </div>
                     <span className="text-xs font-bold text-slate-200 group-hover:text-white">{ind.name}</span>
                   </div>
@@ -1203,13 +1203,13 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
         {/* ==========================================
             SECTION 6: FAQ SECTION
             ========================================== */}
-        <section className="space-y-8 text-center">
+        <section className="space-y-6 text-center">
           
-          <div className="space-y-3 max-w-2xl mx-auto">
+          <div className="space-y-2 max-w-2xl mx-auto">
             <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest">
               EXHIBITOR FAQ
             </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-heading">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-heading">
               Frequently Asked Questions
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
@@ -1217,19 +1217,23 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-4 text-left">
+          <div className="max-w-4xl mx-auto space-y-2.5 text-left">
             {exhibitorFaqs.map((faq, idx) => {
               const isOpen = openFaqIndex === idx;
               return (
                 <div 
                   key={faq.id}
-                  className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all"
+                  className={`rounded-2xl transition-all overflow-hidden ${
+                    isOpen 
+                      ? 'bg-white border-l-4 border-l-[#1E65FF] border-y-0 border-r-0 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.08)]' 
+                      : 'bg-white border border-slate-200/70 hover:border-[#1E65FF]/40 shadow-sm'
+                  }`}
                 >
                   <button
                     onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                    className="w-full px-6 py-4 flex items-center justify-between text-left text-sm font-bold text-slate-900 hover:text-[#1E65FF]"
+                    className="w-full px-5 py-3.5 flex items-center justify-between text-left text-xs sm:text-sm font-bold text-slate-900 hover:text-[#1E65FF]"
                   >
-                    <span className="flex items-center space-x-3">
+                    <span className="flex items-center space-x-2.5 pr-3">
                       <HelpCircle className="w-4 h-4 text-[#1E65FF] shrink-0" />
                       <span>{faq.question}</span>
                     </span>
@@ -1237,7 +1241,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                   </button>
 
                   {isOpen && (
-                    <div className="px-6 pb-5 pt-1 text-xs text-slate-600 leading-relaxed border-t border-slate-100">
+                    <div className="px-5 pb-4 pt-1 text-xs text-slate-600 leading-relaxed border-t border-slate-100">
                       {faq.answer}
                     </div>
                   )}

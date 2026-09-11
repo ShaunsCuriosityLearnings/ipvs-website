@@ -127,32 +127,32 @@ export const PastExhibitionGallery: React.FC<PastExhibitionGalleryProps> = ({
   };
 
   return (
-    <section className={`py-10 sm:py-14 bg-[#F4F7FE] text-slate-900 ${className}`}>
+    <section className={`py-8 sm:py-10 bg-[#F4F7FE] text-slate-900 ${className}`}>
       
       {/* Outer Editorial Container */}
       <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto">
         
-        <div className="bg-white rounded-3xl sm:rounded-[32px] p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-xl relative overflow-hidden">
+        <div className="bg-white rounded-3xl sm:rounded-[32px] p-5 sm:p-7 lg:p-8 border border-slate-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.06)] relative overflow-hidden">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
             
             {/* ========================================================
                 LEFT COLUMN: EDITORIAL TYPOGRAPHY & OVERVIEW
                 ======================================================== */}
-            <div className="lg:col-span-4 space-y-6 lg:pr-4 flex flex-col justify-between h-full text-left">
+            <div className="lg:col-span-4 space-y-4 lg:pr-4 flex flex-col justify-between h-full text-left">
               
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#111183]/10 text-[#111183] text-xs font-bold uppercase tracking-wider">
                   <Camera className="w-3.5 h-3.5" />
                   <span>Exhibition Showcase</span>
                 </div>
                 
-                <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight font-heading leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight font-heading leading-tight">
                   Exhibition <br />
                   <span className="text-[#0e89d0] font-bold">Glimpses</span>
                 </h2>
 
-                <div className="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed font-sans pt-2">
+                <div className="space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-sans pt-1">
                   <p>
                     Experience genuine photographs from IPVS editions featuring global leaders including <strong>ANDRITZ, Grundfos, Wilo, Sant Valves</strong>, and 100+ industrial exhibitors alongside 7,000+ trade buyers.
                   </p>
@@ -163,10 +163,10 @@ export const PastExhibitionGallery: React.FC<PastExhibitionGalleryProps> = ({
               </div>
 
               {/* View Full Gallery CTA Button */}
-              <div className="pt-4 lg:pt-6 space-y-3">
+              <div className="pt-2 lg:pt-4 space-y-2">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full sm:w-auto px-7 py-4 rounded-2xl bg-gradient-to-r from-[#111183] to-[#0e89d0] hover:from-[#0d0d6c] hover:to-[#0c74b1] text-white font-extrabold text-xs transition-all shadow-lg hover:shadow-blue-900/30 flex items-center justify-between sm:justify-start space-x-4 group uppercase tracking-wider"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#111183] to-[#0e89d0] hover:from-[#0d0d6c] hover:to-[#0c74b1] text-white font-extrabold text-xs transition-all shadow-lg hover:shadow-blue-900/30 flex items-center justify-between sm:justify-start space-x-4 group uppercase tracking-wider"
                 >
                   <span>Explore Full Gallery ({PAST_GALLERY_IMAGES.length}+ Photos)</span>
                   <ArrowRight className="w-4 h-4 text-cyan-200 group-hover:text-white group-hover:translate-x-1 transition-transform" />
@@ -189,7 +189,7 @@ export const PastExhibitionGallery: React.FC<PastExhibitionGalleryProps> = ({
                 {/* 1. ANDRITZ Illuminated Grand Stall (finalle 5) */}
                 <div 
                   onClick={() => setLightboxIndex(0)}
-                  className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-[16/11] cursor-pointer shadow-sm border border-slate-200/80"
+                  className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-[16/11] cursor-pointer shadow-sm border-0 hover:shadow-md"
                 >
                   <img 
                     src={PAST_GALLERY_IMAGES[0].src} 
@@ -214,7 +214,7 @@ export const PastExhibitionGallery: React.FC<PastExhibitionGalleryProps> = ({
                 {/* 2. Grundfos Industrial Pumps & Game Zone Stall (finalle 1) */}
                 <div 
                   onClick={() => setLightboxIndex(1)}
-                  className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-[16/11] cursor-pointer shadow-sm border border-slate-200/80"
+                  className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-[16/11] cursor-pointer shadow-sm border-0 hover:shadow-md"
                 >
                   <img 
                     src={PAST_GALLERY_IMAGES[1].src} 
@@ -240,7 +240,7 @@ export const PastExhibitionGallery: React.FC<PastExhibitionGalleryProps> = ({
                 {/* 3. Wilo Multistage Pumps & High Traffic Stalls (finalle 3) */}
                 <div 
                   onClick={() => setLightboxIndex(2)}
-                  className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-[16/11] cursor-pointer shadow-sm border border-slate-200/80"
+                  className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-[16/11] cursor-pointer shadow-sm border-0 hover:shadow-md"
                 >
                   <img 
                     src={PAST_GALLERY_IMAGES[2].src} 
@@ -263,7 +263,7 @@ export const PastExhibitionGallery: React.FC<PastExhibitionGalleryProps> = ({
                   {/* Sant Valves & Heavy Machinery (finalle 4) */}
                   <div 
                     onClick={() => setLightboxIndex(3)}
-                    className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-square cursor-pointer shadow-sm border border-slate-200/80"
+                    className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-square cursor-pointer shadow-sm border-0 hover:shadow-md"
                   >
                     <img 
                       src={PAST_GALLERY_IMAGES[3].src} 
@@ -280,7 +280,7 @@ export const PastExhibitionGallery: React.FC<PastExhibitionGalleryProps> = ({
                   {/* Wilo VIP Customer Desk (finalle 2) */}
                   <div 
                     onClick={() => setLightboxIndex(4)}
-                    className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-square cursor-pointer shadow-sm border border-slate-200/80"
+                    className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-square cursor-pointer shadow-sm border-0 hover:shadow-md"
                   >
                     <img 
                       src={PAST_GALLERY_IMAGES[4].src} 
@@ -303,7 +303,7 @@ export const PastExhibitionGallery: React.FC<PastExhibitionGalleryProps> = ({
                 {/* 6. Grand Inauguration (webkeep.webp) */}
                 <div 
                   onClick={() => setLightboxIndex(5)}
-                  className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-[16/11] cursor-pointer shadow-sm border border-slate-200/80"
+                  className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-[16/11] cursor-pointer shadow-sm border-0 hover:shadow-md"
                 >
                   <img 
                     src={PAST_GALLERY_IMAGES[5].src} 
@@ -325,7 +325,7 @@ export const PastExhibitionGallery: React.FC<PastExhibitionGalleryProps> = ({
                 <div className="grid grid-cols-2 gap-3.5">
                   <div 
                     onClick={() => setLightboxIndex(6)}
-                    className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-square cursor-pointer shadow-sm border border-slate-200/80"
+                    className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-square cursor-pointer shadow-sm border-0 hover:shadow-md"
                   >
                     <img 
                       src={PAST_GALLERY_IMAGES[6].src} 
@@ -341,7 +341,7 @@ export const PastExhibitionGallery: React.FC<PastExhibitionGalleryProps> = ({
 
                   <div 
                     onClick={() => setLightboxIndex(7)}
-                    className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-square cursor-pointer shadow-sm border border-slate-200/80"
+                    className="group relative rounded-2xl overflow-hidden bg-slate-100 aspect-square cursor-pointer shadow-sm border-0 hover:shadow-md"
                   >
                     <img 
                       src={PAST_GALLERY_IMAGES[7].src} 

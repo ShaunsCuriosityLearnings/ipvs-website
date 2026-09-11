@@ -7,18 +7,18 @@ export const EsteemedExhibitorsSection: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-10 sm:py-14 bg-[#F8FAFC] text-slate-900 relative">
-      <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 space-y-8 sm:space-y-10 text-center">
+    <section className="py-8 sm:py-10 bg-[#F8FAFC] text-slate-900 relative">
+      <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 space-y-6 sm:space-y-8 text-center">
 
         {/* ==========================================
             HEADER (MATCHING REFERENCE IMAGE 1)
             ========================================== */}
-        <div className="space-y-3 max-w-3xl mx-auto">
+        <div className="space-y-2.5 max-w-3xl mx-auto">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-600 text-xs font-bold uppercase tracking-wider">
             <span>Our Exhibitors</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-heading tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-heading tracking-tight leading-tight">
             Trusted by 100+ Leading Industrial Brands & Manufacturers
           </h2>
 
@@ -28,27 +28,27 @@ export const EsteemedExhibitorsSection: React.FC = () => {
         </div>
 
         {/* ==========================================
-            LOGO CARDS GRID (MATCHING REFERENCE IMAGES 1 & 2)
+            LOGO CARDS GRID: Borderless with Soft Elevation
             ========================================== */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5 sm:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
           {ESTEEMED_EXHIBITORS.map((exhibitor) => (
             <div
               key={exhibitor.id}
               onClick={() => navigate('/exhibitor')}
-              className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-between text-center min-h-[120px] sm:min-h-[135px]"
+              className="bg-white rounded-2xl p-3.5 sm:p-4 border-0 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.05)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-between text-center min-h-[110px] sm:min-h-[125px]"
             >
               {/* Logo Container with Proper Scaling */}
-              <div className="h-12 sm:h-14 w-full flex items-center justify-center p-1">
+              <div className="h-11 sm:h-13 w-full flex items-center justify-center p-1">
                 <img
                   src={exhibitor.logo}
                   alt={exhibitor.name}
-                  className="max-h-10 sm:max-h-12 w-auto max-w-[85%] object-contain group-hover:scale-105 transition-transform duration-300"
+                  className="max-h-9 sm:max-h-11 w-auto max-w-[85%] object-contain group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
 
               {/* Brand Name Text under the Logo */}
-              <div className="w-full pt-2 border-t border-slate-100/80">
+              <div className="w-full pt-1.5 border-t border-slate-100">
                 <h3 className="text-xs font-extrabold text-slate-900 font-heading tracking-tight line-clamp-1 group-hover:text-[#1E65FF] transition-colors">
                   {exhibitor.name}
                 </h3>

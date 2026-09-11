@@ -80,7 +80,7 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
   ];
 
   return (
-    <div className="pt-20 pb-16 bg-[#F8FAFC] text-slate-800 min-h-screen">
+    <div className="pt-16 pb-12 bg-[#F8FAFC] text-slate-800 min-h-screen">
       <SEO 
         title="Visitor Registration & Free Pass | IPVS 2026 Hyderabad"
         description="Register for your free visitor badge at IPVS 2026. Explore live machinery demos, attend high-level technical conferences, and network with 100+ global manufacturers at HITEX Hyderabad."
@@ -90,7 +90,7 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
       {/* ==========================================
           SECTION 1: CREATIVE ULTRA-MODERN HERO SECTION
           ========================================== */}
-      <section className="relative bg-gradient-to-br from-[#061229] via-[#0B2252] to-[#1E65FF] text-white pt-28 sm:pt-32 pb-16 sm:pb-20 px-3 sm:px-6 lg:px-8 overflow-hidden mb-10 shadow-2xl">
+      <section className="relative bg-gradient-to-br from-[#061229] via-[#0B2252] to-[#1E65FF] text-white pt-24 sm:pt-28 pb-10 sm:pb-12 px-3 sm:px-6 lg:px-8 overflow-hidden mb-8 shadow-xl">
         
         {/* Creative Ambient Spheres & Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
@@ -99,29 +99,29 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
 
         <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto relative z-10">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-6 text-left">
+            <div className="lg:col-span-7 space-y-5 text-left">
               
               {/* Creative Pill Badge */}
-              <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-[#00D2FF] text-xs font-extrabold tracking-widest uppercase backdrop-blur-xl shadow-lg">
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#00D2FF] text-xs font-extrabold tracking-widest uppercase backdrop-blur-xl shadow-lg">
                 <span className="w-2 h-2 rounded-full bg-[#00D2FF] animate-pulse"></span>
                 <span>FREE VISITOR REGISTRATION • IPVS 2026</span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-heading leading-tight tracking-tight text-white drop-shadow-lg">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black font-heading leading-tight tracking-tight text-white drop-shadow-lg">
                 Stay Ahead of the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00D2FF] via-white to-blue-200">Competition</span>
               </h1>
 
               {/* Description Paragraph */}
-              <p className="text-slate-200 text-base sm:text-lg leading-relaxed font-medium max-w-2xl">
+              <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-medium max-w-2xl">
                 Visit IPVS Expo to Discover Cutting-Edge Solutions, Improve Operational Efficiency, and Boost Productivity.
               </p>
 
               {/* Focus Sectors Highlight Banner */}
-              <div className="p-4 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-xl text-xs text-slate-200 space-y-1.5 shadow-xl">
+              <div className="p-3.5 rounded-xl bg-white/10 border border-white/20 backdrop-blur-xl text-xs text-slate-200 space-y-1 shadow-xl">
                 <div className="flex items-center space-x-2 text-[#00D2FF] font-extrabold uppercase tracking-wider text-[11px]">
                   <span className="w-2 h-2 rounded-full bg-[#00D2FF]"></span>
                   <span>Ethanol, Pharma & Water Sectors</span>
@@ -132,11 +132,11 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
               </div>
 
               {/* 2 Feature Highlight Bento Cards */}
-              <div className="grid sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-5 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-xl hover:bg-white/15 hover:border-[#00D2FF]/50 transition-all duration-300 space-y-2 group shadow-xl">
-                  <div className="flex items-center space-x-2.5 text-[#00D2FF]">
-                    <div className="w-8 h-8 rounded-lg bg-[#00D2FF]/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Users className="w-4 h-4 text-[#00D2FF]" />
+              <div className="grid sm:grid-cols-2 gap-3.5 pt-1">
+                <div className="p-4 rounded-xl bg-white/10 border border-white/20 backdrop-blur-xl hover:bg-white/15 hover:border-[#00D2FF]/50 transition-all duration-300 space-y-1.5 group shadow-xl">
+                  <div className="flex items-center space-x-2 text-[#00D2FF]">
+                    <div className="w-7 h-7 rounded-lg bg-[#00D2FF]/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Users className="w-3.5 h-3.5 text-[#00D2FF]" />
                     </div>
                     <h3 className="text-sm font-extrabold text-white">Where Industry Leaders Gather</h3>
                   </div>
@@ -251,18 +251,18 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
       </section>
 
       {/* Main Page Body Container */}
-      <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 space-y-10 sm:space-y-12">
+      <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 space-y-8 sm:space-y-10">
 
         {/* ==========================================
             SECTION 2: WHY VISIT? (INDUSTRIAL PUMPS, VALVES & SYSTEM)
             ========================================== */}
-        <section className="space-y-12">
+        <section className="space-y-6 sm:space-y-8">
           
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="px-4 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block border border-[#1E65FF]/20">
+          <div className="text-center max-w-3xl mx-auto space-y-2.5">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block border border-[#1E65FF]/20">
               Industrial Pumps, Valves & System
             </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-heading">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-heading">
               Why Visit?
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
@@ -270,100 +270,100 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
             </p>
           </div>
 
-          {/* 3 Benefit Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+          {/* 3 Benefit Cards Grid: Varied Top Accent Borders */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 text-left">
             
-            {/* Pillar 1 */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6 group">
+            {/* Pillar 1: Blue Top Accent */}
+            <div className="bg-white rounded-2xl p-5 sm:p-6 border-t-4 border-t-[#1E65FF] border-x-0 border-b-0 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between space-y-4 group">
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Zap className="w-7 h-7" />
+                <div className="w-12 h-12 rounded-xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Zap className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-900 font-heading mb-4">
+                <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading mb-3">
                   Stay Ahead in the Industry
                 </h3>
-                <ul className="space-y-3.5 text-xs sm:text-sm text-slate-600">
+                <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600">
                   <li className="flex items-start">
-                    <CheckCircle2 className="w-4 h-4 text-[#1E65FF] mr-2.5 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#1E65FF] mr-2 shrink-0 mt-0.5" />
                     <span>Discover latest technologies, products, and services.</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle2 className="w-4 h-4 text-[#1E65FF] mr-2.5 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#1E65FF] mr-2 shrink-0 mt-0.5" />
                     <span>Learn from industry experts.</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle2 className="w-4 h-4 text-[#1E65FF] mr-2.5 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#1E65FF] mr-2 shrink-0 mt-0.5" />
                     <span>Network with peers, thought leaders, and potential partners.</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="pt-4 border-t border-slate-100">
+              <div className="pt-3 border-t border-slate-100">
                 <span className="text-xs font-bold text-[#1E65FF] flex items-center">
                   Industry Innovation Track <ChevronRight className="w-3.5 h-3.5 ml-1" />
                 </span>
               </div>
             </div>
 
-            {/* Pillar 2 */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6 group">
+            {/* Pillar 2: Cyan Top Accent */}
+            <div className="bg-white rounded-2xl p-5 sm:p-6 border-t-4 border-t-[#00D2FF] border-x-0 border-b-0 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between space-y-4 group">
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Layers className="w-7 h-7" />
+                <div className="w-12 h-12 rounded-xl bg-[#00D2FF]/10 text-[#00A3C4] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Layers className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-900 font-heading mb-4">
+                <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading mb-3">
                   Source Products and Solutions
                 </h3>
-                <ul className="space-y-3.5 text-xs sm:text-sm text-slate-600">
+                <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600">
                   <li className="flex items-start">
-                    <CheckCircle2 className="w-4 h-4 text-[#1E65FF] mr-2.5 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#00A3C4] mr-2 shrink-0 mt-0.5" />
                     <span>Explore exhibits from leading industrial pumps, valves, systems, and chemical processing equipment industries.</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle2 className="w-4 h-4 text-[#1E65FF] mr-2.5 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#00A3C4] mr-2 shrink-0 mt-0.5" />
                     <span>Compare products, services, and solutions side-by-side.</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle2 className="w-4 h-4 text-[#1E65FF] mr-2.5 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#00A3C4] mr-2 shrink-0 mt-0.5" />
                     <span>Meet suppliers and manufacturers directly.</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="pt-4 border-t border-slate-100">
-                <span className="text-xs font-bold text-[#1E65FF] flex items-center">
+              <div className="pt-3 border-t border-slate-100">
+                <span className="text-xs font-bold text-[#00A3C4] flex items-center">
                   Direct Procurement Sourcing <ChevronRight className="w-3.5 h-3.5 ml-1" />
                 </span>
               </div>
             </div>
 
-            {/* Pillar 3 */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6 group">
+            {/* Pillar 3: Deep Navy Top Accent */}
+            <div className="bg-white rounded-2xl p-5 sm:p-6 border-t-4 border-t-[#111183] border-x-0 border-b-0 shadow-[0_4px_16px_-4px_rgba(0,0,0,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between space-y-4 group">
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Users className="w-7 h-7" />
+                <div className="w-12 h-12 rounded-xl bg-[#111183]/10 text-[#111183] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Users className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-900 font-heading mb-4">
+                <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading mb-3">
                   Unparalleled Networking Opportunities
                 </h3>
-                <ul className="space-y-3.5 text-xs sm:text-sm text-slate-600">
+                <ul className="space-y-2.5 text-xs sm:text-sm text-slate-600">
                   <li className="flex items-start">
-                    <CheckCircle2 className="w-4 h-4 text-[#1E65FF] mr-2.5 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#111183] mr-2 shrink-0 mt-0.5" />
                     <span>Connect with industry professionals.</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle2 className="w-4 h-4 text-[#1E65FF] mr-2.5 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#111183] mr-2 shrink-0 mt-0.5" />
                     <span>Schedule meetings with potential clients/partners.</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle2 className="w-4 h-4 text-[#1E65FF] mr-2.5 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#111183] mr-2 shrink-0 mt-0.5" />
                     <span>Establish nationwide B2B supply chain channels.</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="pt-4 border-t border-slate-100">
-                <span className="text-xs font-bold text-[#1E65FF] flex items-center">
+              <div className="pt-3 border-t border-slate-100">
+                <span className="text-xs font-bold text-[#111183] flex items-center">
                   Structured Matchmaking <ChevronRight className="w-3.5 h-3.5 ml-1" />
                 </span>
               </div>
@@ -376,13 +376,13 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
         {/* ==========================================
             SECTION 3: VISITOR'S PROFILE
             ========================================== */}
-        <section id="visitors-profile" className="scroll-mt-32 space-y-12">
+        <section id="visitors-profile" className="scroll-mt-32 space-y-6 sm:space-y-8">
           
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="px-4 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block border border-[#1E65FF]/20">
+          <div className="text-center max-w-3xl mx-auto space-y-2.5">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block border border-[#1E65FF]/20">
               Target Buyer Categories
             </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-heading">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-heading">
               Visitor's Profile
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
@@ -390,35 +390,35 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             
             {/* Category A: Industrial Pumps, Valves & System */}
-            <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm space-y-8 text-left">
+            <div className="bg-white rounded-2xl p-5 sm:p-7 border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] space-y-6 text-left">
               
-              <div className="border-b border-slate-200 pb-4 flex items-center justify-between">
+              <div className="border-b border-slate-100 pb-3.5 flex items-center justify-between">
                 <div>
-                  <span className="px-3.5 py-1 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-bold uppercase">
+                  <span className="px-3 py-1 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-bold uppercase">
                     Category A
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading mt-2">
+                  <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading mt-1.5">
                     Visitor's Profile: Industrial Pumps, Valves & System
                   </h3>
                 </div>
-                <Building2 className="w-8 h-8 text-[#1E65FF]/30 hidden sm:block" />
+                <Building2 className="w-7 h-7 text-[#1E65FF]/30 hidden sm:block" />
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 
                 {/* Group 1: Manufacturers Of */}
-                <div className="space-y-4">
-                  <h4 className="text-sm font-extrabold text-[#1E65FF] uppercase tracking-wider flex items-center">
-                    <Check className="w-4 h-4 mr-2 text-[#1E65FF]" />
+                <div className="space-y-3">
+                  <h4 className="text-xs font-extrabold text-[#1E65FF] uppercase tracking-wider flex items-center">
+                    <Check className="w-3.5 h-3.5 mr-1.5 text-[#1E65FF]" />
                     MANUFACTURERS OF:
                   </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-700">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700">
                     {pumpValveMfg.map((item, idx) => (
-                      <div key={idx} className="flex items-center p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-[#1E65FF]/30 transition-colors">
-                        <span className="w-2 h-2 rounded-full bg-[#1E65FF] mr-2.5 shrink-0"></span>
+                      <div key={idx} className="flex items-center p-2.5 rounded-lg bg-slate-100/70 hover:bg-blue-50/70 transition-colors">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#1E65FF] mr-2 shrink-0"></span>
                         <span className="font-medium text-slate-800">{item}</span>
                       </div>
                     ))}
@@ -426,15 +426,15 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
                 </div>
 
                 {/* Group 2: Operators, Consultants & Distributors */}
-                <div className="space-y-4">
-                  <h4 className="text-sm font-extrabold text-[#1E65FF] uppercase tracking-wider flex items-center">
-                    <Check className="w-4 h-4 mr-2 text-[#1E65FF]" />
+                <div className="space-y-3">
+                  <h4 className="text-xs font-extrabold text-[#1E65FF] uppercase tracking-wider flex items-center">
+                    <Check className="w-3.5 h-3.5 mr-1.5 text-[#1E65FF]" />
                     OPERATORS, CONSULTANTS & DISTRIBUTORS:
                   </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-700">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700">
                     {pumpValveOps.map((item, idx) => (
-                      <div key={idx} className="flex items-center p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-[#1E65FF]/30 transition-colors">
-                        <span className="w-2 h-2 rounded-full bg-[#1E65FF] mr-2.5 shrink-0"></span>
+                      <div key={idx} className="flex items-center p-2.5 rounded-lg bg-slate-100/70 hover:bg-blue-50/70 transition-colors">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#1E65FF] mr-2 shrink-0"></span>
                         <span className="font-medium text-slate-800">{item}</span>
                       </div>
                     ))}
@@ -446,29 +446,29 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
             </div>
 
             {/* Category B: Industrial Chemical Process Equipment */}
-            <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-xl space-y-8 text-left">
+            <div className="bg-slate-900 text-white rounded-2xl p-5 sm:p-7 border border-slate-800 shadow-xl space-y-6 text-left">
               
-              <div className="border-b border-slate-800 pb-4 flex items-center justify-between">
+              <div className="border-b border-slate-800 pb-3.5 flex items-center justify-between">
                 <div>
-                  <span className="px-3.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase border border-emerald-500/30">
+                  <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase border border-emerald-500/30">
                     Category B (Process & Equipment)
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-white font-heading mt-2">
+                  <h3 className="text-lg sm:text-xl font-extrabold text-white font-heading mt-1.5">
                     Visitor's Profile: Industrial Chemical Process Equipment
                   </h3>
                 </div>
-                <Cpu className="w-8 h-8 text-emerald-400/30 hidden sm:block" />
+                <Cpu className="w-7 h-7 text-emerald-400/30 hidden sm:block" />
               </div>
 
-              <div className="space-y-4">
-                <h4 className="text-sm font-extrabold text-emerald-400 uppercase tracking-wider flex items-center">
-                  <Check className="w-4 h-4 mr-2 text-emerald-400" />
+              <div className="space-y-3">
+                <h4 className="text-xs font-extrabold text-emerald-400 uppercase tracking-wider flex items-center">
+                  <Check className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
                   MANUFACTURERS OF:
                 </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 text-xs text-slate-200">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 text-xs text-slate-200">
                   {chemicalProcessMfg.map((item, idx) => (
-                    <div key={idx} className="flex items-center p-3 rounded-xl bg-slate-800/80 border border-slate-700 hover:border-emerald-500/50 transition-colors">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 mr-2.5 shrink-0"></span>
+                    <div key={idx} className="flex items-center p-2.5 rounded-lg bg-slate-800/80 hover:bg-emerald-950/40 transition-colors">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2 shrink-0"></span>
                       <span className="font-medium">{item}</span>
                     </div>
                   ))}
@@ -495,13 +495,13 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
         {/* ==========================================
             SECTION 5: EXCLUSIVE VISITOR ADVANTAGES (SEO BOOST SECTION)
             ========================================== */}
-        <section className="space-y-8 text-center">
+        <section className="space-y-6 text-center">
           
-          <div className="space-y-3 max-w-2xl mx-auto">
-            <span className="px-4 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block border border-[#1E65FF]/20">
+          <div className="space-y-2.5 max-w-2xl mx-auto">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] text-xs font-extrabold uppercase tracking-widest inline-block border border-[#1E65FF]/20">
               VISITOR ADVANTAGES
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-heading">
               Exclusive Expo Visitor Perks
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
@@ -509,43 +509,44 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+          {/* 4 Cards with Left Accent Borders */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 text-left">
             
-            <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-3 hover:shadow-lg transition-all">
-              <div className="w-12 h-12 rounded-2xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center font-bold">
-                <Ticket className="w-6 h-6" />
+            <div className="bg-white rounded-2xl p-4 sm:p-5 border-l-4 border-l-[#1E65FF] border-y-0 border-r-0 shadow-[0_2px_12px_-2px_rgba(0,0,0,0.05)] space-y-2 hover:shadow-md transition-all">
+              <div className="w-10 h-10 rounded-xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center font-bold">
+                <Ticket className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-extrabold text-slate-900">Fast-Track Entry Pass</h3>
+              <h3 className="text-sm sm:text-base font-extrabold text-slate-900 font-heading">Fast-Track Entry Pass</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Pre-register online to receive instant digital QR badge pass and bypass main registration queues.
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-3 hover:shadow-lg transition-all">
-              <div className="w-12 h-12 rounded-2xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center font-bold">
-                <Globe className="w-6 h-6" />
+            <div className="bg-white rounded-2xl p-4 sm:p-5 border-l-4 border-l-[#00D2FF] border-y-0 border-r-0 shadow-[0_2px_12px_-2px_rgba(0,0,0,0.05)] space-y-2 hover:shadow-md transition-all">
+              <div className="w-10 h-10 rounded-xl bg-[#00D2FF]/10 text-[#00A3C4] flex items-center justify-center font-bold">
+                <Globe className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-extrabold text-slate-900">Full Exhibition Access</h3>
+              <h3 className="text-sm sm:text-base font-extrabold text-slate-900 font-heading">Full Exhibition Access</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Single registration grants free pass to complete exhibition halls, open technical demos, and live showcase arenas.
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-3 hover:shadow-lg transition-all">
-              <div className="w-12 h-12 rounded-2xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center font-bold">
-                <Cpu className="w-6 h-6" />
+            <div className="bg-white rounded-2xl p-4 sm:p-5 border-l-4 border-l-emerald-500 border-y-0 border-r-0 shadow-[0_2px_12px_-2px_rgba(0,0,0,0.05)] space-y-2 hover:shadow-md transition-all">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold">
+                <Cpu className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-extrabold text-slate-900">Live Machinery Demos</h3>
+              <h3 className="text-sm sm:text-base font-extrabold text-slate-900 font-heading">Live Machinery Demos</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Observe live operational testing of slurry pumps, smart actuators, and IIoT telemetry sensors.
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-3 hover:shadow-lg transition-all">
-              <div className="w-12 h-12 rounded-2xl bg-[#1E65FF]/10 text-[#1E65FF] flex items-center justify-center font-bold">
-                <FileText className="w-6 h-6" />
+            <div className="bg-white rounded-2xl p-4 sm:p-5 border-l-4 border-l-purple-500 border-y-0 border-r-0 shadow-[0_2px_12px_-2px_rgba(0,0,0,0.05)] space-y-2 hover:shadow-md transition-all">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-600 flex items-center justify-center font-bold">
+                <FileText className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-extrabold text-slate-900">Free Event Directory PDF</h3>
+              <h3 className="text-sm sm:text-base font-extrabold text-slate-900 font-heading">Free Event Directory PDF</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 Access official exhibitor contact details, stall map directories, and product catalogues.
               </p>
@@ -561,12 +562,12 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
         {/* ==========================================
             SECTION 6: VISITOR LOGISTICS, DATES & VENUE (SEO BOOST SECTION)
             ========================================== */}
-        <section className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-8 text-left">
+        <section className="bg-white rounded-2xl p-6 sm:p-8 border-0 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] space-y-6 text-left">
           
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 border-b border-slate-200 pb-8">
-            <div className="space-y-2 max-w-2xl">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-slate-100 pb-6">
+            <div className="space-y-1.5 max-w-2xl">
               <span className="text-xs font-bold uppercase tracking-widest text-[#1E65FF]">EXPO LOCATION & DATES</span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 font-heading">
+              <h2 className="text-xl sm:text-3xl font-extrabold text-slate-900 font-heading">
                 Visitor Planning & Logistics Guide
               </h2>
               <p className="text-xs sm:text-sm text-slate-600">
@@ -576,16 +577,16 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
 
             <button 
               onClick={() => onOpenModal('visitor')}
-              className="px-8 py-3.5 rounded-xl bg-[#1E65FF] hover:bg-[#0D47A1] text-white font-extrabold text-xs uppercase tracking-wider transition-colors shadow-md flex items-center shrink-0"
+              className="px-6 py-3 rounded-xl bg-[#1E65FF] hover:bg-[#0D47A1] text-white font-extrabold text-xs uppercase tracking-wider transition-colors shadow-md flex items-center shrink-0"
             >
               <span>Get Free Pass Now</span>
               <ArrowRight className="w-4 h-4 ml-2" />
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-700">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 text-xs text-slate-700">
             
-            <div className="p-5 rounded-2xl bg-[#F4F7FE] border border-slate-200 space-y-2">
+            <div className="p-4 rounded-xl bg-[#F4F7FE] border-0 space-y-1.5">
               <div className="flex items-center space-x-2 text-[#1E65FF] font-bold">
                 <Calendar className="w-4 h-4" />
                 <span>Exhibition Dates & Timings</span>
@@ -594,7 +595,7 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
               <p className="text-slate-500">10:00 AM – 6:00 PM IST (Daily)</p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-[#F4F7FE] border border-slate-200 space-y-2">
+            <div className="p-4 rounded-xl bg-[#F4F7FE] border-0 space-y-1.5">
               <div className="flex items-center space-x-2 text-[#1E65FF] font-bold">
                 <MapPin className="w-4 h-4" />
                 <span>Venue Address</span>
@@ -603,7 +604,7 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
               <p className="text-slate-500">Izzat Nagar, Hyderabad – 500 084, Telangana, India</p>
             </div>
 
-            <div className="p-5 rounded-2xl bg-[#F4F7FE] border border-slate-200 space-y-2">
+            <div className="p-4 rounded-xl bg-[#F4F7FE] border-0 space-y-1.5">
               <div className="flex items-center space-x-2 text-[#1E65FF] font-bold">
                 <Compass className="w-4 h-4" />
                 <span>Travel & Transport</span>
