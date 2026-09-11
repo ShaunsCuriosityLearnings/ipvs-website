@@ -65,7 +65,8 @@ async function main() {
     'public/advisory member',
     'public/blogs',
     'public/Logo',
-    'public/mediapartners'
+    'public/mediapartners',
+    'public/newcardimages'
   ];
 
   const individualFiles = [
@@ -89,7 +90,7 @@ async function main() {
     if (f.startsWith(path.join('public', 'we')) && ext !== '.webp') {
       return false; // Skip the raw 850MB JPGs in public/we
     }
-    if (['.jpg', '.jpeg', '.png', '.webp', '.svg'].includes(ext)) {
+    if (['.jpg', '.jpeg', '.png', '.webp', '.svg', '.jfif'].includes(ext)) {
       return true;
     }
     return false;

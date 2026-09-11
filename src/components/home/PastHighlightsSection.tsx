@@ -10,6 +10,7 @@ import {
   Building2,
   Ticket
 } from 'lucide-react';
+import { getMediaUrl } from '../../utils/media';
 
 interface PastHighlightsSectionProps {
   onOpenModal?: (mode: 'exhibitor' | 'visitor' | 'contact') => void;
@@ -23,7 +24,7 @@ export const PastHighlightsSection: React.FC<PastHighlightsSectionProps> = ({ on
       title: "Discover What’s Next in Industrial Technology",
       description: "Experience breakthrough technologies across pumps, valves, automation, instrumentation, IIoT and process engineering, with product launches, demonstrations and next-generation industrial solutions.",
       cta: "Explore Innovation Zone →",
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=75",
+      image: getMediaUrl("/newcardimages/Discover What's Next in Industrial Technology.jfif"),
       icon: Sparkles,
       iconColor: "text-cyan-500",
       journeyStep: "DISCOVER"
@@ -34,7 +35,7 @@ export const PastHighlightsSection: React.FC<PastHighlightsSectionProps> = ({ on
       title: "Connect With the People Who Drive Industry",
       description: "Meet OEMs, EPC companies, plant owners, procurement leaders, consultants, distributors and technology decision-makers to build partnerships and discover new business opportunities.",
       cta: "Build Business Connections →",
-      image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=75",
+      image: getMediaUrl("/newcardimages/Connect With the People Who Drive Industry.jfif"),
       icon: Users,
       iconColor: "text-emerald-500",
       journeyStep: "CONNECT"
@@ -45,7 +46,7 @@ export const PastHighlightsSection: React.FC<PastHighlightsSectionProps> = ({ on
       title: "See Technology in Action",
       description: "Experience industrial technologies through live demonstrations and real-world applications, helping you understand how pumps, valves, automation and process solutions perform beyond the catalogue.",
       cta: "See Technology in Action →",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=75",
+      image: getMediaUrl("/newcardimages/See Technology in Action.jfif"),
       icon: PlayCircle,
       iconColor: "text-amber-500",
       journeyStep: "EXPERIENCE"
@@ -56,7 +57,7 @@ export const PastHighlightsSection: React.FC<PastHighlightsSectionProps> = ({ on
       title: "Where Industrial Equipment Meets Intelligence",
       description: "Explore AI, Industrial IoT, smart sensors, digital twins, predictive maintenance and connected automation transforming the way modern plants operate.",
       cta: "Explore Smart Technologies →",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=75",
+      image: getMediaUrl("/newcardimages/Where Industrial Equipment Meets Intelligence.jfif"),
       icon: Cpu,
       iconColor: "text-blue-500",
       journeyStep: "DIGITALISE"
@@ -67,7 +68,7 @@ export const PastHighlightsSection: React.FC<PastHighlightsSectionProps> = ({ on
       title: "From Components to Complete Systems",
       description: "Discover integrated solutions across pumping, flow control, instrumentation, process automation, water treatment, process control and industrial engineering for end-to-end plant requirements.",
       cta: "Explore Process Solutions →",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=75",
+      image: getMediaUrl("/newcardimages/From Components to Complete Systems.jfif"),
       icon: Layers,
       iconColor: "text-teal-500",
       journeyStep: "SOLVE"
@@ -78,7 +79,7 @@ export const PastHighlightsSection: React.FC<PastHighlightsSectionProps> = ({ on
       title: "Learn What’s Shaping the Future of Industry",
       description: "Gain practical insights through technical seminars, expert sessions and panel discussions covering Industry 4.0, AI, smart manufacturing, sustainability, digitalisation and process innovation.",
       cta: "Explore Knowledge Sessions →",
-      image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=75",
+      image: getMediaUrl("/newcardimages/Learn What's Shaping the Future of Industry.jfif"),
       icon: BookOpen,
       iconColor: "text-purple-500",
       journeyStep: "LEARN"

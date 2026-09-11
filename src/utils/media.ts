@@ -12,7 +12,7 @@ export function getMediaUrl(path: string | undefined | null): string {
     return path;
   }
   const key = path.startsWith('/') ? path : `/${path}`;
-  return typedMap[key] || path;
+  return typedMap[key] || typedMap[key.replace(/’/g, "'")] || typedMap[key.replace(/'/g, '’')] || path;
 }
 
 export default getMediaUrl;

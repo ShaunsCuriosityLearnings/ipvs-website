@@ -1,6 +1,7 @@
 import React from 'react';
 import { Play, Calendar, MapPin, CheckCircle2, ArrowRight } from 'lucide-react';
 import { EVENT_DETAILS } from '../../data/ipvsData';
+import { getMediaUrl } from '../../utils/media';
 
 interface AboutSectionProps {
   onOpenModal: (mode: 'exhibitor' | 'visitor' | 'contact') => void;
@@ -20,7 +21,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal, onNavig
               {/* Main Image */}
               <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white">
                 <img
-                  src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=70"
+                  src={getMediaUrl('/newcardimages/mainimage1.jfif')}
                   alt="Industrial Expo Exhibition Floor"
                   className="w-full h-[380px] object-cover"
                   loading="lazy"
@@ -31,7 +32,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal, onNavig
               {/* Floating Overlay Second Photo with Play Button (Matching Mockup) */}
               <div className="absolute -bottom-8 -right-4 w-52 sm:w-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-white hidden sm:block">
                 <img
-                  src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=400&q=70"
+                  src={getMediaUrl('/newcardimages/mainimage2.jfif')}
                   alt="Conference Presentation"
                   className="w-full h-40 object-cover"
                   loading="lazy"
