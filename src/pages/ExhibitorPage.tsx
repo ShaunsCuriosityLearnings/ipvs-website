@@ -783,7 +783,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                 <div>
                   <div className="relative h-40 overflow-hidden bg-slate-900">
                     <img 
-                      src={getMediaUrl('/newcardimages/From Components to Complete Systems.jfif')} 
+                      src={getMediaUrl('/newcardimages/4. Expand Your Market Presence.jfif')} 
                       alt="Expand Your Market Presence"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
                       loading="lazy"
@@ -987,7 +987,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
               <div>
                 <div className="relative h-44 sm:h-48 overflow-hidden bg-slate-900">
                   <img 
-                    src={getMediaUrl('/newcardimages/From Components to Complete Systems.jfif')} 
+                    src={getMediaUrl('/newcardimages/Industrial Pumps.jfif')} 
                     alt="Industrial Pumps & Fluid Handling Equipment"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
                     loading="lazy"
@@ -1047,7 +1047,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
               <div>
                 <div className="relative h-44 sm:h-48 overflow-hidden bg-slate-900">
                   <img 
-                    src={getMediaUrl('/newcardimages/Where Industrial Equipment Meets Intelligence.jfif')} 
+                    src={getMediaUrl('/newcardimages/Industrial Valve Automation.jfif')} 
                     alt="Industrial Valve Automation & Flow Control"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
                     loading="lazy"
@@ -1106,7 +1106,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
               <div>
                 <div className="relative h-44 sm:h-48 overflow-hidden bg-slate-900">
                   <img 
-                    src={getMediaUrl('/newcardimages/Discover What’s Next in Industrial Technology.jfif')} 
+                    src={getMediaUrl('/newcardimages/Automation & Instrumentation.jfif')} 
                     alt="Automation & Instrumentation"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
                     loading="lazy"
