@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { 
   Play, 
   ArrowRight, 
   Award, 
-  CheckCircle2
+  CheckCircle2,
+  Volume2,
+  VolumeX,
+  Maximize2,
+  Sparkles
 } from 'lucide-react';
 import { getMediaUrl } from '../../utils/media';
 
@@ -14,6 +18,21 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleSound = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    } else {
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const reelCdnUrl = "https://res.cloudinary.com/lh8mihme/video/upload/f_auto,q_auto/v1789126184/wkbci960unajh9puvtys.mp4";
+  const reelLocalUrl = "/ipvs-reel.mp4";
 
   return (
     <section id="hero" className="relative bg-gradient-to-br from-[#111183] via-[#0f4f9e] to-[#0e89d0] text-white pt-36 sm:pt-40 lg:pt-44 pb-32 sm:pb-36 lg:pb-40 overflow-hidden">
@@ -96,18 +115,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
 
           </div>
 
-          {/* Right Column - IPVS Official Main Logo + Event Video Preview */}
-          <div className="lg:col-span-5 relative">
+          {/* Right Column - IPVS Official Main Logo + Autoplay Vertical Reel */}
+          <div className="lg:col-span-5 relative flex flex-col items-center lg:items-end">
             
-            {/* IPVS Main Logo Card - Positioned in the Top-Right of Hero as drawn by User */}
-            <div className="flex justify-center lg:justify-end mb-4 lg:mb-5">
-              <div className="bg-white p-2.5 sm:p-3 rounded-2xl sm:rounded-3xl shadow-2xl border-2 border-white/30 hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3 group">
+            {/* IPVS Main Logo Card */}
+            <div className="flex justify-center lg:justify-end mb-4 lg:mb-5 w-full max-w-[310px] sm:max-w-[340px]">
+              <div className="bg-white p-2.5 sm:p-3 rounded-2xl sm:rounded-3xl shadow-2xl border-2 border-white/30 hover:scale-105 transition-all duration-300 w-full flex items-center justify-between space-x-3 group">
                 <img 
                   src={getMediaUrl("/ipvs_logo.jpg")} 
                   alt="IPVS 2026 Main Exhibition Official Logo" 
-                  className="h-16 sm:h-20 lg:h-24 w-auto object-contain rounded-lg"
+                  className="h-14 sm:h-16 w-auto object-contain rounded-lg"
                 />
-                <div className="text-left pr-2 hidden sm:block">
+                <div className="text-left pr-2">
                   <span className="block text-[10px] font-extrabold uppercase tracking-widest text-[#0e89d0]">Official Exhibition</span>
                   <h4 className="text-sm font-black text-slate-900 font-heading leading-tight">IPVS 2026</h4>
                   <p className="text-[11px] text-slate-500 font-medium">HITEX Hyderabad • Dec 03-04</p>
@@ -115,51 +134,91 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
               </div>
             </div>
 
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Speaker Video Container Frame */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 group">
-                <img 
-                  src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=700&q=70" 
-                  alt="IPVS Keynote Conference Speaker"
-                  className="w-full h-[380px] sm:h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                />
-
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111183]/90 via-transparent to-transparent"></div>
-
-                {/* Floating Video Play Button Badge */}
-                <button 
-                  onClick={() => setIsVideoOpen(true)}
-                  className="absolute inset-0 m-auto w-20 h-20 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-[#111183] shadow-2xl transition-transform transform hover:scale-110 cursor-pointer group-hover:shadow-blue-900/50"
-                  aria-label="Play Conference Video"
+            {/* Vertical Reel Video Device Frame */}
+            <div className="relative w-full max-w-[280px] sm:max-w-[310px] lg:max-w-[330px]">
+              <div 
+                onClick={() => setIsVideoOpen(true)}
+                className="relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-4 border-white/30 bg-slate-950 aspect-[9/16] group cursor-pointer"
+              >
+                {/* Autoplay Reel Video */}
+                <video
+                  ref={videoRef}
+                  autoPlay
+                  loop
+                  muted={isMuted}
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 >
-                  <Play className="w-8 h-8 fill-current ml-1" />
-                </button>
+                  <source src={reelCdnUrl} type="video/mp4" />
+                  <source src={reelLocalUrl} type="video/mp4" />
+                  <source src="/ipvs reel.mp4" type="video/mp4" />
+                </video>
 
-                {/* Bottom Speaker Info Overlay */}
-                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-left">
-                  <div>
-                    <h4 className="text-lg font-bold text-white">IPVS 2026 Keynote Summit</h4>
-                    <p className="text-xs text-slate-300">Live Demonstrations & Technical Sessions</p>
+                {/* Subtle Cinematic Vignette */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none" />
+
+                {/* Top Overlay: Live Reel Tag & Interactive Controls */}
+                <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between z-10 pointer-events-auto">
+                  <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-black tracking-wider uppercase border border-white/20 flex items-center space-x-1.5 shadow-md">
+                    <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <span>IPVS REEL</span>
+                  </span>
+
+                  <div className="flex items-center space-x-2">
+                    {/* Sound Toggle Button */}
+                    <button
+                      type="button"
+                      onClick={toggleSound}
+                      className="w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 backdrop-blur-md text-white flex items-center justify-center border border-white/20 transition-all hover:scale-110 shadow-md"
+                      title={isMuted ? "Tap to Unmute" : "Mute Video"}
+                      aria-label="Toggle sound"
+                    >
+                      {isMuted ? (
+                        <VolumeX className="w-4 h-4 text-white/90" />
+                      ) : (
+                        <Volume2 className="w-4 h-4 text-cyan-400" />
+                      )}
+                    </button>
+
+                    {/* Expand to Fullscreen Modal Button */}
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); setIsVideoOpen(true); }}
+                      className="w-8 h-8 rounded-full bg-black/60 hover:bg-black/90 backdrop-blur-md text-white flex items-center justify-center border border-white/20 transition-all hover:scale-110 shadow-md"
+                      title="Watch Fullscreen"
+                      aria-label="Expand video"
+                    >
+                      <Maximize2 className="w-3.5 h-3.5 text-white/90" />
+                    </button>
                   </div>
-                  <div className="flex -space-x-2">
-                    <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Speaker" loading="lazy" decoding="async" />
-                    <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Speaker" loading="lazy" decoding="async" />
-                    <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Speaker" loading="lazy" decoding="async" />
+                </div>
+
+                {/* Bottom Overlay: Video Title & Action CTA */}
+                <div className="absolute bottom-4 left-4 right-4 text-left z-10 pointer-events-none">
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-bold text-cyan-300 tracking-wider uppercase block drop-shadow-sm flex items-center space-x-1">
+                      <Sparkles className="w-3 h-3" />
+                      <span>Official Event Showcase</span>
+                    </span>
+                    <h4 className="text-sm sm:text-base font-extrabold text-white font-heading leading-tight drop-shadow-md">
+                      Pumps, Valves & Automation 2026
+                    </h4>
+                    <p className="text-[11px] text-slate-200 drop-shadow-sm">
+                      HITEX Hyderabad • Dec 03-04
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* Floating Badge Detail */}
-              <div className="absolute -bottom-6 -left-6 bg-white text-slate-900 p-4 rounded-2xl shadow-2xl border border-slate-200 flex items-center space-x-3 hidden sm:flex">
-                <div className="w-12 h-12 rounded-xl bg-[#111183]/10 text-[#111183] flex items-center justify-center font-bold text-xl">
+              {/* Floating Badge Detail: 100+ Exhibitors */}
+              <div className="absolute -bottom-4 -left-4 sm:-bottom-5 sm:-left-5 bg-white text-slate-900 p-3 sm:p-3.5 rounded-2xl shadow-2xl border border-slate-200 flex items-center space-x-2.5 z-20 hover:scale-105 transition-transform duration-300">
+                <div className="w-10 h-10 rounded-xl bg-[#111183]/10 text-[#111183] flex items-center justify-center font-black text-lg">
                   100+
                 </div>
                 <div>
-                  <p className="text-xs font-extrabold text-slate-900 uppercase">Exhibitors</p>
-                  <p className="text-[11px] text-slate-500">Global & Indian Brands</p>
+                  <p className="text-xs font-black text-slate-900 uppercase tracking-tight">Exhibitors</p>
+                  <p className="text-[10px] text-slate-500 font-semibold">Global & Indian Brands</p>
                 </div>
               </div>
 
@@ -181,28 +240,37 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         </svg>
       </div>
 
-      {/* Video Modal Preview */}
+      {/* Fullscreen Reel Video Modal Preview with Sound */}
       {isVideoOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
-          <div className="relative w-full max-w-4xl bg-slate-900 rounded-2xl overflow-hidden shadow-2xl">
+        <div 
+          onClick={() => setIsVideoOpen(false)}
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
+        >
+          <div 
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-[340px] sm:max-w-[380px] aspect-[9/16] max-h-[92vh] bg-slate-950 rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 flex flex-col justify-center items-center"
+          >
             <button 
               onClick={() => setIsVideoOpen(false)}
-              className="absolute top-4 right-4 text-white hover:text-slate-300 text-xl font-bold z-10 bg-black/50 w-10 h-10 rounded-full flex items-center justify-center"
+              className="absolute top-3.5 right-3.5 text-white hover:text-slate-300 text-sm font-bold z-30 bg-black/70 hover:bg-black w-9 h-9 rounded-full flex items-center justify-center transition-all border border-white/20 shadow-lg"
+              aria-label="Close Modal"
             >
               ✕
             </button>
-            <div className="aspect-video w-full">
-              <iframe 
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/xWqE6zKnFjU?autoplay=1&rel=0" 
-                title="IPVS Event Official Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
+            <video 
+              autoPlay 
+              controls 
+              playsInline 
+              className="w-full h-full object-cover"
+            >
+              <source src={reelCdnUrl} type="video/mp4" />
+              <source src={reelLocalUrl} type="video/mp4" />
+              <source src="/ipvs reel.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       )}
     </section>
   );
 };
+
