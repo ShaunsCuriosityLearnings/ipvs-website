@@ -62,6 +62,19 @@ export const submitLead = async (data: LeadSubmissionData): Promise<LeadSubmissi
       submittedAt: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
     };
 
+    // If client-side Google Sheet Webhook is set, dispatch directly to Google Sheets as well
+    const clientGoogleSheetUrl = (import.meta as any).env?.VITE_GOOGLE_SHEETS_SCRIPT_URL;
+    if (clientGoogleSheetUrl && typeof clientGoogleSheetUrl === 'string' && clientGoogleSheetUrl.startsWith('http')) {
+      fetch(clientGoogleSheetUrl, {
+        method: 'POST',
+        mode: 'no-cors', // Standard for Google Apps Script Web Apps to prevent browser CORS blockages
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(sheetErr => {
+        console.warn('[Direct Google Sheet Webhook Notice]', sheetErr);
+      });
+    }
+
     const response = await fetch('/api/send-lead', {
       method: 'POST',
       headers: {

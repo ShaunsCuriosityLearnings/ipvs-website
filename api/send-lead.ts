@@ -260,6 +260,38 @@ Delivered to: ${targetEmail}
   };
 }
 
+/**
+ * Forwards lead directly to Google Sheets Webhook via Google Apps Script
+ */
+export async function forwardToGoogleSheet(payload: LeadPayload): Promise<{ success: boolean; message: string }> {
+  const googleSheetUrl = process.env.GOOGLE_SHEETS_SCRIPT_URL || process.env.GOOGLE_SHEET_URL;
+  if (!googleSheetUrl || googleSheetUrl.trim() === '') {
+    return { success: false, message: 'GOOGLE_SHEETS_SCRIPT_URL not configured' };
+  }
+
+  try {
+    const response = await fetch(googleSheetUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload),
+      redirect: 'follow'
+    });
+
+    if (response.ok) {
+      console.log(`[Google Sheets] Lead successfully logged for ${payload.firstName} ${payload.lastName}`);
+      return { success: true, message: 'Logged to Google Sheets' };
+    } else {
+      console.warn(`[Google Sheets Warning] HTTP ${response.status}`);
+      return { success: false, message: `HTTP ${response.status}` };
+    }
+  } catch (error: any) {
+    console.error('[Google Sheets Error]', error);
+    return { success: false, message: error.message };
+  }
+}
+
 // Default export for Vercel Serverless Function handler
 export default async function handler(req: any, res: any) {
   // Enable CORS
@@ -290,13 +322,25 @@ export default async function handler(req: any, res: any) {
       });
     }
 
-    const result = await processLeadEmail(payload);
-    return res.status(200).json(result);
+    // Simultaneously dispatch to Google Sheets and Email
+    const [sheetResult, emailResult] = await Promise.allSettled([
+      forwardToGoogleSheet(payload),
+      processLeadEmail(payload)
+    ]);
+
+    const emailResponse = emailResult.status === 'fulfilled' ? emailResult.value : { success: false, message: 'Email dispatch failed' };
+    const sheetResponse = sheetResult.status === 'fulfilled' ? sheetResult.value : { success: false, message: 'Sheet dispatch failed' };
+
+    return res.status(200).json({
+      success: true,
+      message: emailResponse.message,
+      googleSheet: sheetResponse.success ? 'recorded' : sheetResponse.message
+    });
   } catch (error: any) {
-    console.error('[Nodemailer Error]', error);
+    console.error('[Nodemailer/Sheets Error]', error);
     return res.status(500).json({
       success: false,
-      error: error.message || 'Failed to dispatch email lead'
+      error: error.message || 'Failed to dispatch lead'
     });
   }
 }
