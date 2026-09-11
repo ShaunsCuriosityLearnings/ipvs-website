@@ -264,10 +264,8 @@ Delivered to: ${targetEmail}
  * Forwards lead directly to Google Sheets Webhook via Google Apps Script
  */
 export async function forwardToGoogleSheet(payload: LeadPayload): Promise<{ success: boolean; message: string }> {
-  const googleSheetUrl = process.env.GOOGLE_SHEETS_SCRIPT_URL || process.env.GOOGLE_SHEET_URL;
-  if (!googleSheetUrl || googleSheetUrl.trim() === '') {
-    return { success: false, message: 'GOOGLE_SHEETS_SCRIPT_URL not configured' };
-  }
+  const DEFAULT_GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbx9bdhZcGLXFApXJzxFd9DR5tgjRyegFhA2cffAfLaab1TC05YYOPBXeZpKzM2VAEjD/exec';
+  const googleSheetUrl = process.env.GOOGLE_SHEETS_SCRIPT_URL || process.env.GOOGLE_SHEET_URL || DEFAULT_GOOGLE_SHEETS_URL;
 
   try {
     const response = await fetch(googleSheetUrl, {

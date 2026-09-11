@@ -62,8 +62,9 @@ export const submitLead = async (data: LeadSubmissionData): Promise<LeadSubmissi
       submittedAt: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
     };
 
-    // If client-side Google Sheet Webhook is set, dispatch directly to Google Sheets as well
-    const clientGoogleSheetUrl = (import.meta as any).env?.VITE_GOOGLE_SHEETS_SCRIPT_URL;
+    // Directly dispatch to Google Sheets as well
+    const DEFAULT_GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbx9bdhZcGLXFApXJzxFd9DR5tgjRyegFhA2cffAfLaab1TC05YYOPBXeZpKzM2VAEjD/exec';
+    const clientGoogleSheetUrl = (import.meta as any).env?.VITE_GOOGLE_SHEETS_SCRIPT_URL || DEFAULT_GOOGLE_SHEETS_URL;
     if (clientGoogleSheetUrl && typeof clientGoogleSheetUrl === 'string' && clientGoogleSheetUrl.startsWith('http')) {
       fetch(clientGoogleSheetUrl, {
         method: 'POST',
