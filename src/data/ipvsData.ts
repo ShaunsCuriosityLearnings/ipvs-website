@@ -511,6 +511,17 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "High performance nickel alloy fittings, titanium piping, and corrosion-resistant valves.",
     country: "India",
     featured: true
+  },
+  {
+    id: "ex-19",
+    name: "Omval Controls PVT. LTD",
+    sector: "Industrial Valves & Flow Control",
+    booth: "Hall 2 - Booth B204",
+    logo: "/Logo/omvalcontrolspvt.PNG",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Precision engineered industrial valves, butterfly valves, flow control systems, and automated actuation solutions.",
+    country: "India",
+    featured: true
   }
 ].map(e => ({
   ...e,
