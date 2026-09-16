@@ -220,6 +220,11 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onOpenModal }) => {
                     <span className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-medium">
                       {blog.category}
                     </span>
+                    {blog.carouselImages && blog.carouselImages.length > 0 && (
+                      <span className="px-2.5 py-1 rounded-full bg-indigo-600 text-white text-[10px] font-bold shadow-md flex items-center space-x-1">
+                        <span>📸 {blog.carouselImages.length} Slides</span>
+                      </span>
+                    )}
                   </div>
                 </div>
 

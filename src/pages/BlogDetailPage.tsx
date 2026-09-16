@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { BLOG_ARTICLES, BlogArticle } from '../data/ipvsData';
 import { InlineRegistrationForm } from '../components/common/InlineRegistrationForm';
@@ -11,12 +11,272 @@ import {
   Share2, 
   CheckCircle2, 
   HelpCircle, 
+  ChevronLeft,
   ChevronRight, 
   Building2, 
   Users, 
   Sparkles,
-  ExternalLink
+  ExternalLink,
+  Maximize2,
+  X,
+  Play,
+  Pause,
+  Layers
 } from 'lucide-react';
+
+const slideCaptions: Record<number, string> = {
+  0: "Slide 1: Can a 50-Year-Old Factory Become an Industry 4.0 Factory?",
+  1: "Slide 2: The Transformation — You Don't Always Need a New Factory",
+  2: "Slide 3: The Proof — Siemens Kalwa Case Study (21s→9s, +35% Capacity, -86% Carbon)",
+  3: "Slide 4: The Opportunity — Your Factory Could Be Next at IPVS 2026",
+  4: "Slide 5: IPVS 2026 — 3–4 December 2026 HITEX Hyderabad • Visit & Exhibit"
+};
+
+interface BlogCarouselProps {
+  images: string[];
+  title: string;
+}
+
+const BlogCarousel: React.FC<BlogCarouselProps> = ({ images, title }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isAutoPlay, setIsAutoPlay] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  useEffect(() => {
+    if (!isAutoPlay) return;
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [isAutoPlay, currentIndex]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'Escape') setIsFullscreen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [images.length]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart === null) return;
+    const touchEnd = e.changedTouches[0].clientX;
+    const diff = touchStart - touchEnd;
+    if (diff > 50) nextSlide();
+    if (diff < -50) prevSlide();
+    setTouchStart(null);
+  };
+
+  return (
+    <div className="space-y-3">
+      {/* Carousel Container */}
+      <div 
+        className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-2xl bg-slate-950 group select-none"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* Top Floating Action Bar */}
+        <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
+          <div className="flex items-center space-x-2 pointer-events-auto">
+            <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider flex items-center space-x-1.5 border border-white/10 shadow-lg">
+              <Layers className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Slide {currentIndex + 1} of {images.length}</span>
+            </span>
+          </div>
+
+          <div className="flex items-center space-x-2 pointer-events-auto">
+            <button
+              onClick={() => setIsAutoPlay(!isAutoPlay)}
+              className={`p-2 rounded-full backdrop-blur-md border transition-all ${
+                isAutoPlay 
+                  ? 'bg-blue-600/90 border-blue-400 text-white shadow-lg' 
+                  : 'bg-black/60 border-white/10 text-white/80 hover:text-white hover:bg-black/80'
+              }`}
+              title={isAutoPlay ? "Pause slideshow" : "Auto-play slideshow"}
+              aria-label="Toggle auto-play"
+            >
+              {isAutoPlay ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+            </button>
+            <button
+              onClick={() => setIsFullscreen(true)}
+              className="p-2 rounded-full bg-black/60 hover:bg-black/80 text-white/80 hover:text-white backdrop-blur-md border border-white/10 transition-colors shadow-lg"
+              title="View fullscreen"
+              aria-label="Fullscreen view"
+            >
+              <Maximize2 className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Slide Display */}
+        <div 
+          className="relative w-full aspect-[4/5] sm:aspect-square md:aspect-[16/10] max-h-[620px] flex items-center justify-center bg-slate-950 cursor-pointer overflow-hidden"
+          onClick={() => setIsFullscreen(true)}
+        >
+          <img
+            key={currentIndex}
+            src={images[currentIndex]}
+            alt={`${title} - Slide ${currentIndex + 1}`}
+            className="w-full h-full object-contain transition-all duration-300"
+            loading="eager"
+          />
+        </div>
+
+        {/* Floating Navigation Arrows */}
+        <button
+          onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-transform active:scale-95"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        <button
+          onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-xl transition-transform active:scale-95"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+
+        {/* Bottom Slide Caption Bar */}
+        <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 pt-10 text-white flex flex-col sm:flex-row items-center justify-between gap-2 z-10">
+          <p className="text-xs sm:text-sm font-medium text-slate-200 truncate max-w-full text-center sm:text-left">
+            {slideCaptions[currentIndex] || `Visual Slide ${currentIndex + 1}`}
+          </p>
+          <div className="flex items-center space-x-1.5 shrink-0">
+            {images.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={(e) => { e.stopPropagation(); setCurrentIndex(idx); }}
+                className={`h-2 rounded-full transition-all ${
+                  idx === currentIndex ? 'w-6 bg-[#1E65FF]' : 'w-2 bg-white/40 hover:bg-white/70'
+                }`}
+                aria-label={`Jump to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Interactive Thumbnail Strip */}
+      <div className="grid grid-cols-5 gap-2 sm:gap-3 pt-1">
+        {images.map((img, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentIndex(idx)}
+            className={`relative rounded-xl overflow-hidden border-2 transition-all aspect-square bg-slate-900 ${
+              idx === currentIndex
+                ? 'border-[#1E65FF] ring-2 ring-blue-400 shadow-md scale-105'
+                : 'border-slate-200 opacity-60 hover:opacity-100 hover:border-slate-400'
+            }`}
+          >
+            <img
+              src={img}
+              alt={`Slide ${idx + 1} thumbnail`}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <span className="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/70 text-[9px] font-bold text-white">
+              {idx + 1}
+            </span>
+          </button>
+        ))}
+      </div>
+
+      <p className="text-[11px] text-slate-500 italic text-center pt-1">
+        Interactive 5-slide visual carousel • Swipe, use arrow keys, or click to enlarge.
+      </p>
+
+      {/* Fullscreen Lightbox Modal */}
+      {isFullscreen && (
+        <div 
+          className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center p-4 sm:p-8 select-none"
+          onClick={() => setIsFullscreen(false)}
+        >
+          {/* Modal Header */}
+          <div className="w-full max-w-5xl flex items-center justify-between text-white pb-3 z-30" onClick={(e) => e.stopPropagation()}>
+            <div className="space-y-0.5 text-left">
+              <span className="text-xs text-blue-400 font-bold uppercase tracking-wider">
+                IPVS 2026 Visual Presentation • Slide {currentIndex + 1} of {images.length}
+              </span>
+              <h4 className="text-sm sm:text-base font-bold text-slate-100">
+                {slideCaptions[currentIndex] || title}
+              </h4>
+            </div>
+            <button
+              onClick={() => setIsFullscreen(false)}
+              className="p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              aria-label="Close fullscreen"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Modal Image Display */}
+          <div 
+            className="relative w-full max-w-5xl max-h-[80vh] flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={images[currentIndex]}
+              alt={`Slide ${currentIndex + 1}`}
+              className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
+            />
+
+            {/* Left/Right Buttons */}
+            <button
+              onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+              className="absolute left-2 sm:-left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/70 hover:bg-black/90 text-white flex items-center justify-center border border-white/20 shadow-xl transition-transform active:scale-95"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-7 h-7" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+              className="absolute right-2 sm:-right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/70 hover:bg-black/90 text-white flex items-center justify-center border border-white/20 shadow-xl transition-transform active:scale-95"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-7 h-7" />
+            </button>
+          </div>
+
+          {/* Modal Thumbnail Indicators */}
+          <div 
+            className="w-full max-w-xl flex items-center justify-center gap-2 pt-4 z-30"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {images.map((img, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
+                  idx === currentIndex ? 'border-[#1E65FF] scale-110' : 'border-white/20 opacity-50 hover:opacity-80'
+                }`}
+              >
+                <img src={img} alt={`Slide ${idx + 1}`} className="w-full h-full object-cover" />
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 interface BlogDetailPageProps {
   onOpenModal?: (mode: 'exhibitor' | 'visitor' | 'contact') => void;
@@ -41,16 +301,40 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ onOpenModal }) =
     if (blog) {
       document.title = `${blog.seoTitle || blog.title} | IPVS 2026`;
 
-      // Update meta description
-      let metaDesc = document.querySelector("meta[name='description']");
-      if (!metaDesc) {
-        metaDesc = document.createElement('meta');
-        metaDesc.setAttribute('name', 'description');
-        document.head.appendChild(metaDesc);
-      }
-      metaDesc.setAttribute('content', blog.metaDescription || blog.excerpt);
+      // Helper function to update or create meta tags
+      const setMetaTag = (property: string, content: string, isName = false) => {
+        const attr = isName ? 'name' : 'property';
+        let el = document.querySelector(`meta[${attr}='${property}']`);
+        if (!el) {
+          el = document.createElement('meta');
+          el.setAttribute(attr, property);
+          document.head.appendChild(el);
+        }
+        el.setAttribute('content', content);
+      };
 
-      // Add JSON-LD Article Schema for Google SEO
+      setMetaTag('description', blog.metaDescription || blog.excerpt, true);
+      setMetaTag('keywords', blog.tags.join(', '), true);
+      setMetaTag('og:title', `${blog.seoTitle || blog.title} | IPVS 2026`);
+      setMetaTag('og:description', blog.metaDescription || blog.excerpt);
+      setMetaTag('og:image', blog.image.startsWith('http') ? blog.image : window.location.origin + blog.image);
+      setMetaTag('og:url', window.location.href);
+      setMetaTag('og:type', 'article');
+      setMetaTag('twitter:card', 'summary_large_image', true);
+      setMetaTag('twitter:title', `${blog.seoTitle || blog.title} | IPVS 2026`, true);
+      setMetaTag('twitter:description', blog.metaDescription || blog.excerpt, true);
+      setMetaTag('twitter:image', blog.image.startsWith('http') ? blog.image : window.location.origin + blog.image, true);
+
+      // Canonical link
+      let canonicalLink = document.querySelector("link[rel='canonical']") as HTMLLinkElement | null;
+      if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonicalLink);
+      }
+      canonicalLink.setAttribute('href', window.location.href);
+
+      // Add JSON-LD Article + FAQ + Breadcrumbs Schema Graph for Google SEO
       const scriptId = 'blog-jsonld-schema';
       let schemaScript = document.getElementById(scriptId) as HTMLScriptElement | null;
       if (!schemaScript) {
@@ -59,32 +343,87 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ onOpenModal }) =
         schemaScript.type = 'application/ld+json';
         document.head.appendChild(schemaScript);
       }
-      const schemaData = {
+
+      const allImages = blog.carouselImages && blog.carouselImages.length > 0
+        ? blog.carouselImages.map(img => img.startsWith('http') ? img : window.location.origin + img)
+        : [blog.image.startsWith('http') ? blog.image : window.location.origin + blog.image];
+
+      const schemaData: any = {
         "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "headline": blog.title,
-        "description": blog.metaDescription || blog.excerpt,
-        "image": [window.location.origin + blog.image],
-        "datePublished": "2026-01-20T08:00:00+05:30",
-        "dateModified": "2026-01-28T10:00:00+05:30",
-        "author": {
-          "@type": "Organization",
-          "name": blog.author,
-          "url": "https://ipvs.in"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Industrial Pumps & Valves Show (IPVS 2026)",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://ipvs.in/wp-content/uploads/2024/10/ipvs_logo-150x150.jpg"
+        "@graph": [
+          {
+            "@type": "TechArticle",
+            "@id": `${window.location.href}#article`,
+            "isPartOf": {
+              "@type": "WebPage",
+              "@id": window.location.href
+            },
+            "headline": blog.title,
+            "description": blog.metaDescription || blog.excerpt,
+            "image": allImages,
+            "datePublished": "2026-02-12T08:00:00+05:30",
+            "dateModified": new Date().toISOString(),
+            "author": {
+              "@type": "Organization",
+              "name": blog.author,
+              "url": "https://ipvs.in"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Industrial Pumps & Valves Show (IPVS 2026)",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://ipvs.in/wp-content/uploads/2024/10/ipvs_logo-150x150.jpg"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": window.location.href
+            },
+            "keywords": blog.tags.join(", ")
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": `${window.location.href}#breadcrumb`,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://ipvs.in"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blogs & Insights",
+                "item": "https://ipvs.in/blogs"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": blog.title,
+                "item": window.location.href
+              }
+            ]
           }
-        },
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": window.location.href
-        }
+        ]
       };
+
+      if (blog.faq && blog.faq.length > 0) {
+        schemaData["@graph"].push({
+          "@type": "FAQPage",
+          "@id": `${window.location.href}#faq`,
+          "mainEntity": blog.faq.map(item => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.answer
+            }
+          }))
+        });
+      }
+
       schemaScript.text = JSON.stringify(schemaData);
 
       return () => {
@@ -205,7 +544,9 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ onOpenModal }) =
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-5">
                   <span className="text-[11px] text-white/90 font-mono tracking-wide">
-                    Official Creative Asset • IPVS Exhibition Series
+                    {blog.carouselImages && blog.carouselImages.length > 0 
+                      ? `${blog.carouselImages.length}-Slide Interactive Presentation • IPVS 2026` 
+                      : 'Official Creative Asset • IPVS Exhibition Series'}
                   </span>
                 </div>
               </div>
@@ -380,19 +721,23 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ onOpenModal }) =
               </div>
             )}
 
-            {/* High-Resolution Creative Visual Infographic */}
-            <div className="space-y-2">
-              <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-900">
-                <img 
-                  src={blog.image} 
-                  alt={`${blog.title} - Official Technical Visual Graphic`}
-                  className="w-full h-auto object-contain max-h-[600px] mx-auto"
-                />
+            {/* Visual Media: Interactive Carousel or High-Resolution Graphic */}
+            {blog.carouselImages && blog.carouselImages.length > 0 ? (
+              <BlogCarousel images={blog.carouselImages} title={blog.title} />
+            ) : (
+              <div className="space-y-2">
+                <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-900">
+                  <img 
+                    src={blog.image} 
+                    alt={`${blog.title} - Official Technical Visual Graphic`}
+                    className="w-full h-auto object-contain max-h-[600px] mx-auto"
+                  />
+                </div>
+                <p className="text-[11px] text-slate-500 italic text-center">
+                  Fig: Official creative infographic released for the {blog.title} industry brief.
+                </p>
               </div>
-              <p className="text-[11px] text-slate-500 italic text-center">
-                Fig: Official creative infographic released for the {blog.title} industry brief.
-              </p>
-            </div>
+            )}
 
             {/* Primary Introductory Prose */}
             <div className="prose prose-slate max-w-none text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
