@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { EVENT_DETAILS } from '../../data/ipvsData';
 import { submitLead, HEARD_ABOUT_OPTIONS, SPONSORSHIP_TIERS } from '../../services/leadService';
+import { getStoredAttribution } from '../../utils/attribution';
 
 interface RegistrationModalProps {
   isOpen: boolean;
@@ -152,6 +153,20 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
               <Mail className="w-3.5 h-3.5 shrink-0" />
               <span className="truncate">Help Desk</span>
             </button>
+          </div>
+        )}
+
+        {!submitted && getStoredAttribution().invitingExhibitor && (
+          <div className="mb-4 px-3.5 py-2 rounded-xl bg-blue-50 border border-blue-200/80 text-[11px] font-semibold text-blue-900 flex items-center justify-between shadow-sm">
+            <span className="truncate pr-2 flex items-center gap-1.5">
+              <Award className="w-3.5 h-3.5 text-[#1E65FF] shrink-0" />
+              <span>VIP Invitation courtesy of: <strong>{getStoredAttribution().invitingExhibitor}</strong></span>
+            </span>
+            {getStoredAttribution().stallNumber && (
+              <span className="px-2 py-0.5 rounded bg-[#1E65FF] text-white font-mono text-[10px] font-bold shrink-0">
+                {getStoredAttribution().stallNumber}
+              </span>
+            )}
           </div>
         )}
 

@@ -1,3 +1,5 @@
+import { getStoredAttribution } from '../utils/attribution';
+
 /**
  * Lead Service for IPVS 2026 Portal
  * Dispatches form submissions to /api/send-lead which uses Nodemailer to deliver leads to info@orbitexhibitions.com
@@ -47,6 +49,15 @@ export interface LeadSubmissionData {
   sponsorshipTier?: string;
   heardFrom?: string;
   message?: string;
+  // Attribution & Tracking Fields (Auto-Injected)
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmContent?: string;
+  utmTerm?: string;
+  invitingExhibitor?: string;
+  landingPage?: string;
+  referrer?: string;
 }
 
 export interface LeadSubmissionResult {
@@ -57,10 +68,32 @@ export interface LeadSubmissionResult {
 
 export const submitLead = async (data: LeadSubmissionData): Promise<LeadSubmissionResult> => {
   try {
+    const storedAttr = getStoredAttribution();
+
     const payload = {
       ...data,
+      utmSource: data.utmSource || storedAttr.utmSource || 'Direct / Organic',
+      utmMedium: data.utmMedium || storedAttr.utmMedium || 'website',
+      utmCampaign: data.utmCampaign || storedAttr.utmCampaign || 'ipvs2026',
+      utmContent: data.utmContent || storedAttr.utmContent || storedAttr.stallNumber || undefined,
+      utmTerm: data.utmTerm || storedAttr.utmTerm || undefined,
+      invitingExhibitor: data.invitingExhibitor || storedAttr.invitingExhibitor || undefined,
+      landingPage: data.landingPage || storedAttr.landingPage || (typeof window !== 'undefined' ? window.location.pathname : undefined),
+      referrer: data.referrer || storedAttr.referrer || (typeof document !== 'undefined' ? document.referrer : undefined),
       submittedAt: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
     };
+
+    // Google Analytics 4 (GA4) Event Dispatch
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'generate_lead', {
+        form_type: data.formType,
+        source: payload.utmSource,
+        medium: payload.utmMedium,
+        campaign: payload.utmCampaign,
+        content: payload.utmContent,
+        inviting_exhibitor: payload.invitingExhibitor
+      });
+    }
 
     // Directly dispatch to Google Sheets as well
     const DEFAULT_GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbx9bdhZcGLXFApXJzxFd9DR5tgjRyegFhA2cffAfLaab1TC05YYOPBXeZpKzM2VAEjD/exec';

@@ -60,6 +60,12 @@ var HEADERS = [
   "Sponsorship Tier",
   "Sector / Interest",
   "How Did You Hear About Us?",
+  "Invited By Exhibitor",
+  "UTM Source",
+  "UTM Medium",
+  "UTM Campaign",
+  "UTM Content (Stall/Creative)",
+  "Landing Page URL",
   "Message / Requirements"
 ];
 
@@ -105,6 +111,12 @@ function doPost(e) {
     var sectorInterest = data.sectorInterest || "N/A";
     var heardFrom = data.heardFrom || "N/A";
     var message = data.message || "N/A";
+    var invitedByExhibitor = data.invitingExhibitor || "N/A";
+    var utmSource = data.utmSource || "N/A";
+    var utmMedium = data.utmMedium || "N/A";
+    var utmCampaign = data.utmCampaign || "N/A";
+    var utmContent = data.utmContent || "N/A";
+    var landingPage = data.landingPage || "N/A";
 
     var rowValues = [
       istTimestamp,
@@ -123,6 +135,12 @@ function doPost(e) {
       sponsorshipTier,
       sectorInterest,
       heardFrom,
+      invitedByExhibitor,
+      utmSource,
+      utmMedium,
+      utmCampaign,
+      utmContent,
+      landingPage,
       message
     ];
 

@@ -15,6 +15,9 @@ import { AdvisoryPage } from './pages/AdvisoryPage';
 import { ContactUsPage } from './pages/ContactUsPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsPage } from './pages/TermsPage';
+import { TrackedVisitPage } from './pages/TrackedVisitPage';
+import { InviteGeneratorPage } from './pages/InviteGeneratorPage';
+import { captureAttribution } from './utils/attribution';
 import { RegistrationModal } from './components/forms/RegistrationModal';
 import { MessageSquare, ArrowUp } from 'lucide-react';
 
@@ -23,6 +26,11 @@ function AppContent() {
   const [modalMode, setModalMode] = useState<'exhibitor' | 'visitor' | 'contact'>('exhibitor');
   const [selectedSqm, setSelectedSqm] = useState(18);
   const navigate = useNavigate();
+
+  // Capture UTM parameters on any initial landing across the domain
+  React.useEffect(() => {
+    captureAttribution();
+  }, []);
 
   const handleOpenModal = (mode: 'exhibitor' | 'visitor' | 'contact') => {
     setModalMode(mode);
@@ -72,6 +80,9 @@ function AppContent() {
           <Route path="/smart-valve-automation" element={<SmartValvePage onOpenModal={handleOpenModal} />} />
           <Route path="/smart-iot-pumps" element={<SmartPumpPage onOpenModal={handleOpenModal} />} />
           <Route path="/visitor" element={<VisitorPage onOpenModal={handleOpenModal} />} />
+          <Route path="/visit" element={<TrackedVisitPage onOpenModal={handleOpenModal} />} />
+          <Route path="/visitor-invite" element={<TrackedVisitPage onOpenModal={handleOpenModal} />} />
+          <Route path="/invite-generator" element={<InviteGeneratorPage />} />
           <Route path="/blogs" element={<BlogsPage onOpenModal={handleOpenModal} />} />
           <Route path="/blogs/:slug" element={<BlogDetailPage onOpenModal={handleOpenModal} />} />
           <Route path="/advisory-board" element={<AdvisoryPage onOpenModal={handleOpenModal} />} />

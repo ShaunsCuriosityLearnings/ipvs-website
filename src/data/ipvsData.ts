@@ -304,6 +304,8 @@ export const FAQS: FAQItem[] = [
 export interface ExhibitorItem {
   id: string;
   name: string;
+  slug?: string;
+  stall?: string;
   sector: string;
   booth: string;
   logo: string;
@@ -317,8 +319,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-1",
     name: "Bell-o-Seal Valves Private Limited",
+    slug: "bellseal",
+    stall: "Stall A5",
     sector: "Bellow Sealed Valves",
-    booth: "Hall 2 - Booth E110",
+    booth: "Stall A5",
     logo: "/Logo/bell-o-seal.webp",
     image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80",
     description: "Zero-leakage bellow seal valves for hazardous chemical, ethanol, and nuclear power applications.",
@@ -328,8 +332,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-2",
     name: "Grundfos Pumps India Pvt Ltd",
+    slug: "grundfos",
+    stall: "Stall A4",
     sector: "Pumps & Water Solutions",
-    booth: "Hall 1 - Booth A102",
+    booth: "Stall A4",
     logo: "/Logo/Grundfos Pumps India Pvt Ltd.PNG",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
     description: "Global leader in advanced pump solutions and energy-efficient water technologies for process industries.",
@@ -339,8 +345,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-3",
     name: "Ti Anode Fabricators Pvt.Ltd.",
+    slug: "tianode",
+    stall: "Stall L5",
     sector: "Specialty Electrodes",
-    booth: "Hall 3 - Booth B301",
+    booth: "Stall L5",
     logo: "/Logo/Ti Anode Fabricators Pvt.Ltd..webp",
     image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80",
     description: "Titanium anode and cathode fabrications for chemical electrolysis and electro-chlorination.",
@@ -350,8 +358,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-4",
     name: "Sandoz Valves (India) Pvt Ltd",
+    slug: "sandoz",
+    stall: "Stall L21",
     sector: "Process Control Valves",
-    booth: "Hall 2 - Booth C405",
+    booth: "Stall L21",
     logo: "/Logo/Sandoz Valves (India) Pvt Ltd.png",
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
     description: "High-performance stainless steel valves for pharmaceutical and bio-ethanol processing plants.",
@@ -361,8 +371,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-5",
     name: "Fivebro Water Services Pvt Ltd",
+    slug: "fivebro",
+    stall: "Stall A2A",
     sector: "Water Treatment Systems",
-    booth: "Hall 2 - Booth D201",
+    booth: "Stall A2A",
     logo: "/Logo/Fivebro Water Services Pvt Ltd.webp",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
     description: "Comprehensive industrial water treatment, reverse osmosis, and zero liquid discharge solutions.",
@@ -372,8 +384,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-6",
     name: "Adinath Extrusion Private Limited",
+    slug: "adinath",
+    stall: "Stall L9",
     sector: "Extrusion Machinery",
-    booth: "Hall 3 - Booth C110",
+    booth: "Stall L9",
     logo: "/Logo/Adinath Extrusion Private Limited.jpeg",
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
     description: "Industrial extrusion lines and specialized plastic pipe manufacturing systems.",
@@ -383,8 +397,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-7",
     name: "AIP Industries",
+    slug: "aip",
+    stall: "Stall A3",
     sector: "Precision Engineering",
-    booth: "Hall 3 - Booth A105",
+    booth: "Stall A3",
     logo: "/Logo/AIP Industries.png",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
     description: "Heavy duty industrial pump components, impellers, and custom alloy casting.",
@@ -394,8 +410,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-8",
     name: "Brevera Technologies Pvt Ltd",
+    slug: "brevera",
+    stall: "Stall L23",
     sector: "IIoT Telemetry Solutions",
-    booth: "Hall 2 - Booth E302",
+    booth: "Stall L23",
     logo: "/Logo/Brevera Technologies Pvt Ltd.png",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
     description: "Smart wireless vibration and acoustic sensors for predictive pump maintenance.",
@@ -405,8 +423,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-9",
     name: "The Supreme Industries Limited",
+    slug: "supreme",
+    stall: "Stall L30",
     sector: "Piping & Valves Systems",
-    booth: "Hall 1 - Booth C105",
+    booth: "Stall L30",
     logo: "/Logo/The Supreme Industries Limited.png",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
     description: "India's leading plastic piping system and industrial fluid handling manufacturer.",
@@ -416,8 +436,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-10",
     name: "Buchiglas India Private Limited",
+    slug: "buchiglas",
+    stall: "Stall L22",
     sector: "Chemical Reactor Systems",
-    booth: "Hall 1 - Booth A308",
+    booth: "Stall L22",
     logo: "/Logo/Buchiglas India Private Limited.jpg",
     image: "https://images.unsplash.com/photo-1542744094-3a3172720202?auto=format&fit=crop&w=600&q=80",
     description: "Swiss engineered glass reactors and pressure reaction equipment for pharmaceutical synthesis.",
@@ -427,8 +449,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-11",
     name: "Hitech Dynamic Controls Private Limited",
+    slug: "hitech",
+    stall: "Stall L13",
     sector: "Process Control & Instrumentation",
-    booth: "Hall 1 - Booth B118",
+    booth: "Stall L13",
     logo: "/Logo/Hitech Dynamic Controls Private Limited (2).jpeg",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
     description: "Advanced hydraulic controllers, digital positioners, and automated process valve telemetry.",
@@ -438,8 +462,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-12",
     name: "Lucas Tvs Limited",
+    slug: "lucastvs",
+    stall: "Stall L2",
     sector: "Electrical Motors & Drives",
-    booth: "Hall 1 - Booth E202",
+    booth: "Stall L2",
     logo: "/Logo/lucas TVS.PNG",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
     description: "High efficiency electric drive motors and pumps powering industrial automation.",
@@ -449,8 +475,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-13",
     name: "JK Seals India Pvt Ltd",
+    slug: "jkseals",
+    stall: "Stall L15",
     sector: "Mechanical Seals & Gaskets",
-    booth: "Hall 2 - Booth A401",
+    booth: "Stall L15",
     logo: "/Logo/JK SEAL LOGO -fINAL.jpg",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
     description: "Engineered mechanical seals, cartridge seals, and high-temp gland packing.",
@@ -460,8 +488,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-14",
     name: "Rajeev and Company (Kavaata Valves)",
+    slug: "kavaata",
+    stall: "Stall A31",
     sector: "Industrial Control Valves",
-    booth: "Hall 2 - Booth B112",
+    booth: "Stall A31",
     logo: "/Logo/Kavaata Valves.PNG",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
     description: "Precision engineered ball, butterfly, and check valves designed for demanding process conditions.",
@@ -471,8 +501,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-15",
     name: "Triumph Engineers & Associates Pvt. Ltd.",
+    slug: "triumph",
+    stall: "Stall A37",
     sector: "EPC & Skid Systems",
-    booth: "Hall 1 - Booth D208",
+    booth: "Stall A37",
     logo: "/Logo/Triumph Engineers & Associates Pvt. Ltd..PNG",
     image: "https://images.unsplash.com/photo-1542744094-3a3172720202?auto=format&fit=crop&w=600&q=80",
     description: "Turnkey industrial pumping skids, piping engineering, and plant automation consultancy.",
@@ -482,8 +514,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-16",
     name: "Swatika Industries",
+    slug: "swastika",
+    stall: "Stall L25",
     sector: "Heavy Duty Pumps",
-    booth: "Hall 3 - Booth D102",
+    booth: "Stall L25",
     logo: "/Logo/swastika.jpeg",
     image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80",
     description: "High capacity centrifugal and slurry pumps for steel and power plants.",
@@ -493,8 +527,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-17",
     name: "Sumatic Flow Controls Pvt Ltd",
+    slug: "sumatic",
+    stall: "Stall A19+20",
     sector: "Process Automation",
-    booth: "Hall 1 - Booth F204",
+    booth: "Stall A19+20",
     logo: "/Logo/Sumatic.jpeg",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
     description: "Pneumatic positioners, solenoid valves, and plant SCADA integration.",
@@ -504,8 +540,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-18",
     name: "RS Corrosion Resistant Alloys",
+    slug: "rsalloys",
+    stall: "Stall L10",
     sector: "Specialty Alloys & Metals",
-    booth: "Hall 3 - Booth C205",
+    booth: "Stall L10",
     logo: "/Logo/RS Corrosion Resistant Alloys.jpg",
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
     description: "High performance nickel alloy fittings, titanium piping, and corrosion-resistant valves.",
@@ -515,8 +553,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-19",
     name: "Omval Controls PVT. LTD",
+    slug: "omval",
+    stall: "Stall A11",
     sector: "Industrial Valves & Flow Control",
-    booth: "Hall 2 - Booth B204",
+    booth: "Stall A11",
     logo: "/Logo/omvalcontrolspvt.PNG",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
     description: "Precision engineered industrial valves, butterfly valves, flow control systems, and automated actuation solutions.",
@@ -526,8 +566,10 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
     id: "ex-20",
     name: "Alfa Pumps",
+    slug: "alfapumps",
+    stall: "Stall A108",
     sector: "Industrial & Chemical Process Pumps",
-    booth: "Hall 1 - Booth A108",
+    booth: "Stall A108",
     logo: "/Logo/alfapumps.PNG",
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
     description: "High-efficiency chemical process pumps, industrial centrifugal pumps, acid handling pumps, and fluid transfer solutions.",

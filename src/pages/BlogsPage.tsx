@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { BLOG_ARTICLES, BlogArticle } from '../data/ipvsData';
 import { InlineRegistrationForm } from '../components/common/InlineRegistrationForm';
 import { PastExhibitionGallery } from '../components/common/PastExhibitionGallery';
-import { Calendar, Clock, User, Search, Tag, ArrowRight, Sparkles, BookOpen } from 'lucide-react';
+import { Calendar, Clock, User, Search, Tag, ArrowRight, Sparkles, BookOpen, Layers } from 'lucide-react';
 import { SEO } from '../components/common/SEO';
 
 interface BlogsPageProps {
@@ -222,7 +222,8 @@ export const BlogsPage: React.FC<BlogsPageProps> = ({ onOpenModal }) => {
                     </span>
                     {blog.carouselImages && blog.carouselImages.length > 0 && (
                       <span className="px-2.5 py-1 rounded-full bg-indigo-600 text-white text-[10px] font-bold shadow-md flex items-center space-x-1">
-                        <span>📸 {blog.carouselImages.length} Slides</span>
+                        <Layers className="w-3 h-3" />
+                        <span>{blog.carouselImages.length} Slides</span>
                       </span>
                     )}
                   </div>
