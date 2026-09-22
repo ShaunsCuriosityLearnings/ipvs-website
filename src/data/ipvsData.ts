@@ -522,6 +522,17 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "Precision engineered industrial valves, butterfly valves, flow control systems, and automated actuation solutions.",
     country: "India",
     featured: true
+  },
+  {
+    id: "ex-20",
+    name: "Alfa Pumps",
+    sector: "Industrial & Chemical Process Pumps",
+    booth: "Hall 1 - Booth A108",
+    logo: "/Logo/alfapumps.PNG",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    description: "High-efficiency chemical process pumps, industrial centrifugal pumps, acid handling pumps, and fluid transfer solutions.",
+    country: "India",
+    featured: true
   }
 ].map(e => ({
   ...e,
