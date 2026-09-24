@@ -51,7 +51,7 @@ export const EVENT_DETAILS = {
     { label: "Focus Sectors", value: "Ethanol, Pharma & Water", change: "Core Demand" },
     { label: "Key Industries", value: "11 Priority Sectors", change: "Full Supply Chain" }
   ],
-  brochureUrl: "https://ipvs.in/wp-content/uploads/2026/04/IPVS_Brochure_2026.pdf"
+  brochureUrl: "https://drive.google.com/file/d/1MJMJ49QivzPB7QsOC95B741Y64RjoDud/view?usp=sharing"
 };
 
 export const ADVISORY_BOARD: AdvisoryMember[] = [

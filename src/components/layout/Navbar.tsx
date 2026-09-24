@@ -214,9 +214,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
           <Link to="/contact-us" onClick={closeMenus} className="block px-3 py-2 text-sm font-medium text-slate-200 hover:text-white hover:bg-[#1E65FF] rounded-lg">Contact Us</Link>
 
 
-          <div className="pt-2 border-t border-white/10 grid grid-cols-2 gap-2">
-            <button onClick={() => { onOpenModal('visitor'); closeMenus(); }} className="w-full py-2.5 rounded-xl text-xs font-bold text-white bg-[#1E65FF]">Get Tickets</button>
-            <button onClick={() => { onOpenModal('exhibitor'); closeMenus(); }} className="w-full py-2.5 rounded-xl text-xs font-semibold text-[#00D2FF] bg-white/10 border border-white/10">Book Stall</button>
+          <div className="pt-2 border-t border-white/10 space-y-2">
+            <div className="grid grid-cols-2 gap-2">
+              <button onClick={() => { onOpenModal('visitor'); closeMenus(); }} className="w-full py-2.5 rounded-xl text-xs font-bold text-white bg-[#1E65FF]">Get Tickets</button>
+              <button onClick={() => { onOpenModal('exhibitor'); closeMenus(); }} className="w-full py-2.5 rounded-xl text-xs font-semibold text-[#00D2FF] bg-white/10 border border-white/10">Book Stall</button>
+            </div>
+            <a
+              href={EVENT_DETAILS.brochureUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenus}
+              className="w-full py-2.5 rounded-xl text-xs font-semibold text-slate-200 hover:text-white bg-white/10 border border-white/10 flex items-center justify-center space-x-2"
+            >
+              <Download className="w-3.5 h-3.5 text-[#00D2FF]" />
+              <span>Download Brochure</span>
+            </a>
           </div>
         </div>
       )}
