@@ -39,6 +39,7 @@ export function findExhibitorByQuery(query: string | null | undefined): Exhibito
     if (clean === 'bellseal' && e.name.toLowerCase().includes('bell-o-seal')) return true;
     if (clean === 'omval' && e.name.toLowerCase().includes('omval')) return true;
     if (clean === 'kavaata' && e.name.toLowerCase().includes('kavaata')) return true;
+    if (clean.includes('delval') && e.name.toLowerCase().includes('delval')) return true;
     return false;
   });
 }

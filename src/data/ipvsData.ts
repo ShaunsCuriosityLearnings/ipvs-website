@@ -575,6 +575,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "High-efficiency chemical process pumps, industrial centrifugal pumps, acid handling pumps, and fluid transfer solutions.",
     country: "India",
     featured: true
+  },
+  {
+    id: "ex-21",
+    name: "DelVal Flow Controls Pvt Ltd",
+    slug: "delvalflow",
+    stall: "Stall A21+22",
+    sector: "Flow Control & Automated Valves",
+    booth: "Stall A21+22",
+    logo: "/Logo/DelVal Flow Controls Pvt Ltd.png",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Global manufacturer of high-quality quarter-turn valves, butterfly valves, ball valves, actuators, and automation systems.",
+    country: "India / USA",
+    featured: true
   }
 ].map(e => ({
   ...e,
