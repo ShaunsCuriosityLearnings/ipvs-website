@@ -612,39 +612,14 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ onOpenModal }) =
       </header>
 
 
-      {/* 2. Editorial Author & Pull Quote Strip - Matched with User Screenshot */}
-      <section className="bg-white border-b border-slate-200 py-8 sm:py-10">
+      {/* 2. Editorial Pull Quote Strip */}
+      <section className="bg-white border-b border-slate-200 py-6 sm:py-8">
         <div className="max-w-[98%] 2xl:max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            {/* Author Card (Left) */}
-            <div className="lg:col-span-4 flex items-center space-x-4 border-b lg:border-b-0 lg:border-r border-slate-200 pb-6 lg:pb-0 lg:pr-8">
-              {blog.authorAvatar ? (
-                <img 
-                  src={blog.authorAvatar} 
-                  alt={blog.author} 
-                  className="w-16 h-16 rounded-full object-cover border-2 border-[#1E65FF] shadow-md shrink-0" 
-                />
-              ) : (
-                <div className="w-16 h-16 rounded-full bg-[#1E65FF]/10 text-[#1E65FF] font-bold text-xl flex items-center justify-center border-2 border-[#1E65FF] shrink-0">
-                  {blog.author.charAt(0)}
-                </div>
-              )}
-              <div className="space-y-1 text-left">
-                <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Written by</p>
-                <h3 className="text-base font-extrabold text-slate-900 leading-snug">{blog.author}</h3>
-                <p className="text-xs text-slate-500 font-medium">{blog.authorRole}</p>
-                <p className="text-[11px] text-blue-600 font-semibold">{blog.date} | HITEX Hyderabad</p>
-              </div>
-            </div>
-
-            {/* Editorial Pull Quote (Right) - Large, High-Contrast Typography from Reference Screenshot */}
-            <div className="lg:col-span-8 text-left pl-0 lg:pl-4">
-              <blockquote className="text-xl sm:text-2xl lg:text-3xl font-serif italic font-semibold text-[#0A192F] leading-snug sm:leading-relaxed">
-                "{blog.pullQuote || blog.excerpt}"
-              </blockquote>
-            </div>
-
+          <div className="flex items-center space-x-4 max-w-5xl">
+            <div className="w-1.5 self-stretch bg-[#1E65FF] rounded-full shrink-0"></div>
+            <blockquote className="text-lg sm:text-xl lg:text-2xl font-serif italic font-medium text-[#0A192F] leading-snug sm:leading-relaxed text-left">
+              "{blog.pullQuote || blog.excerpt}"
+            </blockquote>
           </div>
         </div>
       </section>
