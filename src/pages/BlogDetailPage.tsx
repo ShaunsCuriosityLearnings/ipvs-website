@@ -21,8 +21,62 @@ import {
   X,
   Play,
   Pause,
-  Layers
+  Layers,
+  Globe,
+  ShieldCheck,
+  MapPin,
+  Compass
 } from 'lucide-react';
+
+// Helper to parse markdown links [label](url) and make them clickable
+const renderFormattedText = (text: string) => {
+  if (!text) return null;
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    const label = match[1];
+    const url = match[2];
+    const isExternal = url.startsWith('http://') || url.startsWith('https://');
+
+    if (isExternal) {
+      parts.push(
+        <a
+          key={match.index}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#1E65FF] hover:text-[#0048db] font-semibold underline underline-offset-2 transition-colors inline-flex items-center gap-0.5"
+        >
+          <span>{label}</span>
+          <ExternalLink className="w-3 h-3 inline-block shrink-0 opacity-70" />
+        </a>
+      );
+    } else {
+      parts.push(
+        <Link
+          key={match.index}
+          to={url}
+          className="text-[#1E65FF] hover:text-[#0048db] font-semibold underline underline-offset-2 transition-colors"
+        >
+          {label}
+        </Link>
+      );
+    }
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : text;
+};
 
 const slideCaptions: Record<number, string> = {
   0: "Slide 1: Can a 50-Year-Old Factory Become an Industry 4.0 Factory?",
@@ -714,7 +768,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ onOpenModal }) =
                   {blog.keyTakeaways.map((takeaway, idx) => (
                     <li key={idx} className="flex items-start space-x-2 leading-relaxed">
                       <span className="text-[#1E65FF] font-bold mt-0.5">•</span>
-                      <span>{takeaway}</span>
+                      <span>{renderFormattedText(takeaway)}</span>
                     </li>
                   ))}
                 </ul>
@@ -742,7 +796,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ onOpenModal }) =
             {/* Primary Introductory Prose */}
             <div className="prose prose-slate max-w-none text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
               <p className="first-letter:text-5xl first-letter:font-extrabold first-letter:text-[#1E65FF] first-letter:mr-3 first-letter:float-left first-letter:font-heading leading-relaxed">
-                {blog.content}
+                {renderFormattedText(blog.content)}
               </p>
             </div>
 
@@ -755,13 +809,31 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ onOpenModal }) =
 
                 {section.content.map((paragraph, pIdx) => (
                   <p key={pIdx} className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                    {paragraph}
+                    {renderFormattedText(paragraph)}
                   </p>
                 ))}
 
+                {section.image && (
+                  <div className="my-6 space-y-2">
+                    <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-slate-950 group">
+                      <img
+                        src={section.image}
+                        alt={section.imageCaption || section.heading}
+                        className="w-full h-auto max-h-[520px] object-cover mx-auto transition-transform duration-500 group-hover:scale-[1.02]"
+                        loading="lazy"
+                      />
+                    </div>
+                    {section.imageCaption && (
+                      <p className="text-xs text-slate-500 italic text-center font-medium">
+                        {section.imageCaption}
+                      </p>
+                    )}
+                  </div>
+                )}
+
                 {section.callout && (
                   <div className="my-5 p-5 rounded-2xl bg-slate-900 text-white border-l-4 border-cyan-400 text-sm font-semibold italic shadow-md">
-                    "{section.callout}"
+                    "{renderFormattedText(section.callout)}"
                   </div>
                 )}
 
@@ -770,13 +842,123 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ onOpenModal }) =
                     {section.bulletPoints.map((point, bIdx) => (
                       <div key={bIdx} className="flex items-start space-x-2.5 text-xs sm:text-sm text-slate-800">
                         <CheckCircle2 className="w-4 h-4 text-[#1E65FF] shrink-0 mt-0.5" />
-                        <span className="leading-relaxed font-medium">{point}</span>
+                        <span className="leading-relaxed font-medium">{renderFormattedText(point)}</span>
                       </div>
                     ))}
                   </div>
                 )}
               </section>
             ))}
+
+            {/* Featured Exhibitor & Product Showcase Hub */}
+            {blog.companyInfo && (
+              <div className="my-8 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-white p-6 sm:p-8 border border-blue-500/20 shadow-2xl space-y-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
+                  <div className="space-y-1.5">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="px-2.5 py-1 rounded-md bg-blue-500/20 border border-blue-400/30 text-blue-300 text-[11px] font-extrabold uppercase tracking-wider flex items-center gap-1">
+                        <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
+                        Confirmed IPVS 2026 Exhibitor
+                      </span>
+                      <span className="px-2.5 py-1 rounded-md bg-amber-500/20 border border-amber-400/30 text-amber-300 text-[11px] font-extrabold uppercase tracking-wider flex items-center gap-1">
+                        <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                        {blog.companyInfo.stallNumber} • {blog.companyInfo.hallName || 'HITEX Hyderabad'}
+                      </span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-black font-heading text-white">
+                      {blog.companyInfo.companyName}
+                    </h3>
+                    {blog.companyInfo.advisoryName && (
+                      <p className="text-xs text-slate-300">
+                        Advisory Leadership: <strong className="text-white">{blog.companyInfo.advisoryName}</strong> ({blog.companyInfo.advisoryRole})
+                      </p>
+                    )}
+                  </div>
+
+                  <a
+                    href={blog.companyInfo.websiteUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
+                  >
+                    <Globe className="w-4 h-4" />
+                    <span>Visit Official Website</span>
+                    <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                  </a>
+                </div>
+
+                {/* Promoted Products Grid */}
+                <div className="space-y-3">
+                  <p className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                    <Compass className="w-3.5 h-3.5 text-blue-400" />
+                    Featured Industrial Products & Technical Solutions
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {blog.companyInfo.products.map((prod, pIdx) => (
+                      <a
+                        key={pIdx}
+                        href={prod.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex flex-col justify-between p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/40 transition-all duration-300"
+                      >
+                        <div className="space-y-2">
+                          {prod.badge && (
+                            <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-blue-500/20 text-blue-300">
+                              {prod.badge}
+                            </span>
+                          )}
+                          <h4 className="text-sm font-bold text-white group-hover:text-blue-300 transition-colors flex items-start justify-between gap-1">
+                            <span>{prod.name}</span>
+                            <ExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0 mt-0.5" />
+                          </h4>
+                          <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                            {prod.description}
+                          </p>
+                        </div>
+                        <div className="mt-3 pt-3 border-t border-white/10 text-[11px] font-semibold text-blue-400 group-hover:text-blue-300 flex items-center gap-1">
+                          <span>Explore Product Specs</span>
+                          <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Fallback Conversion Gateway to IPVS */}
+                <div className="pt-4 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <Link
+                    to="/visitor"
+                    className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-blue-600/30 to-blue-500/20 hover:from-blue-600/50 hover:to-blue-500/40 border border-blue-400/30 transition-all group"
+                  >
+                    <div>
+                      <span className="text-[10px] uppercase font-extrabold text-blue-300 tracking-wider block">
+                        Meet {blog.companyInfo.companyName.split(' ')[0]} in Person
+                      </span>
+                      <strong className="text-xs sm:text-sm text-white font-bold block">
+                        Get Free VIP Trade Visitor Pass
+                      </strong>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-blue-300 group-hover:translate-x-1 transition-transform shrink-0" />
+                  </Link>
+
+                  <Link
+                    to="/exhibitor"
+                    className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-emerald-600/20 to-teal-500/20 hover:from-emerald-600/40 hover:to-teal-500/30 border border-emerald-400/30 transition-all group"
+                  >
+                    <div>
+                      <span className="text-[10px] uppercase font-extrabold text-emerald-300 tracking-wider block">
+                        Exhibit in the Same Hall
+                      </span>
+                      <strong className="text-xs sm:text-sm text-white font-bold block">
+                        Book Your IPVS Exhibition Stall
+                      </strong>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-emerald-300 group-hover:translate-x-1 transition-transform shrink-0" />
+                  </Link>
+                </div>
+              </div>
+            )}
 
             {/* Technical FAQ Section for Search Engine Snippets */}
             {blog.faq && blog.faq.length > 0 && (
@@ -795,7 +977,7 @@ export const BlogDetailPage: React.FC<BlogDetailPageProps> = ({ onOpenModal }) =
                         {faqItem.question}
                       </h4>
                       <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        {faqItem.answer}
+                        {renderFormattedText(faqItem.answer)}
                       </p>
                     </div>
                   ))}

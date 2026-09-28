@@ -588,6 +588,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "Global manufacturer of high-quality quarter-turn valves, butterfly valves, ball valves, actuators, and automation systems.",
     country: "India / USA",
     featured: true
+  },
+  {
+    id: "ex-22",
+    name: "Gipfel Engineering",
+    slug: "gipfel",
+    stall: "Stall L32",
+    sector: "Mechanical Seals & Chemical Process Pumps",
+    booth: "Stall L32",
+    logo: "/Logo/Gipfel.jpg",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "ISO 9001-2015 certified manufacturer of high-precision mechanical seals, cartridge seals, and chemical process pumps for demanding industrial fluid handling applications.",
+    country: "India",
+    featured: true
   }
 ].map(e => ({
   ...e,
@@ -603,24 +616,24 @@ export interface MediaPartner {
 }
 
 export const MEDIA_PARTNERS: MediaPartner[] = [
-  { 
-    id: "mp-1", 
-    name: "Chemical Industry Digest", 
-    category: "Pioneer Chemical & Process Journal", 
+  {
+    id: "mp-1",
+    name: "Chemical Industry Digest",
+    category: "Pioneer Chemical & Process Journal",
     logo: "/mediapartners/chemical-industry-digest.png",
     website: "https://chemindigest.com"
   },
-  { 
-    id: "mp-2", 
-    name: "Spicos Media", 
-    category: "Chemical & Industrial Process Media", 
+  {
+    id: "mp-2",
+    name: "Spicos Media",
+    category: "Chemical & Industrial Process Media",
     logo: "/mediapartners/Spicos.PNG",
     website: "https://www.spicos.com"
   },
-  { 
-    id: "mp-3", 
-    name: "Mantonia", 
-    category: "Industrial Engineering & Machinery Media", 
+  {
+    id: "mp-3",
+    name: "Mantonia",
+    category: "Industrial Engineering & Machinery Media",
     logo: "/mediapartners/mantonia.PNG"
   }
 ].map(p => ({
@@ -633,11 +646,30 @@ export interface BlogSection {
   content: string[];
   bulletPoints?: string[];
   callout?: string;
+  image?: string;
+  imageCaption?: string;
 }
 
 export interface BlogFaq {
   question: string;
   answer: string;
+}
+
+export interface BlogProductLink {
+  name: string;
+  url: string;
+  badge?: string;
+  description: string;
+}
+
+export interface BlogCompanyInfo {
+  companyName: string;
+  websiteUrl: string;
+  stallNumber: string;
+  hallName?: string;
+  advisoryName?: string;
+  advisoryRole?: string;
+  products: BlogProductLink[];
 }
 
 export interface BlogArticle {
@@ -664,6 +696,7 @@ export interface BlogArticle {
   sections: BlogSection[];
   faq: BlogFaq[];
   ctaType: 'exhibitor' | 'visitor';
+  companyInfo?: BlogCompanyInfo;
 }
 
 const RAW_BLOG_ARTICLES: BlogArticle[] = [
@@ -1095,13 +1128,492 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
       }
     ],
     ctaType: "visitor"
+  },
+  {
+    id: "blog-6",
+    slug: "grundfos-pumps-india-ipvs-2026-exhibition",
+    title: "Grundfos Pumps India at IPVS 2026: Why the World's Most Advanced Pump Manufacturer is Exhibiting in Hyderabad",
+    subtitle: "How Grundfos is redefining industrial fluid handling in India through energy-intelligent pumping, IoT telemetry, and sustainability-first engineering — and why they chose IPVS 2026 as their platform.",
+    pullQuote: "When a company that operates in 80+ countries and moves 6% of the world's water chooses to exhibit at IPVS 2026, it signals something decisive: India's industrial pump market has graduated from price-driven procurement to performance-driven engineering partnerships.",
+    seoTitle: "Grundfos Pumps India at IPVS 2026 Hyderabad | Exhibition Preview & Stall Guide",
+    metaDescription: "Grundfos Pumps India is exhibiting at IPVS 2026 in HITEX Hyderabad (Stall A4). Discover their smart pump technologies, iSOLUTIONS platform, and why plant engineers should visit their exhibition stall.",
+    excerpt: "Grundfos, the Danish engineering giant that moves 6% of the world's water, is bringing its full smart pumping arsenal to IPVS 2026. Here's what plant engineers, EPC heads, and procurement directors can expect at Stall A4.",
+    content: "When [Grundfos](https://www.grundfos.com/in) — a company founded in 1945 in Bjerringbro, Denmark, that today operates in over 80 countries and employs 20,000+ engineers — decides to take a prominent exhibition stall at an Indian industrial trade show, it carries strategic significance far beyond a routine marketing exercise. Grundfos Pumps India Pvt Ltd, headquartered in Chennai, has been a cornerstone of India's industrial pumping landscape for decades. Their decision to exhibit at [IPVS 2026 at HITEX Exhibition Centre, Hyderabad](/visitor), reflects a deliberate commitment to positioning India as a global center of excellence for smart, energy-efficient fluid handling.",
+    category: "Exhibitor Spotlight & Company Profile",
+    author: "IPVS Exhibition Editorial Desk",
+    authorRole: "Exhibitor Relations & Industry Intelligence",
+    authorAvatar: "/advisory member/shankar rajaram - grundfos.webp",
+    type: "exhibitor",
+    date: "25 Sep 2026",
+    readTime: "7 min read",
+    image: "/blogs/grundfos-ipvs-booth.jpg",
+    tags: ["Grundfos", "Grundfos India", "IPVS 2026", "Smart Pumps", "Industrial Exhibition", "Exhibitor Spotlight", "Shankar Rajaram", "Hyderabad"],
+    keyTakeaways: [
+      "Grundfos Pumps India Pvt Ltd is confirmed as an Esteemed Exhibitor at IPVS 2026, occupying [Stall A4 at HITEX Exhibition Centre, Hyderabad](/visitor) (December 3–4, 2026).",
+      "Shankar Rajaram, Director of [Grundfos Pumps India](https://www.grundfos.com/in), serves on the official IPVS 2026 Advisory Board, underscoring Grundfos' strategic commitment to the Indian industrial ecosystem.",
+      "Grundfos operates in 80+ countries, employs 20,000+ engineers, and moves approximately 6% of the world's total water supply through its pump installations.",
+      "Visitors to Stall A4 can expect live demonstrations of [CR/CRE smart multistage pumps](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte), [CRE smart pumps](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models), [SMART digital dosing systems](https://product-selection.grundfos.com/in/products/dosing-pumps-digital/dda?tab=models), and IE5 ultra-premium efficiency motors."
+    ],
+    companyInfo: {
+      companyName: "Grundfos Pumps India Pvt Ltd",
+      websiteUrl: "https://www.grundfos.com/in",
+      stallNumber: "Stall A4",
+      hallName: "Hall 1, HITEX Hyderabad",
+      advisoryName: "Shankar Rajaram",
+      advisoryRole: "Director, Grundfos Pumps India & IPVS Advisory Board Member",
+      products: [
+        {
+          name: "Grundfos CR / CRI / CRN Vertical Multistage Pumps",
+          url: "https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte",
+          badge: "Up to 50 Bar & 320 m³/h",
+          description: "Modular multistage centrifugal pumps available in cast iron, SS304, SS316, and titanium for industrial boosting and boiler feed duty."
+        },
+        {
+          name: "Grundfos CRE Smart Pumps with iSOLUTIONS",
+          url: "https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models",
+          badge: "IE5 Ultra-Premium Motor",
+          description: "Integrated Variable Frequency Drive pumps matching speed dynamically to plant demand, saving 20–50% in electricity."
+        },
+        {
+          name: "SMART Digital Dosing Pumps (DDA / DDC / DDE)",
+          url: "https://product-selection.grundfos.com/in/products/dosing-pumps-digital/dda?tab=models",
+          badge: "1:1000 Precision Turndown",
+          description: "Microprocessor-controlled stepper-motor dosing systems engineered for pharmaceutical synthesis, CIP neutralization, and water chlorination."
+        }
+      ]
+    },
+    sections: [
+      {
+        heading: "Who is Grundfos? A Global Engineering Powerhouse",
+        content: [
+          "Founded in 1945 by Poul Due Jensen in the small Danish town of Bjerringbro, [Grundfos](https://www.grundfos.com/in) has grown into the world's largest pump manufacturer by volume and one of the most respected names in industrial fluid engineering. The company's product portfolio spans centrifugal pumps, submersible pumps, dosing systems, water treatment solutions, and intelligent digital platforms.",
+          "Grundfos pumps are installed in virtually every major industry vertical on earth — from municipal water distribution networks serving millions of households, to boiler feed systems in thermal power plants, to ultra-pure water loops in semiconductor fabrication facilities. The company's global installed base moves an estimated 6% of the world's total water supply.",
+          "In India, Grundfos operates through Grundfos Pumps India Pvt Ltd with manufacturing, engineering, and sales operations headquartered in Chennai, Tamil Nadu. Explore their complete portfolio on the [official Grundfos India portal](https://www.grundfos.com/in)."
+        ],
+        callout: "Grundfos moves approximately 6% of the world's water. Their presence at IPVS 2026 brings world-class pump intelligence directly to Indian industry leaders.",
+        image: "/blogs/grundfos-smart-pumps.jpg",
+        imageCaption: "Fig: Advanced pump testing and calibration bay showcasing Grundfos vertical multistage centrifugal pumps with integrated digital smart drives."
+      },
+      {
+        heading: "Why Grundfos Chose IPVS 2026 as Their Exhibition Platform",
+        content: [
+          "[IPVS 2026](/visitor) (Industrial Pumps, Valves & Process Systems) is not a general industrial fair — it is a curated B2B trade exhibition laser-focused on the exact technology domains where Grundfos leads globally: intelligent pumping, process automation, water treatment, and energy-efficient fluid handling.",
+          "The IPVS visitor profile — plant heads, EPC project directors, procurement managers, and reliability engineers from sectors including pharma, ethanol, chemicals, water utilities, and oil & gas — represents precisely the decision-making audience that Grundfos needs to engage for high-value industrial projects.",
+          "Grundfos' participation is further elevated by the fact that Shankar Rajaram, Director of Grundfos Pumps India, is a member of the [IPVS 2026 Advisory Board](/advisory-board). Want to position your company alongside global market leaders? [Explore exhibiting at IPVS 2026](/exhibitor)."
+        ]
+      },
+      {
+        heading: "What to Expect at Grundfos Stall A4 at IPVS 2026",
+        content: [
+          "Visitors walking up to Stall A4 at HITEX Hyderabad will encounter a comprehensive showcase of Grundfos' most advanced industrial pump technologies:"
+        ],
+        bulletPoints: [
+          "[CR / CRI / CRN Vertical Multistage Pumps](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte): The world's most versatile industrial pressure boosting platform, available in cast iron, SS304, SS316, and titanium — capable of flows up to 320 m³/h and pressures up to 50 bar.",
+          "[CRE Smart Pumps with iSOLUTIONS](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models): Factory-integrated Variable Frequency Drives (VFD) with IE5 ultra-premium motors that dynamically match pump speed to real-time system demand, slashing energy consumption by 20–50%.",
+          "[SMART Digital Dosing Pumps (DDA/DDC/DDE)](https://product-selection.grundfos.com/in/products/dosing-pumps-digital/dda?tab=models): Stepper-motor precision dosing systems with 1:1000 turndown ratios for pharmaceutical API synthesis, water treatment chlorination, and effluent neutralization.",
+          "[iSOLUTIONS Intelligent Digital Platform](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models): Live demonstration of remote pump monitoring, predictive maintenance alerts, vibration analytics, and SCADA/DCS integration via Grundfos' IoT dashboard.",
+          "SE/SL Wastewater Submersible Pumps: Heavy-duty non-clog impeller systems with SmartTrim automatic clearance adjustment for handling fibrous municipal sewage and industrial slurries."
+        ],
+        image: "/blogs/grundfos-cr-hero.jpg",
+        imageCaption: "Fig: Commercial-grade Grundfos CRE smart pump unit with integrated MGE IE5 electric drive motor and digital operational interface."
+      },
+      {
+        heading: "Grundfos' Impact on Indian Industrial Manufacturing",
+        content: [
+          "India's industrial landscape is undergoing a fundamental transformation. The National Mission for Clean Ganga, Jal Jeevan Mission, Smart Cities Mission, and the accelerated E20 ethanol blending mandate are creating massive infrastructure demand for high-efficiency pumping systems that conventional fixed-speed cast iron pumps simply cannot fulfil.",
+          "Grundfos' IE5 motor technology and iSOLUTIONS platform directly address the single largest cost driver in pump ownership: electricity. Industry data consistently demonstrates that energy consumption accounts for 80–85% of a pump's total 15-year lifecycle cost, while the initial purchase price represents only 5–8%. By optimizing energy consumption at the motor and hydraulic level, Grundfos pumps deliver measurable ROI within months of commissioning.",
+          "For EPC contractors, plant heads, and procurement directors attending IPVS 2026, Grundfos Stall A4 represents an opportunity to evaluate these technologies hands-on, consult with factory application engineers, and benchmark their facilities against global best practices in smart fluid handling."
+        ],
+        callout: "Plan your visit to Stall A4 at HITEX Hyderabad: [Register for your Free VIP Trade Visitor Pass](/visitor), or [reserve an exhibition stall at IPVS 2026](/exhibitor)."
+      }
+    ],
+    faq: [
+      {
+        question: "Where is the Grundfos stall located at IPVS 2026?",
+        answer: "Grundfos Pumps India Pvt Ltd is exhibiting at Stall A4 at HITEX Exhibition Centre, Hyderabad, during IPVS 2026 on December 3–4, 2026. Visitors can register for their [Free VIP Visitor Pass](/visitor) to access the exhibition."
+      },
+      {
+        question: "Where can I view technical specifications of Grundfos CR and CRE pumps?",
+        answer: "You can view full technical datasheets and pump curves directly on the [Grundfos CR Product Page](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte) or meet factory application engineers in person at Stall A4 at IPVS 2026."
+      },
+      {
+        question: "Can other pump and valve manufacturers exhibit alongside Grundfos?",
+        answer: "Yes. Premium stall spaces are available for industrial manufacturers. You can [book your IPVS 2026 exhibitor stall](/exhibitor) to showcase your equipment to over 10,000 industrial procurement heads."
+      }
+    ],
+    ctaType: "visitor"
+  },
+  {
+    id: "blog-7",
+    slug: "grundfos-cr-cre-isolutions-smart-pumps-industrial-guide",
+    title: "Grundfos CR, CRE & iSOLUTIONS: The Complete Engineering Guide to the World's Most Advanced Industrial Multistage Pumps",
+    subtitle: "How Grundfos CR vertical multistage pumps, IE5 smart drives, and iSOLUTIONS cloud telemetry are eliminating 35% of industrial pumping energy waste in boiler feed, RO, and process boosting applications.",
+    pullQuote: "A 75 kW industrial pump running 8,000 hours per year at just 3% below optimal hydraulic efficiency wastes more money in electricity within 24 months than the entire initial purchase discount you negotiated. Grundfos CR and iSOLUTIONS exist to permanently close that gap.",
+    seoTitle: "Grundfos CR CRE Pump Guide: iSOLUTIONS, IE5 Motors & Smart Industrial Pumping | IPVS 2026",
+    metaDescription: "Complete technical guide to Grundfos CR, CRI, CRN, and CRE smart multistage pumps. Learn how iSOLUTIONS IoT, IE5 motors, and LiqTec protection slash industrial energy costs by 35%. See them live at IPVS 2026.",
+    excerpt: "The Grundfos CR family is the world's most installed vertical multistage centrifugal pump. Combined with iSOLUTIONS IoT and IE5 ultra-premium motors, it represents the gold standard for industrial pressure boosting, boiler feed, and RO applications.",
+    content: "In heavy process industries — from pharmaceutical manufacturing and petrochemical refining to thermal power generation and municipal water distribution — the centrifugal pump is not merely a piece of rotating equipment. It is the single largest continuous energy consumer on the plant floor. Industry benchmark data consistently demonstrates that electricity accounts for 80–85% of an industrial pump's total 15-year lifecycle cost, while the initial capital equipment cost represents only 5–8%. That is why engineers turn to the [Grundfos CR platform](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte) and [iSOLUTIONS technology](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models).",
+    category: "Smart Pump Technology & Product Deep Dive",
+    author: "IPVS Technical Research Desk",
+    authorRole: "Fluid Dynamics & Industrial Pump Engineering Analyst",
+    authorAvatar: "/advisory member/shankar rajaram - grundfos.webp",
+    type: "technology",
+    date: "24 Sep 2026",
+    readTime: "8 min read",
+    image: "/blogs/grundfos-cr-hero.jpg",
+    tags: ["Grundfos CR Pump", "Grundfos CRE", "iSOLUTIONS", "IE5 Motor", "Multistage Pump", "Boiler Feed Pump", "RO High Pressure Pump", "Smart Pumps", "Variable Frequency Drive", "IPVS 2026"],
+    keyTakeaways: [
+      "The [Grundfos CR family](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte) is available in over 1 million modular configurations across cast iron (CR), stainless steel 304 (CRI), stainless steel 316 (CRN), and titanium, covering flows up to 320 m³/h and pressures up to 50 bar.",
+      "The [CRE smart pump variant](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models) integrates a factory-fitted Variable Frequency Drive (VFD) with an IE5 ultra-premium efficiency motor, cutting energy consumption by 20–50%.",
+      "Grundfos iSOLUTIONS transforms CR/CRE pumps into intelligent edge computing nodes, streaming live vibration, temperature, and cavitation data to SCADA/DCS platforms for predictive maintenance.",
+      "Plant engineers can evaluate Grundfos CR, CRE, and iSOLUTIONS technologies live at [Stall A4, IPVS 2026, HITEX Hyderabad](/visitor) (December 3–4, 2026)."
+    ],
+    companyInfo: {
+      companyName: "Grundfos Pumps India Pvt Ltd",
+      websiteUrl: "https://www.grundfos.com/in",
+      stallNumber: "Stall A4",
+      hallName: "Hall 1, HITEX Hyderabad",
+      advisoryName: "Shankar Rajaram",
+      advisoryRole: "Director, Grundfos Pumps India & IPVS Advisory Board Member",
+      products: [
+        {
+          name: "CR, CRI, CRN & CRT Multistage Series",
+          url: "https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte",
+          badge: "Up to 50 Bar Working Pressure",
+          description: "High-pressure vertical centrifugal pumps engineered for continuous boiler feed, reverse osmosis desalination, and process cooling."
+        },
+        {
+          name: "CRE Intelligent Variable Speed Smart Pumps",
+          url: "https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models",
+          badge: "IE5 Permanent Magnet Motor",
+          description: "Self-optimizing pump units that respond to real-time pressure transducers and eliminate throttling valve energy losses."
+        },
+        {
+          name: "Grundfos iSOLUTIONS Edge Intelligence",
+          url: "https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models",
+          badge: "Cloud Telemetry & SCADA",
+          description: "Continuous condition monitoring providing early warning cavitation detection and predictive maintenance alerts."
+        }
+      ]
+    },
+    sections: [
+      {
+        heading: "The CR Platform: Engineering Anatomy of the World's Most Versatile Industrial Pump",
+        content: [
+          "The [Grundfos CR](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte) (Centrifugal, Ring-section) vertical multistage pump is arguably the most widely installed industrial pump platform in the world. Its modular architecture allows engineers to configure the exact combination of stages, impeller diameters, materials, mechanical seals, and motor ratings needed for their specific process duty point.",
+          "Unlike traditional horizontal split-case pumps that require large floor footprints and complex alignment procedures, the CR's vertical inline design occupies minimal installation space while delivering pressures up to 50 bar. This makes it the default choice for applications where both performance and spatial efficiency are critical."
+        ],
+        bulletPoints: [
+          "CR (Cast Iron): Standard industrial duty — cooling towers, HVAC circulation, general pressure boosting, wash-down systems.",
+          "CRI (AISI 304 Stainless Steel): Food-grade and mildly corrosive applications — dairy processing, beverage production, pharmaceutical WFI pre-treatment.",
+          "CRN (AISI 316 Stainless Steel): Aggressive chemical environments — chloride-bearing process water, coastal desalination, petrochemical cooling, high-TDS effluent recirculation.",
+          "CRT (Titanium): Extreme corrosion resistance — concentrated acid handling, offshore seawater injection, chlor-alkali electrolysis cooling.",
+          "Detailed specs and performance curves: [Explore the Grundfos CR Product Catalogue](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte)."
+        ],
+        callout: "Over 1 million possible configurations. One platform. Explore pump curves on [Grundfos India](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte).",
+        image: "/blogs/grundfos-cr-internals.jpg",
+        imageCaption: "Fig: 3D technical cutaway schematic showing internal stainless steel stacked impellers, diffusers, bearings, and balanced cartridge mechanical seal assembly."
+      },
+      {
+        heading: "CRE Smart Pumps: When the Pump Learns to Think",
+        content: [
+          "The [Grundfos CRE variant](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models) takes the proven CR hydraulic platform and integrates an intelligent Variable Frequency Drive (VFD) directly onto the motor housing, creating a single, self-contained smart pump unit. The integrated drive features an IE5 ultra-premium efficiency motor that exceeds international minimum energy performance standards by a significant margin.",
+          "In a traditional fixed-speed pump installation, when downstream demand drops, excess pressure is wasted through throttling valves or bypass lines. The CRE eliminates this waste entirely. Its on-board controller continuously monitors system pressure and flow via integrated sensors, throttling motor speed to match exact demand."
+        ],
+        callout: "A 20% speed reduction = 49% power savings. Read more about the [CRE Smart Pump Series](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models).",
+        image: "/blogs/grundfos-smart-pumps.jpg",
+        imageCaption: "Fig: Array of CRE smart pumps with integrated variable speed drives operating in an automated industrial pressure boosting station."
+      },
+      {
+        heading: "iSOLUTIONS: From Isolated Hardware to Connected Intelligence",
+        content: [
+          "[Grundfos iSOLUTIONS](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models) represents the company's strategic evolution from manufacturing individual pump products to delivering fully integrated intelligent fluid management systems. It combines intelligent hardware, precision sensors, and cloud analytics into a unified operational dashboard."
+        ],
+        bulletPoints: [
+          "Predictive Maintenance Alerts: Tri-axial vibration analysis detects bearing race spalling, shaft misalignment, and impeller erosion up to 6 weeks before audible symptoms appear.",
+          "Cavitation Detection: Acoustic frequency analysis identifies suction starvation and micro-bubble implosion inside the pump casing, preventing catastrophic impeller pitting.",
+          "Energy Optimization Reports: Automated monthly analytics quantifying actual kWh savings versus baseline fixed-speed operation.",
+          "SCADA/DCS Integration: Native Modbus TCP, Profinet, BACnet, and MQTT protocol support for seamless plant integration."
+        ]
+      },
+      {
+        heading: "Application Engineering: Where CR/CRE Pumps Dominate in Indian Industry",
+        content: [
+          "Across India's industrial corridors, Grundfos CR and CRE pumps are specified for the most demanding continuous-duty applications where reliability, efficiency, and uptime are non-negotiable. Learn more on [Grundfos India's Official Portal](https://www.grundfos.com/in)."
+        ],
+        bulletPoints: [
+          "Boiler Feed Water Systems: High-pressure CRN pumps delivering deaerated water to industrial boilers at 25–40 bar.",
+          "Reverse Osmosis (RO) High-Pressure Feed: CRN/CRE pumps providing 15–25 bar operating pressure for brackish water RO and zero liquid discharge (ZLD) plants.",
+          "HVAC & District Cooling: CRE pumps circulating chilled water through large commercial and data center cooling loops.",
+          "Ethanol Distillery Process Water: CRI/CRN pumps handling high-temperature, mildly acidic process water under India's E20 blending mandate."
+        ],
+        callout: "Evaluate Grundfos CR, CRE, and iSOLUTIONS live at Stall A4: [Register for your Free VIP Trade Visitor Pass](/visitor), or [explore exhibitor opportunities at IPVS 2026](/exhibitor)."
+      }
+    ],
+    faq: [
+      {
+        question: "What is the difference between Grundfos CR, CRI, CRN, and CRE pumps?",
+        answer: "CR is the cast iron base model. CRI uses AISI 304 stainless steel for food-grade duties. CRN uses AISI 316 stainless steel for aggressive chemicals. CRE adds an integrated Variable Frequency Drive (VFD) with IE5 motor to any of these variants. Detailed specs are available on the [Grundfos CR Product Page](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte)."
+      },
+      {
+        question: "Can I inspect Grundfos CR and CRE pumps live at IPVS 2026?",
+        answer: "Yes! Grundfos is exhibiting at Stall A4 at IPVS 2026 (HITEX Exhibition Centre, Hyderabad, December 3–4, 2026). You can [claim your Free VIP Trade Visitor Pass](/visitor) today."
+      },
+      {
+        question: "How do I book an exhibitor stall next to pump leaders like Grundfos?",
+        answer: "You can reserve your preferred stall space on the exhibition floor by visiting our [IPVS Exhibitor Registration Portal](/exhibitor)."
+      }
+    ],
+    ctaType: "visitor"
+  },
+  {
+    id: "blog-8",
+    slug: "fivebro-water-services-ipvs-2026-exhibition",
+    title: "Fivebro Water Services at IPVS 2026: India's Largest Water Treatment Component Ecosystem Under One Roof",
+    subtitle: "How Fivebro's 30-year legacy of manufacturing and distributing FRP membrane vessels, pressure tanks, and filtration systems is accelerating India's water infrastructure revolution — and why they're exhibiting at IPVS 2026.",
+    pullQuote: "When an EPC contractor needs membrane housings, pressure tanks, RO membranes, and filtration skids from four different vendors across three states, projects bleed time and money. Fivebro solved this by building India's most comprehensive single-source water treatment component ecosystem.",
+    seoTitle: "Fivebro Water Services at IPVS 2026 Hyderabad | Exhibitor Profile & Product Showcase",
+    metaDescription: "Fivebro Water Services Pvt Ltd is exhibiting at IPVS 2026 (Stall A2A) in HITEX Hyderabad. Explore their FRP membrane vessels, pressure tanks, and turnkey water treatment components. Meet MD Nishit Doshi.",
+    excerpt: "Fivebro Water Services — India's leading water treatment component manufacturer and distributor — is bringing its complete product ecosystem to IPVS 2026. Meet the team behind the Maxima, Altima, and Sumo product lines at Stall A2A.",
+    content: "In the world of industrial water treatment, the difference between a project delivered on time and one stuck in costly delays often comes down to a single, unglamorous bottleneck: component sourcing. EPC contractors building RO desalination skids, zero liquid discharge plants, or municipal water treatment facilities routinely coordinate with 8 to 12 separate vendors across India. That is why [Fivebro Water Services](https://www.fivebro.com/) built India's largest single-source water treatment component ecosystem, and why they are exhibiting at [IPVS 2026 at HITEX Hyderabad](/visitor).",
+    category: "Exhibitor Spotlight & Company Profile",
+    author: "IPVS Exhibition Editorial Desk",
+    authorRole: "Exhibitor Relations & Water Technology Intelligence",
+    authorAvatar: "/advisory member/nishit doshi.png",
+    type: "exhibitor",
+    date: "23 Sep 2026",
+    readTime: "7 min read",
+    image: "/blogs/fivebro-ipvs-booth2.png",
+    tags: ["Fivebro", "Fivebro Water Services", "IPVS 2026", "Water Treatment", "FRP Vessels", "Membrane Housing", "Pressure Tanks", "Nishit Doshi", "RO Components", "Hyderabad Exhibition"],
+    keyTakeaways: [
+      "Fivebro Water Services Pvt Ltd is confirmed as an Esteemed Exhibitor at IPVS 2026, occupying [Stall A2A at HITEX Exhibition Centre, Hyderabad](/visitor) (December 3–4, 2026).",
+      "Nishit Doshi, Managing Director of [Fivebro Water Services](https://www.fivebro.com/), serves on the official IPVS 2026 Advisory Board, contributing to the exhibition's strategic direction on water and wastewater technologies.",
+      "With 30+ years of experience, Fivebro is India's leading manufacturer and master distributor of [FRP membrane pressure vessels (Maxima)](https://www.fivebro.com/), SS membrane housings (Altima), [hydropneumatic pressure tanks (Sumo/Alpha)](https://www.fivebro.com/), and [industrial membranes](https://www.fivebro.com/).",
+      "Fivebro's single-source component ecosystem eliminates the fragmented multi-vendor procurement that delays EPC water treatment projects by 8–12 weeks."
+    ],
+    companyInfo: {
+      companyName: "Fivebro Water Services Pvt Ltd",
+      websiteUrl: "https://www.fivebro.com/",
+      stallNumber: "Stall A2A",
+      hallName: "Hall 1, HITEX Hyderabad",
+      advisoryName: "Nishit Doshi",
+      advisoryRole: "Managing Director, Fivebro Water Services & IPVS Advisory Board Member",
+      products: [
+        {
+          name: "Maxima FRP Membrane Pressure Vessels",
+          url: "https://www.fivebro.com/",
+          badge: "300 to 1200+ PSI Rated",
+          description: "High-integrity filament-wound FRP housings designed for high-recovery BWRO, seawater desalination, and ZLD systems."
+        },
+        {
+          name: "Sumo & Alpha Hydropneumatic Pressure Tanks",
+          url: "https://www.fivebro.com/",
+          badge: "Surge & Water Hammer Protection",
+          description: "Heavy-duty diaphragm and bladder expansion tanks that absorb hydraulic water hammer and protect booster pump motors."
+        },
+        {
+          name: "DuPont & Keensen Industrial Membranes",
+          url: "https://www.fivebro.com/",
+          badge: "Authorized National Distributor",
+          description: "Premium BWRO, SWRO, nanofiltration, and ultrafiltration membranes with immediate pan-India stock availability."
+        }
+      ]
+    },
+    sections: [
+      {
+        heading: "Who is Fivebro? India's Water Treatment Component Authority",
+        content: [
+          "[Fivebro Water Services Pvt Ltd](https://www.fivebro.com/), headquartered in Ahmedabad, Gujarat, has spent over three decades building what is arguably India's most comprehensive water treatment component manufacturing and distribution ecosystem. Founded with a singular vision — to become the single-source procurement partner for every component needed to build an industrial water treatment plant — Fivebro has systematically expanded its product portfolio to cover the entire water treatment value chain.",
+          "From their flagship [Maxima FRP membrane pressure vessels](https://www.fivebro.com/) and Altima stainless steel membrane housings, to their [Sumo and Alpha hydropneumatic pressure tanks](https://www.fivebro.com/), to their authorized distribution of [DuPont/Dow FilmTec and Keensen RO membranes](https://www.fivebro.com/), Fivebro has assembled a product ecosystem that no other Indian company can match in breadth and immediate availability.",
+          "The company serves as a primary supply partner to hundreds of water treatment OEMs, EPC contractors, and system integrators across India. Their pan-India warehousing network ensures that critical components are available for immediate dispatch. Learn more at the [official Fivebro website](https://www.fivebro.com/)."
+        ],
+        callout: "30+ years. One unified component ecosystem. From membrane vessels to pressure tanks to filtration media — explore the [Fivebro Product Range](https://www.fivebro.com/).",
+        image: "/blogs/fivebro-maxima-sumo-hero.jpg",
+        imageCaption: "Fig: Fivebro flagship engineering products: Maxima multi-port FRP membrane pressure vessels and Sumo hydropneumatic pressure tanks."
+      },
+      {
+        heading: "Why Fivebro is Exhibiting at IPVS 2026",
+        content: [
+          "[IPVS 2026](/visitor) focuses heavily on the intersection of pumps, valves, and process systems with India's fastest-growing industrial sectors: water and wastewater treatment, ethanol processing, pharmaceuticals, and chemical manufacturing. For Fivebro, this alignment is strategic.",
+          "Every industrial pump installation in a water treatment plant requires downstream membrane vessels, pressure regulation tanks, and filtration systems. Fivebro's presence at IPVS 2026 creates a natural synergy — pump OEMs and valve manufacturers exhibiting alongside can explore turnkey component partnerships, while EPC visitors can source their complete bill of materials under one roof.",
+          "The strategic importance of Fivebro's participation is further underscored by the fact that Nishit Doshi, Managing Director of Fivebro Water Services, is a member of the [IPVS 2026 Advisory Board](/advisory-board). Looking to exhibit your water technologies? [Reserve your exhibition stall at IPVS 2026](/exhibitor)."
+        ]
+      },
+      {
+        heading: "What Visitors Will Find at Fivebro Stall A2A",
+        content: [
+          "Stall A2A at HITEX Hyderabad will showcase Fivebro's complete industrial water treatment component portfolio:"
+        ],
+        bulletPoints: [
+          "[Maxima FRP Membrane Pressure Vessels](https://www.fivebro.com/): Multi-port 4-inch and 8-inch FRP vessels rated for operating pressures from 300 PSI to 1200+ PSI, engineered for brackish water RO, seawater desalination, nanofiltration, and ZLD brine concentration.",
+          "Altima Stainless Steel Membrane Housings: Food-grade SS304 and SS316 sanitary housings for pharmaceutical purified water (WFI/PW), dairy processing, and sterile beverage production.",
+          "[Sumo & Alpha Hydropneumatic Pressure Tanks](https://www.fivebro.com/): Heavy-duty EDS butyl diaphragm and bladder-type expansion tanks designed to absorb hydraulic water hammer, prevent booster pump short-cycling, and stabilize distribution line pressures.",
+          "[DuPont/Dow FilmTec & Keensen RO/NF/UF Membranes](https://www.fivebro.com/): India's authorized distribution channel for premium membrane technology across industrial, commercial, and municipal applications.",
+          "Automatic Disc Filtration Skids & Filter Vessels: Pre-engineered filtration assemblies for sand, activated carbon, and dual-media treatment, paired with multiport automation valves."
+        ],
+        image: "/blogs/fivebro-ro-facility.jpg",
+        imageCaption: "Fig: High-capacity multi-stage reverse osmosis water treatment facility utilizing multi-port FRP membrane pressure vessel racks."
+      },
+      {
+        heading: "Fivebro's Role in India's Water Infrastructure Mission",
+        content: [
+          "India's water treatment sector is experiencing unprecedented growth driven by multiple converging policy mandates: the Jal Jeevan Mission targeting piped water for every rural household, CPCB-mandated zero liquid discharge compliance for polluting industries, tightening pharmaceutical effluent standards, and growing municipal desalination requirements in coastal cities.",
+          "This infrastructure expansion creates enormous demand for reliable, immediately available water treatment components. Fivebro's pan-India distribution network and deep inventory holdings position them as the critical enabler for EPC contractors racing to meet project commissioning deadlines.",
+          "For water treatment OEMs, system integrators, and EPC contractors attending IPVS 2026, Stall A2A represents the opportunity to consolidate vendor relationships, evaluate new product launches including the Alpha Series pressure tanks, and negotiate supply agreements directly with Fivebro's senior leadership."
+        ],
+        callout: "Meet the Fivebro leadership team at Stall A2A: [Register for your Free VIP Trade Visitor Pass](/visitor), or [book your exhibition booth at IPVS 2026](/exhibitor)."
+      }
+    ],
+    faq: [
+      {
+        question: "Where is the Fivebro stall located at IPVS 2026?",
+        answer: "Fivebro Water Services Pvt Ltd is exhibiting at Stall A2A at HITEX Exhibition Centre, Hyderabad, during IPVS 2026 on December 3–4, 2026. You can [register for your Free Visitor Pass](/visitor) online."
+      },
+      {
+        question: "Where can I view Fivebro's full product catalog?",
+        answer: "You can explore their complete range of FRP vessels, pressure tanks, and membranes directly on the [Official Fivebro Products Portal](https://www.fivebro.com/)."
+      },
+      {
+        question: "Can water treatment OEMs and valve makers book booths near Fivebro?",
+        answer: "Yes, exhibition spaces in Hall 1 are available. You can [book your IPVS 2026 stall](/exhibitor) to display your products alongside industry leaders."
+      }
+    ],
+    ctaType: "visitor"
+  },
+  {
+    id: "blog-9",
+    slug: "fivebro-frp-membrane-vessels-pressure-tanks-industrial-guide",
+    title: "Fivebro Maxima FRP Vessels & Sumo Pressure Tanks: The Complete Specification Guide for Industrial Water Treatment Engineers",
+    subtitle: "Engineering deep dive into Fivebro's Maxima 1000+ PSI FRP membrane pressure vessels, Altima SS housings, and Sumo hydropneumatic tanks — the critical components that prevent membrane failures, water hammer, and pump burnout.",
+    pullQuote: "A membrane housing failure at 800 PSI in a zero liquid discharge plant doesn't just destroy a single vessel. It destroys an entire production batch, floods the skid room, and triggers a cascade of unplanned shutdowns costing lakhs per hour. The engineering integrity of your FRP vessel is the last line of defense.",
+    seoTitle: "Fivebro Maxima FRP Membrane Vessels & Sumo Pressure Tanks: Industrial Specification Guide | IPVS 2026",
+    metaDescription: "Complete engineering guide to Fivebro Maxima FRP membrane pressure vessels (300–1200 PSI), Altima SS housings, and Sumo hydropneumatic tanks. Prevent membrane failures and water hammer in ZLD, RO, and industrial water plants.",
+    excerpt: "FRP membrane vessel failures and water hammer incidents are among the most expensive and dangerous events in industrial water treatment. This guide covers the engineering specifications behind Fivebro's Maxima, Altima, and Sumo product lines.",
+    content: "In the world of industrial water treatment — whether reverse osmosis desalination, zero liquid discharge brine concentration, or pharmaceutical purified water production — the membrane pressure vessel is the most critically stressed component in the entire system. It operates under sustained hydraulic pressures of 300 to 1200+ PSI, contains aggressive chemical concentrates, and must maintain absolute leak-free integrity for years of continuous operation. Learn why leading plant engineers specify [Fivebro Maxima FRP Vessels](https://www.fivebro.com/) and [Fivebro Sumo Pressure Tanks](https://www.fivebro.com/).",
+    category: "Water Treatment Technology & Product Deep Dive",
+    author: "IPVS Water Technology Research Desk",
+    authorRole: "Membrane Systems & Industrial Water Engineering Analyst",
+    authorAvatar: "/advisory member/nishit doshi.png",
+    type: "technology",
+    date: "22 Sep 2026",
+    readTime: "8 min read",
+    image: "/blogs/fivebro-maxima-sumo-hero.jpg",
+    tags: ["Fivebro Maxima", "FRP Membrane Vessel", "Pressure Tank", "Sumo Alpha", "Zero Liquid Discharge", "RO Membrane Housing", "Water Hammer", "Hydropneumatic Tank", "Water Treatment Components", "IPVS 2026"],
+    keyTakeaways: [
+      "[Fivebro Maxima FRP membrane pressure vessels](https://www.fivebro.com/) are engineered for operating pressures from 300 PSI to 1200+ PSI, with burst ratings exceeding 3x the rated working pressure, specifically designed for high-recovery BWRO, SWRO, and ZLD brine concentration applications.",
+      "Fivebro Altima stainless steel membrane housings (SS304/SS316) provide sanitary-grade, corrosion-resistant membrane containment for pharmaceutical WFI, dairy CIP, and food-grade ultrafiltration applications.",
+      "[Fivebro Sumo and Alpha hydropneumatic pressure tanks](https://www.fivebro.com/) with EDS butyl diaphragms absorb hydraulic water hammer, prevent booster pump short-cycling, and extend pump motor life by 40–60%.",
+      "Water treatment engineers can physically inspect and evaluate Fivebro's complete vessel and tank range at [Stall A2A, IPVS 2026, HITEX Hyderabad](/visitor) (December 3–4, 2026)."
+    ],
+    companyInfo: {
+      companyName: "Fivebro Water Services Pvt Ltd",
+      websiteUrl: "https://www.fivebro.com/",
+      stallNumber: "Stall A2A",
+      hallName: "Hall 1, HITEX Hyderabad",
+      advisoryName: "Nishit Doshi",
+      advisoryRole: "Managing Director, Fivebro Water Services & IPVS Advisory Board Member",
+      products: [
+        {
+          name: "Fivebro Maxima 1000+ PSI FRP Vessels",
+          url: "https://www.fivebro.com/",
+          badge: "ASME Section X Certified",
+          description: "Multi-element filament wound FRP pressure vessels with double O-ring seals and anti-extrusion rings for ZLD brine concentration."
+        },
+        {
+          name: "Sumo & Alpha Hydropneumatic Expansion Tanks",
+          url: "https://www.fivebro.com/",
+          badge: "10 & 16 Bar Rated",
+          description: "Pre-charged bladder and diaphragm surge tanks engineered to absorb water hammer shockwaves and prevent pump motor burnout."
+        },
+        {
+          name: "Fivebro Complete Component Sourcing",
+          url: "https://www.fivebro.com/",
+          badge: "Single-Source Water OEM",
+          description: "Master distributor for RO membranes, disc filtration skids, multiport automation valves, and chemical dosing accessories."
+        }
+      ]
+    },
+    sections: [
+      {
+        heading: "Maxima FRP Membrane Pressure Vessels: Engineering Under Extreme Pressure",
+        content: [
+          "The [Fivebro Maxima series](https://www.fivebro.com/) represents the company's flagship FRP (Fiber-Reinforced Plastic) membrane pressure vessel platform, designed to house standard 4-inch and 8-inch diameter spiral-wound RO, NF, and UF membrane elements under sustained high-pressure operation.",
+          "What separates an industrial-grade FRP vessel from a commodity product is the quality of the filament winding process, the purity and consistency of the resin matrix, and the engineering integrity of the end-cap sealing system. In a zero liquid discharge plant operating at 800–1000 PSI, the brine concentrate inside the vessel is highly corrosive, elevated in temperature, and under enormous hydraulic stress. A vessel with inconsistent resin cure, fiber voids, or poorly machined O-ring grooves will eventually develop micro-cracks that propagate into catastrophic failures."
+        ],
+        bulletPoints: [
+          "Operating Pressure Range: 300 PSI (BWRO/Industrial) to 1200+ PSI (SWRO/ZLD High-Recovery).",
+          "Burst Pressure Rating: Engineered to exceed 3x the rated working pressure, providing a robust safety margin for pressure spikes and water hammer transients.",
+          "Available Configurations: 1-element through 7-element housings in both side-port and end-port entry configurations.",
+          "Material Construction: Premium-grade E-glass fiber wound in epoxy resin with UV-resistant outer gel coat and chemically inert inner liner.",
+          "End-Cap System: Precision-machined GRP end-caps with double O-ring sealing and anti-extrusion backup rings to prevent high-pressure blowout.",
+          "Full technical specifications: [Visit Fivebro FRP Vessels Catalogue](https://www.fivebro.com/)."
+        ],
+        callout: "A failed O-ring at 1000 PSI doesn't leak. It explodes. Maxima vessels are engineered with double O-ring sealing. Explore specs at [Fivebro](https://www.fivebro.com/).",
+        image: "/blogs/fivebro-ro-facility.jpg",
+        imageCaption: "Fig: High-pressure multi-element FRP membrane vessel assembly installed on an industrial effluent recycling system."
+      },
+      {
+        heading: "Altima Stainless Steel Membrane Housings: Sanitary-Grade Precision",
+        content: [
+          "While FRP vessels dominate in industrial RO and desalination applications, pharmaceutical manufacturing, dairy processing, and food-grade beverage production require membrane housings constructed from sanitary-grade stainless steel. The Fivebro Altima series addresses this requirement with precision-fabricated SS304 and SS316L membrane housings designed for CIP (Clean-in-Place) compatibility, autoclave sterilization, and FDA/cGMP compliance. Explore Fivebro's full product line on the [Fivebro Official Portal](https://www.fivebro.com/)."
+        ],
+        bulletPoints: [
+          "Materials: AISI 304 (standard) and AISI 316L (high-corrosion environments, chloride-bearing feed water).",
+          "Surface Finish: Internal electropolishing to Ra ≤ 0.8 μm for biofilm prevention and CIP compatibility.",
+          "Connections: Tri-clamp sanitary fittings for tool-free, sterile-compliant maintenance.",
+          "Applications: Pharmaceutical WFI/PW generation, dairy ultrafiltration, beverage concentration, sterile API process water."
+        ]
+      },
+      {
+        heading: "Sumo & Alpha Hydropneumatic Pressure Tanks: Stopping Water Hammer Before It Destroys Your Plant",
+        content: [
+          "Water hammer — the hydraulic shockwave generated when a pump starts, stops, or when a valve closes rapidly — is one of the most destructive forces in industrial piping systems. The pressure transient from a single water hammer event can exceed 10x the normal operating pressure, rupturing pipes, destroying mechanical seals, fracturing valve bodies, and triggering cascade shutdowns.",
+          "The [Fivebro Sumo and Alpha hydropneumatic pressure tank series](https://www.fivebro.com/) solves both problems simultaneously. These are pre-charged bladder-type or diaphragm-type expansion vessels that maintain a cushion of compressed air above the water line, preventing both water hammer shockwaves and excessive motor starts."
+        ],
+        bulletPoints: [
+          "[Sumo Series](https://www.fivebro.com/): Heavy-duty butyl diaphragm tanks available from 8 litres to 500+ litres, designed for commercial building booster systems, fire jockey pumps, and industrial pressure stabilization.",
+          "[Alpha Series (New Launch)](https://www.fivebro.com/): Premium bladder-type expansion tanks with replaceable butyl rubber bladders, 304 stainless steel flanges, and epoxy-coated carbon steel shells rated for 10 bar and 16 bar working pressures.",
+          "Pump Life Extension: Properly sized hydropneumatic tanks reduce pump motor starts from 30–50/hour to 3–5/hour, extending motor winding life by 40–60%.",
+          "Water Hammer Absorption: The pre-charged air cushion absorbs hydraulic transients before they propagate through the piping network, protecting valves, instruments, and membrane vessels."
+        ],
+        callout: "A booster pump cycling 40 times per hour burns through motor windings in months. A properly sized Sumo or Alpha tank extends motor life by years: [View Fivebro Pressure Tanks](https://www.fivebro.com/).",
+        image: "/blogs/fivebro-water-hammer-skid.jpg",
+        imageCaption: "Fig: Hydropneumatic pressure surge expansion tank integrated into an industrial multistage booster pumping skid to suppress water hammer."
+      },
+      {
+        heading: "Specification & Selection: Engineering Guidance for Water Treatment Professionals",
+        content: [
+          "Selecting the correct FRP vessel pressure rating and hydropneumatic tank volume is critical. Under-specification leads to equipment failure; over-specification wastes capital. Consult directly with Fivebro engineers on the [Fivebro Website](https://www.fivebro.com/) or at IPVS 2026."
+        ],
+        callout: "Evaluate Fivebro's complete Maxima, Altima, Sumo, and Alpha product ranges at Stall A2A, HITEX Hyderabad: [Register for your Free VIP Trade Visitor Pass](/visitor), or [book an exhibition stall at IPVS 2026](/exhibitor)."
+      }
+    ],
+    faq: [
+      {
+        question: "What is the maximum operating pressure for Fivebro Maxima FRP vessels?",
+        answer: "Fivebro Maxima FRP membrane pressure vessels are available in pressure ratings from 300 PSI for standard brackish water RO applications up to 1200+ PSI for high-recovery seawater desalination and ZLD brine concentration. Learn more on the [Fivebro Maxima Product Page](https://www.fivebro.com/)."
+      },
+      {
+        question: "Can I inspect Fivebro Maxima vessels and Sumo tanks live at IPVS 2026?",
+        answer: "Yes! Fivebro Water Services is exhibiting at Stall A2A at IPVS 2026 (HITEX Exhibition Centre, Hyderabad, December 3–4, 2026). You can [register for your Free VIP Visitor Pass](/visitor) today."
+      },
+      {
+        question: "How can other water treatment companies exhibit at IPVS 2026?",
+        answer: "You can book your exhibition stall by visiting our [IPVS Exhibitor Portal](/exhibitor) to showcase your water treatment solutions alongside Fivebro and leading OEMs."
+      }
+    ],
+    ctaType: "visitor"
   }
 ];
 
 export const BLOG_ARTICLES: BlogArticle[] = RAW_BLOG_ARTICLES.map((b): BlogArticle => ({
   ...b,
   image: getMediaUrl(b.image),
-  carouselImages: b.carouselImages?.map(img => getMediaUrl(img))
+  carouselImages: b.carouselImages?.map(img => getMediaUrl(img)),
+  sections: b.sections?.map(s => ({
+    ...s,
+    image: s.image ? getMediaUrl(s.image) : undefined
+  }))
 }));
 
 
