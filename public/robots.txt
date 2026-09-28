@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /invite-generator
 
 Sitemap: https://ipvs.in/sitemap.xml

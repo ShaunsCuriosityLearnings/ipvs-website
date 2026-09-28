@@ -3,75 +3,132 @@
   <!-- Core Website Pages -->
   <url>
     <loc>https://ipvs.in/</loc>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ipvs.in/about-us</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://ipvs.in/exhibitor</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://ipvs.in/visitor</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://ipvs.in/visit</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ipvs.in/about-us</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://ipvs.in/smart-iot-pumps</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://ipvs.in/smart-valve-automation</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://ipvs.in/advisory-board</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://ipvs.in/contact-us</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://ipvs.in/privacy-policy</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://ipvs.in/terms-and-conditions</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
   </url>
 
   <!-- Knowledge Hub & SEO Blog Hub -->
   <url>
     <loc>https://ipvs.in/blogs</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
   </url>
 
-  <!-- Dedicated Blog Articles -->
+  <!-- Dedicated Technical & Exhibitor Spotlight Blog Articles -->
   <url>
     <loc>https://ipvs.in/blogs/smart-indian-pump-manufacturers-tco</loc>
-    <lastmod>2026-01-28</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://ipvs.in/blogs/india-water-management-problem-smart-flow</loc>
-    <lastmod>2026-01-22</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://ipvs.in/blogs/factories-wait-equipment-fail-predictive-maintenance</loc>
-    <lastmod>2026-01-15</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://ipvs.in/blogs/ethanol-blending-mandate-pumps-valves</loc>
-    <lastmod>2026-01-10</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ipvs.in/blogs/brownfield-industry-4-smart-factory-transformation</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ipvs.in/blogs/grundfos-pumps-india-ipvs-2026-exhibition</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ipvs.in/blogs/grundfos-cr-cre-isolutions-smart-pumps-industrial-guide</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ipvs.in/blogs/fivebro-water-services-ipvs-2026-exhibition</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://ipvs.in/blogs/fivebro-frp-membrane-vessels-pressure-tanks-industrial-guide</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
 </urlset>
