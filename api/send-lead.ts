@@ -40,11 +40,11 @@ export async function processLeadEmail(payload: LeadPayload): Promise<{ success:
   } = payload;
 
   const targetEmail = process.env.RECEIVER_EMAIL || 'info@orbitexhibitions.com';
-  const smtpHost = process.env.SMTP_HOST || 'mail.orbitexhibitions.com';
-  const smtpPort = parseInt(process.env.SMTP_PORT || '587', 10);
-  const smtpSecure = process.env.SMTP_SECURE === 'true' || smtpPort === 465;
+  const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
+  const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
+  const smtpSecure = process.env.SMTP_SECURE !== 'false';
   const smtpUser = process.env.SMTP_USER || 'info@orbitexhibitions.com';
-  const smtpPass = process.env.SMTP_PASS || '';
+  const smtpPass = process.env.SMTP_PASS || 'jtmacomtlpxareuj';
   const smtpFrom = process.env.SMTP_FROM || `"IPVS 2026 Portal" <${smtpUser}>`;
 
   // Determine subject line based on lead category
@@ -239,6 +239,9 @@ Delivered to: ${targetEmail}
       user: smtpUser,
       pass: smtpPass
     },
+    connectionTimeout: 8000,
+    greetingTimeout: 8000,
+    socketTimeout: 10000,
     tls: {
       rejectUnauthorized: false // Helps avoid self-signed cert issues on enterprise webmail
     }
