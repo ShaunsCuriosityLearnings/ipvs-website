@@ -41,6 +41,7 @@ export function findExhibitorByQuery(query: string | null | undefined): Exhibito
     if (clean === 'kavaata' && e.name.toLowerCase().includes('kavaata')) return true;
     if (clean.includes('delval') && e.name.toLowerCase().includes('delval')) return true;
     if (clean.includes('gipfel') && e.name.toLowerCase().includes('gipfel')) return true;
+    if (clean.includes('aqua') && e.name.toLowerCase().includes('aqua')) return true;
     return false;
   });
 }

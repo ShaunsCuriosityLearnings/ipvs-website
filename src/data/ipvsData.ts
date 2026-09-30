@@ -599,6 +599,18 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     logo: "/Logo/Gipfel.jpg",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
     description: "ISO 9001-2015 certified manufacturer of high-precision mechanical seals, cartridge seals, and chemical process pumps for demanding industrial fluid handling applications.",
+    country: "India",    featured: true
+  },
+  {
+    id: "ex-23",
+    name: "Aqua Group",
+    slug: "aquagroup",
+    stall: "Stall A34",
+    sector: "Submersible & Industrial Pumps",
+    booth: "Stall A34",
+    logo: "/Logo/Aqua Group.png",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Pioneering manufacturer of energy-efficient agricultural, domestic, and industrial pumps, submersible motors, and fluid handling systems under the flagship brands TEXMO and AQUATEX.",
     country: "India",
     featured: true
   }
