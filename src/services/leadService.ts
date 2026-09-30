@@ -95,47 +95,62 @@ export const submitLead = async (data: LeadSubmissionData): Promise<LeadSubmissi
       });
     }
 
-    // Directly dispatch to Google Sheets as well
     const DEFAULT_GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbx9bdhZcGLXFApXJzxFd9DR5tgjRyegFhA2cffAfLaab1TC05YYOPBXeZpKzM2VAEjD/exec';
     const clientGoogleSheetUrl = (import.meta as any).env?.VITE_GOOGLE_SHEETS_SCRIPT_URL || DEFAULT_GOOGLE_SHEETS_URL;
-    if (clientGoogleSheetUrl && typeof clientGoogleSheetUrl === 'string' && clientGoogleSheetUrl.startsWith('http')) {
-      fetch(clientGoogleSheetUrl, {
+
+    // Direct Google Sheets fallback dispatcher (used ONLY if the backend API is unreachable or fails)
+    const dispatchDirectToGoogleSheetsFallback = async () => {
+      if (clientGoogleSheetUrl && typeof clientGoogleSheetUrl === 'string' && clientGoogleSheetUrl.startsWith('http')) {
+        try {
+          await fetch(clientGoogleSheetUrl, {
+            method: 'POST',
+            mode: 'no-cors', // Standard for Google Apps Script Web Apps to prevent browser CORS blockages
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          console.log('[Direct Google Sheet Fallback] Lead logged directly to Google Sheets.');
+        } catch (sheetErr) {
+          console.warn('[Direct Google Sheet Webhook Notice]', sheetErr);
+        }
+      }
+    };
+
+    // Primary route: Send to backend API (/api/send-lead), which records in Google Sheets AND sends Nodemailer email
+    try {
+      const response = await fetch('/api/send-lead', {
         method: 'POST',
-        mode: 'no-cors', // Standard for Google Apps Script Web Apps to prevent browser CORS blockages
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify(payload)
-      }).catch(sheetErr => {
-        console.warn('[Direct Google Sheet Webhook Notice]', sheetErr);
       });
-    }
 
-    const response = await fetch('/api/send-lead', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    });
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        console.warn('[Lead Submission Backend Warning, invoking Google Sheets fallback]', errorData);
+        await dispatchDirectToGoogleSheetsFallback();
+        return {
+          success: true,
+          message: errorData.message || 'Lead received'
+        };
+      }
 
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      console.warn('[Lead Submission Warning]', errorData);
-      // Return gracefully so user still sees confirmation while logging warning
+      const result = await response.json();
       return {
         success: true,
-        message: errorData.message || 'Lead received'
+        message: result.message || 'Lead successfully dispatched'
+      };
+    } catch (networkOrApiErr) {
+      console.warn('[Backend API Unreachable, invoking direct Google Sheets fallback]', networkOrApiErr);
+      await dispatchDirectToGoogleSheetsFallback();
+      return {
+        success: true,
+        message: 'Lead received'
       };
     }
-
-    const result = await response.json();
-    return {
-      success: true,
-      message: result.message || 'Lead successfully dispatched to info@orbitexhibitions.com'
-    };
   } catch (err: any) {
-    console.error('[Lead Dispatch Error]', err);
-    // Don't crash client UX on network issue; return graceful success
+    console.error('[Lead Dispatch Critical Error]', err);
     return {
       success: true,
       message: 'Lead received locally'

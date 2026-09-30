@@ -118,6 +118,20 @@ function doPost(e) {
     var utmContent = data.utmContent || "N/A";
     var landingPage = data.landingPage || "N/A";
 
+    // Deduplication Guard: Ignore duplicate submissions for the same email/phone within 15 seconds
+    var dedupeKey = ((email + "_" + mobile).toLowerCase()).replace(/[^a-z0-9_]/gi, "");
+    if (dedupeKey && dedupeKey !== "_") {
+      var cache = CacheService.getScriptCache();
+      if (cache.get("lead_" + dedupeKey)) {
+        return ContentService.createTextOutput(JSON.stringify({
+          status: "success",
+          message: "Duplicate lead submission ignored (already recorded within 15s window)",
+          timestamp: istTimestamp
+        })).setMimeType(ContentService.MimeType.JSON);
+      }
+      cache.put("lead_" + dedupeKey, "1", 15);
+    }
+
     var rowValues = [
       istTimestamp,
       formType.toUpperCase(),
