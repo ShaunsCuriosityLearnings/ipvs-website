@@ -42,6 +42,7 @@ export function findExhibitorByQuery(query: string | null | undefined): Exhibito
     if (clean.includes('delval') && e.name.toLowerCase().includes('delval')) return true;
     if (clean.includes('gipfel') && e.name.toLowerCase().includes('gipfel')) return true;
     if (clean.includes('aqua') && e.name.toLowerCase().includes('aqua')) return true;
+    if (clean.includes('alfa') && e.name.toLowerCase().includes('alfa')) return true;
     return false;
   });
 }
