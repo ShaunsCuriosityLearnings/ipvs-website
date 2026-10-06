@@ -613,6 +613,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "Pioneering manufacturer of energy-efficient agricultural, domestic, and industrial pumps, submersible motors, and fluid handling systems under the flagship brands TEXMO and AQUATEX.",
     country: "India",
     featured: true
+  },
+  {
+    id: "ex-24",
+    name: "N Gandhi Group",
+    slug: "ngandhi",
+    stall: "Stall A23",
+    sector: "Precision Valve Balls & Engineering Components",
+    booth: "Stall A23",
+    logo: "/Logo/N GANDHI GROUP LOGO WB (1).png",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    description: "Leading manufacturer of precision valve balls, high-tolerance spherical components, technical ceramics, and precision-machined flow control parts for industrial valves and process systems.",
+    country: "India",
+    featured: true
   }
 ].map(e => ({
   ...e,
