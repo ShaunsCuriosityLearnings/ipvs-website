@@ -30,26 +30,26 @@ export const EsteemedExhibitorsSection: React.FC = () => {
         {/* ==========================================
             LOGO CARDS GRID: Borderless with Soft Elevation
             ========================================== */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5 sm:gap-5">
           {ESTEEMED_EXHIBITORS.map((exhibitor) => (
             <div
               key={exhibitor.id}
               onClick={() => navigate('/exhibitor')}
-              className="bg-white rounded-2xl p-3.5 sm:p-4 border-0 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.05)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-between text-center min-h-[110px] sm:min-h-[125px]"
+              className="bg-white rounded-2xl p-4 sm:p-5 border-0 shadow-[0_2px_12px_-2px_rgba(0,0,0,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-between text-center min-h-[150px] sm:min-h-[170px]"
             >
-              {/* Logo Container with Proper Scaling */}
-              <div className="h-11 sm:h-13 w-full flex items-center justify-center p-1">
+              {/* Logo Container with Expanded Scaling */}
+              <div className="h-20 sm:h-24 w-full flex items-center justify-center p-1 sm:p-2">
                 <img
                   src={exhibitor.logo}
                   alt={exhibitor.name}
-                  className="max-h-9 sm:max-h-11 w-auto max-w-[85%] object-contain group-hover:scale-105 transition-transform duration-300"
+                  className="max-h-16 sm:max-h-20 w-auto max-w-[92%] sm:max-w-[90%] object-contain group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
 
               {/* Brand Name Text under the Logo */}
-              <div className="w-full pt-1.5 border-t border-slate-100">
-                <h3 className="text-xs font-extrabold text-slate-900 font-heading tracking-tight line-clamp-1 group-hover:text-[#1E65FF] transition-colors">
+              <div className="w-full pt-2.5 border-t border-slate-100">
+                <h3 className="text-xs sm:text-[13px] font-extrabold text-slate-800 font-heading tracking-tight line-clamp-1 group-hover:text-[#1E65FF] transition-colors">
                   {exhibitor.name}
                 </h3>
               </div>

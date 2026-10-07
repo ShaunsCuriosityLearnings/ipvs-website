@@ -626,6 +626,32 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "Leading manufacturer of precision valve balls, high-tolerance spherical components, technical ceramics, and precision-machined flow control parts for industrial valves and process systems.",
     country: "India",
     featured: true
+  },
+  {
+    id: "ex-25",
+    name: "Anant Hydro Engineers",
+    slug: "ananthydro",
+    stall: "Stall A35",
+    sector: "Industrial Hydraulics & Hydro Engineering Systems",
+    booth: "Stall A35",
+    logo: "/Logo/Anant Hydro Engineers LLP.png",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Specialized engineering firm delivering high-performance hydraulic systems, hydro-mechanical equipment, precision fluid power solutions, and turnkey industrial engineering services.",
+    country: "India",
+    featured: true
+  },
+  {
+    id: "ex-26",
+    name: "Tender Genie",
+    slug: "tendergenie",
+    stall: "Stall L24",
+    sector: "Industrial Procurement Intelligence & Tender Solutions",
+    booth: "Stall L24",
+    logo: "/Logo/TenderGenie.png",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    description: "Premier AI-powered B2B tender discovery, procurement intelligence, and bid management platform connecting equipment manufacturers and contractors to global industrial tenders.",
+    country: "India",
+    featured: true
   }
 ].map(e => ({
   ...e,

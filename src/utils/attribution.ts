@@ -44,6 +44,8 @@ export function findExhibitorByQuery(query: string | null | undefined): Exhibito
     if (clean.includes('aqua') && e.name.toLowerCase().includes('aqua')) return true;
     if (clean.includes('alfa') && e.name.toLowerCase().includes('alfa')) return true;
     if ((clean.includes('gandhi') || clean.includes('ngandhi')) && e.name.toLowerCase().includes('gandhi')) return true;
+    if ((clean.includes('anant') || clean.includes('ananthydro')) && e.name.toLowerCase().includes('anant')) return true;
+    if ((clean.includes('tender') || clean.includes('genie') || clean.includes('tendergenie')) && e.name.toLowerCase().includes('tender')) return true;
     return false;
   });
 }

@@ -914,26 +914,26 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
           </div>
 
           {/* Logo Cards Grid: Clean Borderless Cards with Soft Elevation */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5 sm:gap-4.5">
             {ESTEEMED_EXHIBITORS.map((exhibitor) => (
               <div 
                 key={exhibitor.id}
                 onClick={() => onOpenModal('exhibitor')}
-                className="bg-[#F8FAFC] hover:bg-white rounded-xl p-3.5 sm:p-4 border-0 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-between text-center min-h-[110px] sm:min-h-[125px]"
+                className="bg-[#F8FAFC] hover:bg-white rounded-2xl p-3.5 sm:p-4.5 border-0 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.05)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-between text-center min-h-[140px] sm:min-h-[160px]"
               >
                 {/* Logo Container */}
-                <div className="h-11 sm:h-13 w-full flex items-center justify-center p-1">
+                <div className="h-18 sm:h-22 w-full flex items-center justify-center p-1 sm:p-1.5">
                   <img 
                     src={exhibitor.logo} 
                     alt={exhibitor.name}
-                    className="max-h-9 sm:max-h-11 w-auto max-w-[85%] object-contain group-hover:scale-105 transition-transform duration-300"
+                    className="max-h-14 sm:max-h-18 w-auto max-w-[92%] sm:max-w-[90%] object-contain group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                 </div>
 
                 {/* Brand Name */}
-                <div className="w-full pt-1.5 border-t border-slate-100">
-                  <h3 className="text-xs font-extrabold text-slate-900 font-heading tracking-tight line-clamp-2 text-center group-hover:text-[#1E65FF] transition-colors">
+                <div className="w-full pt-2 border-t border-slate-100">
+                  <h3 className="text-[11px] sm:text-xs font-extrabold text-slate-800 font-heading tracking-tight line-clamp-2 text-center group-hover:text-[#1E65FF] transition-colors">
                     {exhibitor.name}
                   </h3>
                 </div>
