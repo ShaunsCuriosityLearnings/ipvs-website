@@ -768,7 +768,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
     type: "exhibitor",
     date: "28 Jan 2026",
     readTime: "6 min read",
-    image: "/blogs/smart-indian-pumps-tco.png",
+    image: "/blog-assets/smart-indian-pumps-tco.png",
     tags: ["Smart Pumps", "Make in India", "Total Cost of Ownership", "Industrial IoT", "IPVS 2026", "Export Manufacturing", "Flow Control"],
     keyTakeaways: [
       "Global procurement has decisively shifted from initial capex discount hunting to Total Cost of Ownership (TCO) and lifecycle energy efficiency.",
@@ -854,7 +854,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
     type: "technology",
     date: "22 Jan 2026",
     readTime: "7 min read",
-    image: "/blogs/water-management-ipvs.png",
+    image: "/blog-assets/water-management-ipvs.png",
     tags: ["Water Management", "Zero Liquid Discharge", "Smart Valves", "Industrial IoT", "ZLD", "Wastewater Treatment", "Circular Economy"],
     keyTakeaways: [
       "The primary bottleneck in Indian industry is not absolute water scarcity, but distribution inefficiencies, transmission losses, and low circular recycling rates.",
@@ -932,7 +932,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
     type: "visitor",
     date: "15 Jan 2026",
     readTime: "6 min read",
-    image: "/blogs/predictive-maintenance-valves.png",
+    image: "/blog-assets/predictive-maintenance-valves.png",
     tags: ["Predictive Maintenance", "Smart Manufacturing", "Cavitation Detection", "Industrial IoT", "Smart Valves", "Asset Reliability", "IPVS 2026"],
     keyTakeaways: [
       "Reactive 'Run-to-Failure' maintenance destroys production schedules and costs heavy process plants over $50,000 per hour in unscheduled downtime.",
@@ -1067,13 +1067,13 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
     type: "technology",
     date: "12 Feb 2026",
     readTime: "8 min read",
-    image: "/blogs/IPVSlinkedin12 (1).jpg",
+    image: "/blog-assets/IPVSlinkedin12 (1).jpg",
     carouselImages: [
-      "/blogs/IPVSlinkedin12 (1).jpg",
-      "/blogs/IPVSlinkedin12 (2).jpg",
-      "/blogs/IPVSlinkedin12 (3).jpg",
-      "/blogs/IPVSlinkedin12 (4).jpg",
-      "/blogs/IPVSlinkedin12 (5).jpg"
+      "/blog-assets/IPVSlinkedin12 (1).jpg",
+      "/blog-assets/IPVSlinkedin12 (2).jpg",
+      "/blog-assets/IPVSlinkedin12 (3).jpg",
+      "/blog-assets/IPVSlinkedin12 (4).jpg",
+      "/blog-assets/IPVSlinkedin12 (5).jpg"
     ],
     tags: [
       "Industry 4.0",
@@ -1197,7 +1197,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
     type: "exhibitor",
     date: "25 Sep 2026",
     readTime: "7 min read",
-    image: "/blogs/grundfos-ipvs-booth.jpg",
+    image: "/blog-assets/grundfos-ipvs-booth.jpg",
     tags: ["Grundfos", "Grundfos India", "IPVS 2026", "Smart Pumps", "Industrial Exhibition", "Exhibitor Spotlight", "Shankar Rajaram", "Hyderabad"],
     keyTakeaways: [
       "Grundfos Pumps India Pvt Ltd is confirmed as an Esteemed Exhibitor at IPVS 2026, occupying [Stall A4 at HITEX Exhibition Centre, Hyderabad](/visitor) (December 3–4, 2026).",
@@ -1242,7 +1242,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
           "In India, Grundfos operates through Grundfos Pumps India Pvt Ltd with manufacturing, engineering, and sales operations headquartered in Chennai, Tamil Nadu. Explore their complete portfolio on the [official Grundfos India portal](https://www.grundfos.com/in)."
         ],
         callout: "Grundfos moves approximately 6% of the world's water. Their presence at IPVS 2026 brings world-class pump intelligence directly to Indian industry leaders.",
-        image: "/blogs/grundfos-smart-pumps.jpg",
+        image: "/blog-assets/grundfos-smart-pumps.jpg",
         imageCaption: "Fig: Advanced pump testing and calibration bay showcasing Grundfos vertical multistage centrifugal pumps with integrated digital smart drives."
       },
       {
@@ -1265,7 +1265,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
           "[iSOLUTIONS Intelligent Digital Platform](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models): Live demonstration of remote pump monitoring, predictive maintenance alerts, vibration analytics, and SCADA/DCS integration via Grundfos' IoT dashboard.",
           "SE/SL Wastewater Submersible Pumps: Heavy-duty non-clog impeller systems with SmartTrim automatic clearance adjustment for handling fibrous municipal sewage and industrial slurries."
         ],
-        image: "/blogs/grundfos-cr-hero.jpg",
+        image: "/blog-assets/grundfos-cr-hero.jpg",
         imageCaption: "Fig: Commercial-grade Grundfos CRE smart pump unit with integrated MGE IE5 electric drive motor and digital operational interface."
       },
       {
@@ -1311,7 +1311,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
     type: "technology",
     date: "24 Sep 2026",
     readTime: "8 min read",
-    image: "/blogs/grundfos-cr-hero.jpg",
+    image: "/blog-assets/grundfos-cr-hero.jpg",
     tags: ["Grundfos CR Pump", "Grundfos CRE", "iSOLUTIONS", "IE5 Motor", "Multistage Pump", "Boiler Feed Pump", "RO High Pressure Pump", "Smart Pumps", "Variable Frequency Drive", "IPVS 2026"],
     keyTakeaways: [
       "The [Grundfos CR family](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte) is available in over 1 million modular configurations across cast iron (CR), stainless steel 304 (CRI), stainless steel 316 (CRN), and titanium, covering flows up to 320 m³/h and pressures up to 50 bar.",
@@ -1362,7 +1362,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
           "Detailed specs and performance curves: [Explore the Grundfos CR Product Catalogue](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte)."
         ],
         callout: "Over 1 million possible configurations. One platform. Explore pump curves on [Grundfos India](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte).",
-        image: "/blogs/grundfos-cr-internals.jpg",
+        image: "/blog-assets/grundfos-cr-internals.jpg",
         imageCaption: "Fig: 3D technical cutaway schematic showing internal stainless steel stacked impellers, diffusers, bearings, and balanced cartridge mechanical seal assembly."
       },
       {
@@ -1372,7 +1372,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
           "In a traditional fixed-speed pump installation, when downstream demand drops, excess pressure is wasted through throttling valves or bypass lines. The CRE eliminates this waste entirely. Its on-board controller continuously monitors system pressure and flow via integrated sensors, throttling motor speed to match exact demand."
         ],
         callout: "A 20% speed reduction = 49% power savings. Read more about the [CRE Smart Pump Series](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models).",
-        image: "/blogs/grundfos-smart-pumps.jpg",
+        image: "/blog-assets/grundfos-smart-pumps.jpg",
         imageCaption: "Fig: Array of CRE smart pumps with integrated variable speed drives operating in an automated industrial pressure boosting station."
       },
       {
@@ -1434,7 +1434,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
     type: "exhibitor",
     date: "23 Sep 2026",
     readTime: "7 min read",
-    image: "/blogs/fivebro-ipvs-booth2.png",
+    image: "/blog-assets/fivebro-ipvs-booth2.png",
     tags: ["Fivebro", "Fivebro Water Services", "IPVS 2026", "Water Treatment", "FRP Vessels", "Membrane Housing", "Pressure Tanks", "Nishit Doshi", "RO Components", "Hyderabad Exhibition"],
     keyTakeaways: [
       "Fivebro Water Services Pvt Ltd is confirmed as an Esteemed Exhibitor at IPVS 2026, occupying [Stall A2A at HITEX Exhibition Centre, Hyderabad](/visitor) (December 3–4, 2026).",
@@ -1479,7 +1479,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
           "The company serves as a primary supply partner to hundreds of water treatment OEMs, EPC contractors, and system integrators across India. Their pan-India warehousing network ensures that critical components are available for immediate dispatch. Learn more at the [official Fivebro website](https://www.fivebro.com/)."
         ],
         callout: "30+ years. One unified component ecosystem. From membrane vessels to pressure tanks to filtration media — explore the [Fivebro Product Range](https://www.fivebro.com/).",
-        image: "/blogs/fivebro-maxima-sumo-hero.jpg",
+        image: "/blog-assets/fivebro-maxima-sumo-hero.jpg",
         imageCaption: "Fig: Fivebro flagship engineering products: Maxima multi-port FRP membrane pressure vessels and Sumo hydropneumatic pressure tanks."
       },
       {
@@ -1502,7 +1502,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
           "[DuPont/Dow FilmTec & Keensen RO/NF/UF Membranes](https://www.fivebro.com/): India's authorized distribution channel for premium membrane technology across industrial, commercial, and municipal applications.",
           "Automatic Disc Filtration Skids & Filter Vessels: Pre-engineered filtration assemblies for sand, activated carbon, and dual-media treatment, paired with multiport automation valves."
         ],
-        image: "/blogs/fivebro-ro-facility.jpg",
+        image: "/blog-assets/fivebro-ro-facility.jpg",
         imageCaption: "Fig: High-capacity multi-stage reverse osmosis water treatment facility utilizing multi-port FRP membrane pressure vessel racks."
       },
       {
@@ -1548,7 +1548,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
     type: "technology",
     date: "22 Sep 2026",
     readTime: "8 min read",
-    image: "/blogs/fivebro-maxima-sumo-hero.jpg",
+    image: "/blog-assets/fivebro-maxima-sumo-hero.jpg",
     tags: ["Fivebro Maxima", "FRP Membrane Vessel", "Pressure Tank", "Sumo Alpha", "Zero Liquid Discharge", "RO Membrane Housing", "Water Hammer", "Hydropneumatic Tank", "Water Treatment Components", "IPVS 2026"],
     keyTakeaways: [
       "[Fivebro Maxima FRP membrane pressure vessels](https://www.fivebro.com/) are engineered for operating pressures from 300 PSI to 1200+ PSI, with burst ratings exceeding 3x the rated working pressure, specifically designed for high-recovery BWRO, SWRO, and ZLD brine concentration applications.",
@@ -1600,7 +1600,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
           "Full technical specifications: [Visit Fivebro FRP Vessels Catalogue](https://www.fivebro.com/)."
         ],
         callout: "A failed O-ring at 1000 PSI doesn't leak. It explodes. Maxima vessels are engineered with double O-ring sealing. Explore specs at [Fivebro](https://www.fivebro.com/).",
-        image: "/blogs/fivebro-ro-facility.jpg",
+        image: "/blog-assets/fivebro-ro-facility.jpg",
         imageCaption: "Fig: High-pressure multi-element FRP membrane vessel assembly installed on an industrial effluent recycling system."
       },
       {
@@ -1628,7 +1628,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
           "Water Hammer Absorption: The pre-charged air cushion absorbs hydraulic transients before they propagate through the piping network, protecting valves, instruments, and membrane vessels."
         ],
         callout: "A booster pump cycling 40 times per hour burns through motor windings in months. A properly sized Sumo or Alpha tank extends motor life by years: [View Fivebro Pressure Tanks](https://www.fivebro.com/).",
-        image: "/blogs/fivebro-water-hammer-skid.jpg",
+        image: "/blog-assets/fivebro-water-hammer-skid.jpg",
         imageCaption: "Fig: Hydropneumatic pressure surge expansion tank integrated into an industrial multistage booster pumping skid to suppress water hammer."
       },
       {
