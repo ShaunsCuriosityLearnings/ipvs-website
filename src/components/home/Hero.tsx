@@ -30,8 +30,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
       setIsMuted(!isMuted);
     }
   };
-
-  const reelCdnUrl = "https://res.cloudinary.com/lh8mihme/video/upload/f_auto,q_auto/v1789126184/wkbci960unajh9puvtys.mp4";
   const reelLocalUrl = "/ipvs-reel.mp4";
 
   return (
@@ -150,7 +148,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                   preload="auto"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 >
-                  <source src={reelCdnUrl} type="video/mp4" />
                   <source src={reelLocalUrl} type="video/mp4" />
                   <source src="/ipvs reel.mp4" type="video/mp4" />
                 </video>
@@ -263,7 +260,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
               playsInline 
               className="w-full h-full object-cover"
             >
-              <source src={reelCdnUrl} type="video/mp4" />
               <source src={reelLocalUrl} type="video/mp4" />
               <source src="/ipvs reel.mp4" type="video/mp4" />
             </video>

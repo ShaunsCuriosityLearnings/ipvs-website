@@ -3,6 +3,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { captureAttribution, getStoredAttribution, findExhibitorByQuery, AttributionData } from '../utils/attribution';
 import { ExhibitorItem, EVENT_DETAILS } from '../data/ipvsData';
 import { submitLead } from '../services/leadService';
+import { getMediaUrl } from '../utils/media';
 import { 
   Ticket, 
   Building2, 
@@ -205,7 +206,7 @@ export const TrackedVisitPage: React.FC<TrackedVisitPageProps> = ({ onOpenModal 
               <div className="shrink-0 flex items-center justify-center">
                 <div className="w-32 h-20 sm:w-56 sm:h-32 md:w-72 md:h-40 bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-5 shadow-2xl flex items-center justify-center">
                   <img
-                    src="/Logo/logo-1.png"
+                    src={getMediaUrl('/ipvs_logo.jpg')}
                     alt="IPVS 2026"
                     className="max-h-full max-w-full object-contain"
                   />

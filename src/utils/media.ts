@@ -1,18 +1,16 @@
-import cloudinaryMap from '../data/cloudinaryMap.json';
-
-const typedMap = cloudinaryMap as Record<string, string>;
-
 /**
- * Returns the optimized Cloudinary CDN URL for any local public asset path.
- * If not found in the Cloudinary map or if already an external URL, returns the original path.
+ * Media URL resolver for IPVS 2026 Portal
+ * Serves all media assets directly from the local web server / public directory.
+ * This guarantees 100% uptime, zero external CDN dependencies, and prevents
+ * 401 Unauthorized errors caused by expired or suspended third-party CDN accounts.
  */
 export function getMediaUrl(path: string | undefined | null): string {
   if (!path) return '';
   if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
     return path;
   }
-  const key = path.startsWith('/') ? path : `/${path}`;
-  return typedMap[key] || typedMap[key.replace(/’/g, "'")] || typedMap[key.replace(/'/g, '’')] || path;
+  return path.startsWith('/') ? path : `/${path}`;
 }
 
 export default getMediaUrl;
+
