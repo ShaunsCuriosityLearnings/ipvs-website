@@ -665,6 +665,32 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "Specialized manufacturer of precision fluid control valves, process valve components, industrial actuation fittings, and high-performance fluid handling solutions.",
     country: "India",
     featured: true
+  },
+  {
+    id: "ex-28",
+    name: "Convergent Science India LLP",
+    slug: "convergentscience",
+    stall: "Stall A37",
+    sector: "CFD Simulation Software & Fluid Flow Modeling",
+    booth: "Stall A37",
+    logo: "/Logo/Convergent Flow Logo.png",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    description: "World-leading computational fluid dynamics (CFD) software and simulation engineering provider specializing in CONVERGE CFD for automated fluid flow modeling, pumps, valves, and complex physical process systems.",
+    country: "India",
+    featured: true
+  },
+  {
+    id: "ex-29",
+    name: "TS Flow Controls Private Limited",
+    slug: "tsflow",
+    stall: "Stall L03",
+    sector: "Flow Control Systems & Industrial Valves",
+    booth: "Stall L03",
+    logo: "/Logo/tsflo.png",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Premier manufacturer and provider of advanced fluid flow control solutions, engineered industrial valves, actuation systems, and process equipment under the TS Flo brand.",
+    country: "India",
+    featured: true
   }
 ].map(e => ({
   ...e,

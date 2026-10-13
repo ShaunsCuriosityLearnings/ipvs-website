@@ -47,6 +47,8 @@ export function findExhibitorByQuery(query: string | null | undefined): Exhibito
     if ((clean.includes('anant') || clean.includes('ananthydro')) && e.name.toLowerCase().includes('anant')) return true;
     if ((clean.includes('tender') || clean.includes('genie') || clean.includes('tendergenie')) && e.name.toLowerCase().includes('tender')) return true;
     if ((clean.includes('ellem') || clean.includes('ellemengineering')) && e.name.toLowerCase().includes('ellem')) return true;
+    if ((clean.includes('convergent') || clean.includes('convergentscience') || clean.includes('convergentflow')) && e.name.toLowerCase().includes('convergent')) return true;
+    if ((clean.includes('tsflow') || clean.includes('tsflo') || clean.includes('tsflowcontrols')) && e.name.toLowerCase().includes('ts flow')) return true;
     return false;
   });
 }
