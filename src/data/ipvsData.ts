@@ -691,6 +691,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "Premier manufacturer and provider of advanced fluid flow control solutions, engineered industrial valves, actuation systems, and process equipment under the TS Flo brand.",
     country: "India",
     featured: true
+  },
+  {
+    id: "ex-30",
+    name: "Nikoo Precision Cast",
+    slug: "nikoo",
+    stall: "Stall L33",
+    sector: "Precision Investment Castings & Valve Components",
+    booth: "Stall L33",
+    logo: "/Logo/nikoo precision cast.svg",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    description: "Leading manufacturer of high-integrity investment castings, precision lost-wax castings, stainless steel, and alloy steel cast components for industrial valves, pumps, and process equipment.",
+    country: "India",
+    featured: true
   }
 ].map(e => ({
   ...e,

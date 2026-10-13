@@ -49,6 +49,7 @@ export function findExhibitorByQuery(query: string | null | undefined): Exhibito
     if ((clean.includes('ellem') || clean.includes('ellemengineering')) && e.name.toLowerCase().includes('ellem')) return true;
     if ((clean.includes('convergent') || clean.includes('convergentscience') || clean.includes('convergentflow')) && e.name.toLowerCase().includes('convergent')) return true;
     if ((clean.includes('tsflow') || clean.includes('tsflo') || clean.includes('tsflowcontrols')) && e.name.toLowerCase().includes('ts flow')) return true;
+    if ((clean.includes('nikoo') || clean.includes('nikooprecision') || clean.includes('nikoocast')) && e.name.toLowerCase().includes('nikoo')) return true;
     return false;
   });
 }
