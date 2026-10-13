@@ -652,6 +652,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "Premier AI-powered B2B tender discovery, procurement intelligence, and bid management platform connecting equipment manufacturers and contractors to global industrial tenders.",
     country: "India",
     featured: true
+  },
+  {
+    id: "ex-27",
+    name: "ELLEM Engineering",
+    slug: "ellem",
+    stall: "Stall L18",
+    sector: "Fluid Control Valves & Components",
+    booth: "Stall L18",
+    logo: "/Logo/ELLEM Engineering.jpg",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Specialized manufacturer of precision fluid control valves, process valve components, industrial actuation fittings, and high-performance fluid handling solutions.",
+    country: "India",
+    featured: true
   }
 ].map(e => ({
   ...e,

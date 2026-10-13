@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ESTEEMED_EXHIBITORS, ExhibitorItem } from '../data/ipvsData';
-import { buildTrackingUrl } from '../utils/attribution';
+import { buildTrackingUrl, findExhibitorByQuery } from '../utils/attribution';
 import { 
   QrCode, 
   Copy, 
@@ -40,6 +41,7 @@ const AUTH_KEY = 'ipvs_generator_auth_token';
 const VALID_PASSKEYS = ['ipvs2026', 'orbit2026'];
 
 export const InviteGeneratorPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
   // Authentication State
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false;
@@ -50,11 +52,23 @@ export const InviteGeneratorPage: React.FC = () => {
   const [authError, setAuthError] = useState(false);
 
   // Generator State
-  const [selectedExhibitorId, setSelectedExhibitorId] = useState<string>(ESTEEMED_EXHIBITORS[0]?.id || 'ex-1');
+  const exhibitorParam = searchParams.get('exhibitor') || searchParams.get('id') || searchParams.get('slug');
+  const matchedInitial = exhibitorParam ? findExhibitorByQuery(exhibitorParam) : undefined;
+  const [selectedExhibitorId, setSelectedExhibitorId] = useState<string>(matchedInitial?.id || ESTEEMED_EXHIBITORS[0]?.id || 'ex-1');
   const [selectedChannel, setSelectedChannel] = useState<string>('qr');
   const [campaign, setCampaign] = useState<string>('ipvs2026');
   const [copiedUrl, setCopiedUrl] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>('');
+
+  useEffect(() => {
+    const param = searchParams.get('exhibitor') || searchParams.get('id') || searchParams.get('slug');
+    if (param) {
+      const match = findExhibitorByQuery(param);
+      if (match) {
+        setSelectedExhibitorId(match.id);
+      }
+    }
+  }, [searchParams]);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
