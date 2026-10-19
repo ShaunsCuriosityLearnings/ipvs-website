@@ -735,9 +735,10 @@ export const MEDIA_PARTNERS: MediaPartner[] = [
   },
   {
     id: "mp-3",
-    name: "Mantonia",
+    name: "Maintonia",
     category: "Industrial Engineering & Machinery Media",
-    logo: "/mediapartners/mantonia.PNG"
+    logo: "/mediapartners/Maintonia-Logo-Black.png",
+    website: "https://maintonia.ai"
   }
 ].map(p => ({
   ...p,
