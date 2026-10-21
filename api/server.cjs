@@ -201,6 +201,235 @@ async function sendLeadEmail(payload) {
   }
 }
 
+async function sendUserConfirmationEmail(payload) {
+  const {
+    formType = 'general',
+    firstName = '',
+    lastName = '',
+    company = '',
+    designation = '',
+    email = '',
+    mobile = '',
+    stallSize = 'N/A',
+    sectorInterest = 'General Industrial Flow Control',
+    sponsorshipTier = 'General Sponsorship'
+  } = payload;
+
+  if (!email || !email.includes('@')) {
+    console.warn('[Autoresponder] Skipped: invalid email address', email);
+    return false;
+  }
+
+  const isVisitor = formType === 'visitor';
+  const isExhibitor = formType === 'exhibitor';
+  const isSponsorship = formType === 'sponsorship';
+
+  let subject = '';
+  let contentHtml = '';
+
+  if (isVisitor) {
+    subject = `Registration Confirmed: Your VIP Trade Visitor Pass for IPVS 2026 | HITEX Hyderabad`;
+    contentHtml = `
+      <p style="font-size: 16px; margin: 0 0 16px 0; color: #0f172a;">Dear <strong>${firstName}</strong>,</p>
+      <p style="font-size: 14px; line-height: 1.6; margin: 0 0 20px 0; color: #334155;">
+        Thank you for pre-registering for <strong>IPVS 2026 (Industrial Pumps, Valves & Process Systems Exhibition)</strong>! We are excited to have you join us at India's premier B2B industrial technology gathering.
+      </p>
+
+      <table width="100%" cellpadding="12" cellspacing="0" style="background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 24px; font-size: 14px; border-collapse: collapse;">
+        <tr>
+          <td colspan="2" style="background: #0D327B; color: #ffffff; font-weight: bold; font-size: 14px; border-radius: 6px 6px 0 0;">
+            📅 EVENT LOGISTICS & VENUE
+          </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e2e8f0;">
+          <td width="30%" style="color: #64748b; font-weight: bold;">Dates:</td>
+          <td style="color: #0f172a; font-weight: bold;">December 03 – 04, 2026 (Thursday & Friday)</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="color: #64748b; font-weight: bold;">Timings:</td>
+          <td style="color: #0f172a;">10:00 AM – 6:00 PM IST (Both Days)</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="color: #64748b; font-weight: bold;">Venue:</td>
+          <td style="color: #0f172a;">
+            <strong>HITEX Exhibition Center</strong><br>
+            Izzat Nagar, Kothaguda, Hyderabad, Telangana – 500084, India
+          </td>
+        </tr>
+        <tr>
+          <td style="color: #64748b; font-weight: bold;">Location Map:</td>
+          <td><a href="https://maps.google.com/?q=HITEX+Exhibition+Center+Hyderabad" target="_blank" style="color: #1E65FF; text-decoration: underline; font-weight: bold;">View on Google Maps &rarr;</a></td>
+        </tr>
+      </table>
+
+      <div style="background: #eff6ff; border-left: 4px solid #1E65FF; padding: 14px 18px; border-radius: 6px; margin-bottom: 24px;">
+        <h4 style="margin: 0 0 8px 0; color: #1E65FF; font-size: 14px; text-transform: uppercase;">Next Steps for Badge Collection</h4>
+        <ul style="margin: 0; padding-left: 18px; color: #334155; font-size: 13px; line-height: 1.6;">
+          <li>Your official digital registration has been logged for <strong>${company ? company : 'Delegate'}</strong>.</li>
+          <li>Closer to the event, you will receive your digital entry barcode and pass.</li>
+          <li><strong>On-Site Fast Track:</strong> Simply present this confirmation email along with your <strong>Business / Corporate ID Card</strong> at the <em>Pre-Registered Visitor Counter</em> at HITEX to collect your official Badge & Lanyard.</li>
+        </ul>
+      </div>
+
+      <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 18px; border-radius: 6px; margin-bottom: 24px;">
+        <h4 style="margin: 0 0 6px 0; color: #991b1b; font-size: 13px; text-transform: uppercase;">Important Guidelines</h4>
+        <ul style="margin: 0; padding-left: 18px; color: #7f1d1d; font-size: 12px; line-height: 1.5;">
+          <li><strong>Trade Visitors Only:</strong> Strictly open to industrial professionals, plant managers, EPC engineers, and procurement directors.</li>
+          <li><strong>Entry is Free:</strong> Complimentary trade pass for pre-registered industry delegates.</li>
+          <li><strong>Age Limit:</strong> Individuals below 18 years of age are strictly not permitted inside exhibition halls.</li>
+        </ul>
+      </div>
+
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; text-align: center; margin-bottom: 24px;">
+        <p style="margin: 0 0 6px 0; font-size: 13px; font-weight: bold; color: #166534;">
+          Think your colleagues will also benefit from attending?
+        </p>
+        <p style="margin: 0 0 12px 0; font-size: 12px; color: #15803d;">
+          Forward the Visitor Pre-Registration link to your engineering & procurement team:
+        </p>
+        <a href="https://ipvs.in/visitor" target="_blank" style="display: inline-block; background: #16a34a; color: #ffffff; padding: 10px 22px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 13px;">Forward Registration Link</a>
+      </div>
+    `;
+  } else if (isExhibitor) {
+    subject = `Thank You for Your Interest in Exhibiting at IPVS 2026 | HITEX Hyderabad`;
+    contentHtml = `
+      <p style="font-size: 16px; margin: 0 0 16px 0; color: #0f172a;">Dear <strong>${firstName}</strong>,</p>
+      <p style="font-size: 14px; line-height: 1.6; margin: 0 0 20px 0; color: #334155;">
+        Thank you for your interest in exhibiting at <strong>IPVS 2026 (Industrial Pumps, Valves & Process Systems Exhibition)</strong>! We are excited to have the opportunity to support your participation in what promises to be a dynamic and influential industrial event.
+      </p>
+
+      <table width="100%" cellpadding="12" cellspacing="0" style="background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 24px; font-size: 14px; border-collapse: collapse;">
+        <tr>
+          <td colspan="2" style="background: #0D327B; color: #ffffff; font-weight: bold; font-size: 14px; border-radius: 6px 6px 0 0;">
+            🏢 EXHIBITION DETAILS & LOCATION
+          </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e2e8f0;">
+          <td width="30%" style="color: #64748b; font-weight: bold;">Dates:</td>
+          <td style="color: #0f172a; font-weight: bold;">December 03 – 04, 2026</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="color: #64748b; font-weight: bold;">Venue:</td>
+          <td style="color: #0f172a;">
+            <strong>HITEX Exhibition Center</strong><br>
+            Izzat Nagar, Kothaguda, Hyderabad, Telangana – 500084, India
+          </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e2e8f0;">
+          <td style="color: #64748b; font-weight: bold;">Requested Stall:</td>
+          <td style="color: #1E65FF; font-weight: bold;">${stallSize !== 'N/A' ? stallSize : 'Standard Booth Space'}</td>
+        </tr>
+        <tr>
+          <td style="color: #64748b; font-weight: bold;">Company:</td>
+          <td style="color: #0f172a;">${company || 'N/A'}</td>
+        </tr>
+      </table>
+
+      <div style="background: #f8fafc; border-left: 4px solid #0D327B; padding: 16px 20px; border-radius: 6px; margin-bottom: 24px;">
+        <h4 style="margin: 0 0 10px 0; color: #0D327B; font-size: 14px; text-transform: uppercase;">Exhibitor Benefits at IPVS 2026:</h4>
+        <p style="margin: 0 0 10px 0; font-size: 13px; color: #475569;">As an exhibitor, you will have the chance to:</p>
+        <ul style="margin: 0; padding-left: 20px; color: #334155; font-size: 13px; line-height: 1.6;">
+          <li><strong>Connect and Network:</strong> Meet over 7,000+ pre-qualified plant heads, EPC contractors, and industrial buyers.</li>
+          <li><strong>Increase Brand Visibility:</strong> Position your company before high-priority sectors (Ethanol & Biofuels, Water Treatment & ZLD, Chemicals, Pharmaceuticals, Power & Steel).</li>
+          <li><strong>Generate Leads and Sales:</strong> Secure high-ticket annual supply contracts and direct procurement orders.</li>
+          <li><strong>Drive Business Growth:</strong> Showcase functional pumps, valves, and automation systems live to decision-makers.</li>
+          <li><strong>Stay Updated on Industry Trends:</strong> Participate in co-located technical conferences and knowledge sessions.</li>
+        </ul>
+      </div>
+
+      <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+        <h4 style="margin: 0 0 8px 0; color: #1E65FF; font-size: 14px;">Next Steps:</h4>
+        <p style="margin: 0 0 8px 0; font-size: 13px; color: #1e3a8a; line-height: 1.5;">
+          Please let us know if you would like further information on specific packages or if you would like to discuss your exhibit plans. Our Senior Exhibition Account Manager will contact you shortly with the latest <strong>HITEX Floor Plan Layout</strong> and commercial stall packages. We would be happy to arrange a call to go over any questions you may have.
+        </p>
+        <p style="margin: 0; font-size: 12px; color: #1e40af;">
+          Direct Contact: Call <strong>+91 22 2410 2801</strong> or Email <strong>info@orbitexhibitions.com</strong>.
+        </p>
+      </div>
+    `;
+  } else if (isSponsorship) {
+    subject = `Thank You for Your Sponsorship Inquiry — IPVS 2026 | HITEX Hyderabad`;
+    contentHtml = `
+      <p style="font-size: 16px; margin: 0 0 16px 0; color: #0f172a;">Dear <strong>${firstName}</strong>,</p>
+      <p style="font-size: 14px; line-height: 1.6; margin: 0 0 20px 0; color: #334155;">
+        Thank you for your interest in partnering with <strong>IPVS 2026</strong> as a Corporate Sponsor (${sponsorshipTier}).
+      </p>
+      <div style="background: #f8fafc; border-left: 4px solid #7C3AED; padding: 14px 18px; border-radius: 6px; margin-bottom: 20px;">
+        <h4 style="margin: 0 0 6px 0; color: #7C3AED; font-size: 14px;">Event Details</h4>
+        <p style="margin: 0; font-size: 13px; color: #334155;">
+          Dates: December 3–4, 2026 | HITEX Exhibition Center, Hyderabad, India<br>
+          Our Director of Strategic Partnerships will review your inquiry and share the comprehensive IPVS 2026 Sponsorship & Branding Deliverables Deck shortly.
+        </p>
+      </div>
+    `;
+  } else {
+    subject = `We Have Received Your Message — IPVS 2026 Event Desk`;
+    contentHtml = `
+      <p style="font-size: 16px; margin: 0 0 16px 0; color: #0f172a;">Dear <strong>${firstName}</strong>,</p>
+      <p style="font-size: 14px; line-height: 1.6; margin: 0 0 20px 0; color: #334155;">
+        Thank you for contacting the <strong>IPVS 2026 Event Desk</strong>. We have received your inquiry.
+      </p>
+      <p style="font-size: 13px; color: #475569; line-height: 1.5;">
+        Our support team will review your message and respond to <strong>${email}</strong> within one business day.
+      </p>
+    `;
+  }
+
+  const finalHtml = `
+    <!DOCTYPE html>
+    <html>
+    <head><meta charset="utf-8"></head>
+    <body style="font-family: Arial, sans-serif; background-color: #f4f7fe; padding: 20px; color: #1e293b; margin: 0;">
+      <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 620px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+        <tr>
+          <td style="background: linear-gradient(135deg, #0D327B 0%, #1E65FF 100%); padding: 26px 24px; text-align: center; color: #ffffff;">
+            <div style="font-size: 11px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: #67e8f9; margin-bottom: 6px;">Official Confirmation</div>
+            <h1 style="margin: 0; font-size: 24px; font-weight: 800; letter-spacing: 0.5px; color: #ffffff;">IPVS 2026</h1>
+            <p style="margin: 6px 0 0 0; font-size: 13px; opacity: 0.9; color: #e2e8f0;">Industrial Pumps, Valves & Systems Exhibition</p>
+            <p style="margin: 4px 0 0 0; font-size: 11px; color: #cbd5e1;">December 03–04, 2026 | HITEX Exhibition Center, Hyderabad</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 28px 24px;">
+            ${contentHtml}
+
+            <!-- Signoff Footer -->
+            <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 13px; color: #64748b; line-height: 1.6;">
+              <p style="margin: 0 0 4px 0; font-weight: bold; color: #0f172a;">Warm regards,</p>
+              <p style="margin: 0 0 10px 0; font-weight: bold; color: #1E65FF; font-size: 14px;">Team IPVS 2026</p>
+              <p style="margin: 0 0 2px 0;"><strong>Orbit Exhibitions Pvt. Ltd.</strong></p>
+              <p style="margin: 0 0 2px 0;">103, Navyug Industrial Estate, Tokershi Jivraj Rd, Sewri, Mumbai, Maharashtra 400015</p>
+              <p style="margin: 0 0 2px 0;">Phone: <a href="tel:+912224102801" style="color: #1E65FF; text-decoration: none;">+91 22 2410 2801</a> | Email: <a href="mailto:info@orbitexhibitions.com" style="color: #1E65FF; text-decoration: none;">info@orbitexhibitions.com</a></p>
+              <p style="margin: 0;">Website: <a href="https://ipvs.in" target="_blank" style="color: #1E65FF; text-decoration: none; font-weight: bold;">https://ipvs.in</a></p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="background: #f8fafc; padding: 14px 20px; text-align: center; font-size: 11px; color: #94a3b8; border-top: 1px solid #e2e8f0;">
+            This email was sent to ${email} because you submitted a form on the IPVS 2026 Official Portal (https://ipvs.in).
+          </td>
+        </tr>
+      </table>
+    </body>
+    </html>
+  `;
+
+  try {
+    const info = await transporter.sendMail({
+      from: `"Team IPVS 2026" <${process.env.SMTP_USER || 'info@orbitexhibitions.com'}>`,
+      to: email,
+      replyTo: process.env.RECEIVER_EMAIL || 'info@orbitexhibitions.com',
+      subject,
+      html: finalHtml
+    });
+    console.log(`[Autoresponder Sent] To ${email} (Subject: "${subject}") [ID: ${info.messageId}]`);
+    return true;
+  } catch (err) {
+    console.error('[Autoresponder Error]', err.message);
+    return false;
+  }
+}
+
 app.post('/api/send-lead', async (req, res) => {
   try {
     const payload = req.body;
@@ -217,10 +446,11 @@ app.post('/api/send-lead', async (req, res) => {
     // Instantly acknowledge receipt so form completes in < 50ms
     res.json({ success: true, message: 'Lead captured successfully' });
 
-    // Execute Google Sheets and Nodemailer in background
+    // Execute Google Sheets, Admin Nodemailer, and User Autoresponder in background
     Promise.allSettled([
       forwardToGoogleSheets(payload),
-      sendLeadEmail(payload)
+      sendLeadEmail(payload),
+      sendUserConfirmationEmail(payload)
     ]).catch(err => console.error('[Background Task Error]', err));
 
   } catch (err) {

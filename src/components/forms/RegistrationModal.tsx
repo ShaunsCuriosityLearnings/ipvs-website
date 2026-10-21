@@ -9,7 +9,13 @@ import {
   Calendar,
   ShieldCheck,
   Loader2,
-  Award
+  Award,
+  MapPin,
+  Clock,
+  Share2,
+  ExternalLink,
+  User,
+  Phone
 } from 'lucide-react';
 import { EVENT_DETAILS } from '../../data/ipvsData';
 import { submitLead, HEARD_ABOUT_OPTIONS, SPONSORSHIP_TIERS } from '../../services/leadService';
@@ -172,38 +178,187 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
         {/* Success Confirmation View */}
         {submitted ? (
-          <div className="text-center py-6 sm:py-8 space-y-3.5 animate-in fade-in duration-300">
-            <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto border-2 border-emerald-300 shadow-sm">
-              <CheckCircle2 className="w-8 h-8" />
+          <div className="text-left py-2 space-y-3.5 animate-in fade-in duration-300">
+            {/* Header Status Banner */}
+            <div className="text-center pb-2 border-b border-slate-200">
+              <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto border-2 border-emerald-300 shadow-sm mb-2.5">
+                <CheckCircle2 className="w-7 h-7" />
+              </div>
+
+              <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider mb-1 bg-emerald-50 text-emerald-700 border border-emerald-200">
+                {isVisitor 
+                  ? "Visitor Pre-Registration Confirmed" 
+                  : isExhibitor 
+                    ? "Exhibitor Stall Request Confirmed" 
+                    : isSponsorship
+                      ? "Sponsorship Inquiry Confirmed"
+                      : "Inquiry Sent to Event Desk"}
+              </span>
+
+              <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading">
+                Dear {formData.firstName || 'Delegate'},
+              </h3>
+
+              <p className="text-xs text-slate-600 max-w-md mx-auto mt-1 leading-relaxed">
+                {isVisitor ? (
+                  <>Thank you for pre-registering for <strong>IPVS 2026</strong>! We’re excited to have you join India&apos;s premier pumps, valves & process systems gathering. Your official confirmation has been sent to <strong className="text-blue-700">{formData.email}</strong>.</>
+                ) : isExhibitor ? (
+                  <>Thank you for your interest in exhibiting at <strong>IPVS 2026</strong>! We look forward to supporting your participation. A booking summary has been sent to <strong className="text-blue-700">{formData.email}</strong>.</>
+                ) : (
+                  <>Thank you for contacting the <strong>IPVS 2026 Organizing Desk</strong>. A copy of your submission has been dispatched to <strong className="text-blue-700">{formData.email}</strong>.</>
+                )}
+              </p>
             </div>
 
-            <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 font-heading">
-              {isVisitor 
-                ? "Visitor Registration Confirmed!" 
-                : isExhibitor 
-                  ? "Stall Request Confirmed!" 
-                  : isSponsorship
-                    ? "Sponsorship Inquiry Received!"
-                    : "Inquiry Sent to Event Desk!"}
-            </h3>
+            {/* User & Submission Details Card */}
+            <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm space-y-2">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-1.5">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                  <User className="w-3.5 h-3.5 text-[#1E65FF]" /> Registration Summary
+                </span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200 font-mono">
+                  {isVisitor ? 'TRADE VISITOR' : isExhibitor ? `EXHIBITOR (${formData.stallSize})` : 'PARTNERSHIP'}
+                </span>
+              </div>
 
-            <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-              Thank you, <strong>{formData.firstName} {formData.lastName}</strong> from <strong>{formData.company || 'Delegate'}</strong>. 
-              {isVisitor 
-                ? ` Your confirmation has been dispatched to ${formData.email}. Show confirmation at HITEX registration counter for instant fast-track entry.` 
-                : isExhibitor
-                  ? ` Orbit Exhibitions will contact you at ${formData.email} and ${formData.mobile} with layout diagrams for ${formData.stallSize}.`
-                  : isSponsorship
-                    ? ` Orbit Exhibitions will contact you at ${formData.email} and ${formData.mobile} with the IPVS 2026 Sponsorship Deck & branding deliverables.`
-                    : ` Event Desk will review your inquiry and respond to ${formData.email} shortly.`}
-            </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                <div>
+                  <span className="text-slate-400 text-[11px] block">Full Name</span>
+                  <span className="font-semibold text-slate-800">{formData.firstName} {formData.lastName}</span>
+                </div>
+                <div>
+                  <span className="text-slate-400 text-[11px] block">Company</span>
+                  <span className="font-semibold text-slate-800 truncate block">{formData.company || 'Not Specified'}</span>
+                </div>
+                <div>
+                  <span className="text-slate-400 text-[11px] block">Mobile Number</span>
+                  <span className="font-semibold text-slate-800">{formData.mobile}</span>
+                </div>
+                <div>
+                  <span className="text-slate-400 text-[11px] block">Official Email</span>
+                  <span className="font-semibold text-blue-700 truncate block">{formData.email}</span>
+                </div>
+                {formData.designation && (
+                  <div>
+                    <span className="text-slate-400 text-[11px] block">Designation</span>
+                    <span className="font-semibold text-slate-800">{formData.designation}</span>
+                  </div>
+                )}
+                {formData.city && (
+                  <div>
+                    <span className="text-slate-400 text-[11px] block">City</span>
+                    <span className="font-semibold text-slate-800">{formData.city}</span>
+                  </div>
+                )}
+                {isExhibitor && (
+                  <div>
+                    <span className="text-slate-400 text-[11px] block">Requested Stall Space</span>
+                    <span className="font-bold text-[#1E65FF]">{formData.stallSize}</span>
+                  </div>
+                )}
+                {isVisitor && formData.sectorInterest && (
+                  <div>
+                    <span className="text-slate-400 text-[11px] block">Sector Focus</span>
+                    <span className="font-semibold text-emerald-700 truncate block">{formData.sectorInterest}</span>
+                  </div>
+                )}
+              </div>
+            </div>
 
-            <button
-              onClick={onClose}
-              className="mt-2 px-7 py-2.5 rounded-xl text-xs font-bold text-white bg-[#1E65FF] hover:bg-[#0D47A1] transition-all shadow-md"
-            >
-              Done & Return to Website
-            </button>
+            {/* Event Details Card */}
+            <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5 text-[#1E65FF]" /> Event Details
+              </span>
+
+              <div className="space-y-1.5 text-slate-700">
+                <div className="flex items-start justify-between gap-2">
+                  <span className="text-slate-500 font-medium">Dates:</span>
+                  <span className="font-bold text-slate-900 text-right">December 03 – 04, 2026 (Thu & Fri)</span>
+                </div>
+                <div className="flex items-start justify-between gap-2">
+                  <span className="text-slate-500 font-medium">Timings:</span>
+                  <span className="font-semibold text-slate-800 text-right">10:00 AM – 6:00 PM IST</span>
+                </div>
+                <div className="flex items-start justify-between gap-2">
+                  <span className="text-slate-500 font-medium">Venue:</span>
+                  <span className="font-semibold text-slate-800 text-right">
+                    HITEX Exhibition Center, Izzat Nagar, Hyderabad, Telangana – 500084
+                  </span>
+                </div>
+                <div className="pt-1 flex items-center justify-between">
+                  <span className="text-slate-500 font-medium">Location Map:</span>
+                  <a 
+                    href="https://maps.google.com/?q=HITEX+Exhibition+Center+Hyderabad" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-[#1E65FF] hover:underline"
+                  >
+                    <MapPin className="w-3.5 h-3.5" /> View on Google Maps <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Next Steps & Guidelines Box */}
+            <div className={`p-3 rounded-xl border text-xs space-y-1.5 ${
+              isVisitor 
+                ? 'bg-blue-50/60 border-blue-200 text-slate-700' 
+                : 'bg-amber-50/60 border-amber-200 text-slate-700'
+            }`}>
+              <div className="font-bold uppercase text-[11px] tracking-wider text-slate-900 flex items-center gap-1">
+                <Clock className="w-3.5 h-3.5 text-[#1E65FF]" /> Next Steps:
+              </div>
+              {isVisitor ? (
+                <ul className="list-disc list-inside space-y-1 text-[11px] leading-relaxed text-slate-600">
+                  <li>Show this confirmation email or your digital badge barcode at the <strong>Pre-Registration Counter</strong> on-site to collect your official Badge & Lanyard.</li>
+                  <li>Please carry a valid <strong>Business / Corporate ID Card</strong> for verification.</li>
+                  <li><strong>Important:</strong> Trade visitors only • Entry is free • Persons below 18 years are strictly not permitted in exhibition halls.</li>
+                </ul>
+              ) : isExhibitor ? (
+                <ul className="list-disc list-inside space-y-1 text-[11px] leading-relaxed text-slate-600">
+                  <li>Our Senior Exhibition Account Manager will contact you shortly with the latest <strong>HITEX Floor Plan Layout</strong> and commercial stall package for <strong>{formData.stallSize}</strong>.</li>
+                  <li>Need direct floor plan assistance? Call <strong>+91 22 2410 2801</strong> or email <strong>info@orbitexhibitions.com</strong>.</li>
+                </ul>
+              ) : (
+                <p className="text-[11px] leading-relaxed text-slate-600">
+                  Our strategic partnership team will review your requirements and respond within one business day.
+                </p>
+              )}
+            </div>
+
+            {/* Actions: Add to Calendar, Invite Colleagues, Return */}
+            <div className="space-y-2 pt-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <a
+                  href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('IPVS 2026 - Industrial Pumps, Valves & Process Systems Exhibition')}&dates=20261203T043000Z/20261204T123000Z&details=${encodeURIComponent('IPVS 2026 at HITEX Exhibition Center, Hyderabad. Free trade visitor entry for plant engineers, procurement heads, and manufacturers. https://ipvs.in')}&location=${encodeURIComponent('HITEX Exhibition Center, Hyderabad')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2.5 px-3 rounded-xl text-xs font-bold bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 flex items-center justify-center gap-2 transition-all shadow-sm"
+                >
+                  <Calendar className="w-3.5 h-3.5 text-[#1E65FF]" />
+                  <span>Add to Google Calendar</span>
+                </a>
+
+                <a
+                  href={`https://wa.me/?text=${encodeURIComponent(`Hi! I just registered for IPVS 2026 (Industrial Pumps, Valves & Process Systems Exhibition) at HITEX Hyderabad (Dec 3-4, 2026). Claim your complimentary VIP Trade Visitor Pass here: https://ipvs.in/visitor`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2.5 px-3 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center gap-2 transition-all shadow-sm"
+                >
+                  <Share2 className="w-3.5 h-3.5" />
+                  <span>Invite Colleagues (WhatsApp)</span>
+                </a>
+              </div>
+
+              <button
+                type="button"
+                onClick={onClose}
+                className="w-full py-2.5 rounded-xl text-xs font-extrabold text-white bg-[#0D327B] hover:bg-[#1E65FF] transition-all shadow-md text-center"
+              >
+                Done & Return to Website
+              </button>
+            </div>
           </div>
         ) : (
           <div>
