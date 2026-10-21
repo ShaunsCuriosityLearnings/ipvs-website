@@ -228,7 +228,7 @@ async function sendUserConfirmationEmail(payload) {
   let contentHtml = '';
 
   if (isVisitor) {
-    subject = `Registration Confirmed: Your VIP Trade Visitor Pass for IPVS 2026 | HITEX Hyderabad`;
+    subject = `Registration Confirmed: Your Trade Visitor Pass for IPVS 2026 | HITEX Hyderabad`;
     contentHtml = `
       <p style="font-size: 16px; margin: 0 0 16px 0; color: #0f172a;">Dear <strong>${firstName}</strong>,</p>
       <p style="font-size: 14px; line-height: 1.6; margin: 0 0 20px 0; color: #334155;">

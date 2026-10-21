@@ -53,7 +53,7 @@ export const TrackedVisitPage: React.FC<TrackedVisitPageProps> = ({ onOpenModal 
     const matched = findExhibitorByQuery(query);
     setExhibitor(matched);
 
-    const exhibitorTitle = matched ? `${matched.name} | Official VIP Invite` : 'Official VIP Trade Visitor Portal';
+    const exhibitorTitle = matched ? `${matched.name} | Official Trade Invite` : 'Official Trade Visitor Portal';
     document.title = `${exhibitorTitle} | IPVS 2026`;
 
     let metaDesc = document.querySelector("meta[name='description']");
@@ -65,8 +65,8 @@ export const TrackedVisitPage: React.FC<TrackedVisitPageProps> = ({ onOpenModal 
     metaDesc.setAttribute(
       'content',
       matched
-        ? `You have been exclusively invited by ${matched.name} (${matched.stall || matched.booth}) to attend IPVS 2026 at HITEX Hyderabad (03-04 Dec 2026). Claim your complimentary VIP Trade Pass.`
-        : 'Register for your free VIP Trade Visitor Pass to IPVS 2026 at HITEX Hyderabad. Discover 100+ industrial pump & valve manufacturers.'
+        ? `You have been exclusively invited by ${matched.name} (${matched.stall || matched.booth}) to attend IPVS 2026 at HITEX Hyderabad (03-04 Dec 2026). Claim your complimentary Trade Pass.`
+        : 'Register for your free Trade Visitor Pass to IPVS 2026 at HITEX Hyderabad. Discover 100+ industrial pump & valve manufacturers.'
     );
   }, [searchParams]);
 
@@ -251,7 +251,7 @@ export const TrackedVisitPage: React.FC<TrackedVisitPageProps> = ({ onOpenModal 
                 </span>
               </div>
               <h3 className="text-xs sm:text-lg md:text-xl font-black text-slate-900 leading-snug group-hover:text-[#1E65FF] transition-colors">
-                Free VIP Pass
+                Free Trade Pass
               </h3>
               <p className="text-[11px] sm:text-xs text-slate-500 hidden sm:block mt-1">
                 Complimentary entry to all 3 exhibition halls & technical conferences
@@ -313,7 +313,7 @@ export const TrackedVisitPage: React.FC<TrackedVisitPageProps> = ({ onOpenModal 
           </div>
           <div className="bg-white p-2 sm:p-4 rounded-xl border border-slate-200/80 shadow-xs text-center">
             <span className="text-sm sm:text-2xl font-extrabold text-emerald-600 font-heading block">Free</span>
-            <span className="text-[9px] sm:text-xs font-semibold text-slate-600 block leading-tight">VIP Pass</span>
+            <span className="text-[9px] sm:text-xs font-semibold text-slate-600 block leading-tight">Visitor Pass</span>
           </div>
         </div>
       </section>
@@ -330,7 +330,7 @@ export const TrackedVisitPage: React.FC<TrackedVisitPageProps> = ({ onOpenModal 
             {exhibitor ? (
               <div className="flex items-center space-x-1.5 text-[11px] sm:text-xs font-bold text-[#1E65FF]">
                 <Award className="w-3.5 h-3.5 shrink-0" />
-                <span>Courtesy VIP Pass • {exhibitor.name} {cleanStall ? `(Stall ${cleanStall})` : ''}</span>
+                <span>Courtesy Pass • {exhibitor.name} {cleanStall ? `(Stall ${cleanStall})` : ''}</span>
               </div>
             ) : (
               <div className="flex items-center space-x-1.5 text-[11px] sm:text-xs font-bold text-[#1E65FF]">
@@ -356,7 +356,7 @@ export const TrackedVisitPage: React.FC<TrackedVisitPageProps> = ({ onOpenModal 
                 Registration Confirmed!
               </h3>
               <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
-                Thank you, <strong>{formData.firstName} {formData.lastName}</strong>. Your complimentary VIP visitor pass has been reserved. Present your mobile number at the registration counter for badge printing.
+                Thank you, <strong>{formData.firstName} {formData.lastName}</strong>. Your complimentary trade visitor pass has been reserved. Present your mobile number at the registration counter for badge printing.
               </p>
               {exhibitor && (
                 <div className="p-2.5 sm:p-3 bg-blue-50 rounded-xl text-xs text-blue-900 font-medium inline-block border border-blue-100">
@@ -471,7 +471,7 @@ export const TrackedVisitPage: React.FC<TrackedVisitPageProps> = ({ onOpenModal 
                   </>
                 ) : (
                   <>
-                    <span>Confirm Free VIP Pass</span>
+                    <span>Confirm Free Trade Pass</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </>
                 )}

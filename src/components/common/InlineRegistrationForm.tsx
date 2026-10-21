@@ -320,7 +320,7 @@ export const InlineRegistrationForm: React.FC<InlineRegistrationFormProps> = ({
                   </a>
 
                   <a
-                    href={`https://wa.me/?text=${encodeURIComponent(`Hi! I just registered for IPVS 2026 (Industrial Pumps, Valves & Process Systems Exhibition) at HITEX Hyderabad (Dec 3-4, 2026). Claim your complimentary VIP Trade Visitor Pass here: https://ipvs.in/visitor`)}`}
+                    href={`https://wa.me/?text=${encodeURIComponent(`Hi! I just registered for IPVS 2026 (Industrial Pumps, Valves & Process Systems Exhibition) at HITEX Hyderabad (Dec 3-4, 2026). Claim your complimentary Trade Visitor Pass here: https://ipvs.in/visitor`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="py-2.5 px-3 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center gap-2 transition-all shadow-sm"

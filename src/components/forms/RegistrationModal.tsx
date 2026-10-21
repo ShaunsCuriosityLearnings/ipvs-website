@@ -166,7 +166,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
           <div className="mb-4 px-3.5 py-2 rounded-xl bg-blue-50 border border-blue-200/80 text-[11px] font-semibold text-blue-900 flex items-center justify-between shadow-sm">
             <span className="truncate pr-2 flex items-center gap-1.5">
               <Award className="w-3.5 h-3.5 text-[#1E65FF] shrink-0" />
-              <span>VIP Invitation courtesy of: <strong>{getStoredAttribution().invitingExhibitor}</strong></span>
+              <span>Official Invitation courtesy of: <strong>{getStoredAttribution().invitingExhibitor}</strong></span>
             </span>
             {getStoredAttribution().stallNumber && (
               <span className="px-2 py-0.5 rounded bg-[#1E65FF] text-white font-mono text-[10px] font-bold shrink-0">
@@ -341,7 +341,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                 </a>
 
                 <a
-                  href={`https://wa.me/?text=${encodeURIComponent(`Hi! I just registered for IPVS 2026 (Industrial Pumps, Valves & Process Systems Exhibition) at HITEX Hyderabad (Dec 3-4, 2026). Claim your complimentary VIP Trade Visitor Pass here: https://ipvs.in/visitor`)}`}
+                  href={`https://wa.me/?text=${encodeURIComponent(`Hi! I just registered for IPVS 2026 (Industrial Pumps, Valves & Process Systems Exhibition) at HITEX Hyderabad (Dec 3-4, 2026). Claim your complimentary Trade Visitor Pass here: https://ipvs.in/visitor`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="py-2.5 px-3 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center gap-2 transition-all shadow-sm"
