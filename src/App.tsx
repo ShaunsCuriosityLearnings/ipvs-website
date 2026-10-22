@@ -81,6 +81,7 @@ function AppContent() {
           <Route path="/smart-iot-pumps" element={<SmartPumpPage onOpenModal={handleOpenModal} />} />
           <Route path="/visitor" element={<VisitorPage onOpenModal={handleOpenModal} />} />
           <Route path="/visit" element={<TrackedVisitPage onOpenModal={handleOpenModal} />} />
+          <Route path="/visit/:slug" element={<TrackedVisitPage onOpenModal={handleOpenModal} />} />
           <Route path="/visitor-invite" element={<TrackedVisitPage onOpenModal={handleOpenModal} />} />
           <Route path="/invite-generator" element={<InviteGeneratorPage />} />
           <Route path="/blogs" element={<BlogsPage onOpenModal={handleOpenModal} />} />

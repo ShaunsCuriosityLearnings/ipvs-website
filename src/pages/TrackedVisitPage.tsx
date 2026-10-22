@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useParams, useNavigate } from 'react-router-dom';
 import { captureAttribution, getStoredAttribution, findExhibitorByQuery, AttributionData } from '../utils/attribution';
 import { ExhibitorItem, EVENT_DETAILS } from '../data/ipvsData';
 import { submitLead } from '../services/leadService';
@@ -12,7 +12,7 @@ import {
   CheckCircle2, 
   ArrowRight, 
   ShieldCheck, 
-  Award,
+  Award, 
   Users,
   Check,
   Loader2
@@ -24,6 +24,7 @@ interface TrackedVisitPageProps {
 
 export const TrackedVisitPage: React.FC<TrackedVisitPageProps> = ({ onOpenModal }) => {
   const [searchParams] = useSearchParams();
+  const { slug } = useParams<{ slug?: string }>();
   const navigate = useNavigate();
   const [attribution, setAttribution] = useState<AttributionData>({});
   const [exhibitor, setExhibitor] = useState<ExhibitorItem | undefined>(undefined);
@@ -49,7 +50,7 @@ export const TrackedVisitPage: React.FC<TrackedVisitPageProps> = ({ onOpenModal 
     setAttribution(attr);
 
     // Identify if visitor was invited by an exhibitor
-    const query = searchParams.get('utm_source') || searchParams.get('exhibitor') || attr.invitingExhibitorSlug || attr.utmSource;
+    const query = slug || searchParams.get('utm_source') || searchParams.get('exhibitor') || attr.invitingExhibitorSlug || attr.utmSource;
     const matched = findExhibitorByQuery(query);
     setExhibitor(matched);
 

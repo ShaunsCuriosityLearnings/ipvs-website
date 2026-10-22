@@ -50,6 +50,7 @@ export function findExhibitorByQuery(query: string | null | undefined): Exhibito
     if ((clean.includes('convergent') || clean.includes('convergentscience') || clean.includes('convergentflow')) && e.name.toLowerCase().includes('convergent')) return true;
     if ((clean.includes('tsflow') || clean.includes('tsflo') || clean.includes('tsflowcontrols')) && e.name.toLowerCase().includes('ts flow')) return true;
     if ((clean.includes('nikoo') || clean.includes('nikooprecision') || clean.includes('nikoocast')) && e.name.toLowerCase().includes('nikoo')) return true;
+    if ((clean.includes('precise') || clean.includes('preciseengineers') || clean.includes('vedanta') || clean.includes('vedantagroup')) && (e.name.toLowerCase().includes('precise') || e.slug.includes('precise'))) return true;
     return false;
   });
 }
