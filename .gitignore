@@ -29,3 +29,6 @@ dist-ssr
 public/we/*.JPG
 public/we/*.jpg
 
+# Temporary scratch & analysis
+scratch/
+
