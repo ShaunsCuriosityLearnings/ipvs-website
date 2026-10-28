@@ -51,6 +51,10 @@ export function findExhibitorByQuery(query: string | null | undefined): Exhibito
     if ((clean.includes('tsflow') || clean.includes('tsflo') || clean.includes('tsflowcontrols')) && e.name.toLowerCase().includes('ts flow')) return true;
     if ((clean.includes('nikoo') || clean.includes('nikooprecision') || clean.includes('nikoocast')) && e.name.toLowerCase().includes('nikoo')) return true;
     if ((clean.includes('precise') || clean.includes('preciseengineers') || clean.includes('vedanta') || clean.includes('vedantagroup')) && (e.name.toLowerCase().includes('precise') || e.slug.includes('precise'))) return true;
+    if ((clean.includes('andritz') || clean.includes('andritztechnologies')) && e.name.toLowerCase().includes('andritz')) return true;
+    if ((clean.includes('minilec') || clean.includes('minilecindia')) && e.name.toLowerCase().includes('minilec')) return true;
+    if ((clean.includes('shivrishi') || clean.includes('shiv-rishi') || clean.includes('shivrishimarketing') || clean.includes('shiv rishi')) && e.name.toLowerCase().includes('shiv rishi')) return true;
+    if ((clean.includes('sandoz') || clean.includes('sandaz')) && e.name.toLowerCase().includes('sandoz')) return true;
     return false;
   });
 }

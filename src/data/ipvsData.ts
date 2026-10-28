@@ -71,7 +71,7 @@ export const ADVISORY_BOARD: AdvisoryMember[] = [
     company: "ANDRITZ TECHNOLOGIES PVT. LTD.",
     category: "advisory",
     image: "/advisory member/praveen singh.png",
-    companyLogo: "/Logo/andritz-logo-icon (1).webp"
+    companyLogo: "/Logo/ANDRITZ.jpeg"
   },
   {
     id: "advisory-3",
@@ -362,7 +362,7 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     stall: "Stall L21",
     sector: "Process Control Valves",
     booth: "Stall L21",
-    logo: "/Logo/Sandoz Valves (India) Pvt Ltd.png",
+    logo: "/Logo/Sandoz updated.jpg",
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
     description: "High-performance stainless steel valves for pharmaceutical and bio-ethanol processing plants.",
     country: "India",
@@ -715,6 +715,45 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     logo: "/Logo/Vedanta logo.JPG",
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
     description: "EIL-approved & ISO 9001:2015 certified unit under the Vedanta Group of Companies. Leading manufacturer of metallic expansion bellows, expansion joints, dismantling joints, pressure vessels, and specialized piping solutions.",
+    country: "India",
+    featured: true
+  },
+  {
+    id: "ex-32",
+    name: "Andritz Technologies Pvt. Ltd.",
+    slug: "andritz",
+    stall: "Stall A4A",
+    sector: "Engineered Pumps & Slurry Systems",
+    booth: "Stall A4A",
+    logo: "/Logo/ANDRITZ.jpeg",
+    image: "/blog-assets/andritz-split-case-pumps.jpg",
+    description: "Global technology group and OEM leader in heavy-duty centrifugal pumps, split-case units, slurry systems, and industrial fluid transport for water, chemical, and mineral processing sectors.",
+    country: "India",
+    featured: true
+  },
+  {
+    id: "ex-33",
+    name: "Minilec India Pvt. Ltd.",
+    slug: "minilec",
+    stall: "Stall A25",
+    sector: "Motor Protection Relays & Automation",
+    booth: "Stall A25",
+    logo: "/Logo/Minilec logo (1).png",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Global manufacturer and pioneer of microprocessor-based motor protection relays, pump controllers, phase failure relays, water level controllers, annunciators, and smart industrial automation electronics.",
+    country: "India",
+    featured: true
+  },
+  {
+    id: "ex-34",
+    name: "Shiv Rishi Marketing & Services Pvt. Ltd.",
+    slug: "shivrishi",
+    stall: "Stall L34",
+    sector: "Industrial Valves & Piping Solutions",
+    booth: "Stall L34",
+    logo: "/Logo/Shivrishi marketing.jpg",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    description: "Authorized distributor and engineering solution provider for high-performance industrial valves, piping components, gaskets, fluid handling accessories, and plant maintenance solutions.",
     country: "India",
     featured: true
   }
@@ -1739,9 +1778,9 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
     date: "26 Oct 2026",
     readTime: "8 min read",
     image: "/blog-assets/andritz-split-case-pumps.jpg",
-    tags: ["ANDRITZ", "ANDRITZ Technologies", "Centrifugal Pumps", "Split Case Pumps", "Vertical Turbine Pumps", "Slurry Pumps", "IPVS 2026", "HITEX Hyderabad", "Praveen Singh", "Industrial Water Treatment", "Pulp and Paper"],
+    tags: ["ANDRITZ", "ANDRITZ Technologies", "Stall A4A", "Centrifugal Pumps", "Split Case Pumps", "Vertical Turbine Pumps", "Slurry Pumps", "IPVS 2026", "HITEX Hyderabad", "Praveen Singh", "Industrial Water Treatment", "Pulp and Paper"],
     keyTakeaways: [
-      "ANDRITZ Technologies Pvt Ltd is a premier industrial equipment exhibitor and key advisory stakeholder at [IPVS 2026 at HITEX Exhibition Centre, Hyderabad](/visitor) (December 03–04, 2026).",
+      "ANDRITZ Technologies Pvt Ltd is a premier industrial equipment exhibitor at [Stall A4A at IPVS 2026 at HITEX Exhibition Centre, Hyderabad](/visitor) (December 03–04, 2026).",
       "Praveen Singh, Vice President (Pumps) at [ANDRITZ Technologies](https://www.andritz.com/pumps-en), serves on the official [IPVS 2026 Advisory Board](/advisory-board), actively guiding technological dialogues for national fluid handling priorities.",
       "ANDRITZ operates across 80+ countries with over 170 years of engineering heritage and cutting-edge Indian manufacturing facilities in Mandideep (Bhopal) and Chennai.",
       "Key product families include high-flow split-case pumps, multi-stage boiler feed pumps, submersible borehole pumps, vertical turbine pumps, and abrasive slurry transfer systems for pulp & paper, mining, and municipal desalination."
@@ -1749,8 +1788,8 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
     companyInfo: {
       companyName: "ANDRITZ Technologies Pvt Ltd",
       websiteUrl: "https://www.andritz.com/pumps-en",
-      stallNumber: "Hall 1, HITEX Hyderabad",
-      hallName: "Hall 1 - Industrial Flow & Process Equipment Pavilion",
+      stallNumber: "Stall A4A",
+      hallName: "Hall 1, Stall A4A, HITEX Hyderabad",
       advisoryName: "Praveen Singh",
       advisoryRole: "Vice President (Pumps), ANDRITZ Technologies & IPVS Advisory Board Member",
       products: [
@@ -1816,12 +1855,12 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
           "Unlike generic industrial expos, IPVS 2026 brings together the specific demographic that relies on high-flow, high-reliability fluid machinery: chief procurement officers, EPC project directors from L&T, Megha, Tata Projects, and BHEL, plant managers from bulk chemical refineries, and municipal chief engineers.",
           "The strategic significance of ANDRITZ's participation is further cemented by the leadership of Praveen Singh, Vice President (Pumps) at ANDRITZ Technologies, who serves on the prestigious [IPVS 2026 Advisory Board](/advisory-board). Looking to position your enterprise alongside global technology pioneers? [Reserve your exhibition stall at IPVS 2026](/exhibitor)."
         ],
-        callout: "Meet the ANDRITZ engineering leadership team at IPVS 2026: [Register for your Free VIP Trade Visitor Pass](/visitor) or explore the [Advisory Board Profile](/advisory-board)."
+        callout: "Meet the ANDRITZ engineering leadership team at Stall A4A at IPVS 2026: [Register for your Free VIP Trade Visitor Pass](/visitor) or access the [ANDRITZ Technologies VIP Portal](/visit/andritz).",
       },
       {
         heading: "What Plant Engineers and EPC Contractors Can Experience at IPVS 2026",
         content: [
-          "At IPVS 2026 in Hall 1 at HITEX Hyderabad, visitors to the ANDRITZ showcase will be able to evaluate technical cutaways, cross-sectional models of high-efficiency split-case impellers, and digital telemetry monitoring suites that demonstrate how modern smart sensors capture bearing temperature, vibration harmonics, and cavitation spikes in real-time.",
+          "At IPVS 2026 at Stall A4A in Hall 1 at HITEX Hyderabad, visitors to the ANDRITZ showcase will be able to evaluate technical cutaways, cross-sectional models of high-efficiency split-case impellers, and digital telemetry monitoring suites that demonstrate how modern smart sensors capture bearing temperature, vibration harmonics, and cavitation spikes in real-time.",
           "Technical personnel will have direct access to senior application engineers who can advise on complex system challenges: overcoming high NPSH margins in deep intake wells, selecting metallurgy for high-chloride seawater feeds, and slashing recurring power costs by migrating legacy pumps to modern high-efficiency hydraulic geometries."
         ]
       }
@@ -1829,7 +1868,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
     faq: [
       {
         question: "Where can I meet the ANDRITZ Technologies team at IPVS 2026?",
-        answer: "ANDRITZ Technologies Pvt Ltd is participating in Hall 1 at HITEX Exhibition Centre, Hyderabad during IPVS 2026 on December 03–04, 2026. You can claim your [Free VIP Visitor Pass](/visitor) to meet their senior engineering team."
+        answer: "ANDRITZ Technologies Pvt Ltd is exhibiting at Stall A4A in Hall 1 at HITEX Exhibition Centre, Hyderabad during IPVS 2026 on December 03–04, 2026. You can claim your [Free VIP Visitor Pass](/visitor) or access the [ANDRITZ VIP Visitor Portal](/visit/andritz) to meet their senior engineering team."
       },
       {
         question: "What industrial applications do ANDRITZ pumps specialize in?",
