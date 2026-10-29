@@ -756,6 +756,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "Authorized distributor and engineering solution provider for high-performance industrial valves, piping components, gaskets, fluid handling accessories, and plant maintenance solutions.",
     country: "India",
     featured: true
+  },
+  {
+    id: "ex-35",
+    name: "Nilon Valves Private Limited",
+    slug: "nilon",
+    stall: "Stall A1A",
+    sector: "Industrial Valves & Flow Control",
+    booth: "Stall A1A",
+    logo: "/Logo/nilon.png",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Leading manufacturer of industrial valves including gate, globe, check, ball, and butterfly valves engineered for chemical, petrochemical, oil & gas, water, and process applications.",
+    country: "India",
+    featured: true
   }
 ].map(e => ({
   ...e,
