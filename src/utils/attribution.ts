@@ -56,6 +56,7 @@ export function findExhibitorByQuery(query: string | null | undefined): Exhibito
     if ((clean.includes('shivrishi') || clean.includes('shiv-rishi') || clean.includes('shivrishimarketing') || clean.includes('shiv rishi')) && e.name.toLowerCase().includes('shiv rishi')) return true;
     if ((clean.includes('sandoz') || clean.includes('sandaz')) && e.name.toLowerCase().includes('sandoz')) return true;
     if ((clean.includes('nilon') || clean.includes('nilonvalves')) && e.name.toLowerCase().includes('nilon')) return true;
+    if ((clean === 'gm' || clean === 'gmengineering' || clean === 'gmvalves' || clean.includes('gmengineering')) && e.name.toLowerCase().includes('g m engineering')) return true;
     return false;
   });
 }

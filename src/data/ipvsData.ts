@@ -333,9 +333,9 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     id: "ex-2",
     name: "Grundfos Pumps India Pvt Ltd",
     slug: "grundfos",
-    stall: "Stall A4",
+    stall: "Stall A1",
     sector: "Pumps & Water Solutions",
-    booth: "Stall A4",
+    booth: "Stall A1",
     logo: "/Logo/Grundfos Pumps India Pvt Ltd.PNG",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
     description: "Global leader in advanced pump solutions and energy-efficient water technologies for process industries.",
@@ -767,6 +767,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     logo: "/Logo/nilon.png",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
     description: "Leading manufacturer of industrial valves including gate, globe, check, ball, and butterfly valves engineered for chemical, petrochemical, oil & gas, water, and process applications.",
+    country: "India",
+    featured: true
+  },
+  {
+    id: "ex-36",
+    name: "G M Engineering Pvt Ltd",
+    slug: "gmengineering",
+    stall: "Stall L7",
+    sector: "Industrial Valves & Flow Control",
+    booth: "Stall L7",
+    logo: "/Logo/GM Engineering Logo.jpg",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    description: "Leading manufacturer and exporter of high-integrity industrial valves, ball valves, gate, globe, check, and butterfly valves engineered for chemical, petrochemical, oil & gas, pharmaceutical, and water process applications.",
     country: "India",
     featured: true
   }
@@ -1305,8 +1318,8 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
     subtitle: "How Grundfos is redefining industrial fluid handling in India through energy-intelligent pumping, IoT telemetry, and sustainability-first engineering — and why they chose IPVS 2026 as their platform.",
     pullQuote: "When a company that operates in 80+ countries and moves 6% of the world's water chooses to exhibit at IPVS 2026, it signals something decisive: India's industrial pump market has graduated from price-driven procurement to performance-driven engineering partnerships.",
     seoTitle: "Grundfos Pumps India at IPVS 2026 Hyderabad | Exhibition Preview & Stall Guide",
-    metaDescription: "Grundfos Pumps India is exhibiting at IPVS 2026 in HITEX Hyderabad (Stall A4). Discover their smart pump technologies, iSOLUTIONS platform, and why plant engineers should visit their exhibition stall.",
-    excerpt: "Grundfos, the Danish engineering giant that moves 6% of the world's water, is bringing its full smart pumping arsenal to IPVS 2026. Here's what plant engineers, EPC heads, and procurement directors can expect at Stall A4.",
+    metaDescription: "Grundfos Pumps India is exhibiting at IPVS 2026 in HITEX Hyderabad (Stall A1). Discover their smart pump technologies, iSOLUTIONS platform, and why plant engineers should visit their exhibition stall.",
+    excerpt: "Grundfos, the Danish engineering giant that moves 6% of the world's water, is bringing its full smart pumping arsenal to IPVS 2026. Here's what plant engineers, EPC heads, and procurement directors can expect at Stall A1.",
     content: "When [Grundfos](https://www.grundfos.com/in) — a company founded in 1945 in Bjerringbro, Denmark, that today operates in over 80 countries and employs 20,000+ engineers — decides to take a prominent exhibition stall at an Indian industrial trade show, it carries strategic significance far beyond a routine marketing exercise. Grundfos Pumps India Pvt Ltd, headquartered in Chennai, has been a cornerstone of India's industrial pumping landscape for decades. Their decision to exhibit at [IPVS 2026 at HITEX Exhibition Centre, Hyderabad](/visitor), reflects a deliberate commitment to positioning India as a global center of excellence for smart, energy-efficient fluid handling.",
     category: "Exhibitor Spotlight & Company Profile",
     author: "IPVS Exhibition Editorial Desk",
@@ -1318,15 +1331,15 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
     image: "/blog-assets/grundfos-ipvs-booth.jpg",
     tags: ["Grundfos", "Grundfos India", "IPVS 2026", "Smart Pumps", "Industrial Exhibition", "Exhibitor Spotlight", "Shankar Rajaram", "Hyderabad"],
     keyTakeaways: [
-      "Grundfos Pumps India Pvt Ltd is confirmed as an Esteemed Exhibitor at IPVS 2026, occupying [Stall A4 at HITEX Exhibition Centre, Hyderabad](/visitor) (December 3–4, 2026).",
+      "Grundfos Pumps India Pvt Ltd is confirmed as an Esteemed Exhibitor at IPVS 2026, occupying [Stall A1 at HITEX Exhibition Centre, Hyderabad](/visitor) (December 3–4, 2026).",
       "Shankar Rajaram, Director of [Grundfos Pumps India](https://www.grundfos.com/in), serves on the official IPVS 2026 Advisory Board, underscoring Grundfos' strategic commitment to the Indian industrial ecosystem.",
       "Grundfos operates in 80+ countries, employs 20,000+ engineers, and moves approximately 6% of the world's total water supply through its pump installations.",
-      "Visitors to Stall A4 can expect live demonstrations of [CR/CRE smart multistage pumps](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte), [CRE smart pumps](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models), [SMART digital dosing systems](https://product-selection.grundfos.com/in/products/dosing-pumps-digital/dda?tab=models), and IE5 ultra-premium efficiency motors."
+      "Visitors to Stall A1 can expect live demonstrations of [CR/CRE smart multistage pumps](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte), [CRE smart pumps](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models), [SMART digital dosing systems](https://product-selection.grundfos.com/in/products/dosing-pumps-digital/dda?tab=models), and IE5 ultra-premium efficiency motors."
     ],
     companyInfo: {
       companyName: "Grundfos Pumps India Pvt Ltd",
       websiteUrl: "https://www.grundfos.com/in",
-      stallNumber: "Stall A4",
+      stallNumber: "Stall A1",
       hallName: "Hall 1, HITEX Hyderabad",
       advisoryName: "Shankar Rajaram",
       advisoryRole: "Director, Grundfos Pumps India & IPVS Advisory Board Member",
@@ -1372,9 +1385,9 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
         ]
       },
       {
-        heading: "What to Expect at Grundfos Stall A4 at IPVS 2026",
+        heading: "What to Expect at Grundfos Stall A1 at IPVS 2026",
         content: [
-          "Visitors walking up to Stall A4 at HITEX Hyderabad will encounter a comprehensive showcase of Grundfos' most advanced industrial pump technologies:"
+          "Visitors walking up to Stall A1 at HITEX Hyderabad will encounter a comprehensive showcase of Grundfos' most advanced industrial pump technologies:"
         ],
         bulletPoints: [
           "[CR / CRI / CRN Vertical Multistage Pumps](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte): The world's most versatile industrial pressure boosting platform, available in cast iron, SS304, SS316, and titanium — capable of flows up to 320 m³/h and pressures up to 50 bar.",
@@ -1391,19 +1404,19 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
         content: [
           "India's industrial landscape is undergoing a fundamental transformation. The National Mission for Clean Ganga, Jal Jeevan Mission, Smart Cities Mission, and the accelerated E20 ethanol blending mandate are creating massive infrastructure demand for high-efficiency pumping systems that conventional fixed-speed cast iron pumps simply cannot fulfil.",
           "Grundfos' IE5 motor technology and iSOLUTIONS platform directly address the single largest cost driver in pump ownership: electricity. Industry data consistently demonstrates that energy consumption accounts for 80–85% of a pump's total 15-year lifecycle cost, while the initial purchase price represents only 5–8%. By optimizing energy consumption at the motor and hydraulic level, Grundfos pumps deliver measurable ROI within months of commissioning.",
-          "For EPC contractors, plant heads, and procurement directors attending IPVS 2026, Grundfos Stall A4 represents an opportunity to evaluate these technologies hands-on, consult with factory application engineers, and benchmark their facilities against global best practices in smart fluid handling."
+          "For EPC contractors, plant heads, and procurement directors attending IPVS 2026, Grundfos Stall A1 represents an opportunity to evaluate these technologies hands-on, consult with factory application engineers, and benchmark their facilities against global best practices in smart fluid handling."
         ],
-        callout: "Plan your visit to Stall A4 at HITEX Hyderabad: [Register for your Free VIP Trade Visitor Pass](/visitor), or [reserve an exhibition stall at IPVS 2026](/exhibitor)."
+        callout: "Plan your visit to Stall A1 at HITEX Hyderabad: [Register for your Free VIP Trade Visitor Pass](/visitor), or [reserve an exhibition stall at IPVS 2026](/exhibitor)."
       }
     ],
     faq: [
       {
         question: "Where is the Grundfos stall located at IPVS 2026?",
-        answer: "Grundfos Pumps India Pvt Ltd is exhibiting at Stall A4 at HITEX Exhibition Centre, Hyderabad, during IPVS 2026 on December 3–4, 2026. Visitors can register for their [Free VIP Visitor Pass](/visitor) to access the exhibition."
+        answer: "Grundfos Pumps India Pvt Ltd is exhibiting at Stall A1 at HITEX Exhibition Centre, Hyderabad, during IPVS 2026 on December 3–4, 2026. Visitors can register for their [Free VIP Visitor Pass](/visitor) to access the exhibition."
       },
       {
         question: "Where can I view technical specifications of Grundfos CR and CRE pumps?",
-        answer: "You can view full technical datasheets and pump curves directly on the [Grundfos CR Product Page](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte) or meet factory application engineers in person at Stall A4 at IPVS 2026."
+        answer: "You can view full technical datasheets and pump curves directly on the [Grundfos CR Product Page](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte) or meet factory application engineers in person at Stall A1 at IPVS 2026."
       },
       {
         question: "Can other pump and valve manufacturers exhibit alongside Grundfos?",
@@ -1435,12 +1448,12 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
       "The [Grundfos CR family](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte) is available in over 1 million modular configurations across cast iron (CR), stainless steel 304 (CRI), stainless steel 316 (CRN), and titanium, covering flows up to 320 m³/h and pressures up to 50 bar.",
       "The [CRE smart pump variant](https://product-selection.grundfos.com/in/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models) integrates a factory-fitted Variable Frequency Drive (VFD) with an IE5 ultra-premium efficiency motor, cutting energy consumption by 20–50%.",
       "Grundfos iSOLUTIONS transforms CR/CRE pumps into intelligent edge computing nodes, streaming live vibration, temperature, and cavitation data to SCADA/DCS platforms for predictive maintenance.",
-      "Plant engineers can evaluate Grundfos CR, CRE, and iSOLUTIONS technologies live at [Stall A4, IPVS 2026, HITEX Hyderabad](/visitor) (December 3–4, 2026)."
+      "Plant engineers can evaluate Grundfos CR, CRE, and iSOLUTIONS technologies live at [Stall A1, IPVS 2026, HITEX Hyderabad](/visitor) (December 3–4, 2026)."
     ],
     companyInfo: {
       companyName: "Grundfos Pumps India Pvt Ltd",
       websiteUrl: "https://www.grundfos.com/in",
-      stallNumber: "Stall A4",
+      stallNumber: "Stall A1",
       hallName: "Hall 1, HITEX Hyderabad",
       advisoryName: "Shankar Rajaram",
       advisoryRole: "Director, Grundfos Pumps India & IPVS Advisory Board Member",
@@ -1516,7 +1529,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
           "HVAC & District Cooling: CRE pumps circulating chilled water through large commercial and data center cooling loops.",
           "Ethanol Distillery Process Water: CRI/CRN pumps handling high-temperature, mildly acidic process water under India's E20 blending mandate."
         ],
-        callout: "Evaluate Grundfos CR, CRE, and iSOLUTIONS live at Stall A4: [Register for your Free VIP Trade Visitor Pass](/visitor), or [explore exhibitor opportunities at IPVS 2026](/exhibitor)."
+        callout: "Evaluate Grundfos CR, CRE, and iSOLUTIONS live at Stall A1: [Register for your Free VIP Trade Visitor Pass](/visitor), or [explore exhibitor opportunities at IPVS 2026](/exhibitor)."
       }
     ],
     faq: [
@@ -1526,7 +1539,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
       },
       {
         question: "Can I inspect Grundfos CR and CRE pumps live at IPVS 2026?",
-        answer: "Yes! Grundfos is exhibiting at Stall A4 at IPVS 2026 (HITEX Exhibition Centre, Hyderabad, December 3–4, 2026). You can [claim your Free VIP Trade Visitor Pass](/visitor) today."
+        answer: "Yes! Grundfos is exhibiting at Stall A1 at IPVS 2026 (HITEX Exhibition Centre, Hyderabad, December 3–4, 2026). You can [claim your Free VIP Trade Visitor Pass](/visitor) today."
       },
       {
         question: "How do I book an exhibitor stall next to pump leaders like Grundfos?",
