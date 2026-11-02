@@ -127,9 +127,13 @@ export const TrackedVisitPage: React.FC<TrackedVisitPageProps> = ({ onOpenModal 
               
               {/* LEFT SIDE: Large Exhibitor Name & Event Details */}
               <div className="flex-1 min-w-0 text-left space-y-2 sm:space-y-3">
-                <div className="inline-flex items-center space-x-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-cyan-400/15 border border-cyan-400/30 text-cyan-300 text-[10px] sm:text-xs font-bold uppercase tracking-wider">
-                  <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                  <span className="truncate">Official VIP Invitation</span>
+                <div className={`inline-flex items-center space-x-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider ${
+                  exhibitor.sponsorTier 
+                    ? 'bg-gradient-to-r from-amber-500/20 to-yellow-500/20 border border-amber-400/40 text-amber-300'
+                    : 'bg-cyan-400/15 border border-cyan-400/30 text-cyan-300'
+                }`}>
+                  <ShieldCheck className={`w-3.5 h-3.5 shrink-0 ${exhibitor.sponsorTier ? 'text-amber-400' : 'text-cyan-400'}`} />
+                  <span className="truncate">{exhibitor.sponsorTier ? `Official ${exhibitor.sponsorTier}` : 'Official VIP Invitation'}</span>
                 </div>
 
                 <h1 className="text-base sm:text-3xl md:text-4xl lg:text-5xl font-black font-heading text-white leading-tight tracking-tight line-clamp-2 sm:line-clamp-3">
@@ -162,9 +166,15 @@ export const TrackedVisitPage: React.FC<TrackedVisitPageProps> = ({ onOpenModal 
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
-                <span className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-cyan-300/90 mt-2 hidden sm:block">
-                  Featured Exhibitor
-                </span>
+                {exhibitor.sponsorTier ? (
+                  <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-[#D4AF37] mt-2 block flex items-center gap-1.5 drop-shadow-md">
+                    ★ {exhibitor.sponsorTier}
+                  </span>
+                ) : (
+                  <span className="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-cyan-300/90 mt-2 hidden sm:block">
+                    Featured Exhibitor
+                  </span>
+                )}
               </div>
 
               {/* RIGHT SIDE: LARGE PROMINENT STALL NUMBER */}

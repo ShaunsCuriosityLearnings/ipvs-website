@@ -313,6 +313,7 @@ export interface ExhibitorItem {
   description: string;
   country: string;
   featured: boolean;
+  sponsorTier?: string;
 }
 
 export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
@@ -764,6 +765,7 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     stall: "Stall A1A",
     sector: "Industrial Valves & Flow Control",
     booth: "Stall A1A",
+    sponsorTier: "Gold Sponsor",
     logo: "/Logo/nilon.png",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
     description: "Leading manufacturer of industrial valves including gate, globe, check, ball, and butterfly valves engineered for chemical, petrochemical, oil & gas, water, and process applications.",

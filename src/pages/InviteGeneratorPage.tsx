@@ -327,7 +327,7 @@ export const InviteGeneratorPage: React.FC = () => {
               >
                 {ESTEEMED_EXHIBITORS.map((ex) => (
                   <option key={ex.id} value={ex.id}>
-                    {ex.name} — {ex.stall || ex.booth} ({ex.sector})
+                    {ex.name} — {ex.stall || ex.booth} ({ex.sector}){ex.sponsorTier ? ` [★ ${ex.sponsorTier}]` : ''}
                   </option>
                 ))}
               </select>
@@ -536,6 +536,11 @@ export const InviteGeneratorPage: React.FC = () => {
                             className="w-7 h-7 rounded-lg object-contain p-0.5 border border-slate-200 bg-white shrink-0"
                           />
                           <span className="font-bold text-slate-900 truncate max-w-[180px] sm:max-w-xs">{ex.name}</span>
+                          {ex.sponsorTier && (
+                            <span className="ml-1.5 px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-300 font-extrabold text-[9px] uppercase tracking-wider shrink-0">
+                              ★ {ex.sponsorTier}
+                            </span>
+                          )}
                         </div>
                       </td>
 

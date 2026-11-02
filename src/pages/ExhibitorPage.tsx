@@ -919,8 +919,16 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
               <div 
                 key={exhibitor.id}
                 onClick={() => onOpenModal('exhibitor')}
-                className="bg-[#F8FAFC] hover:bg-white rounded-2xl p-3.5 sm:p-4.5 border-0 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.05)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-between text-center min-h-[140px] sm:min-h-[160px]"
+                className="bg-[#F8FAFC] hover:bg-white rounded-2xl p-3.5 sm:p-4.5 border-0 shadow-[0_2px_10px_-2px_rgba(0,0,0,0.05)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-between text-center min-h-[140px] sm:min-h-[160px] relative overflow-hidden"
               >
+                {/* Gold Sponsor Badge */}
+                {exhibitor.sponsorTier && (
+                  <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-50 to-yellow-100 border border-amber-300 text-amber-700 font-extrabold text-[8px] sm:text-[9px] uppercase tracking-wider shadow-xs flex items-center space-x-1">
+                    <Sparkles className="w-2.5 h-2.5 text-amber-500 fill-amber-400" />
+                    <span>{exhibitor.sponsorTier}</span>
+                  </div>
+                )}
+
                 {/* Logo Container */}
                 <div className="h-18 sm:h-22 w-full flex items-center justify-center p-1 sm:p-1.5">
                   <img 
@@ -932,7 +940,12 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                 </div>
 
                 {/* Brand Name */}
-                <div className="w-full pt-2 border-t border-slate-100">
+                <div className="w-full pt-2 border-t border-slate-100 flex flex-col items-center">
+                  {exhibitor.sponsorTier && (
+                    <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[#D4AF37] mb-0.5 flex items-center gap-1">
+                      ★ {exhibitor.sponsorTier} ★
+                    </span>
+                  )}
                   <h3 className="text-[11px] sm:text-xs font-extrabold text-slate-800 font-heading tracking-tight line-clamp-2 text-center group-hover:text-[#1E65FF] transition-colors">
                     {exhibitor.name}
                   </h3>

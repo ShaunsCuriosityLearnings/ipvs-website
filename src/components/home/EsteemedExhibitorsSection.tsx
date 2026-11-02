@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ESTEEMED_EXHIBITORS } from '../../data/ipvsData';
-import { ArrowRight, Building2 } from 'lucide-react';
+import { ArrowRight, Building2, Sparkles } from 'lucide-react';
 
 export const EsteemedExhibitorsSection: React.FC = () => {
   const navigate = useNavigate();
@@ -35,8 +35,16 @@ export const EsteemedExhibitorsSection: React.FC = () => {
             <div
               key={exhibitor.id}
               onClick={() => navigate('/exhibitor')}
-              className="bg-white rounded-2xl p-4 sm:p-5 border-0 shadow-[0_2px_12px_-2px_rgba(0,0,0,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-between text-center min-h-[150px] sm:min-h-[170px]"
+              className="bg-white rounded-2xl p-4 sm:p-5 border-0 shadow-[0_2px_12px_-2px_rgba(0,0,0,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-between text-center min-h-[150px] sm:min-h-[170px] relative overflow-hidden"
             >
+              {/* Gold Sponsor Badge */}
+              {exhibitor.sponsorTier && (
+                <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-50 to-yellow-100 border border-amber-300 text-amber-700 font-extrabold text-[9px] uppercase tracking-wider shadow-xs flex items-center space-x-1">
+                  <Sparkles className="w-2.5 h-2.5 text-amber-500 fill-amber-400" />
+                  <span>{exhibitor.sponsorTier}</span>
+                </div>
+              )}
+
               {/* Logo Container with Expanded Scaling */}
               <div className="h-20 sm:h-24 w-full flex items-center justify-center p-1 sm:p-2">
                 <img
@@ -48,7 +56,12 @@ export const EsteemedExhibitorsSection: React.FC = () => {
               </div>
 
               {/* Brand Name Text under the Logo */}
-              <div className="w-full pt-2.5 border-t border-slate-100">
+              <div className="w-full pt-2.5 border-t border-slate-100 flex flex-col items-center">
+                {exhibitor.sponsorTier && (
+                  <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[#D4AF37] mb-0.5 flex items-center gap-1">
+                    ★ {exhibitor.sponsorTier} ★
+                  </span>
+                )}
                 <h3 className="text-xs sm:text-[13px] font-extrabold text-slate-800 font-heading tracking-tight line-clamp-1 group-hover:text-[#1E65FF] transition-colors">
                   {exhibitor.name}
                 </h3>
