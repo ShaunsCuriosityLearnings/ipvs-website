@@ -57,6 +57,8 @@ export function findExhibitorByQuery(query: string | null | undefined): Exhibito
     if ((clean.includes('sandoz') || clean.includes('sandaz')) && e.name.toLowerCase().includes('sandoz')) return true;
     if ((clean.includes('nilon') || clean.includes('nilonvalves')) && e.name.toLowerCase().includes('nilon')) return true;
     if ((clean === 'gm' || clean === 'gmengineering' || clean === 'gmvalves' || clean.includes('gmengineering')) && e.name.toLowerCase().includes('g m engineering')) return true;
+    if ((clean.includes('arrow') || clean.includes('arrowtechno') || clean.includes('arrowtechnocast')) && e.name.toLowerCase().includes('arrow')) return true;
+    if ((clean.includes('falcon') || clean.includes('falconpumps') || clean.includes('cityengineering')) && (e.name.toLowerCase().includes('falcon') || e.name.toLowerCase().includes('city engineering'))) return true;
     return false;
   });
 }

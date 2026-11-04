@@ -784,6 +784,32 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "Leading manufacturer and exporter of high-integrity industrial valves, ball valves, gate, globe, check, and butterfly valves engineered for chemical, petrochemical, oil & gas, pharmaceutical, and water process applications.",
     country: "India",
     featured: true
+  },
+  {
+    id: "ex-37",
+    name: "Arrow Technocast Guj Pvt Ltd",
+    slug: "arrowtechnocast",
+    stall: "Stall L8",
+    sector: "Precision Investment Castings & Valve Components",
+    booth: "Stall L8",
+    logo: "/Logo/Arrow Technocast Guj Pvt Ltd.png",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    description: "Specialized manufacturer of high-precision investment castings, lost-wax stainless steel, carbon steel, and alloy castings for industrial valves, pumps, and process machinery.",
+    country: "India",
+    featured: true
+  },
+  {
+    id: "ex-38",
+    name: "City Engineering Corporation | Falcon Pumps",
+    slug: "falconpumps",
+    stall: "Stall A12",
+    sector: "Submersible & Industrial Pumps",
+    booth: "Stall A12",
+    logo: "/Logo/City Engineering Corporation  Falcon Pumps.png",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Leading manufacturer and distributor of high-efficiency submersible pumps, borewell pumps, industrial motors, and fluid handling solutions under the renowned Falcon Pumps brand.",
+    country: "India",
+    featured: true
   }
 ].map(e => ({
   ...e,
