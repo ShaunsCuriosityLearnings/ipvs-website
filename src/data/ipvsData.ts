@@ -810,6 +810,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "Leading manufacturer and distributor of high-efficiency submersible pumps, borewell pumps, industrial motors, and fluid handling solutions under the renowned Falcon Pumps brand.",
     country: "India",
     featured: true
+  },
+  {
+    id: "ex-39",
+    name: "L&T and IHM Valves",
+    slug: "lt-ihm-valves",
+    stall: "Stall A2",
+    sector: "Flow Control, Industrial Valves & Automation",
+    booth: "Stall A2",
+    logo: "/Logo/L&T and IHM Valves Logo Banner.png",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "World-class manufacturer and solutions provider of engineered flow-control solutions, high-pressure industrial valves, gate, globe, check, and ball valves in partnership with IHM Valves for critical process industries.",
+    country: "India",
+    featured: true
   }
 ].map(e => ({
   ...e,

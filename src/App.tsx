@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { ScrollToTop } from './components/layout/ScrollToTop';
@@ -26,6 +26,28 @@ function AppContent() {
   const [modalMode, setModalMode] = useState<'exhibitor' | 'visitor' | 'contact'>('exhibitor');
   const [selectedSqm, setSelectedSqm] = useState(18);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Track virtual page views for Single Page Application in GTM & GA4
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const w = window as any;
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({
+        event: 'virtual_page_view',
+        page_path: location.pathname + location.search,
+        page_title: document.title,
+        page_location: window.location.href,
+      });
+      if (typeof w.gtag === 'function') {
+        w.gtag('event', 'page_view', {
+          page_path: location.pathname + location.search,
+          page_title: document.title,
+          page_location: window.location.href,
+        });
+      }
+    }
+  }, [location.pathname, location.search]);
 
   // Capture UTM parameters on any initial landing across the domain
   React.useEffect(() => {
@@ -67,7 +89,7 @@ function AppContent() {
     <div className="min-h-screen bg-[#F4F7FE] text-slate-800 selection:bg-[#1E65FF] selection:text-white font-sans relative flex flex-col justify-between">
       <ScrollToTop />
 
-      
+
       {/* Header */}
       <Navbar onOpenModal={handleOpenModal} />
 
@@ -99,11 +121,11 @@ function AppContent() {
       <Footer onOpenModal={handleOpenModal} />
 
       {/* Interactive Registration Modal */}
-      <RegistrationModal 
-        isOpen={modalOpen} 
-        mode={modalMode} 
+      <RegistrationModal
+        isOpen={modalOpen}
+        mode={modalMode}
         initialSqm={selectedSqm}
-        onClose={() => setModalOpen(false)} 
+        onClose={() => setModalOpen(false)}
       />
 
       {/* Floating Action Buttons */}

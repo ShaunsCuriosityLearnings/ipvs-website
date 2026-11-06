@@ -83,16 +83,79 @@ export const submitLead = async (data: LeadSubmissionData): Promise<LeadSubmissi
       submittedAt: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
     };
 
-    // Google Analytics 4 (GA4) Event Dispatch
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'generate_lead', {
+    // =========================================================================
+    // Multi-Platform Conversion Dispatch (GTM dataLayer + GA4 + Google Ads)
+    // =========================================================================
+    if (typeof window !== 'undefined') {
+      const w = window as any;
+      w.dataLayer = w.dataLayer || [];
+
+      // Calculate conversion value for Value-Based Smart Bidding (INR)
+      let conversionValue = 250;
+      if (data.formType === 'exhibitor') {
+        const parsedSqm = parseInt((data.stallSize || '').replace(/\D/g, ''), 10) || 18;
+        conversionValue = parsedSqm * 12500;
+      } else if (data.formType === 'sponsorship') {
+        conversionValue = 100000;
+      } else if (data.formType === 'visitor') {
+        conversionValue = 500;
+      }
+
+      const trackingPayload = {
         form_type: data.formType,
-        source: payload.utmSource,
-        medium: payload.utmMedium,
-        campaign: payload.utmCampaign,
-        content: payload.utmContent,
-        inviting_exhibitor: payload.invitingExhibitor
+        form_category: data.formType,
+        lead_id: `${Date.now()}_${Math.random().toString(36).substring(2, 8)}`,
+        value: conversionValue,
+        currency: 'INR',
+        company_name: data.company || 'N/A',
+        designation: data.designation || undefined,
+        city: data.city || undefined,
+        stall_size: data.stallSize || undefined,
+        sponsorship_tier: data.sponsorshipTier || undefined,
+        sector_interest: data.sectorInterest || undefined,
+        utm_source: payload.utmSource,
+        utm_medium: payload.utmMedium,
+        utm_campaign: payload.utmCampaign,
+        utm_content: payload.utmContent,
+        utm_term: payload.utmTerm,
+        inviting_exhibitor: payload.invitingExhibitor,
+        landing_page: payload.landingPage,
+        page_location: window.location.href,
+        page_path: window.location.pathname
+      };
+
+      // 1. Primary standard GA4 / GTM generate_lead event
+      w.dataLayer.push({
+        event: 'generate_lead',
+        ...trackingPayload
       });
+
+      // 2. Form-specific custom event for dedicated GTM conversion triggers
+      w.dataLayer.push({
+        event: `${data.formType}_form_submit`,
+        ...trackingPayload
+      });
+
+      // 3. Direct GA4 gtag event (if gtag is loaded)
+      if (typeof w.gtag === 'function') {
+        w.gtag('event', 'generate_lead', {
+          form_type: data.formType,
+          value: conversionValue,
+          currency: 'INR',
+          source: payload.utmSource,
+          medium: payload.utmMedium,
+          campaign: payload.utmCampaign,
+          content: payload.utmContent,
+          inviting_exhibitor: payload.invitingExhibitor
+        });
+
+        // Fire Google Ads conversion event if AW config exists
+        w.gtag('event', 'conversion', {
+          value: conversionValue,
+          currency: 'INR',
+          transaction_id: trackingPayload.lead_id
+        });
+      }
     }
 
     const DEFAULT_GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbx9bdhZcGLXFApXJzxFd9DR5tgjRyegFhA2cffAfLaab1TC05YYOPBXeZpKzM2VAEjD/exec';
