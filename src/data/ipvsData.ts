@@ -823,6 +823,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "World-class manufacturer and solutions provider of engineered flow-control solutions, high-pressure industrial valves, gate, globe, check, and ball valves in partnership with IHM Valves for critical process industries.",
     country: "India",
     featured: true
+  },
+  {
+    id: "ex-40",
+    name: "Harisgold",
+    slug: "harisgold",
+    stall: "Stall A4",
+    sector: "Industrial Pumps, Valves & Flow Control Spares",
+    booth: "Stall A4",
+    logo: "/Logo/Haris Gold.jpg",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    description: "Leading importer, distributor, and supplier of precision industrial pumps, fluid handling valves, solenoid valves, and high-performance pump components for process engineering.",
+    country: "India",
+    featured: true
   }
 ].map(e => ({
   ...e,
