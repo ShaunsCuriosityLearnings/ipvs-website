@@ -836,6 +836,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     description: "Leading importer, distributor, and supplier of precision industrial pumps, fluid handling valves, solenoid valves, and high-performance pump components for process engineering.",
     country: "India",
     featured: true
+  },
+  {
+    id: "ex-41",
+    name: "RV5E ENGINEERS LLP",
+    slug: "rv5e",
+    stall: "Stall L35",
+    sector: "Fluid Management Systems, Pumps & Industrial Valves",
+    booth: "Stall L35",
+    logo: "/Logo/RV5E-Logo.png",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Hyderabad-based engineering services, fluid management, and turnkey solutions provider specializing in pressure booster pumps, submersible pumps, drainage systems, and industrial valves.",
+    country: "India",
+    featured: true
   }
 ].map(e => ({
   ...e,
