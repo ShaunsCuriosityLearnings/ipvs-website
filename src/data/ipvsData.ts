@@ -513,19 +513,6 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     featured: true
   },
   {
-    id: "ex-16",
-    name: "Swatika Industries",
-    slug: "swastika",
-    stall: "Stall L20",
-    sector: "Heavy Duty Pumps",
-    booth: "Stall L20",
-    logo: "/Logo/swastika.jpeg",
-    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80",
-    description: "High capacity centrifugal and slurry pumps for steel and power plants.",
-    country: "India",
-    featured: true
-  },
-  {
     id: "ex-17",
     name: "Sumatic Flow Controls Pvt Ltd",
     slug: "sumatic",
@@ -635,7 +622,7 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     stall: "Stall A35",
     sector: "Industrial Hydraulics & Hydro Engineering Systems",
     booth: "Stall A35",
-    logo: "/Logo/Anant Hydro Engineers LLP.png",
+    logo: "/Logo/anant hydro update.jpg",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
     description: "Specialized engineering firm delivering high-performance hydraulic systems, hydro-mechanical equipment, precision fluid power solutions, and turnkey industrial engineering services.",
     country: "India",
