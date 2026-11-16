@@ -318,15 +318,29 @@ export interface ExhibitorItem {
 
 export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   {
-    id: "ex-1",
-    name: "Bell-o-Seal Valves Private Limited",
-    slug: "bellseal",
-    stall: "Stall A5",
-    sector: "Bellow Sealed Valves",
-    booth: "Stall A5",
-    logo: "/Logo/bell-o-seal.webp",
-    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80",
-    description: "Zero-leakage bellow seal valves for hazardous chemical, ethanol, and nuclear power applications.",
+    id: "ex-35",
+    name: "Nilon Valves Private Limited",
+    slug: "nilon",
+    stall: "Stall A1A",
+    sector: "Industrial Valves & Flow Control",
+    booth: "Stall A1A",
+    sponsorTier: "Gold Sponsor",
+    logo: "/Logo/nilon.png",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Leading manufacturer of industrial valves including gate, globe, check, ball, and butterfly valves engineered for chemical, petrochemical, oil & gas, water, and process applications.",
+    country: "India",
+    featured: true
+  },
+  {
+    id: "ex-39",
+    name: "L&T and IHM Valves",
+    slug: "lt-ihm-valves",
+    stall: "Stall A2",
+    sector: "Flow Control, Industrial Valves & Automation",
+    booth: "Stall A2",
+    logo: "/Logo/L&T and IHM Valves Logo Banner.png",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "World-class manufacturer and solutions provider of engineered flow-control solutions, high-pressure industrial valves, gate, globe, check, and ball valves in partnership with IHM Valves for critical process industries.",
     country: "India",
     featured: true
   },
@@ -344,32 +358,6 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     featured: true
   },
   {
-    id: "ex-3",
-    name: "Ti Anode Fabricators Pvt.Ltd.",
-    slug: "tianode",
-    stall: "Stall L5",
-    sector: "Specialty Electrodes",
-    booth: "Stall L5",
-    logo: "/Logo/Ti Anode Fabricators Pvt.Ltd..webp",
-    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80",
-    description: "Titanium anode and cathode fabrications for chemical electrolysis and electro-chlorination.",
-    country: "India",
-    featured: true
-  },
-  {
-    id: "ex-4",
-    name: "Sandoz Valves (India) Pvt Ltd",
-    slug: "sandoz",
-    stall: "Stall L21",
-    sector: "Process Control Valves",
-    booth: "Stall L21",
-    logo: "/Logo/Sandoz updated.jpg",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
-    description: "High-performance stainless steel valves for pharmaceutical and bio-ethanol processing plants.",
-    country: "India",
-    featured: true
-  },
-  {
     id: "ex-5",
     name: "Fivebro Water Services Pvt Ltd",
     slug: "fivebro",
@@ -379,6 +367,58 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     logo: "/Logo/Fivebro Water Services Pvt Ltd.webp",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
     description: "Comprehensive industrial water treatment, reverse osmosis, and zero liquid discharge solutions.",
+    country: "India",
+    featured: true
+  },
+  {
+    id: "ex-32",
+    name: "Andritz Technologies Pvt. Ltd.",
+    slug: "andritz",
+    stall: "Stall A4A",
+    sector: "Engineered Pumps & Slurry Systems",
+    booth: "Stall A4A",
+    logo: "/Logo/ANDRITZ.jpeg",
+    image: "/blog-assets/andritz-split-case-pumps.jpg",
+    description: "Global technology group and OEM leader in heavy-duty centrifugal pumps, split-case units, slurry systems, and industrial fluid transport for water, chemical, and mineral processing sectors.",
+    country: "India",
+    featured: true
+  },
+  {
+    id: "ex-1",
+    name: "Bell-o-Seal Valves Private Limited",
+    slug: "bellseal",
+    stall: "Stall A5",
+    sector: "Bellow Sealed Valves",
+    booth: "Stall A5",
+    logo: "/Logo/bell-o-seal.webp",
+    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80",
+    description: "Zero-leakage bellow seal valves for hazardous chemical, ethanol, and nuclear power applications.",
+    country: "India",
+    featured: true
+  },
+  {
+    id: "ex-21",
+    name: "DelVal Flow Controls Pvt Ltd",
+    slug: "delvalflow",
+    stall: "Stall A21+22",
+    sector: "Flow Control & Automated Valves",
+    booth: "Stall A21+22",
+    logo: "/Logo/DelVal Flow Controls Pvt Ltd.png",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Global manufacturer of high-quality quarter-turn valves, butterfly valves, ball valves, actuators, and automation systems.",
+    country: "India / USA",
+    featured: true
+  },
+  {
+    id: "ex-3",
+    name: "Ti Anode Fabricators Pvt.Ltd.",
+    slug: "tianode",
+    stall: "Stall L5",
+    sector: "Specialty Electrodes",
+    booth: "Stall L5",
+    logo: "/Logo/Ti Anode Fabricators Pvt.Ltd..webp",
+    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80",
+    description: "Titanium anode and cathode fabrications for chemical electrolysis and electro-chlorination.",
     country: "India",
     featured: true
   },
@@ -565,19 +605,6 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     featured: true
   },
   {
-    id: "ex-21",
-    name: "DelVal Flow Controls Pvt Ltd",
-    slug: "delvalflow",
-    stall: "Stall A21+22",
-    sector: "Flow Control & Automated Valves",
-    booth: "Stall A21+22",
-    logo: "/Logo/DelVal Flow Controls Pvt Ltd.png",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
-    description: "Global manufacturer of high-quality quarter-turn valves, butterfly valves, ball valves, actuators, and automation systems.",
-    country: "India / USA",
-    featured: true
-  },
-  {
     id: "ex-22",
     name: "Gipfel Engineering",
     slug: "gipfel",
@@ -707,19 +734,6 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     featured: true
   },
   {
-    id: "ex-32",
-    name: "Andritz Technologies Pvt. Ltd.",
-    slug: "andritz",
-    stall: "Stall A4A",
-    sector: "Engineered Pumps & Slurry Systems",
-    booth: "Stall A4A",
-    logo: "/Logo/ANDRITZ.jpeg",
-    image: "/blog-assets/andritz-split-case-pumps.jpg",
-    description: "Global technology group and OEM leader in heavy-duty centrifugal pumps, split-case units, slurry systems, and industrial fluid transport for water, chemical, and mineral processing sectors.",
-    country: "India",
-    featured: true
-  },
-  {
     id: "ex-33",
     name: "Minilec India Pvt. Ltd.",
     slug: "minilec",
@@ -742,20 +756,6 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     logo: "/Logo/Shivrishi marketing.jpg",
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
     description: "Authorized distributor and engineering solution provider for high-performance industrial valves, piping components, gaskets, fluid handling accessories, and plant maintenance solutions.",
-    country: "India",
-    featured: true
-  },
-  {
-    id: "ex-35",
-    name: "Nilon Valves Private Limited",
-    slug: "nilon",
-    stall: "Stall A1A",
-    sector: "Industrial Valves & Flow Control",
-    booth: "Stall A1A",
-    sponsorTier: "Gold Sponsor",
-    logo: "/Logo/nilon.png",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
-    description: "Leading manufacturer of industrial valves including gate, globe, check, ball, and butterfly valves engineered for chemical, petrochemical, oil & gas, water, and process applications.",
     country: "India",
     featured: true
   },
@@ -799,19 +799,6 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     featured: true
   },
   {
-    id: "ex-39",
-    name: "L&T and IHM Valves",
-    slug: "lt-ihm-valves",
-    stall: "Stall A2",
-    sector: "Flow Control, Industrial Valves & Automation",
-    booth: "Stall A2",
-    logo: "/Logo/L&T and IHM Valves Logo Banner.png",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
-    description: "World-class manufacturer and solutions provider of engineered flow-control solutions, high-pressure industrial valves, gate, globe, check, and ball valves in partnership with IHM Valves for critical process industries.",
-    country: "India",
-    featured: true
-  },
-  {
     id: "ex-40",
     name: "Harisgold",
     slug: "harisgold",
@@ -834,6 +821,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     logo: "/Logo/RV5E-Logo.png",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
     description: "Hyderabad-based engineering services, fluid management, and turnkey solutions provider specializing in pressure booster pumps, submersible pumps, drainage systems, and industrial valves.",
+    country: "India",
+    featured: true
+  },
+  {
+    id: "ex-4",
+    name: "Sandoz Valves (India) Pvt Ltd",
+    slug: "sandoz",
+    stall: "Stall L21",
+    sector: "Process Control Valves",
+    booth: "Stall L21",
+    logo: "/Logo/Sandoz updated.jpg",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    description: "High-performance stainless steel valves for pharmaceutical and bio-ethanol processing plants.",
     country: "India",
     featured: true
   }
