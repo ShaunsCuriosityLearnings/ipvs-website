@@ -800,14 +800,14 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
   },
   {
     id: "ex-40",
-    name: "Harisgold",
+    name: "Haris Gold - CEME Valves",
     slug: "harisgold",
     stall: "Stall A4",
-    sector: "Industrial Pumps, Valves & Flow Control Spares",
+    sector: "Industrial Pumps, CEME Solenoid Valves & Flow Spares",
     booth: "Stall A4",
     logo: "/Logo/Haris Gold.jpg",
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
-    description: "Leading importer, distributor, and supplier of precision industrial pumps, fluid handling valves, solenoid valves, and high-performance pump components for process engineering.",
+    description: "Leading importer, distributor, and supplier of precision industrial pumps, CEME solenoid valves, fluid control automation, and high-performance flow components for process industries.",
     country: "India",
     featured: true
   },
@@ -821,6 +821,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     logo: "/Logo/RV5E-Logo.png",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
     description: "Hyderabad-based engineering services, fluid management, and turnkey solutions provider specializing in pressure booster pumps, submersible pumps, drainage systems, and industrial valves.",
+    country: "India",
+    featured: true
+  },
+  {
+    id: "ex-42",
+    name: "SAN Precision Alloys Private Limited",
+    slug: "sanprecision",
+    stall: "Stall L16",
+    sector: "Precision Investment Castings & Machined Valve Components",
+    booth: "Stall L16",
+    logo: "/Logo/SAN logo.png",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    description: "Coimbatore-based premier manufacturer specializing in precision investment castings (lost wax process), advanced CNC machining, and heat treatment for critical industrial valves, pumps, automotive, and process engineering.",
     country: "India",
     featured: true
   },

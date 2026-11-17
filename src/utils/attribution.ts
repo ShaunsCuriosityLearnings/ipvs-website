@@ -60,8 +60,9 @@ export function findExhibitorByQuery(query: string | null | undefined): Exhibito
     if ((clean.includes('arrow') || clean.includes('arrowtechno') || clean.includes('arrowtechnocast')) && e.name.toLowerCase().includes('arrow')) return true;
     if ((clean.includes('falcon') || clean.includes('falconpumps') || clean.includes('cityengineering')) && (e.name.toLowerCase().includes('falcon') || e.name.toLowerCase().includes('city engineering'))) return true;
     if ((clean.includes('lt') || clean.includes('l&t') || clean.includes('ihm') || clean.includes('ihmvalves') || clean.includes('ltvalves') || clean.includes('lt-ihm')) && (e.name.toLowerCase().includes('l&t') || e.name.toLowerCase().includes('ihm') || e.slug.includes('lt'))) return true;
-    if ((clean.includes('haris') || clean.includes('harisgold') || clean.includes('harris')) && (e.name.toLowerCase().includes('haris') || e.slug.includes('haris'))) return true;
+    if ((clean.includes('haris') || clean.includes('harisgold') || clean.includes('harris') || clean.includes('ceme')) && (e.name.toLowerCase().includes('haris') || e.slug.includes('haris'))) return true;
     if ((clean.includes('rv5e') || clean.includes('rv5') || clean.includes('rvengineers')) && (e.name.toLowerCase().includes('rv5e') || e.slug.includes('rv5e'))) return true;
+    if ((clean.includes('sanprecision') || clean.includes('sanalloys') || clean.includes('san-precision') || clean === 'san' || clean.includes('precisionalloys')) && (e.name.toLowerCase().includes('san precision') || e.slug.includes('sanprecision'))) return true;
     return false;
   });
 }
