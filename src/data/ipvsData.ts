@@ -838,6 +838,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     featured: true
   },
   {
+    id: "ex-43",
+    name: "Vintec Valves | Delta Valves",
+    slug: "vintec-delta",
+    stall: "Stall L6",
+    sector: "Industrial Valves, Flow Control & Instrumentation",
+    booth: "Stall L6",
+    logo: "/Logo/vintec valves delta valves.jpg",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Premier manufacturers and solution providers of industrial valves, high-pressure flow isolation, control valves, and process piping systems engineered for oil & gas, chemicals, power, and water applications.",
+    country: "India",
+    featured: true
+  },
+  {
     id: "ex-4",
     name: "Sandoz Valves (India) Pvt Ltd",
     slug: "sandoz",
