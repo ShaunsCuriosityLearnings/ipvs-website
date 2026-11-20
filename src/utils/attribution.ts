@@ -66,6 +66,7 @@ export function findExhibitorByQuery(query: string | null | undefined): Exhibito
     if ((clean.includes('rv5e') || clean.includes('rv5') || clean.includes('rvengineers')) && (e.name.toLowerCase().includes('rv5e') || e.slug.includes('rv5e'))) return true;
     if ((clean.includes('sanprecision') || clean.includes('sanalloys') || clean.includes('san-precision') || clean === 'san' || clean.includes('precisionalloys')) && (e.name.toLowerCase().includes('san precision') || e.slug.includes('sanprecision'))) return true;
     if ((clean.includes('vintec') || clean.includes('vin-tec') || clean.includes('deltavalve') || clean.includes('vintecdelta')) && (e.name.toLowerCase().includes('vintec') || e.slug.includes('vintec'))) return true;
+    if ((clean.includes('deraz') || clean.includes('delraz') || clean.includes('derazengineers') || clean.includes('delrazengineers')) && (e.name.toLowerCase().includes('deraz') || e.slug.includes('deraz'))) return true;
     return false;
   });
 }

@@ -877,6 +877,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     featured: true
   },
   {
+    id: "ex-46",
+    name: "Deraz Engineers",
+    slug: "deraz",
+    stall: "Stall A6-A7",
+    sector: "Industrial Pumps, Valves & Flow Control Systems",
+    booth: "Stall A6-A7",
+    logo: "/Logo/Delraz.jpg",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Hyderabad-based premier engineering firm and authorized distributor specializing in industrial centrifugal pumps, submersible pumps, hydro-pneumatic systems, gate, globe, check, and butterfly valves for chemical, pharma, water treatment, and infrastructure projects.",
+    country: "India",
+    featured: true
+  },
+  {
     id: "ex-4",
     name: "Sandoz Valves (India) Pvt Ltd",
     slug: "sandoz",
