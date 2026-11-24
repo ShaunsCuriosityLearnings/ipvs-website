@@ -46,7 +46,7 @@ export const EVENT_DETAILS = {
   venue: "HITEX Exhibition Center",
   location: "Izzat Nagar, Hyderabad – 500 084, Telangana, India",
   stats: [
-    { label: "Expected Visitors", value: "+7000 visitors", change: "+25% YoY" },
+    { label: "Expected Visitors", value: "10,000+ visitors", change: "+25% YoY" },
     { label: "Leading Exhibitors", value: "100+ Exhibitors", change: "Global & Domestic" },
     { label: "Focus Sectors", value: "Ethanol, Pharma & Water", change: "Core Demand" },
     { label: "Key Industries", value: "11 Priority Sectors", change: "Full Supply Chain" }
@@ -2021,7 +2021,7 @@ const RAW_BLOG_ARTICLES: BlogArticle[] = [
       },
       {
         question: "How can other pump and valve OEMs participate alongside ANDRITZ at IPVS 2026?",
-        answer: "Pump, valve, and process machinery manufacturers can book exhibition booths by visiting the [IPVS 2026 Exhibitor Booking Portal](/exhibitor) to display their solutions to over 7,000 industrial buyers."
+        answer: "Pump, valve, and process machinery manufacturers can book exhibition booths by visiting the [IPVS 2026 Exhibitor Booking Portal](/exhibitor) to display their solutions to over 10,000+ industrial buyers."
       }
     ],
     ctaType: "visitor"

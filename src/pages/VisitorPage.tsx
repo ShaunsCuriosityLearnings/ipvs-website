@@ -204,7 +204,7 @@ export const VisitorPage: React.FC<VisitorPageProps> = ({ onOpenModal }) => {
                   {/* Floating Top Badge */}
                   <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md text-slate-200 text-[10px] font-bold px-3 py-1 rounded-full border border-white/10 flex items-center space-x-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                    <span>+7000 visitors</span>
+                    <span>10,000+ visitors</span>
                   </div>
 
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">

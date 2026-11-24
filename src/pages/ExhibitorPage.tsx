@@ -140,7 +140,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                 Exhibitor Registration
               </h3>
               <p className="text-xs text-slate-600 font-medium">
-                Reserve your stall & connect with +7000 industrial buyers
+                Reserve your stall & connect with 10,000+ industrial buyers
               </p>
             </div>
 
@@ -397,7 +397,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                 <span className="text-xs text-slate-300 block">Exhibitors</span>
               </div>
               <div>
-                <span className="text-2xl sm:text-3xl font-black text-white font-heading">+7000</span>
+                <span className="text-2xl sm:text-3xl font-black text-white font-heading">10,000+</span>
                 <span className="text-xs text-slate-300 block">Visitors</span>
               </div>
               <div>
@@ -461,7 +461,7 @@ export const ExhibitorPage: React.FC<ExhibitorPageProps> = ({ onOpenModal }) => 
                       High-Value Sourcing Delegation
                     </span>
                     <p className="text-white font-extrabold text-base sm:text-lg font-heading leading-tight drop-shadow-sm">
-                      7,000+ Industrial Buyers & Plant Heads
+                      10,000+ Industrial Buyers & Plant Heads
                     </p>
                   </div>
                 </div>
