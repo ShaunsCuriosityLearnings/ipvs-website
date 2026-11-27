@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
-import { 
-  Play, 
-  ArrowRight, 
-  Award, 
+import {
+  Play,
+  ArrowRight,
+  Award,
   CheckCircle2,
   Volume2,
   VolumeX,
@@ -34,17 +34,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
 
   return (
     <section id="hero" className="relative bg-gradient-to-br from-[#111183] via-[#0f4f9e] to-[#0e89d0] text-white pt-36 sm:pt-40 lg:pt-44 pb-32 sm:pb-36 lg:pb-40 overflow-hidden">
-      
+
       {/* Subtle Background Glows */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-white/10 rounded-full blur-[140px] pointer-events-none"></div>
       <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-[#00D2FF]/20 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="relative z-10 max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          
+
           {/* Left Column - Main Headline & Information */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            
+
             {/* Subhead Tag */}
             <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#38BDF8] text-xs font-bold tracking-wider uppercase backdrop-blur-md">
               <Award className="w-3.5 h-3.5 text-[#38BDF8]" />
@@ -71,7 +71,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-[#38BDF8]" />
-                <span>+7000 Visitors</span>
+                <span>+10000 Visitors</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-[#38BDF8]" />
@@ -95,7 +95,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
 
             {/* CTA Buttons - Single row on mobile */}
             <div className="flex flex-row items-center gap-2 sm:gap-4 pt-4 w-full">
-              <button 
+              <button
                 onClick={() => onOpenModal('exhibitor')}
                 className="flex-1 sm:flex-initial px-3 sm:px-8 py-3.5 sm:py-4 rounded-xl text-[11px] sm:text-sm font-bold text-white bg-gradient-to-r from-[#111183] to-[#0e89d0] hover:from-[#0d0d6c] hover:to-[#0c74b1] shadow-xl shadow-blue-950/50 border border-white/20 transition-all uppercase tracking-wider flex items-center justify-center text-center whitespace-nowrap"
               >
@@ -103,7 +103,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                 <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1.5" />
               </button>
 
-              <button 
+              <button
                 onClick={() => onOpenModal('visitor')}
                 className="flex-1 sm:flex-initial px-3 sm:px-8 py-3.5 sm:py-4 rounded-xl text-[11px] sm:text-sm font-bold text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-all uppercase tracking-wider flex items-center justify-center text-center whitespace-nowrap backdrop-blur-md"
               >
@@ -115,13 +115,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
 
           {/* Right Column - IPVS Official Main Logo + Autoplay Vertical Reel */}
           <div className="lg:col-span-5 relative flex flex-col items-center lg:items-end">
-            
+
             {/* IPVS Main Logo Card */}
             <div className="flex justify-center lg:justify-end mb-4 lg:mb-5 w-full max-w-[310px] sm:max-w-[340px]">
               <div className="bg-white p-2.5 sm:p-3 rounded-2xl sm:rounded-3xl shadow-2xl border-2 border-white/30 hover:scale-105 transition-all duration-300 w-full flex items-center justify-between space-x-3 group">
-                <img 
-                  src={getMediaUrl("/ipvs_logo.jpg")} 
-                  alt="IPVS 2026 Main Exhibition Official Logo" 
+                <img
+                  src={getMediaUrl("/ipvs_logo.jpg")}
+                  alt="IPVS 2026 Main Exhibition Official Logo"
                   className="h-14 sm:h-16 w-auto object-contain rounded-lg"
                 />
                 <div className="text-left pr-2">
@@ -134,7 +134,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
 
             {/* Vertical Reel Video Device Frame */}
             <div className="relative w-full max-w-[280px] sm:max-w-[310px] lg:max-w-[330px]">
-              <div 
+              <div
                 onClick={() => setIsVideoOpen(true)}
                 className="relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-4 border-white/30 bg-slate-950 aspect-[9/16] group cursor-pointer"
               >
@@ -227,9 +227,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
 
       {/* Signature Blue SVG Wave Curve Divider (Transitioning to Light Body) */}
       <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-20">
-        <svg 
-          className="relative block w-full h-16 sm:h-24 lg:h-28 text-[#F4F7FE]" 
-          viewBox="0 0 1200 120" 
+        <svg
+          className="relative block w-full h-16 sm:h-24 lg:h-28 text-[#F4F7FE]"
+          viewBox="0 0 1200 120"
           preserveAspectRatio="none"
           fill="currentColor"
         >
@@ -239,25 +239,25 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
 
       {/* Fullscreen Reel Video Modal Preview with Sound */}
       {isVideoOpen && (
-        <div 
+        <div
           onClick={() => setIsVideoOpen(false)}
           className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
         >
-          <div 
+          <div
             onClick={(e) => e.stopPropagation()}
             className="relative w-full max-w-[340px] sm:max-w-[380px] aspect-[9/16] max-h-[92vh] bg-slate-950 rounded-3xl overflow-hidden shadow-2xl border-2 border-white/20 flex flex-col justify-center items-center"
           >
-            <button 
+            <button
               onClick={() => setIsVideoOpen(false)}
               className="absolute top-3.5 right-3.5 text-white hover:text-slate-300 text-sm font-bold z-30 bg-black/70 hover:bg-black w-9 h-9 rounded-full flex items-center justify-center transition-all border border-white/20 shadow-lg"
               aria-label="Close Modal"
             >
               ✕
             </button>
-            <video 
-              autoPlay 
-              controls 
-              playsInline 
+            <video
+              autoPlay
+              controls
+              playsInline
               className="w-full h-full object-cover"
             >
               <source src={reelLocalUrl} type="video/mp4" />

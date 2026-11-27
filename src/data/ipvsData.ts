@@ -890,6 +890,19 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     featured: true
   },
   {
+    id: "ex-47",
+    name: "Ashwini Metals",
+    slug: "ashwini",
+    stall: "Stall L29",
+    sector: "Precision Engineering & Metal Components",
+    booth: "Stall L29",
+    logo: "/Logo/Ashwini.jpg",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
+    description: "Pioneering precision engineering since 1963, specializing in high-precision machined metal components, specialized alloys, castings, and engineered hardware for industrial pumps, valves, and flow control systems.",
+    country: "India",
+    featured: true
+  },
+  {
     id: "ex-4",
     name: "Sandoz Valves (India) Pvt Ltd",
     slug: "sandoz",

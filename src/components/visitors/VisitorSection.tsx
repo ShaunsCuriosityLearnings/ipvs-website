@@ -9,9 +9,9 @@ interface VisitorSectionProps {
 export const VisitorSection: React.FC<VisitorSectionProps> = ({ onOpenModal }) => {
   return (
     <section id="visitor" className="py-24 bg-slate-900/40 relative overflow-hidden border-t border-slate-800">
-      
+
       <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
@@ -62,7 +62,7 @@ export const VisitorSection: React.FC<VisitorSectionProps> = ({ onOpenModal }) =
             </div>
             <h3 className="text-lg font-bold text-white mb-2 font-heading">Unparalleled Networking</h3>
             <p className="text-xs text-slate-400 leading-relaxed mb-4">
-              Connect with +7000 visitors, plant managers, EPC consultants, distributors, and technology pioneers.
+              Connect with +10000 visitors, plant managers, EPC consultants, distributors, and technology pioneers.
             </p>
             <span className="text-[11px] text-purple-400 font-semibold flex items-center">
               <CheckCircle2 className="w-3.5 h-3.5 mr-1" />
@@ -103,7 +103,7 @@ export const VisitorSection: React.FC<VisitorSectionProps> = ({ onOpenModal }) =
               Skip registration queues at HITEX Hyderabad by completing your free online pass registration now.
             </p>
           </div>
-          <button 
+          <button
             onClick={() => onOpenModal('visitor')}
             className="px-8 py-4 rounded-xl text-sm font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 transition-all shadow-xl shadow-emerald-950/40 shrink-0 flex items-center"
           >

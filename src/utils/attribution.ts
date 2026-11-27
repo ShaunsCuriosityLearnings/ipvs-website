@@ -67,6 +67,7 @@ export function findExhibitorByQuery(query: string | null | undefined): Exhibito
     if ((clean.includes('sanprecision') || clean.includes('sanalloys') || clean.includes('san-precision') || clean === 'san' || clean.includes('precisionalloys')) && (e.name.toLowerCase().includes('san precision') || e.slug.includes('sanprecision'))) return true;
     if ((clean.includes('vintec') || clean.includes('vin-tec') || clean.includes('deltavalve') || clean.includes('vintecdelta')) && (e.name.toLowerCase().includes('vintec') || e.slug.includes('vintec'))) return true;
     if ((clean.includes('deraz') || clean.includes('delraz') || clean.includes('derazengineers') || clean.includes('delrazengineers')) && (e.name.toLowerCase().includes('deraz') || e.slug.includes('deraz'))) return true;
+    if ((clean.includes('ashwini') || clean.includes('ashwani') || clean.includes('ashwinimetals') || clean.includes('ashwanimetals')) && (e.name.toLowerCase().includes('ashwini') || e.name.toLowerCase().includes('ashwani') || e.slug.includes('ashwini') || e.slug.includes('ashwani'))) return true;
     return false;
   });
 }

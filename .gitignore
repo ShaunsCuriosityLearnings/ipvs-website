@@ -31,4 +31,9 @@ public/we/*.jpg
 
 # Temporary scratch & analysis
 scratch/
+sendy*
+*.zip
+*.jfif
+IPVS Eailer*
+
 

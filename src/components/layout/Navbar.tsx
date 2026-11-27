@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
       : 'py-3.5 bg-gradient-to-r from-[#111183]/95 to-[#0e89d0]/95 backdrop-blur-xl border-b border-white/10'
       }`}>
 
-{/* Top Banner Announcement Strip */}
+      {/* Top Banner Announcement Strip */}
       <div className="hidden lg:block border-b border-white/10 pb-2 mb-2">
         <div className="max-w-[98%] 2xl:max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-6 flex justify-between items-center text-xs text-slate-300">
           <div className="flex items-center space-x-6">
@@ -63,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
             </span>
             <span className="text-emerald-400 font-medium flex items-center">
               <CheckCircle2 className="w-3.5 h-3.5 mr-1" />
-              100+ Exhibitors • +7000 Visitors
+              100+ Exhibitors • +10000 Visitors
             </span>
           </div>
           <div className="flex items-center space-x-4">
