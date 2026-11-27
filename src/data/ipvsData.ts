@@ -896,7 +896,7 @@ export const ESTEEMED_EXHIBITORS: ExhibitorItem[] = [
     stall: "Stall L29",
     sector: "Precision Engineering & Metal Components",
     booth: "Stall L29",
-    logo: "/Logo/Ashwini.jpg",
+    logo: "/Logo/Ashwini.jpeg",
     image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80",
     description: "Pioneering precision engineering since 1963, specializing in high-precision machined metal components, specialized alloys, castings, and engineered hardware for industrial pumps, valves, and flow control systems.",
     country: "India",

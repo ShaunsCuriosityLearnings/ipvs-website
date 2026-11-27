@@ -106,6 +106,8 @@ function AppContent() {
           <Route path="/visit/:slug" element={<TrackedVisitPage onOpenModal={handleOpenModal} />} />
           <Route path="/visitor-invite" element={<TrackedVisitPage onOpenModal={handleOpenModal} />} />
           <Route path="/invite-generator" element={<InviteGeneratorPage />} />
+          <Route path="/invitegenerator" element={<InviteGeneratorPage />} />
+          <Route path="/invite" element={<InviteGeneratorPage />} />
           <Route path="/blogs" element={<BlogsPage onOpenModal={handleOpenModal} />} />
           <Route path="/blogs/:slug" element={<BlogDetailPage onOpenModal={handleOpenModal} />} />
           <Route path="/advisory-board" element={<AdvisoryPage onOpenModal={handleOpenModal} />} />
